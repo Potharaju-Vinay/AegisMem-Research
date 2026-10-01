@@ -1,0 +1,150 @@
+|   |   |       |       |   greatest.js
+|   |   |       |       |   greatestIndex.js
+|   |   |       |       |   group.js
+|   |   |       |       |   groupSort.js
+|   |   |       |       |   identity.js
+|   |   |       |       |   index.js
+|   |   |       |       |   intersection.js
+|   |   |       |       |   least.js
+|   |   |       |       |   leastIndex.js
+|   |   |       |       |   map.js
+|   |   |       |       |   max.js
+|   |   |       |       |   maxIndex.js
+|   |   |       |       |   mean.js
+|   |   |       |       |   median.js
+|   |   |       |       |   merge.js
+|   |   |       |       |   min.js
+|   |   |       |       |   minIndex.js
+|   |   |       |       |   mode.js
+|   |   |       |       |   nice.js
+|   |   |       |       |   number.js
+|   |   |       |       |   pairs.js
+|   |   |       |       |   permute.js
+|   |   |       |       |   quantile.js
+|   |   |       |       |   quickselect.js
+|   |   |       |       |   range.js
+|   |   |       |       |   rank.js
+|   |   |       |       |   reduce.js
+|   |   |       |       |   reverse.js
+|   |   |       |       |   scan.js
+|   |   |       |       |   shuffle.js
+|   |   |       |       |   some.js
+|   |   |       |       |   sort.js
+|   |   |       |       |   subset.js
+|   |   |       |       |   sum.js
+|   |   |       |       |   superset.js
+|   |   |       |       |   ticks.js
+|   |   |       |       |   transpose.js
+|   |   |       |       |   union.js
+|   |   |       |       |   variance.js
+|   |   |       |       |   zip.js
+|   |   |       |       |   
+|   |   |       |       \---threshold
+|   |   |       |               freedmanDiaconis.js
+|   |   |       |               scott.js
+|   |   |       |               sturges.js
+|   |   |       |               
+|   |   |       +---d3-color
+|   |   |       |   |   LICENSE
+|   |   |       |   |   
+|   |   |       |   \---src
+|   |   |       |           color.js
+|   |   |       |           cubehelix.js
+|   |   |       |           define.js
+|   |   |       |           index.js
+|   |   |       |           lab.js
+|   |   |       |           math.js
+|   |   |       |           
+|   |   |       +---d3-ease
+|   |   |       |   |   LICENSE
+|   |   |       |   |   
+|   |   |       |   \---src
+|   |   |       |           back.js
+|   |   |       |           bounce.js
+|   |   |       |           circle.js
+|   |   |       |           cubic.js
+|   |   |       |           elastic.js
+|   |   |       |           exp.js
+|   |   |       |           index.js
+|   |   |       |           linear.js
+|   |   |       |           math.js
+|   |   |       |           poly.js
+|   |   |       |           quad.js
+|   |   |       |           sin.js
+|   |   |       |           
+|   |   |       +---d3-format
+|   |   |       |   |   LICENSE
+|   |   |       |   |   
+|   |   |       |   \---src
+|   |   |       |           defaultLocale.js
+|   |   |       |           exponent.js
+|   |   |       |           formatDecimal.js
+|   |   |       |           formatGroup.js
+|   |   |       |           formatNumerals.js
+|   |   |       |           formatPrefixAuto.js
+|   |   |       |           formatRounded.js
+|   |   |       |           formatSpecifier.js
+|   |   |       |           formatTrim.js
+|   |   |       |           formatTypes.js
+|   |   |       |           identity.js
+|   |   |       |           index.js
+|   |   |       |           locale.js
+|   |   |       |           precisionFixed.js
+|   |   |       |           precisionPrefix.js
+|   |   |       |           precisionRound.js
+|   |   |       |           
+|   |   |       +---d3-interpolate
+|   |   |       |   |   LICENSE
+|   |   |       |   |   
+|   |   |       |   \---src
+|   |   |       |       |   array.js
+|   |   |       |       |   basis.js
+|   |   |       |       |   basisClosed.js
+|   |   |       |       |   color.js
+|   |   |       |       |   constant.js
+|   |   |       |       |   cubehelix.js
+|   |   |       |       |   date.js
+|   |   |       |       |   discrete.js
+|   |   |       |       |   hcl.js
+|   |   |       |       |   hsl.js
+|   |   |       |       |   hue.js
+|   |   |       |       |   index.js
+|   |   |       |       |   lab.js
+|   |   |       |       |   number.js
+|   |   |       |       |   numberArray.js
+|   |   |       |       |   object.js
+|   |   |       |       |   piecewise.js
+|   |   |       |       |   quantize.js
+|   |   |       |       |   rgb.js
+|   |   |       |       |   round.js
+|   |   |       |       |   string.js
+|   |   |       |       |   value.js
+|   |   |       |       |   zoom.js
+|   |   |       |       |   
+|   |   |       |       \---transform
+|   |   |       |               decompose.js
+|   |   |       |               index.js
+|   |   |       |               parse.js
+|   |   |       |               
+|   |   |       +---d3-path
+|   |   |       |   |   LICENSE
+|   |   |       |   |   
+|   |   |       |   \---src
+|   |   |       |           index.js
+|   |   |       |           path.js
+|   |   |       |           
+|   |   |       +---d3-scale
+|   |   |       |   |   LICENSE
+|   |   |       |   |   
+|   |   |       |   \---src
+|   |   |       |           band.js
+|   |   |       |           colors.js
+|   |   |       |           constant.js
+|   |   |       |           continuous.js
+|   |   |       |           diverging.js
+|   |   |       |           identity.js
+|   |   |       |           index.js
+|   |   |       |           init.js
+|   |   |       |           linear.js
+|   |   |       |           log.js
+|   |   |       |           nice.js

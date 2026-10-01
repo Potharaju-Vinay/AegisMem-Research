@@ -1,0 +1,150 @@
+    |       |   |   |   _umath_tests.cp313-win_amd64.lib
+    |       |   |   |   _umath_tests.cp313-win_amd64.pyd
+    |       |   |   |   _umath_tests.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   +---include
+    |       |   |   |   \---numpy
+    |       |   |   |       |   arrayobject.h
+    |       |   |   |       |   arrayscalars.h
+    |       |   |   |       |   dtype_api.h
+    |       |   |   |       |   halffloat.h
+    |       |   |   |       |   ndarrayobject.h
+    |       |   |   |       |   ndarraytypes.h
+    |       |   |   |       |   npy_2_compat.h
+    |       |   |   |       |   npy_2_complexcompat.h
+    |       |   |   |       |   npy_3kcompat.h
+    |       |   |   |       |   npy_common.h
+    |       |   |   |       |   npy_cpu.h
+    |       |   |   |       |   npy_endian.h
+    |       |   |   |       |   npy_math.h
+    |       |   |   |       |   npy_no_deprecated_api.h
+    |       |   |   |       |   npy_os.h
+    |       |   |   |       |   numpyconfig.h
+    |       |   |   |       |   ufuncobject.h
+    |       |   |   |       |   utils.h
+    |       |   |   |       |   _neighborhood_iterator_imp.h
+    |       |   |   |       |   _numpyconfig.h
+    |       |   |   |       |   _public_dtype_api_table.h
+    |       |   |   |       |   __multiarray_api.c
+    |       |   |   |       |   __multiarray_api.h
+    |       |   |   |       |   __ufunc_api.c
+    |       |   |   |       |   __ufunc_api.h
+    |       |   |   |       |   
+    |       |   |   |       \---random
+    |       |   |   |               bitgen.h
+    |       |   |   |               distributions.h
+    |       |   |   |               libdivide.h
+    |       |   |   |               LICENSE.txt
+    |       |   |   |               
+    |       |   |   +---lib
+    |       |   |   |   |   npymath.lib
+    |       |   |   |   |   
+    |       |   |   |   \---pkgconfig
+    |       |   |   |           numpy.pc
+    |       |   |   |           
+    |       |   |   +---tests
+    |       |   |   |   |   test_abc.py
+    |       |   |   |   |   test_api.py
+    |       |   |   |   |   test_argparse.py
+    |       |   |   |   |   test_arraymethod.py
+    |       |   |   |   |   test_arrayobject.py
+    |       |   |   |   |   test_arrayprint.py
+    |       |   |   |   |   test_array_api_info.py
+    |       |   |   |   |   test_array_coercion.py
+    |       |   |   |   |   test_array_interface.py
+    |       |   |   |   |   test_casting_floatingpoint_errors.py
+    |       |   |   |   |   test_casting_unittests.py
+    |       |   |   |   |   test_conversion_utils.py
+    |       |   |   |   |   test_cpu_dispatcher.py
+    |       |   |   |   |   test_cpu_features.py
+    |       |   |   |   |   test_custom_dtypes.py
+    |       |   |   |   |   test_cython.py
+    |       |   |   |   |   test_datetime.py
+    |       |   |   |   |   test_defchararray.py
+    |       |   |   |   |   test_deprecations.py
+    |       |   |   |   |   test_dlpack.py
+    |       |   |   |   |   test_dtype.py
+    |       |   |   |   |   test_einsum.py
+    |       |   |   |   |   test_errstate.py
+    |       |   |   |   |   test_extint128.py
+    |       |   |   |   |   test_finfo.py
+    |       |   |   |   |   test_function_base.py
+    |       |   |   |   |   test_getlimits.py
+    |       |   |   |   |   test_half.py
+    |       |   |   |   |   test_hashtable.py
+    |       |   |   |   |   test_indexerrors.py
+    |       |   |   |   |   test_indexing.py
+    |       |   |   |   |   test_item_selection.py
+    |       |   |   |   |   test_limited_api.py
+    |       |   |   |   |   test_longdouble.py
+    |       |   |   |   |   test_memmap.py
+    |       |   |   |   |   test_mem_overlap.py
+    |       |   |   |   |   test_mem_policy.py
+    |       |   |   |   |   test_multiarray.py
+    |       |   |   |   |   test_multiprocessing.py
+    |       |   |   |   |   test_multithreading.py
+    |       |   |   |   |   test_nditer.py
+    |       |   |   |   |   test_nep50_promotions.py
+    |       |   |   |   |   test_numeric.py
+    |       |   |   |   |   test_numerictypes.py
+    |       |   |   |   |   test_overrides.py
+    |       |   |   |   |   test_print.py
+    |       |   |   |   |   test_protocols.py
+    |       |   |   |   |   test_records.py
+    |       |   |   |   |   test_regression.py
+    |       |   |   |   |   test_scalarbuffer.py
+    |       |   |   |   |   test_scalarinherit.py
+    |       |   |   |   |   test_scalarmath.py
+    |       |   |   |   |   test_scalarprint.py
+    |       |   |   |   |   test_scalar_ctors.py
+    |       |   |   |   |   test_scalar_methods.py
+    |       |   |   |   |   test_shape_base.py
+    |       |   |   |   |   test_simd.py
+    |       |   |   |   |   test_simd_module.py
+    |       |   |   |   |   test_stringdtype.py
+    |       |   |   |   |   test_strings.py
+    |       |   |   |   |   test_ufunc.py
+    |       |   |   |   |   test_umath.py
+    |       |   |   |   |   test_umath_accuracy.py
+    |       |   |   |   |   test_umath_complex.py
+    |       |   |   |   |   test_unicode.py
+    |       |   |   |   |   test__exceptions.py
+    |       |   |   |   |   _locales.py
+    |       |   |   |   |   _natype.py
+    |       |   |   |   |   
+    |       |   |   |   +---data
+    |       |   |   |   |       astype_copy.pkl
+    |       |   |   |   |       generate_umath_validation_data.cpp
+    |       |   |   |   |       recarray_from_file.fits
+    |       |   |   |   |       umath-validation-set-arccos.csv
+    |       |   |   |   |       umath-validation-set-arccosh.csv
+    |       |   |   |   |       umath-validation-set-arcsin.csv
+    |       |   |   |   |       umath-validation-set-arcsinh.csv
+    |       |   |   |   |       umath-validation-set-arctan.csv
+    |       |   |   |   |       umath-validation-set-arctanh.csv
+    |       |   |   |   |       umath-validation-set-cbrt.csv
+    |       |   |   |   |       umath-validation-set-cos.csv
+    |       |   |   |   |       umath-validation-set-cosh.csv
+    |       |   |   |   |       umath-validation-set-exp.csv
+    |       |   |   |   |       umath-validation-set-exp2.csv
+    |       |   |   |   |       umath-validation-set-expm1.csv
+    |       |   |   |   |       umath-validation-set-log.csv
+    |       |   |   |   |       umath-validation-set-log10.csv
+    |       |   |   |   |       umath-validation-set-log1p.csv
+    |       |   |   |   |       umath-validation-set-log2.csv
+    |       |   |   |   |       umath-validation-set-README.txt
+    |       |   |   |   |       umath-validation-set-sin.csv
+    |       |   |   |   |       umath-validation-set-sinh.csv
+    |       |   |   |   |       umath-validation-set-tan.csv
+    |       |   |   |   |       umath-validation-set-tanh.csv
+    |       |   |   |   |       
+    |       |   |   |   +---examples
+    |       |   |   |   |   +---cython
+    |       |   |   |   |   |   |   checks.pyx
+    |       |   |   |   |   |   |   meson.build
+    |       |   |   |   |   |   |   setup.py
+    |       |   |   |   |   |   |   
+    |       |   |   |   |   |   \---__pycache__
+    |       |   |   |   |   |           setup.cpython-313.pyc

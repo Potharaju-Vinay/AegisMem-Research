@@ -1,0 +1,150 @@
+    |       |   |   |   +---Indiana
+    |       |   |   |   |   |   Indianapolis
+    |       |   |   |   |   |   Knox
+    |       |   |   |   |   |   Marengo
+    |       |   |   |   |   |   Petersburg
+    |       |   |   |   |   |   Tell_City
+    |       |   |   |   |   |   Vevay
+    |       |   |   |   |   |   Vincennes
+    |       |   |   |   |   |   Winamac
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---Kentucky
+    |       |   |   |   |   |   Louisville
+    |       |   |   |   |   |   Monticello
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---North_Dakota
+    |       |   |   |   |   |   Beulah
+    |       |   |   |   |   |   Center
+    |       |   |   |   |   |   New_Salem
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---Antarctica
+    |       |   |   |   |   Casey
+    |       |   |   |   |   Davis
+    |       |   |   |   |   DumontDUrville
+    |       |   |   |   |   Macquarie
+    |       |   |   |   |   Mawson
+    |       |   |   |   |   McMurdo
+    |       |   |   |   |   Palmer
+    |       |   |   |   |   Rothera
+    |       |   |   |   |   South_Pole
+    |       |   |   |   |   Syowa
+    |       |   |   |   |   Troll
+    |       |   |   |   |   Vostok
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---Arctic
+    |       |   |   |   |   Longyearbyen
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---Asia
+    |       |   |   |   |   Aden
+    |       |   |   |   |   Almaty
+    |       |   |   |   |   Amman
+    |       |   |   |   |   Anadyr
+    |       |   |   |   |   Aqtau
+    |       |   |   |   |   Aqtobe
+    |       |   |   |   |   Ashgabat
+    |       |   |   |   |   Ashkhabad
+    |       |   |   |   |   Atyrau
+    |       |   |   |   |   Baghdad
+    |       |   |   |   |   Bahrain
+    |       |   |   |   |   Baku
+    |       |   |   |   |   Bangkok
+    |       |   |   |   |   Barnaul
+    |       |   |   |   |   Beirut
+    |       |   |   |   |   Bishkek
+    |       |   |   |   |   Brunei
+    |       |   |   |   |   Calcutta
+    |       |   |   |   |   Chita
+    |       |   |   |   |   Choibalsan
+    |       |   |   |   |   Chongqing
+    |       |   |   |   |   Chungking
+    |       |   |   |   |   Colombo
+    |       |   |   |   |   Dacca
+    |       |   |   |   |   Damascus
+    |       |   |   |   |   Dhaka
+    |       |   |   |   |   Dili
+    |       |   |   |   |   Dubai
+    |       |   |   |   |   Dushanbe
+    |       |   |   |   |   Famagusta
+    |       |   |   |   |   Gaza
+    |       |   |   |   |   Harbin
+    |       |   |   |   |   Hebron
+    |       |   |   |   |   Hong_Kong
+    |       |   |   |   |   Hovd
+    |       |   |   |   |   Ho_Chi_Minh
+    |       |   |   |   |   Irkutsk
+    |       |   |   |   |   Istanbul
+    |       |   |   |   |   Jakarta
+    |       |   |   |   |   Jayapura
+    |       |   |   |   |   Jerusalem
+    |       |   |   |   |   Kabul
+    |       |   |   |   |   Kamchatka
+    |       |   |   |   |   Karachi
+    |       |   |   |   |   Kashgar
+    |       |   |   |   |   Kathmandu
+    |       |   |   |   |   Katmandu
+    |       |   |   |   |   Khandyga
+    |       |   |   |   |   Kolkata
+    |       |   |   |   |   Krasnoyarsk
+    |       |   |   |   |   Kuala_Lumpur
+    |       |   |   |   |   Kuching
+    |       |   |   |   |   Kuwait
+    |       |   |   |   |   Macao
+    |       |   |   |   |   Macau
+    |       |   |   |   |   Magadan
+    |       |   |   |   |   Makassar
+    |       |   |   |   |   Manila
+    |       |   |   |   |   Muscat
+    |       |   |   |   |   Nicosia
+    |       |   |   |   |   Novokuznetsk
+    |       |   |   |   |   Novosibirsk
+    |       |   |   |   |   Omsk
+    |       |   |   |   |   Oral
+    |       |   |   |   |   Phnom_Penh
+    |       |   |   |   |   Pontianak
+    |       |   |   |   |   Pyongyang
+    |       |   |   |   |   Qatar
+    |       |   |   |   |   Qostanay
+    |       |   |   |   |   Qyzylorda
+    |       |   |   |   |   Rangoon
+    |       |   |   |   |   Riyadh
+    |       |   |   |   |   Saigon
+    |       |   |   |   |   Sakhalin
+    |       |   |   |   |   Samarkand
+    |       |   |   |   |   Seoul
+    |       |   |   |   |   Shanghai
+    |       |   |   |   |   Singapore
+    |       |   |   |   |   Srednekolymsk
+    |       |   |   |   |   Taipei
+    |       |   |   |   |   Tashkent
+    |       |   |   |   |   Tbilisi
+    |       |   |   |   |   Tehran
+    |       |   |   |   |   Tel_Aviv
+    |       |   |   |   |   Thimbu
+    |       |   |   |   |   Thimphu
+    |       |   |   |   |   Tokyo
+    |       |   |   |   |   Tomsk
+    |       |   |   |   |   Ujung_Pandang
+    |       |   |   |   |   Ulaanbaatar

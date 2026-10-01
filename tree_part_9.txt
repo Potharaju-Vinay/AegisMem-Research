@@ -1,0 +1,150 @@
+|   |   |           |       deprecated-aliases.js.map
+|   |   |           |       experimental.js
+|   |   |           |       experimental.js.map
+|   |   |           |       flow.js
+|   |   |           |       flow.js.map
+|   |   |           |       index.js
+|   |   |           |       index.js.map
+|   |   |           |       jsx.js
+|   |   |           |       jsx.js.map
+|   |   |           |       misc.js
+|   |   |           |       misc.js.map
+|   |   |           |       placeholders.js
+|   |   |           |       placeholders.js.map
+|   |   |           |       typescript.js
+|   |   |           |       typescript.js.map
+|   |   |           |       utils.js
+|   |   |           |       utils.js.map
+|   |   |           |       
+|   |   |           +---modifications
+|   |   |           |   |   appendToMemberExpression.js
+|   |   |           |   |   appendToMemberExpression.js.map
+|   |   |           |   |   inherits.js
+|   |   |           |   |   inherits.js.map
+|   |   |           |   |   prependToMemberExpression.js
+|   |   |           |   |   prependToMemberExpression.js.map
+|   |   |           |   |   removeProperties.js
+|   |   |           |   |   removeProperties.js.map
+|   |   |           |   |   removePropertiesDeep.js
+|   |   |           |   |   removePropertiesDeep.js.map
+|   |   |           |   |   
+|   |   |           |   +---flow
+|   |   |           |   |       removeTypeDuplicates.js
+|   |   |           |   |       removeTypeDuplicates.js.map
+|   |   |           |   |       
+|   |   |           |   \---typescript
+|   |   |           |           removeTypeDuplicates.js
+|   |   |           |           removeTypeDuplicates.js.map
+|   |   |           |           
+|   |   |           +---retrievers
+|   |   |           |       getAssignmentIdentifiers.js
+|   |   |           |       getAssignmentIdentifiers.js.map
+|   |   |           |       getBindingIdentifiers.js
+|   |   |           |       getBindingIdentifiers.js.map
+|   |   |           |       getFunctionName.js
+|   |   |           |       getFunctionName.js.map
+|   |   |           |       getOuterBindingIdentifiers.js
+|   |   |           |       getOuterBindingIdentifiers.js.map
+|   |   |           |       
+|   |   |           +---traverse
+|   |   |           |       traverse.js
+|   |   |           |       traverse.js.map
+|   |   |           |       traverseFast.js
+|   |   |           |       traverseFast.js.map
+|   |   |           |       
+|   |   |           +---utils
+|   |   |           |   |   deprecationWarning.js
+|   |   |           |   |   deprecationWarning.js.map
+|   |   |           |   |   inherit.js
+|   |   |           |   |   inherit.js.map
+|   |   |           |   |   shallowEqual.js
+|   |   |           |   |   shallowEqual.js.map
+|   |   |           |   |   
+|   |   |           |   \---react
+|   |   |           |           cleanJSXElementLiteralChild.js
+|   |   |           |           cleanJSXElementLiteralChild.js.map
+|   |   |           |           
+|   |   |           \---validators
+|   |   |               |   buildMatchMemberExpression.js
+|   |   |               |   buildMatchMemberExpression.js.map
+|   |   |               |   is.js
+|   |   |               |   is.js.map
+|   |   |               |   isBinding.js
+|   |   |               |   isBinding.js.map
+|   |   |               |   isBlockScoped.js
+|   |   |               |   isBlockScoped.js.map
+|   |   |               |   isImmutable.js
+|   |   |               |   isImmutable.js.map
+|   |   |               |   isLet.js
+|   |   |               |   isLet.js.map
+|   |   |               |   isNode.js
+|   |   |               |   isNode.js.map
+|   |   |               |   isNodesEquivalent.js
+|   |   |               |   isNodesEquivalent.js.map
+|   |   |               |   isPlaceholderType.js
+|   |   |               |   isPlaceholderType.js.map
+|   |   |               |   isReferenced.js
+|   |   |               |   isReferenced.js.map
+|   |   |               |   isScope.js
+|   |   |               |   isScope.js.map
+|   |   |               |   isSpecifierDefault.js
+|   |   |               |   isSpecifierDefault.js.map
+|   |   |               |   isType.js
+|   |   |               |   isType.js.map
+|   |   |               |   isValidES3Identifier.js
+|   |   |               |   isValidES3Identifier.js.map
+|   |   |               |   isValidIdentifier.js
+|   |   |               |   isValidIdentifier.js.map
+|   |   |               |   isVar.js
+|   |   |               |   isVar.js.map
+|   |   |               |   matchesPattern.js
+|   |   |               |   matchesPattern.js.map
+|   |   |               |   validate.js
+|   |   |               |   validate.js.map
+|   |   |               |   
+|   |   |               +---generated
+|   |   |               |       index.js
+|   |   |               |       index.js.map
+|   |   |               |       
+|   |   |               \---react
+|   |   |                       isCompatTag.js
+|   |   |                       isCompatTag.js.map
+|   |   |                       isReactComponent.js
+|   |   |                       isReactComponent.js.map
+|   |   |                       
+|   |   +---@cacheable
+|   |   |   +---memory
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   \---dist
+|   |   |   |           index.cjs
+|   |   |   |           index.d.cts
+|   |   |   |           index.d.mts
+|   |   |   |           index.mjs
+|   |   |   |           
+|   |   |   \---utils
+|   |   |       |   LICENSE
+|   |   |       |   package.json
+|   |   |       |   README.md
+|   |   |       |   
+|   |   |       \---dist
+|   |   |               index.cjs
+|   |   |               index.d.cts
+|   |   |               index.d.mts
+|   |   |               index.mjs
+|   |   |               
+|   |   +---@eslint
+|   |   |   +---config-array
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   \---dist
+|   |   |   |       +---cjs
+|   |   |   |       |   |   index.cjs
+|   |   |   |       |   |   index.d.cts
+|   |   |   |       |   |   types.cts
+|   |   |   |       |   |   
+|   |   |   |       |   \---std__path

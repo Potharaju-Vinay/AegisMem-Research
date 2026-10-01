@@ -1,0 +1,150 @@
+    |       |   |   |   |   object_array.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           accessor.cpython-313.pyc
+    |       |   |   |           object_array.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---tools
+    |       |   |   |   |   datetimes.py
+    |       |   |   |   |   numeric.py
+    |       |   |   |   |   timedeltas.py
+    |       |   |   |   |   times.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           datetimes.cpython-313.pyc
+    |       |   |   |           numeric.cpython-313.pyc
+    |       |   |   |           timedeltas.cpython-313.pyc
+    |       |   |   |           times.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---util
+    |       |   |   |   |   hashing.py
+    |       |   |   |   |   numba_.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           hashing.cpython-313.pyc
+    |       |   |   |           numba_.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---window
+    |       |   |   |   |   common.py
+    |       |   |   |   |   doc.py
+    |       |   |   |   |   ewm.py
+    |       |   |   |   |   expanding.py
+    |       |   |   |   |   numba_.py
+    |       |   |   |   |   online.py
+    |       |   |   |   |   rolling.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           common.cpython-313.pyc
+    |       |   |   |           doc.cpython-313.pyc
+    |       |   |   |           ewm.cpython-313.pyc
+    |       |   |   |           expanding.cpython-313.pyc
+    |       |   |   |           numba_.cpython-313.pyc
+    |       |   |   |           online.cpython-313.pyc
+    |       |   |   |           rolling.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---_numba
+    |       |   |   |   |   executor.py
+    |       |   |   |   |   extensions.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---kernels
+    |       |   |   |   |   |   mean_.py
+    |       |   |   |   |   |   min_max_.py
+    |       |   |   |   |   |   shared.py
+    |       |   |   |   |   |   sum_.py
+    |       |   |   |   |   |   var_.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           mean_.cpython-313.pyc
+    |       |   |   |   |           min_max_.cpython-313.pyc
+    |       |   |   |   |           shared.cpython-313.pyc
+    |       |   |   |   |           sum_.cpython-313.pyc
+    |       |   |   |   |           var_.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           executor.cpython-313.pyc
+    |       |   |   |           extensions.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           accessor.cpython-313.pyc
+    |       |   |           algorithms.cpython-313.pyc
+    |       |   |           api.cpython-313.pyc
+    |       |   |           apply.cpython-313.pyc
+    |       |   |           arraylike.cpython-313.pyc
+    |       |   |           base.cpython-313.pyc
+    |       |   |           col.cpython-313.pyc
+    |       |   |           common.cpython-313.pyc
+    |       |   |           config_init.cpython-313.pyc
+    |       |   |           construction.cpython-313.pyc
+    |       |   |           flags.cpython-313.pyc
+    |       |   |           frame.cpython-313.pyc
+    |       |   |           generic.cpython-313.pyc
+    |       |   |           indexing.cpython-313.pyc
+    |       |   |           missing.cpython-313.pyc
+    |       |   |           nanops.cpython-313.pyc
+    |       |   |           resample.cpython-313.pyc
+    |       |   |           roperator.cpython-313.pyc
+    |       |   |           sample.cpython-313.pyc
+    |       |   |           series.cpython-313.pyc
+    |       |   |           shared_docs.cpython-313.pyc
+    |       |   |           sorting.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---errors
+    |       |   |   |   cow.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           cow.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---io
+    |       |   |   |   api.py
+    |       |   |   |   clipboards.py
+    |       |   |   |   common.py
+    |       |   |   |   feather_format.py
+    |       |   |   |   html.py
+    |       |   |   |   iceberg.py
+    |       |   |   |   orc.py
+    |       |   |   |   parquet.py
+    |       |   |   |   pickle.py
+    |       |   |   |   pytables.py
+    |       |   |   |   spss.py
+    |       |   |   |   sql.py
+    |       |   |   |   stata.py
+    |       |   |   |   xml.py
+    |       |   |   |   _util.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---clipboard
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---excel
+    |       |   |   |   |   _base.py
+    |       |   |   |   |   _calamine.py
+    |       |   |   |   |   _odfreader.py
+    |       |   |   |   |   _odswriter.py
+    |       |   |   |   |   _openpyxl.py
+    |       |   |   |   |   _pyxlsb.py
+    |       |   |   |   |   _util.py
+    |       |   |   |   |   _xlrd.py
+    |       |   |   |   |   _xlsxwriter.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _base.cpython-313.pyc
+    |       |   |   |           _calamine.cpython-313.pyc

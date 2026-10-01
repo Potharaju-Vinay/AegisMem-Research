@@ -1,0 +1,150 @@
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _parser.cpython-313.pyc
+    |       |   |   |           _re.cpython-313.pyc
+    |       |   |   |           _types.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---tomli_w
+    |       |   |   |   |   LICENSE
+    |       |   |   |   |   py.typed
+    |       |   |   |   |   _writer.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _writer.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---truststore
+    |       |   |   |   |   LICENSE
+    |       |   |   |   |   py.typed
+    |       |   |   |   |   _api.py
+    |       |   |   |   |   _macos.py
+    |       |   |   |   |   _openssl.py
+    |       |   |   |   |   _ssl_constants.py
+    |       |   |   |   |   _windows.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _api.cpython-313.pyc
+    |       |   |   |           _macos.cpython-313.pyc
+    |       |   |   |           _openssl.cpython-313.pyc
+    |       |   |   |           _ssl_constants.cpython-313.pyc
+    |       |   |   |           _windows.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---urllib3
+    |       |   |   |   |   connection.py
+    |       |   |   |   |   connectionpool.py
+    |       |   |   |   |   exceptions.py
+    |       |   |   |   |   fields.py
+    |       |   |   |   |   filepost.py
+    |       |   |   |   |   LICENSE.txt
+    |       |   |   |   |   poolmanager.py
+    |       |   |   |   |   py.typed
+    |       |   |   |   |   response.py
+    |       |   |   |   |   _base_connection.py
+    |       |   |   |   |   _collections.py
+    |       |   |   |   |   _request_methods.py
+    |       |   |   |   |   _version.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---contrib
+    |       |   |   |   |   |   pyopenssl.py
+    |       |   |   |   |   |   socks.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   +---emscripten
+    |       |   |   |   |   |   |   connection.py
+    |       |   |   |   |   |   |   emscripten_fetch_worker.js
+    |       |   |   |   |   |   |   fetch.py
+    |       |   |   |   |   |   |   request.py
+    |       |   |   |   |   |   |   response.py
+    |       |   |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   |   
+    |       |   |   |   |   |   \---__pycache__
+    |       |   |   |   |   |           connection.cpython-313.pyc
+    |       |   |   |   |   |           fetch.cpython-313.pyc
+    |       |   |   |   |   |           request.cpython-313.pyc
+    |       |   |   |   |   |           response.cpython-313.pyc
+    |       |   |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |   |           
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           pyopenssl.cpython-313.pyc
+    |       |   |   |   |           socks.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---http2
+    |       |   |   |   |   |   connection.py
+    |       |   |   |   |   |   probe.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           connection.cpython-313.pyc
+    |       |   |   |   |           probe.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---util
+    |       |   |   |   |   |   connection.py
+    |       |   |   |   |   |   proxy.py
+    |       |   |   |   |   |   request.py
+    |       |   |   |   |   |   response.py
+    |       |   |   |   |   |   retry.py
+    |       |   |   |   |   |   ssltransport.py
+    |       |   |   |   |   |   ssl_.py
+    |       |   |   |   |   |   ssl_match_hostname.py
+    |       |   |   |   |   |   timeout.py
+    |       |   |   |   |   |   url.py
+    |       |   |   |   |   |   util.py
+    |       |   |   |   |   |   wait.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           connection.cpython-313.pyc
+    |       |   |   |   |           proxy.cpython-313.pyc
+    |       |   |   |   |           request.cpython-313.pyc
+    |       |   |   |   |           response.cpython-313.pyc
+    |       |   |   |   |           retry.cpython-313.pyc
+    |       |   |   |   |           ssltransport.cpython-313.pyc
+    |       |   |   |   |           ssl_.cpython-313.pyc
+    |       |   |   |   |           ssl_match_hostname.cpython-313.pyc
+    |       |   |   |   |           timeout.cpython-313.pyc
+    |       |   |   |   |           url.cpython-313.pyc
+    |       |   |   |   |           util.cpython-313.pyc
+    |       |   |   |   |           wait.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           connection.cpython-313.pyc
+    |       |   |   |           connectionpool.cpython-313.pyc
+    |       |   |   |           exceptions.cpython-313.pyc
+    |       |   |   |           fields.cpython-313.pyc
+    |       |   |   |           filepost.cpython-313.pyc
+    |       |   |   |           poolmanager.cpython-313.pyc
+    |       |   |   |           response.cpython-313.pyc
+    |       |   |   |           _base_connection.cpython-313.pyc
+    |       |   |   |           _collections.cpython-313.pyc
+    |       |   |   |           _request_methods.cpython-313.pyc
+    |       |   |   |           _version.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           __init__.cpython-313.pyc
+    |       |           __main__.cpython-313.pyc
+    |       |           __pip-runner__.cpython-313.pyc
+    |       |           
+    |       +---pip-26.2.1.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |       |   AUTHORS.txt
+    |       |       |   LICENSE.txt
+    |       |       |   

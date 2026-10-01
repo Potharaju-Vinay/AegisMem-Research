@@ -1,0 +1,150 @@
+|   |   |   |       |           posix.cjs
+|   |   |   |       |           windows.cjs
+|   |   |   |       |           
+|   |   |   |       \---esm
+|   |   |   |           |   index.d.ts
+|   |   |   |           |   index.js
+|   |   |   |           |   types.d.ts
+|   |   |   |           |   types.ts
+|   |   |   |           |   
+|   |   |   |           \---std__path
+|   |   |   |                   posix.js
+|   |   |   |                   windows.js
+|   |   |   |                   
+|   |   |   +---config-helpers
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   \---dist
+|   |   |   |       +---cjs
+|   |   |   |       |       index.cjs
+|   |   |   |       |       index.d.cts
+|   |   |   |       |       types.cts
+|   |   |   |       |       
+|   |   |   |       \---esm
+|   |   |   |               index.d.ts
+|   |   |   |               index.js
+|   |   |   |               types.d.ts
+|   |   |   |               types.ts
+|   |   |   |               
+|   |   |   +---core
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   \---dist
+|   |   |   |       +---cjs
+|   |   |   |       |       types.d.cts
+|   |   |   |       |       
+|   |   |   |       \---esm
+|   |   |   |               types.d.ts
+|   |   |   |               
+|   |   |   +---js
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   +---src
+|   |   |   |   |   |   index.js
+|   |   |   |   |   |   
+|   |   |   |   |   \---configs
+|   |   |   |   |           eslint-all.js
+|   |   |   |   |           eslint-recommended.js
+|   |   |   |   |           
+|   |   |   |   \---types
+|   |   |   |           index.d.ts
+|   |   |   |           
+|   |   |   +---object-schema
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   \---dist
+|   |   |   |       +---cjs
+|   |   |   |       |       index.cjs
+|   |   |   |       |       index.d.cts
+|   |   |   |       |       types.cts
+|   |   |   |       |       
+|   |   |   |       \---esm
+|   |   |   |               index.d.ts
+|   |   |   |               index.js
+|   |   |   |               types.d.ts
+|   |   |   |               types.ts
+|   |   |   |               
+|   |   |   \---plugin-kit
+|   |   |       |   LICENSE
+|   |   |       |   package.json
+|   |   |       |   README.md
+|   |   |       |   
+|   |   |       \---dist
+|   |   |           +---cjs
+|   |   |           |       index.cjs
+|   |   |           |       index.d.cts
+|   |   |           |       types.cts
+|   |   |           |       types.d.cts
+|   |   |           |       
+|   |   |           \---esm
+|   |   |                   index.d.ts
+|   |   |                   index.js
+|   |   |                   types.d.ts
+|   |   |                   types.ts
+|   |   |                   
+|   |   +---@eslint-community
+|   |   |   +---eslint-utils
+|   |   |   |   |   index.d.mts
+|   |   |   |   |   index.d.ts
+|   |   |   |   |   index.js
+|   |   |   |   |   index.js.map
+|   |   |   |   |   index.mjs
+|   |   |   |   |   index.mjs.map
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   \---node_modules
+|   |   |   |       \---eslint-visitor-keys
+|   |   |   |           |   LICENSE
+|   |   |   |           |   package.json
+|   |   |   |           |   README.md
+|   |   |   |           |   
+|   |   |   |           +---dist
+|   |   |   |           |       eslint-visitor-keys.cjs
+|   |   |   |           |       eslint-visitor-keys.d.cts
+|   |   |   |           |       index.d.ts
+|   |   |   |           |       visitor-keys.d.ts
+|   |   |   |           |       
+|   |   |   |           \---lib
+|   |   |   |                   index.js
+|   |   |   |                   visitor-keys.js
+|   |   |   |                   
+|   |   |   \---regexpp
+|   |   |           index.d.ts
+|   |   |           index.js
+|   |   |           index.js.map
+|   |   |           index.mjs
+|   |   |           index.mjs.map
+|   |   |           LICENSE
+|   |   |           package.json
+|   |   |           README.md
+|   |   |           
+|   |   +---@humanfs
+|   |   |   +---core
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   +---dist
+|   |   |   |   |       errors.d.ts
+|   |   |   |   |       fsx.d.ts
+|   |   |   |   |       hfs.d.ts
+|   |   |   |   |       index.d.ts
+|   |   |   |   |       path.d.ts
+|   |   |   |   |       
+|   |   |   |   \---src
+|   |   |   |           errors.js
+|   |   |   |           hfs.js
+|   |   |   |           index.js
+|   |   |   |           path.js
+|   |   |   |           
+|   |   |   +---node

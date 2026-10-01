@@ -1,0 +1,150 @@
+|   |   |   .package-lock.json
+|   |   |   
+|   |   +---.bin
+|   |   |       acorn
+|   |   |       acorn.cmd
+|   |   |       acorn.ps1
+|   |   |       baseline-browser-mapping
+|   |   |       baseline-browser-mapping.cmd
+|   |   |       baseline-browser-mapping.ps1
+|   |   |       browserslist
+|   |   |       browserslist.cmd
+|   |   |       browserslist.ps1
+|   |   |       eslint
+|   |   |       eslint.cmd
+|   |   |       eslint.ps1
+|   |   |       jsesc
+|   |   |       jsesc.cmd
+|   |   |       jsesc.ps1
+|   |   |       json5
+|   |   |       json5.cmd
+|   |   |       json5.ps1
+|   |   |       nanoid
+|   |   |       nanoid.cmd
+|   |   |       nanoid.ps1
+|   |   |       node-which
+|   |   |       node-which.cmd
+|   |   |       node-which.ps1
+|   |   |       parser
+|   |   |       parser.cmd
+|   |   |       parser.ps1
+|   |   |       rolldown
+|   |   |       rolldown.cmd
+|   |   |       rolldown.ps1
+|   |   |       semver
+|   |   |       semver.cmd
+|   |   |       semver.ps1
+|   |   |       update-browserslist-db
+|   |   |       update-browserslist-db.cmd
+|   |   |       update-browserslist-db.ps1
+|   |   |       vite
+|   |   |       vite.cmd
+|   |   |       vite.ps1
+|   |   |       
+|   |   +---.vite
+|   |   |   \---deps
+|   |   |           lucide-react.js
+|   |   |           lucide-react.js.map
+|   |   |           package.json
+|   |   |           react-dom.js
+|   |   |           react-dom.js.map
+|   |   |           react-dom_client.js
+|   |   |           react-dom_client.js.map
+|   |   |           react.js
+|   |   |           react.js.map
+|   |   |           react_jsx-dev-runtime.js
+|   |   |           react_jsx-dev-runtime.js.map
+|   |   |           react_jsx-runtime.js
+|   |   |           react_jsx-runtime.js.map
+|   |   |           rolldown-runtime-EAsCxrDo.js
+|   |   |           _metadata.json
+|   |   |           
+|   |   +---.vite-temp
+|   |   +---@babel
+|   |   |   +---code-frame
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   \---lib
+|   |   |   |           index.js
+|   |   |   |           index.js.map
+|   |   |   |           
+|   |   |   +---compat-data
+|   |   |   |   |   corejs2-built-ins.js
+|   |   |   |   |   corejs3-shipped-proposals.js
+|   |   |   |   |   LICENSE
+|   |   |   |   |   native-modules.js
+|   |   |   |   |   overlapping-plugins.js
+|   |   |   |   |   package.json
+|   |   |   |   |   plugin-bugfixes.js
+|   |   |   |   |   plugins.js
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   \---data
+|   |   |   |           corejs2-built-ins.json
+|   |   |   |           corejs3-shipped-proposals.json
+|   |   |   |           native-modules.json
+|   |   |   |           overlapping-plugins.json
+|   |   |   |           plugin-bugfixes.json
+|   |   |   |           plugins.json
+|   |   |   |           
+|   |   |   +---core
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   +---lib
+|   |   |   |   |   |   index.js
+|   |   |   |   |   |   index.js.map
+|   |   |   |   |   |   parse.js
+|   |   |   |   |   |   parse.js.map
+|   |   |   |   |   |   transform-ast.js
+|   |   |   |   |   |   transform-ast.js.map
+|   |   |   |   |   |   transform-file-browser.js
+|   |   |   |   |   |   transform-file-browser.js.map
+|   |   |   |   |   |   transform-file.js
+|   |   |   |   |   |   transform-file.js.map
+|   |   |   |   |   |   transform.js
+|   |   |   |   |   |   transform.js.map
+|   |   |   |   |   |   
+|   |   |   |   |   +---config
+|   |   |   |   |   |   |   cache-contexts.js
+|   |   |   |   |   |   |   cache-contexts.js.map
+|   |   |   |   |   |   |   caching.js
+|   |   |   |   |   |   |   caching.js.map
+|   |   |   |   |   |   |   config-chain.js
+|   |   |   |   |   |   |   config-chain.js.map
+|   |   |   |   |   |   |   config-descriptors.js
+|   |   |   |   |   |   |   config-descriptors.js.map
+|   |   |   |   |   |   |   full.js
+|   |   |   |   |   |   |   full.js.map
+|   |   |   |   |   |   |   index.js
+|   |   |   |   |   |   |   index.js.map
+|   |   |   |   |   |   |   item.js
+|   |   |   |   |   |   |   item.js.map
+|   |   |   |   |   |   |   partial.js
+|   |   |   |   |   |   |   partial.js.map
+|   |   |   |   |   |   |   pattern-to-regex.js
+|   |   |   |   |   |   |   pattern-to-regex.js.map
+|   |   |   |   |   |   |   plugin.js
+|   |   |   |   |   |   |   plugin.js.map
+|   |   |   |   |   |   |   printer.js
+|   |   |   |   |   |   |   printer.js.map
+|   |   |   |   |   |   |   resolve-targets-browser.js
+|   |   |   |   |   |   |   resolve-targets-browser.js.map
+|   |   |   |   |   |   |   resolve-targets.js
+|   |   |   |   |   |   |   resolve-targets.js.map
+|   |   |   |   |   |   |   util.js
+|   |   |   |   |   |   |   util.js.map
+|   |   |   |   |   |   |   
+|   |   |   |   |   |   +---files
+|   |   |   |   |   |   |       configuration.js
+|   |   |   |   |   |   |       configuration.js.map
+|   |   |   |   |   |   |       import.cjs
+|   |   |   |   |   |   |       import.cjs.map
+|   |   |   |   |   |   |       index-browser.js
+|   |   |   |   |   |   |       index-browser.js.map
+|   |   |   |   |   |   |       index.js
+|   |   |   |   |   |   |       index.js.map
+|   |   |   |   |   |   |       module-types.js

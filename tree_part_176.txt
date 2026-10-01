@@ -1,0 +1,150 @@
+    |       |   |   |   |   test_validate_inclusive.py
+    |       |   |   |   |   test_validate_kwargs.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           conftest.cpython-313.pyc
+    |       |   |   |           test_assert_almost_equal.cpython-313.pyc
+    |       |   |   |           test_assert_attr_equal.cpython-313.pyc
+    |       |   |   |           test_assert_categorical_equal.cpython-313.pyc
+    |       |   |   |           test_assert_extension_array_equal.cpython-313.pyc
+    |       |   |   |           test_assert_frame_equal.cpython-313.pyc
+    |       |   |   |           test_assert_index_equal.cpython-313.pyc
+    |       |   |   |           test_assert_interval_array_equal.cpython-313.pyc
+    |       |   |   |           test_assert_numpy_array_equal.cpython-313.pyc
+    |       |   |   |           test_assert_produces_warning.cpython-313.pyc
+    |       |   |   |           test_assert_series_equal.cpython-313.pyc
+    |       |   |   |           test_deprecate.cpython-313.pyc
+    |       |   |   |           test_deprecate_kwarg.cpython-313.pyc
+    |       |   |   |           test_deprecate_nonkeyword_arguments.cpython-313.pyc
+    |       |   |   |           test_doc.cpython-313.pyc
+    |       |   |   |           test_hashing.cpython-313.pyc
+    |       |   |   |           test_numba.cpython-313.pyc
+    |       |   |   |           test_rewrite_warning.cpython-313.pyc
+    |       |   |   |           test_shares_memory.cpython-313.pyc
+    |       |   |   |           test_show_versions.cpython-313.pyc
+    |       |   |   |           test_util.cpython-313.pyc
+    |       |   |   |           test_validate_args.cpython-313.pyc
+    |       |   |   |           test_validate_args_and_kwargs.cpython-313.pyc
+    |       |   |   |           test_validate_inclusive.cpython-313.pyc
+    |       |   |   |           test_validate_kwargs.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---window
+    |       |   |   |   |   conftest.py
+    |       |   |   |   |   test_api.py
+    |       |   |   |   |   test_apply.py
+    |       |   |   |   |   test_base_indexer.py
+    |       |   |   |   |   test_cython_aggregations.py
+    |       |   |   |   |   test_dtypes.py
+    |       |   |   |   |   test_ewm.py
+    |       |   |   |   |   test_expanding.py
+    |       |   |   |   |   test_groupby.py
+    |       |   |   |   |   test_numba.py
+    |       |   |   |   |   test_online.py
+    |       |   |   |   |   test_pairwise.py
+    |       |   |   |   |   test_rolling.py
+    |       |   |   |   |   test_rolling_functions.py
+    |       |   |   |   |   test_rolling_quantile.py
+    |       |   |   |   |   test_rolling_skew_kurt.py
+    |       |   |   |   |   test_timeseries_window.py
+    |       |   |   |   |   test_win_type.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---moments
+    |       |   |   |   |   |   conftest.py
+    |       |   |   |   |   |   test_moments_consistency_ewm.py
+    |       |   |   |   |   |   test_moments_consistency_expanding.py
+    |       |   |   |   |   |   test_moments_consistency_rolling.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           conftest.cpython-313.pyc
+    |       |   |   |   |           test_moments_consistency_ewm.cpython-313.pyc
+    |       |   |   |   |           test_moments_consistency_expanding.cpython-313.pyc
+    |       |   |   |   |           test_moments_consistency_rolling.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           conftest.cpython-313.pyc
+    |       |   |   |           test_api.cpython-313.pyc
+    |       |   |   |           test_apply.cpython-313.pyc
+    |       |   |   |           test_base_indexer.cpython-313.pyc
+    |       |   |   |           test_cython_aggregations.cpython-313.pyc
+    |       |   |   |           test_dtypes.cpython-313.pyc
+    |       |   |   |           test_ewm.cpython-313.pyc
+    |       |   |   |           test_expanding.cpython-313.pyc
+    |       |   |   |           test_groupby.cpython-313.pyc
+    |       |   |   |           test_numba.cpython-313.pyc
+    |       |   |   |           test_online.cpython-313.pyc
+    |       |   |   |           test_pairwise.cpython-313.pyc
+    |       |   |   |           test_rolling.cpython-313.pyc
+    |       |   |   |           test_rolling_functions.cpython-313.pyc
+    |       |   |   |           test_rolling_quantile.cpython-313.pyc
+    |       |   |   |           test_rolling_skew_kurt.cpython-313.pyc
+    |       |   |   |           test_timeseries_window.cpython-313.pyc
+    |       |   |   |           test_win_type.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           test_aggregation.cpython-313.pyc
+    |       |   |           test_algos.cpython-313.pyc
+    |       |   |           test_col.cpython-313.pyc
+    |       |   |           test_common.cpython-313.pyc
+    |       |   |           test_downstream.cpython-313.pyc
+    |       |   |           test_errors.cpython-313.pyc
+    |       |   |           test_expressions.cpython-313.pyc
+    |       |   |           test_flags.cpython-313.pyc
+    |       |   |           test_multilevel.cpython-313.pyc
+    |       |   |           test_nanops.cpython-313.pyc
+    |       |   |           test_optional_dependency.cpython-313.pyc
+    |       |   |           test_register_accessor.cpython-313.pyc
+    |       |   |           test_sorting.cpython-313.pyc
+    |       |   |           test_take.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---tseries
+    |       |   |   |   api.py
+    |       |   |   |   frequencies.py
+    |       |   |   |   holiday.py
+    |       |   |   |   offsets.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           api.cpython-313.pyc
+    |       |   |           frequencies.cpython-313.pyc
+    |       |   |           holiday.cpython-313.pyc
+    |       |   |           offsets.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---util
+    |       |   |   |   _decorators.py
+    |       |   |   |   _doctools.py
+    |       |   |   |   _exceptions.py
+    |       |   |   |   _print_versions.py
+    |       |   |   |   _tester.py
+    |       |   |   |   _test_decorators.py
+    |       |   |   |   _validators.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---version
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           _decorators.cpython-313.pyc
+    |       |   |           _doctools.cpython-313.pyc
+    |       |   |           _exceptions.cpython-313.pyc
+    |       |   |           _print_versions.cpython-313.pyc
+    |       |   |           _tester.cpython-313.pyc
+    |       |   |           _test_decorators.cpython-313.pyc
+    |       |   |           _validators.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---_config
+    |       |   |   |   config.py
+    |       |   |   |   dates.py
+    |       |   |   |   display.py
+    |       |   |   |   localization.py

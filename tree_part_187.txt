@@ -1,0 +1,150 @@
+    |       |       \---src
+    |       |           \---pip
+    |       |               \---_vendor
+    |       |                   +---cachecontrol
+    |       |                   |       LICENSE.txt
+    |       |                   |       
+    |       |                   +---certifi
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---distlib
+    |       |                   |       LICENSE.txt
+    |       |                   |       
+    |       |                   +---distro
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---idna
+    |       |                   |       LICENSE.md
+    |       |                   |       
+    |       |                   +---msgpack
+    |       |                   |       COPYING
+    |       |                   |       
+    |       |                   +---packaging
+    |       |                   |       LICENSE
+    |       |                   |       LICENSE.APACHE
+    |       |                   |       LICENSE.BSD
+    |       |                   |       
+    |       |                   +---pkg_resources
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---platformdirs
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---pygments
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---pyproject_hooks
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---requests
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---resolvelib
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---rich
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---tomli
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---tomli_w
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---truststore
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   \---urllib3
+    |       |                           LICENSE.txt
+    |       |                           
+    |       +---pluggy
+    |       |   |   py.typed
+    |       |   |   _callers.py
+    |       |   |   _hooks.py
+    |       |   |   _manager.py
+    |       |   |   _result.py
+    |       |   |   _tracing.py
+    |       |   |   _version.py
+    |       |   |   _warnings.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           _callers.cpython-313.pyc
+    |       |           _hooks.cpython-313.pyc
+    |       |           _manager.cpython-313.pyc
+    |       |           _result.cpython-313.pyc
+    |       |           _tracing.cpython-313.pyc
+    |       |           _version.cpython-313.pyc
+    |       |           _warnings.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---pluggy-1.6.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---pycodestyle-2.15.0.dist-info
+    |       |       entry_points.txt
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---pycparser
+    |       |   |   ast_transforms.py
+    |       |   |   c_ast.py
+    |       |   |   c_generator.py
+    |       |   |   c_lexer.py
+    |       |   |   c_parser.py
+    |       |   |   _ast_gen.py
+    |       |   |   _c_ast.cfg
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           ast_transforms.cpython-313.pyc
+    |       |           c_ast.cpython-313.pyc
+    |       |           c_generator.cpython-313.pyc
+    |       |           c_lexer.cpython-313.pyc
+    |       |           c_parser.cpython-313.pyc
+    |       |           _ast_gen.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---pycparser-3.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---pydantic
+    |       |   |   aliases.py
+    |       |   |   alias_generators.py
+    |       |   |   annotated_handlers.py
+    |       |   |   class_validators.py
+    |       |   |   color.py
+    |       |   |   config.py
+    |       |   |   dataclasses.py
+    |       |   |   datetime_parse.py
+    |       |   |   decorator.py
+    |       |   |   env_settings.py
+    |       |   |   errors.py
+    |       |   |   error_wrappers.py
+    |       |   |   fields.py
+    |       |   |   functional_serializers.py
+    |       |   |   functional_validators.py
+    |       |   |   generics.py
+    |       |   |   json.py
+    |       |   |   json_schema.py
+    |       |   |   main.py
+    |       |   |   mypy.py
+    |       |   |   networks.py

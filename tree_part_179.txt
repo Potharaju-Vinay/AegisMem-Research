@@ -1,0 +1,150 @@
+    |       |   |   _imagingmorph.cp313-win_amd64.pyd
+    |       |   |   _imagingmorph.pyi
+    |       |   |   _imagingtk.cp313-win_amd64.pyd
+    |       |   |   _imagingtk.pyi
+    |       |   |   _tkinter_finder.py
+    |       |   |   _typing.py
+    |       |   |   _util.py
+    |       |   |   _version.py
+    |       |   |   _webp.cp313-win_amd64.pyd
+    |       |   |   _webp.pyi
+    |       |   |   __init__.py
+    |       |   |   __main__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           AvifImagePlugin.cpython-313.pyc
+    |       |           BdfFontFile.cpython-313.pyc
+    |       |           BlpImagePlugin.cpython-313.pyc
+    |       |           BmpImagePlugin.cpython-313.pyc
+    |       |           BufrStubImagePlugin.cpython-313.pyc
+    |       |           ContainerIO.cpython-313.pyc
+    |       |           CurImagePlugin.cpython-313.pyc
+    |       |           DcxImagePlugin.cpython-313.pyc
+    |       |           DdsImagePlugin.cpython-313.pyc
+    |       |           EpsImagePlugin.cpython-313.pyc
+    |       |           ExifTags.cpython-313.pyc
+    |       |           features.cpython-313.pyc
+    |       |           FitsImagePlugin.cpython-313.pyc
+    |       |           FliImagePlugin.cpython-313.pyc
+    |       |           FontFile.cpython-313.pyc
+    |       |           FpxImagePlugin.cpython-313.pyc
+    |       |           FtexImagePlugin.cpython-313.pyc
+    |       |           GbrImagePlugin.cpython-313.pyc
+    |       |           GdImageFile.cpython-313.pyc
+    |       |           GifImagePlugin.cpython-313.pyc
+    |       |           GimpGradientFile.cpython-313.pyc
+    |       |           GimpPaletteFile.cpython-313.pyc
+    |       |           GribStubImagePlugin.cpython-313.pyc
+    |       |           Hdf5StubImagePlugin.cpython-313.pyc
+    |       |           IcnsImagePlugin.cpython-313.pyc
+    |       |           IcoImagePlugin.cpython-313.pyc
+    |       |           Image.cpython-313.pyc
+    |       |           ImageChops.cpython-313.pyc
+    |       |           ImageCms.cpython-313.pyc
+    |       |           ImageColor.cpython-313.pyc
+    |       |           ImageDraw.cpython-313.pyc
+    |       |           ImageDraw2.cpython-313.pyc
+    |       |           ImageEnhance.cpython-313.pyc
+    |       |           ImageFile.cpython-313.pyc
+    |       |           ImageFilter.cpython-313.pyc
+    |       |           ImageFont.cpython-313.pyc
+    |       |           ImageGrab.cpython-313.pyc
+    |       |           ImageMath.cpython-313.pyc
+    |       |           ImageMode.cpython-313.pyc
+    |       |           ImageMorph.cpython-313.pyc
+    |       |           ImageOps.cpython-313.pyc
+    |       |           ImagePalette.cpython-313.pyc
+    |       |           ImagePath.cpython-313.pyc
+    |       |           ImageQt.cpython-313.pyc
+    |       |           ImageSequence.cpython-313.pyc
+    |       |           ImageShow.cpython-313.pyc
+    |       |           ImageStat.cpython-313.pyc
+    |       |           ImageText.cpython-313.pyc
+    |       |           ImageTk.cpython-313.pyc
+    |       |           ImageTransform.cpython-313.pyc
+    |       |           ImageWin.cpython-313.pyc
+    |       |           ImImagePlugin.cpython-313.pyc
+    |       |           ImtImagePlugin.cpython-313.pyc
+    |       |           IptcImagePlugin.cpython-313.pyc
+    |       |           Jpeg2KImagePlugin.cpython-313.pyc
+    |       |           JpegImagePlugin.cpython-313.pyc
+    |       |           JpegPresets.cpython-313.pyc
+    |       |           McIdasImagePlugin.cpython-313.pyc
+    |       |           MicImagePlugin.cpython-313.pyc
+    |       |           MpegImagePlugin.cpython-313.pyc
+    |       |           MpoImagePlugin.cpython-313.pyc
+    |       |           MspImagePlugin.cpython-313.pyc
+    |       |           PaletteFile.cpython-313.pyc
+    |       |           PalmImagePlugin.cpython-313.pyc
+    |       |           PcdImagePlugin.cpython-313.pyc
+    |       |           PcfFontFile.cpython-313.pyc
+    |       |           PcxImagePlugin.cpython-313.pyc
+    |       |           PdfImagePlugin.cpython-313.pyc
+    |       |           PdfParser.cpython-313.pyc
+    |       |           PixarImagePlugin.cpython-313.pyc
+    |       |           PngImagePlugin.cpython-313.pyc
+    |       |           PpmImagePlugin.cpython-313.pyc
+    |       |           PsdImagePlugin.cpython-313.pyc
+    |       |           PSDraw.cpython-313.pyc
+    |       |           QoiImagePlugin.cpython-313.pyc
+    |       |           report.cpython-313.pyc
+    |       |           SgiImagePlugin.cpython-313.pyc
+    |       |           SpiderImagePlugin.cpython-313.pyc
+    |       |           SunImagePlugin.cpython-313.pyc
+    |       |           TarIO.cpython-313.pyc
+    |       |           TgaImagePlugin.cpython-313.pyc
+    |       |           TiffImagePlugin.cpython-313.pyc
+    |       |           TiffTags.cpython-313.pyc
+    |       |           WalImageFile.cpython-313.pyc
+    |       |           WebPImagePlugin.cpython-313.pyc
+    |       |           WmfImagePlugin.cpython-313.pyc
+    |       |           XbmImagePlugin.cpython-313.pyc
+    |       |           XpmImagePlugin.cpython-313.pyc
+    |       |           XVThumbImagePlugin.cpython-313.pyc
+    |       |           _binary.cpython-313.pyc
+    |       |           _deprecate.cpython-313.pyc
+    |       |           _tkinter_finder.cpython-313.pyc
+    |       |           _typing.cpython-313.pyc
+    |       |           _util.cpython-313.pyc
+    |       |           _version.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           __main__.cpython-313.pyc
+    |       |           
+    |       +---pillow-12.3.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   zip-safe
+    |       |   |   
+    |       |   +---licenses
+    |       |   |       LICENSE
+    |       |   |       
+    |       |   \---sboms
+    |       |           pillow-12.3.0.cdx.json
+    |       |           
+    |       +---pip
+    |       |   |   py.typed
+    |       |   |   __init__.py
+    |       |   |   __main__.py
+    |       |   |   __pip-runner__.py
+    |       |   |   
+    |       |   +---_internal
+    |       |   |   |   cache.py
+    |       |   |   |   configuration.py
+    |       |   |   |   exceptions.py
+    |       |   |   |   main.py
+    |       |   |   |   pyproject.py
+    |       |   |   |   self_outdated_check.py
+    |       |   |   |   wheel_builder.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---build_env
+    |       |   |   |   |   base.py
+    |       |   |   |   |   installer.py
+    |       |   |   |   |   noop.py
+    |       |   |   |   |   venv.py
+    |       |   |   |   |   virtual.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   

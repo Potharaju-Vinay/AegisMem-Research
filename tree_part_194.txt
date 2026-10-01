@@ -1,0 +1,150 @@
+    |       |   |           gh_dark.cpython-313.pyc
+    |       |   |           gruvbox.cpython-313.pyc
+    |       |   |           igor.cpython-313.pyc
+    |       |   |           inkpot.cpython-313.pyc
+    |       |   |           lightbulb.cpython-313.pyc
+    |       |   |           lilypond.cpython-313.pyc
+    |       |   |           lovelace.cpython-313.pyc
+    |       |   |           manni.cpython-313.pyc
+    |       |   |           material.cpython-313.pyc
+    |       |   |           monokai.cpython-313.pyc
+    |       |   |           murphy.cpython-313.pyc
+    |       |   |           native.cpython-313.pyc
+    |       |   |           night_owl.cpython-313.pyc
+    |       |   |           nord.cpython-313.pyc
+    |       |   |           onedark.cpython-313.pyc
+    |       |   |           paraiso_dark.cpython-313.pyc
+    |       |   |           paraiso_light.cpython-313.pyc
+    |       |   |           pastie.cpython-313.pyc
+    |       |   |           perldoc.cpython-313.pyc
+    |       |   |           rainbow_dash.cpython-313.pyc
+    |       |   |           rrt.cpython-313.pyc
+    |       |   |           sas.cpython-313.pyc
+    |       |   |           solarized.cpython-313.pyc
+    |       |   |           staroffice.cpython-313.pyc
+    |       |   |           stata_dark.cpython-313.pyc
+    |       |   |           stata_light.cpython-313.pyc
+    |       |   |           tango.cpython-313.pyc
+    |       |   |           trac.cpython-313.pyc
+    |       |   |           vim.cpython-313.pyc
+    |       |   |           vs.cpython-313.pyc
+    |       |   |           xcode.cpython-313.pyc
+    |       |   |           zenburn.cpython-313.pyc
+    |       |   |           _mapping.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           cmdline.cpython-313.pyc
+    |       |           console.cpython-313.pyc
+    |       |           filter.cpython-313.pyc
+    |       |           formatter.cpython-313.pyc
+    |       |           lexer.cpython-313.pyc
+    |       |           modeline.cpython-313.pyc
+    |       |           plugin.cpython-313.pyc
+    |       |           regexopt.cpython-313.pyc
+    |       |           scanner.cpython-313.pyc
+    |       |           sphinxext.cpython-313.pyc
+    |       |           style.cpython-313.pyc
+    |       |           token.cpython-313.pyc
+    |       |           unistring.cpython-313.pyc
+    |       |           util.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           __main__.cpython-313.pyc
+    |       |           
+    |       +---pygments-2.21.0.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           AUTHORS
+    |       |           LICENSE
+    |       |           
+    |       +---pyparsing
+    |       |   |   actions.py
+    |       |   |   common.py
+    |       |   |   core.py
+    |       |   |   exceptions.py
+    |       |   |   helpers.py
+    |       |   |   py.typed
+    |       |   |   results.py
+    |       |   |   testing.py
+    |       |   |   unicode.py
+    |       |   |   util.py
+    |       |   |   warnings.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---ai
+    |       |   |   |   best_practices.md
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---show_best_practices
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   __main__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           __main__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---diagram
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---tools
+    |       |   |   |   cvt_pyparsing_pep8_names.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           cvt_pyparsing_pep8_names.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           actions.cpython-313.pyc
+    |       |           common.cpython-313.pyc
+    |       |           core.cpython-313.pyc
+    |       |           exceptions.cpython-313.pyc
+    |       |           helpers.cpython-313.pyc
+    |       |           results.cpython-313.pyc
+    |       |           testing.cpython-313.pyc
+    |       |           unicode.cpython-313.pyc
+    |       |           util.cpython-313.pyc
+    |       |           warnings.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---pyparsing-3.3.3.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---pytest
+    |       |   |   py.typed
+    |       |   |   __init__.py
+    |       |   |   __main__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           __init__.cpython-313.pyc
+    |       |           __main__.cpython-313.pyc
+    |       |           
+    |       +---pytest-9.1.1.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           

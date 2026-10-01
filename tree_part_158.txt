@@ -1,0 +1,150 @@
+    |       |   |   |           _odfreader.cpython-313.pyc
+    |       |   |   |           _odswriter.cpython-313.pyc
+    |       |   |   |           _openpyxl.cpython-313.pyc
+    |       |   |   |           _pyxlsb.cpython-313.pyc
+    |       |   |   |           _util.cpython-313.pyc
+    |       |   |   |           _xlrd.cpython-313.pyc
+    |       |   |   |           _xlsxwriter.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---formats
+    |       |   |   |   |   console.py
+    |       |   |   |   |   css.py
+    |       |   |   |   |   csvs.py
+    |       |   |   |   |   excel.py
+    |       |   |   |   |   format.py
+    |       |   |   |   |   html.py
+    |       |   |   |   |   info.py
+    |       |   |   |   |   printing.py
+    |       |   |   |   |   string.py
+    |       |   |   |   |   style.py
+    |       |   |   |   |   style_render.py
+    |       |   |   |   |   xml.py
+    |       |   |   |   |   _color_data.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---templates
+    |       |   |   |   |       html.tpl
+    |       |   |   |   |       html_style.tpl
+    |       |   |   |   |       html_table.tpl
+    |       |   |   |   |       latex.tpl
+    |       |   |   |   |       latex_longtable.tpl
+    |       |   |   |   |       latex_table.tpl
+    |       |   |   |   |       string.tpl
+    |       |   |   |   |       typst.tpl
+    |       |   |   |   |       
+    |       |   |   |   \---__pycache__
+    |       |   |   |           console.cpython-313.pyc
+    |       |   |   |           css.cpython-313.pyc
+    |       |   |   |           csvs.cpython-313.pyc
+    |       |   |   |           excel.cpython-313.pyc
+    |       |   |   |           format.cpython-313.pyc
+    |       |   |   |           html.cpython-313.pyc
+    |       |   |   |           info.cpython-313.pyc
+    |       |   |   |           printing.cpython-313.pyc
+    |       |   |   |           string.cpython-313.pyc
+    |       |   |   |           style.cpython-313.pyc
+    |       |   |   |           style_render.cpython-313.pyc
+    |       |   |   |           xml.cpython-313.pyc
+    |       |   |   |           _color_data.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---json
+    |       |   |   |   |   _json.py
+    |       |   |   |   |   _normalize.py
+    |       |   |   |   |   _table_schema.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _json.cpython-313.pyc
+    |       |   |   |           _normalize.cpython-313.pyc
+    |       |   |   |           _table_schema.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---parsers
+    |       |   |   |   |   arrow_parser_wrapper.py
+    |       |   |   |   |   base_parser.py
+    |       |   |   |   |   c_parser_wrapper.py
+    |       |   |   |   |   python_parser.py
+    |       |   |   |   |   readers.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           arrow_parser_wrapper.cpython-313.pyc
+    |       |   |   |           base_parser.cpython-313.pyc
+    |       |   |   |           c_parser_wrapper.cpython-313.pyc
+    |       |   |   |           python_parser.cpython-313.pyc
+    |       |   |   |           readers.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---sas
+    |       |   |   |   |   sas7bdat.py
+    |       |   |   |   |   sasreader.py
+    |       |   |   |   |   sas_constants.py
+    |       |   |   |   |   sas_xport.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           sas7bdat.cpython-313.pyc
+    |       |   |   |           sasreader.cpython-313.pyc
+    |       |   |   |           sas_constants.cpython-313.pyc
+    |       |   |   |           sas_xport.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           api.cpython-313.pyc
+    |       |   |           clipboards.cpython-313.pyc
+    |       |   |           common.cpython-313.pyc
+    |       |   |           feather_format.cpython-313.pyc
+    |       |   |           html.cpython-313.pyc
+    |       |   |           iceberg.cpython-313.pyc
+    |       |   |           orc.cpython-313.pyc
+    |       |   |           parquet.cpython-313.pyc
+    |       |   |           pickle.cpython-313.pyc
+    |       |   |           pytables.cpython-313.pyc
+    |       |   |           spss.cpython-313.pyc
+    |       |   |           sql.cpython-313.pyc
+    |       |   |           stata.cpython-313.pyc
+    |       |   |           xml.cpython-313.pyc
+    |       |   |           _util.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---plotting
+    |       |   |   |   _core.py
+    |       |   |   |   _misc.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---_matplotlib
+    |       |   |   |   |   boxplot.py
+    |       |   |   |   |   converter.py
+    |       |   |   |   |   core.py
+    |       |   |   |   |   groupby.py
+    |       |   |   |   |   hist.py
+    |       |   |   |   |   misc.py
+    |       |   |   |   |   style.py
+    |       |   |   |   |   timeseries.py
+    |       |   |   |   |   tools.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           boxplot.cpython-313.pyc
+    |       |   |   |           converter.cpython-313.pyc
+    |       |   |   |           core.cpython-313.pyc
+    |       |   |   |           groupby.cpython-313.pyc
+    |       |   |   |           hist.cpython-313.pyc
+    |       |   |   |           misc.cpython-313.pyc
+    |       |   |   |           style.cpython-313.pyc
+    |       |   |   |           timeseries.cpython-313.pyc
+    |       |   |   |           tools.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           _core.cpython-313.pyc
+    |       |   |           _misc.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---tests
+    |       |   |   |   test_aggregation.py
+    |       |   |   |   test_algos.py
+    |       |   |   |   test_col.py
+    |       |   |   |   test_common.py

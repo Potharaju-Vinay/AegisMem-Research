@@ -1,0 +1,150 @@
+    |       |   |   |   |   |       gh25286.pyf
+    |       |   |   |   |   |       gh25286_bc.pyf
+    |       |   |   |   |   |       scalar_string.f90
+    |       |   |   |   |   |       string.f
+    |       |   |   |   |   |       
+    |       |   |   |   |   \---value_attrspec
+    |       |   |   |   |           gh21665.f90
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_abstract_interface.cpython-313.pyc
+    |       |   |   |           test_array_from_pyobj.cpython-313.pyc
+    |       |   |   |           test_assumed_shape.cpython-313.pyc
+    |       |   |   |           test_block_docstring.cpython-313.pyc
+    |       |   |   |           test_callback.cpython-313.pyc
+    |       |   |   |           test_capi_maps.cpython-313.pyc
+    |       |   |   |           test_character.cpython-313.pyc
+    |       |   |   |           test_common.cpython-313.pyc
+    |       |   |   |           test_crackfortran.cpython-313.pyc
+    |       |   |   |           test_data.cpython-313.pyc
+    |       |   |   |           test_docs.cpython-313.pyc
+    |       |   |   |           test_f2cmap.cpython-313.pyc
+    |       |   |   |           test_f2py2e.cpython-313.pyc
+    |       |   |   |           test_inplace.cpython-313.pyc
+    |       |   |   |           test_isoc.cpython-313.pyc
+    |       |   |   |           test_kind.cpython-313.pyc
+    |       |   |   |           test_mixed.cpython-313.pyc
+    |       |   |   |           test_modules.cpython-313.pyc
+    |       |   |   |           test_parameter.cpython-313.pyc
+    |       |   |   |           test_pyf_src.cpython-313.pyc
+    |       |   |   |           test_quoted_character.cpython-313.pyc
+    |       |   |   |           test_regression.cpython-313.pyc
+    |       |   |   |           test_return_character.cpython-313.pyc
+    |       |   |   |           test_return_complex.cpython-313.pyc
+    |       |   |   |           test_return_integer.cpython-313.pyc
+    |       |   |   |           test_return_logical.cpython-313.pyc
+    |       |   |   |           test_return_real.cpython-313.pyc
+    |       |   |   |           test_routines.cpython-313.pyc
+    |       |   |   |           test_semicolon_split.cpython-313.pyc
+    |       |   |   |           test_size.cpython-313.pyc
+    |       |   |   |           test_string.cpython-313.pyc
+    |       |   |   |           test_symbolic.cpython-313.pyc
+    |       |   |   |           test_value_attrspec.cpython-313.pyc
+    |       |   |   |           util.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---_backends
+    |       |   |   |   |   meson.build.template
+    |       |   |   |   |   _backend.py
+    |       |   |   |   |   _backend.pyi
+    |       |   |   |   |   _meson.py
+    |       |   |   |   |   _meson.pyi
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   __init__.pyi
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _backend.cpython-313.pyc
+    |       |   |   |           _meson.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           auxfuncs.cpython-313.pyc
+    |       |   |           capi_maps.cpython-313.pyc
+    |       |   |           cb_rules.cpython-313.pyc
+    |       |   |           cfuncs.cpython-313.pyc
+    |       |   |           common_rules.cpython-313.pyc
+    |       |   |           crackfortran.cpython-313.pyc
+    |       |   |           diagnose.cpython-313.pyc
+    |       |   |           f2py2e.cpython-313.pyc
+    |       |   |           f90mod_rules.cpython-313.pyc
+    |       |   |           func2subr.cpython-313.pyc
+    |       |   |           rules.cpython-313.pyc
+    |       |   |           symbolic.cpython-313.pyc
+    |       |   |           use_rules.cpython-313.pyc
+    |       |   |           _isocbind.cpython-313.pyc
+    |       |   |           _src_pyf.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           __main__.cpython-313.pyc
+    |       |   |           __version__.cpython-313.pyc
+    |       |   |           
+    |       |   +---fft
+    |       |   |   |   _helper.py
+    |       |   |   |   _helper.pyi
+    |       |   |   |   _pocketfft.py
+    |       |   |   |   _pocketfft.pyi
+    |       |   |   |   _pocketfft_umath.cp313-win_amd64.lib
+    |       |   |   |   _pocketfft_umath.cp313-win_amd64.pyd
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_helper.py
+    |       |   |   |   |   test_pocketfft.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_helper.cpython-313.pyc
+    |       |   |   |           test_pocketfft.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           _helper.cpython-313.pyc
+    |       |   |           _pocketfft.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---lib
+    |       |   |   |   array_utils.py
+    |       |   |   |   array_utils.pyi
+    |       |   |   |   format.py
+    |       |   |   |   format.pyi
+    |       |   |   |   introspect.py
+    |       |   |   |   introspect.pyi
+    |       |   |   |   mixins.py
+    |       |   |   |   mixins.pyi
+    |       |   |   |   npyio.py
+    |       |   |   |   npyio.pyi
+    |       |   |   |   recfunctions.py
+    |       |   |   |   recfunctions.pyi
+    |       |   |   |   scimath.py
+    |       |   |   |   scimath.pyi
+    |       |   |   |   stride_tricks.py
+    |       |   |   |   stride_tricks.pyi
+    |       |   |   |   user_array.py
+    |       |   |   |   user_array.pyi
+    |       |   |   |   _arraypad_impl.py
+    |       |   |   |   _arraypad_impl.pyi
+    |       |   |   |   _arraysetops_impl.py
+    |       |   |   |   _arraysetops_impl.pyi
+    |       |   |   |   _arrayterator_impl.py
+    |       |   |   |   _arrayterator_impl.pyi
+    |       |   |   |   _array_utils_impl.py
+    |       |   |   |   _array_utils_impl.pyi
+    |       |   |   |   _datasource.py
+    |       |   |   |   _datasource.pyi
+    |       |   |   |   _format_impl.py
+    |       |   |   |   _format_impl.pyi
+    |       |   |   |   _function_base_impl.py
+    |       |   |   |   _function_base_impl.pyi
+    |       |   |   |   _histograms_impl.py
+    |       |   |   |   _histograms_impl.pyi
+    |       |   |   |   _index_tricks_impl.py
+    |       |   |   |   _index_tricks_impl.pyi
+    |       |   |   |   _iotools.py
+    |       |   |   |   _iotools.pyi
+    |       |   |   |   _nanfunctions_impl.py
+    |       |   |   |   _nanfunctions_impl.pyi
+    |       |   |   |   _npyio_impl.py
+    |       |   |   |   _npyio_impl.pyi
+    |       |   |   |   _polynomial_impl.py
+    |       |   |   |   _polynomial_impl.pyi
+    |       |   |   |   _scimath_impl.py

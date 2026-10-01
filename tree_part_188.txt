@@ -1,0 +1,150 @@
+    |       |   |   parse.py
+    |       |   |   py.typed
+    |       |   |   root_model.py
+    |       |   |   schema.py
+    |       |   |   tools.py
+    |       |   |   types.py
+    |       |   |   type_adapter.py
+    |       |   |   typing.py
+    |       |   |   utils.py
+    |       |   |   validate_call_decorator.py
+    |       |   |   validators.py
+    |       |   |   version.py
+    |       |   |   warnings.py
+    |       |   |   _migration.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---deprecated
+    |       |   |   |   class_validators.py
+    |       |   |   |   config.py
+    |       |   |   |   copy_internals.py
+    |       |   |   |   decorator.py
+    |       |   |   |   json.py
+    |       |   |   |   parse.py
+    |       |   |   |   tools.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           class_validators.cpython-313.pyc
+    |       |   |           config.cpython-313.pyc
+    |       |   |           copy_internals.cpython-313.pyc
+    |       |   |           decorator.cpython-313.pyc
+    |       |   |           json.cpython-313.pyc
+    |       |   |           parse.cpython-313.pyc
+    |       |   |           tools.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---experimental
+    |       |   |   |   arguments_schema.py
+    |       |   |   |   missing_sentinel.py
+    |       |   |   |   pipeline.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           arguments_schema.cpython-313.pyc
+    |       |   |           missing_sentinel.cpython-313.pyc
+    |       |   |           pipeline.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---plugin
+    |       |   |   |   _loader.py
+    |       |   |   |   _schema_validator.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           _loader.cpython-313.pyc
+    |       |   |           _schema_validator.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---v1
+    |       |   |   |   annotated_types.py
+    |       |   |   |   class_validators.py
+    |       |   |   |   color.py
+    |       |   |   |   config.py
+    |       |   |   |   dataclasses.py
+    |       |   |   |   datetime_parse.py
+    |       |   |   |   decorator.py
+    |       |   |   |   env_settings.py
+    |       |   |   |   errors.py
+    |       |   |   |   error_wrappers.py
+    |       |   |   |   fields.py
+    |       |   |   |   generics.py
+    |       |   |   |   json.py
+    |       |   |   |   main.py
+    |       |   |   |   mypy.py
+    |       |   |   |   networks.py
+    |       |   |   |   parse.py
+    |       |   |   |   py.typed
+    |       |   |   |   schema.py
+    |       |   |   |   tools.py
+    |       |   |   |   types.py
+    |       |   |   |   typing.py
+    |       |   |   |   utils.py
+    |       |   |   |   validators.py
+    |       |   |   |   version.py
+    |       |   |   |   _hypothesis_plugin.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           annotated_types.cpython-313.pyc
+    |       |   |           class_validators.cpython-313.pyc
+    |       |   |           color.cpython-313.pyc
+    |       |   |           config.cpython-313.pyc
+    |       |   |           dataclasses.cpython-313.pyc
+    |       |   |           datetime_parse.cpython-313.pyc
+    |       |   |           decorator.cpython-313.pyc
+    |       |   |           env_settings.cpython-313.pyc
+    |       |   |           errors.cpython-313.pyc
+    |       |   |           error_wrappers.cpython-313.pyc
+    |       |   |           fields.cpython-313.pyc
+    |       |   |           generics.cpython-313.pyc
+    |       |   |           json.cpython-313.pyc
+    |       |   |           main.cpython-313.pyc
+    |       |   |           mypy.cpython-313.pyc
+    |       |   |           networks.cpython-313.pyc
+    |       |   |           parse.cpython-313.pyc
+    |       |   |           schema.cpython-313.pyc
+    |       |   |           tools.cpython-313.pyc
+    |       |   |           types.cpython-313.pyc
+    |       |   |           typing.cpython-313.pyc
+    |       |   |           utils.cpython-313.pyc
+    |       |   |           validators.cpython-313.pyc
+    |       |   |           version.cpython-313.pyc
+    |       |   |           _hypothesis_plugin.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---_internal
+    |       |   |   |   _config.py
+    |       |   |   |   _core_metadata.py
+    |       |   |   |   _core_utils.py
+    |       |   |   |   _dataclasses.py
+    |       |   |   |   _decorators.py
+    |       |   |   |   _decorators_v1.py
+    |       |   |   |   _discriminated_union.py
+    |       |   |   |   _docs_extraction.py
+    |       |   |   |   _fields.py
+    |       |   |   |   _forward_ref.py
+    |       |   |   |   _generate_schema.py
+    |       |   |   |   _generics.py
+    |       |   |   |   _git.py
+    |       |   |   |   _import_utils.py
+    |       |   |   |   _internal_dataclass.py
+    |       |   |   |   _known_annotated_metadata.py
+    |       |   |   |   _mock_val_ser.py
+    |       |   |   |   _model_construction.py
+    |       |   |   |   _namespace_utils.py
+    |       |   |   |   _repr.py
+    |       |   |   |   _schema_gather.py
+    |       |   |   |   _schema_generation_shared.py
+    |       |   |   |   _serializers.py
+    |       |   |   |   _signature.py
+    |       |   |   |   _typing_extra.py
+    |       |   |   |   _utils.py
+    |       |   |   |   _validate_call.py
+    |       |   |   |   _validators.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           _config.cpython-313.pyc
+    |       |   |           _core_metadata.cpython-313.pyc
+    |       |   |           _core_utils.cpython-313.pyc

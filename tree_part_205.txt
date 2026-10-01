@@ -1,0 +1,150 @@
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---tzdata-2026.4.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |       |   LICENSE
+    |       |       |   
+    |       |       \---licenses
+    |       |               LICENSE_APACHE
+    |       |               
+    |       +---uvicorn
+    |       |   |   config.py
+    |       |   |   importer.py
+    |       |   |   logging.py
+    |       |   |   main.py
+    |       |   |   py.typed
+    |       |   |   server.py
+    |       |   |   workers.py
+    |       |   |   _ansi.py
+    |       |   |   _compat.py
+    |       |   |   _subprocess.py
+    |       |   |   _types.py
+    |       |   |   __init__.py
+    |       |   |   __main__.py
+    |       |   |   
+    |       |   +---lifespan
+    |       |   |   |   off.py
+    |       |   |   |   on.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           off.cpython-313.pyc
+    |       |   |           on.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---loops
+    |       |   |   |   asyncio.py
+    |       |   |   |   auto.py
+    |       |   |   |   uvloop.py
+    |       |   |   |   zuvloop.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           asyncio.cpython-313.pyc
+    |       |   |           auto.cpython-313.pyc
+    |       |   |           uvloop.cpython-313.pyc
+    |       |   |           zuvloop.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---middleware
+    |       |   |   |   asgi2.py
+    |       |   |   |   message_logger.py
+    |       |   |   |   proxy_headers.py
+    |       |   |   |   wsgi.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           asgi2.cpython-313.pyc
+    |       |   |           message_logger.cpython-313.pyc
+    |       |   |           proxy_headers.cpython-313.pyc
+    |       |   |           wsgi.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---protocols
+    |       |   |   |   utils.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---http
+    |       |   |   |   |   auto.py
+    |       |   |   |   |   auto_zttp_impl.py
+    |       |   |   |   |   flow_control.py
+    |       |   |   |   |   h11_impl.py
+    |       |   |   |   |   httptools_impl.py
+    |       |   |   |   |   zttp_h2_impl.py
+    |       |   |   |   |   zttp_impl.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           auto.cpython-313.pyc
+    |       |   |   |           auto_zttp_impl.cpython-313.pyc
+    |       |   |   |           flow_control.cpython-313.pyc
+    |       |   |   |           h11_impl.cpython-313.pyc
+    |       |   |   |           httptools_impl.cpython-313.pyc
+    |       |   |   |           zttp_h2_impl.cpython-313.pyc
+    |       |   |   |           zttp_impl.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---websockets
+    |       |   |   |   |   auto.py
+    |       |   |   |   |   websockets_impl.py
+    |       |   |   |   |   websockets_sansio_impl.py
+    |       |   |   |   |   wsproto_impl.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           auto.cpython-313.pyc
+    |       |   |   |           websockets_impl.cpython-313.pyc
+    |       |   |   |           websockets_sansio_impl.cpython-313.pyc
+    |       |   |   |           wsproto_impl.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           utils.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---supervisors
+    |       |   |   |   basereload.py
+    |       |   |   |   multiprocess.py
+    |       |   |   |   statreload.py
+    |       |   |   |   watchfilesreload.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           basereload.cpython-313.pyc
+    |       |   |           multiprocess.cpython-313.pyc
+    |       |   |           statreload.cpython-313.pyc
+    |       |   |           watchfilesreload.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           config.cpython-313.pyc
+    |       |           importer.cpython-313.pyc
+    |       |           logging.cpython-313.pyc
+    |       |           main.cpython-313.pyc
+    |       |           server.cpython-313.pyc
+    |       |           workers.cpython-313.pyc
+    |       |           _ansi.cpython-313.pyc
+    |       |           _compat.cpython-313.pyc
+    |       |           _subprocess.cpython-313.pyc
+    |       |           _types.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           __main__.cpython-313.pyc
+    |       |           
+    |       +---uvicorn-0.53.0.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.md

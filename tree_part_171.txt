@@ -1,0 +1,150 @@
+    |       |   |   |   |           test_read.cpython-313.pyc
+    |       |   |   |   |           test_retain_attributes.cpython-313.pyc
+    |       |   |   |   |           test_round_trip.cpython-313.pyc
+    |       |   |   |   |           test_select.cpython-313.pyc
+    |       |   |   |   |           test_store.cpython-313.pyc
+    |       |   |   |   |           test_subclass.cpython-313.pyc
+    |       |   |   |   |           test_timezones.cpython-313.pyc
+    |       |   |   |   |           test_time_series.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---sas
+    |       |   |   |   |   |   test_byteswap.py
+    |       |   |   |   |   |   test_sas.py
+    |       |   |   |   |   |   test_sas7bdat.py
+    |       |   |   |   |   |   test_xport.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_byteswap.cpython-313.pyc
+    |       |   |   |   |           test_sas.cpython-313.pyc
+    |       |   |   |   |           test_sas7bdat.cpython-313.pyc
+    |       |   |   |   |           test_xport.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---xml
+    |       |   |   |   |   |   conftest.py
+    |       |   |   |   |   |   test_to_xml.py
+    |       |   |   |   |   |   test_xml.py
+    |       |   |   |   |   |   test_xml_dtypes.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           conftest.cpython-313.pyc
+    |       |   |   |   |           test_to_xml.cpython-313.pyc
+    |       |   |   |   |           test_xml.cpython-313.pyc
+    |       |   |   |   |           test_xml_dtypes.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           conftest.cpython-313.pyc
+    |       |   |   |           generate_legacy_storage_files.cpython-313.pyc
+    |       |   |   |           test_clipboard.cpython-313.pyc
+    |       |   |   |           test_common.cpython-313.pyc
+    |       |   |   |           test_compression.cpython-313.pyc
+    |       |   |   |           test_feather.cpython-313.pyc
+    |       |   |   |           test_fsspec.cpython-313.pyc
+    |       |   |   |           test_gcs.cpython-313.pyc
+    |       |   |   |           test_html.cpython-313.pyc
+    |       |   |   |           test_http_headers.cpython-313.pyc
+    |       |   |   |           test_iceberg.cpython-313.pyc
+    |       |   |   |           test_orc.cpython-313.pyc
+    |       |   |   |           test_parquet.cpython-313.pyc
+    |       |   |   |           test_pickle.cpython-313.pyc
+    |       |   |   |           test_s3.cpython-313.pyc
+    |       |   |   |           test_spss.cpython-313.pyc
+    |       |   |   |           test_sql.cpython-313.pyc
+    |       |   |   |           test_stata.cpython-313.pyc
+    |       |   |   |           test_util.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---libs
+    |       |   |   |   |   test_hashtable.py
+    |       |   |   |   |   test_join.py
+    |       |   |   |   |   test_lib.py
+    |       |   |   |   |   test_libalgos.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_hashtable.cpython-313.pyc
+    |       |   |   |           test_join.cpython-313.pyc
+    |       |   |   |           test_lib.cpython-313.pyc
+    |       |   |   |           test_libalgos.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---plotting
+    |       |   |   |   |   common.py
+    |       |   |   |   |   conftest.py
+    |       |   |   |   |   test_backend.py
+    |       |   |   |   |   test_boxplot_method.py
+    |       |   |   |   |   test_common.py
+    |       |   |   |   |   test_converter.py
+    |       |   |   |   |   test_datetimelike.py
+    |       |   |   |   |   test_groupby.py
+    |       |   |   |   |   test_hist_method.py
+    |       |   |   |   |   test_misc.py
+    |       |   |   |   |   test_series.py
+    |       |   |   |   |   test_style.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---frame
+    |       |   |   |   |   |   test_frame.py
+    |       |   |   |   |   |   test_frame_color.py
+    |       |   |   |   |   |   test_frame_groupby.py
+    |       |   |   |   |   |   test_frame_legend.py
+    |       |   |   |   |   |   test_frame_subplots.py
+    |       |   |   |   |   |   test_hist_box_by.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_frame.cpython-313.pyc
+    |       |   |   |   |           test_frame_color.cpython-313.pyc
+    |       |   |   |   |           test_frame_groupby.cpython-313.pyc
+    |       |   |   |   |           test_frame_legend.cpython-313.pyc
+    |       |   |   |   |           test_frame_subplots.cpython-313.pyc
+    |       |   |   |   |           test_hist_box_by.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           common.cpython-313.pyc
+    |       |   |   |           conftest.cpython-313.pyc
+    |       |   |   |           test_backend.cpython-313.pyc
+    |       |   |   |           test_boxplot_method.cpython-313.pyc
+    |       |   |   |           test_common.cpython-313.pyc
+    |       |   |   |           test_converter.cpython-313.pyc
+    |       |   |   |           test_datetimelike.cpython-313.pyc
+    |       |   |   |           test_groupby.cpython-313.pyc
+    |       |   |   |           test_hist_method.cpython-313.pyc
+    |       |   |   |           test_misc.cpython-313.pyc
+    |       |   |   |           test_series.cpython-313.pyc
+    |       |   |   |           test_style.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---reductions
+    |       |   |   |   |   test_reductions.py
+    |       |   |   |   |   test_stat_reductions.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_reductions.cpython-313.pyc
+    |       |   |   |           test_stat_reductions.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---resample
+    |       |   |   |   |   conftest.py
+    |       |   |   |   |   test_base.py
+    |       |   |   |   |   test_datetime_index.py
+    |       |   |   |   |   test_period_index.py
+    |       |   |   |   |   test_resampler_grouper.py
+    |       |   |   |   |   test_resample_api.py
+    |       |   |   |   |   test_timedelta.py
+    |       |   |   |   |   test_time_grouper.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           conftest.cpython-313.pyc
+    |       |   |   |           test_base.cpython-313.pyc
+    |       |   |   |           test_datetime_index.cpython-313.pyc
+    |       |   |   |           test_period_index.cpython-313.pyc
+    |       |   |   |           test_resampler_grouper.cpython-313.pyc
+    |       |   |   |           test_resample_api.cpython-313.pyc

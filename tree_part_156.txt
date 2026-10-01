@@ -1,0 +1,150 @@
+    |       |   |   |           generic.cpython-313.pyc
+    |       |   |   |           groupby.cpython-313.pyc
+    |       |   |   |           grouper.cpython-313.pyc
+    |       |   |   |           indexing.cpython-313.pyc
+    |       |   |   |           numba_.cpython-313.pyc
+    |       |   |   |           ops.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---indexers
+    |       |   |   |   |   objects.py
+    |       |   |   |   |   utils.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           objects.cpython-313.pyc
+    |       |   |   |           utils.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---indexes
+    |       |   |   |   |   accessors.py
+    |       |   |   |   |   api.py
+    |       |   |   |   |   base.py
+    |       |   |   |   |   category.py
+    |       |   |   |   |   datetimelike.py
+    |       |   |   |   |   datetimes.py
+    |       |   |   |   |   extension.py
+    |       |   |   |   |   frozen.py
+    |       |   |   |   |   interval.py
+    |       |   |   |   |   multi.py
+    |       |   |   |   |   period.py
+    |       |   |   |   |   range.py
+    |       |   |   |   |   timedeltas.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           accessors.cpython-313.pyc
+    |       |   |   |           api.cpython-313.pyc
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           category.cpython-313.pyc
+    |       |   |   |           datetimelike.cpython-313.pyc
+    |       |   |   |           datetimes.cpython-313.pyc
+    |       |   |   |           extension.cpython-313.pyc
+    |       |   |   |           frozen.cpython-313.pyc
+    |       |   |   |           interval.cpython-313.pyc
+    |       |   |   |           multi.cpython-313.pyc
+    |       |   |   |           period.cpython-313.pyc
+    |       |   |   |           range.cpython-313.pyc
+    |       |   |   |           timedeltas.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---interchange
+    |       |   |   |   |   buffer.py
+    |       |   |   |   |   column.py
+    |       |   |   |   |   dataframe.py
+    |       |   |   |   |   dataframe_protocol.py
+    |       |   |   |   |   from_dataframe.py
+    |       |   |   |   |   utils.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           buffer.cpython-313.pyc
+    |       |   |   |           column.cpython-313.pyc
+    |       |   |   |           dataframe.cpython-313.pyc
+    |       |   |   |           dataframe_protocol.cpython-313.pyc
+    |       |   |   |           from_dataframe.cpython-313.pyc
+    |       |   |   |           utils.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---internals
+    |       |   |   |   |   api.py
+    |       |   |   |   |   blocks.py
+    |       |   |   |   |   concat.py
+    |       |   |   |   |   construction.py
+    |       |   |   |   |   managers.py
+    |       |   |   |   |   ops.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           api.cpython-313.pyc
+    |       |   |   |           blocks.cpython-313.pyc
+    |       |   |   |           concat.cpython-313.pyc
+    |       |   |   |           construction.cpython-313.pyc
+    |       |   |   |           managers.cpython-313.pyc
+    |       |   |   |           ops.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---methods
+    |       |   |   |   |   describe.py
+    |       |   |   |   |   selectn.py
+    |       |   |   |   |   to_dict.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           describe.cpython-313.pyc
+    |       |   |   |           selectn.cpython-313.pyc
+    |       |   |   |           to_dict.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---ops
+    |       |   |   |   |   array_ops.py
+    |       |   |   |   |   common.py
+    |       |   |   |   |   dispatch.py
+    |       |   |   |   |   docstrings.py
+    |       |   |   |   |   invalid.py
+    |       |   |   |   |   mask_ops.py
+    |       |   |   |   |   missing.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           array_ops.cpython-313.pyc
+    |       |   |   |           common.cpython-313.pyc
+    |       |   |   |           dispatch.cpython-313.pyc
+    |       |   |   |           docstrings.cpython-313.pyc
+    |       |   |   |           invalid.cpython-313.pyc
+    |       |   |   |           mask_ops.cpython-313.pyc
+    |       |   |   |           missing.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---reshape
+    |       |   |   |   |   api.py
+    |       |   |   |   |   concat.py
+    |       |   |   |   |   encoding.py
+    |       |   |   |   |   melt.py
+    |       |   |   |   |   merge.py
+    |       |   |   |   |   pivot.py
+    |       |   |   |   |   reshape.py
+    |       |   |   |   |   tile.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           api.cpython-313.pyc
+    |       |   |   |           concat.cpython-313.pyc
+    |       |   |   |           encoding.cpython-313.pyc
+    |       |   |   |           melt.cpython-313.pyc
+    |       |   |   |           merge.cpython-313.pyc
+    |       |   |   |           pivot.cpython-313.pyc
+    |       |   |   |           reshape.cpython-313.pyc
+    |       |   |   |           tile.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---sparse
+    |       |   |   |   |   api.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           api.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---strings
+    |       |   |   |   |   accessor.py

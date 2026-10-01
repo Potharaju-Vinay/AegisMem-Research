@@ -1,0 +1,150 @@
+    |       |   |   |   _trirefine.py
+    |       |   |   |   _trirefine.pyi
+    |       |   |   |   _tritools.py
+    |       |   |   |   _tritools.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           _triangulation.cpython-313.pyc
+    |       |   |           _tricontour.cpython-313.pyc
+    |       |   |           _trifinder.cpython-313.pyc
+    |       |   |           _triinterpolate.cpython-313.pyc
+    |       |   |           _tripcolor.cpython-313.pyc
+    |       |   |           _triplot.cpython-313.pyc
+    |       |   |           _trirefine.cpython-313.pyc
+    |       |   |           _tritools.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---_api
+    |       |   |   |   deprecation.py
+    |       |   |   |   deprecation.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           deprecation.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           animation.cpython-313.pyc
+    |       |           artist.cpython-313.pyc
+    |       |           axis.cpython-313.pyc
+    |       |           backend_bases.cpython-313.pyc
+    |       |           backend_managers.cpython-313.pyc
+    |       |           backend_tools.cpython-313.pyc
+    |       |           bezier.cpython-313.pyc
+    |       |           category.cpython-313.pyc
+    |       |           cbook.cpython-313.pyc
+    |       |           cm.cpython-313.pyc
+    |       |           collections.cpython-313.pyc
+    |       |           colorbar.cpython-313.pyc
+    |       |           colorizer.cpython-313.pyc
+    |       |           colors.cpython-313.pyc
+    |       |           container.cpython-313.pyc
+    |       |           contour.cpython-313.pyc
+    |       |           dates.cpython-313.pyc
+    |       |           dviread.cpython-313.pyc
+    |       |           figure.cpython-313.pyc
+    |       |           font_manager.cpython-313.pyc
+    |       |           gridspec.cpython-313.pyc
+    |       |           hatch.cpython-313.pyc
+    |       |           image.cpython-313.pyc
+    |       |           inset.cpython-313.pyc
+    |       |           layout_engine.cpython-313.pyc
+    |       |           legend.cpython-313.pyc
+    |       |           legend_handler.cpython-313.pyc
+    |       |           lines.cpython-313.pyc
+    |       |           markers.cpython-313.pyc
+    |       |           mathtext.cpython-313.pyc
+    |       |           mlab.cpython-313.pyc
+    |       |           offsetbox.cpython-313.pyc
+    |       |           patches.cpython-313.pyc
+    |       |           path.cpython-313.pyc
+    |       |           patheffects.cpython-313.pyc
+    |       |           pylab.cpython-313.pyc
+    |       |           pyplot.cpython-313.pyc
+    |       |           quiver.cpython-313.pyc
+    |       |           rcsetup.cpython-313.pyc
+    |       |           sankey.cpython-313.pyc
+    |       |           scale.cpython-313.pyc
+    |       |           spines.cpython-313.pyc
+    |       |           stackplot.cpython-313.pyc
+    |       |           streamplot.cpython-313.pyc
+    |       |           table.cpython-313.pyc
+    |       |           texmanager.cpython-313.pyc
+    |       |           text.cpython-313.pyc
+    |       |           textpath.cpython-313.pyc
+    |       |           ticker.cpython-313.pyc
+    |       |           transforms.cpython-313.pyc
+    |       |           typing.cpython-313.pyc
+    |       |           units.cpython-313.pyc
+    |       |           widgets.cpython-313.pyc
+    |       |           _afm.cpython-313.pyc
+    |       |           _animation_data.cpython-313.pyc
+    |       |           _blocking_input.cpython-313.pyc
+    |       |           _cm.cpython-313.pyc
+    |       |           _cm_bivar.cpython-313.pyc
+    |       |           _cm_listed.cpython-313.pyc
+    |       |           _cm_multivar.cpython-313.pyc
+    |       |           _color_data.cpython-313.pyc
+    |       |           _constrained_layout.cpython-313.pyc
+    |       |           _docstring.cpython-313.pyc
+    |       |           _enums.cpython-313.pyc
+    |       |           _fontconfig_pattern.cpython-313.pyc
+    |       |           _internal_utils.cpython-313.pyc
+    |       |           _layoutgrid.cpython-313.pyc
+    |       |           _mathtext.cpython-313.pyc
+    |       |           _mathtext_data.cpython-313.pyc
+    |       |           _pylab_helpers.cpython-313.pyc
+    |       |           _style_helpers.cpython-313.pyc
+    |       |           _text_helpers.cpython-313.pyc
+    |       |           _tight_bbox.cpython-313.pyc
+    |       |           _tight_layout.cpython-313.pyc
+    |       |           _type1font.cpython-313.pyc
+    |       |           _version.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---matplotlib-3.11.2.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       REQUESTED
+    |       |       WHEEL
+    |       |       
+    |       +---mpl_toolkits
+    |       |   +---axes_grid1
+    |       |   |   |   anchored_artists.py
+    |       |   |   |   axes_divider.py
+    |       |   |   |   axes_grid.py
+    |       |   |   |   axes_rgb.py
+    |       |   |   |   axes_size.py
+    |       |   |   |   inset_locator.py
+    |       |   |   |   mpl_axes.py
+    |       |   |   |   parasite_axes.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   conftest.py
+    |       |   |   |   |   test_axes_grid1.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           conftest.cpython-313.pyc
+    |       |   |   |           test_axes_grid1.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           anchored_artists.cpython-313.pyc
+    |       |   |           axes_divider.cpython-313.pyc
+    |       |   |           axes_grid.cpython-313.pyc
+    |       |   |           axes_rgb.cpython-313.pyc
+    |       |   |           axes_size.cpython-313.pyc
+    |       |   |           inset_locator.cpython-313.pyc
+    |       |   |           mpl_axes.cpython-313.pyc
+    |       |   |           parasite_axes.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---axisartist
+    |       |   |   |   angle_helper.py
+    |       |   |   |   axes_divider.py

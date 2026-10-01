@@ -1,0 +1,150 @@
+    |       |   |           _dataclasses.cpython-313.pyc
+    |       |   |           _decorators.cpython-313.pyc
+    |       |   |           _decorators_v1.cpython-313.pyc
+    |       |   |           _discriminated_union.cpython-313.pyc
+    |       |   |           _docs_extraction.cpython-313.pyc
+    |       |   |           _fields.cpython-313.pyc
+    |       |   |           _forward_ref.cpython-313.pyc
+    |       |   |           _generate_schema.cpython-313.pyc
+    |       |   |           _generics.cpython-313.pyc
+    |       |   |           _git.cpython-313.pyc
+    |       |   |           _import_utils.cpython-313.pyc
+    |       |   |           _internal_dataclass.cpython-313.pyc
+    |       |   |           _known_annotated_metadata.cpython-313.pyc
+    |       |   |           _mock_val_ser.cpython-313.pyc
+    |       |   |           _model_construction.cpython-313.pyc
+    |       |   |           _namespace_utils.cpython-313.pyc
+    |       |   |           _repr.cpython-313.pyc
+    |       |   |           _schema_gather.cpython-313.pyc
+    |       |   |           _schema_generation_shared.cpython-313.pyc
+    |       |   |           _serializers.cpython-313.pyc
+    |       |   |           _signature.cpython-313.pyc
+    |       |   |           _typing_extra.cpython-313.pyc
+    |       |   |           _utils.cpython-313.pyc
+    |       |   |           _validate_call.cpython-313.pyc
+    |       |   |           _validators.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           aliases.cpython-313.pyc
+    |       |           alias_generators.cpython-313.pyc
+    |       |           annotated_handlers.cpython-313.pyc
+    |       |           class_validators.cpython-313.pyc
+    |       |           color.cpython-313.pyc
+    |       |           config.cpython-313.pyc
+    |       |           dataclasses.cpython-313.pyc
+    |       |           datetime_parse.cpython-313.pyc
+    |       |           decorator.cpython-313.pyc
+    |       |           env_settings.cpython-313.pyc
+    |       |           errors.cpython-313.pyc
+    |       |           error_wrappers.cpython-313.pyc
+    |       |           fields.cpython-313.pyc
+    |       |           functional_serializers.cpython-313.pyc
+    |       |           functional_validators.cpython-313.pyc
+    |       |           generics.cpython-313.pyc
+    |       |           json.cpython-313.pyc
+    |       |           json_schema.cpython-313.pyc
+    |       |           main.cpython-313.pyc
+    |       |           mypy.cpython-313.pyc
+    |       |           networks.cpython-313.pyc
+    |       |           parse.cpython-313.pyc
+    |       |           root_model.cpython-313.pyc
+    |       |           schema.cpython-313.pyc
+    |       |           tools.cpython-313.pyc
+    |       |           types.cpython-313.pyc
+    |       |           type_adapter.cpython-313.pyc
+    |       |           typing.cpython-313.pyc
+    |       |           utils.cpython-313.pyc
+    |       |           validate_call_decorator.cpython-313.pyc
+    |       |           validators.cpython-313.pyc
+    |       |           version.cpython-313.pyc
+    |       |           warnings.cpython-313.pyc
+    |       |           _migration.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---pydantic-2.13.4.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---pydantic_core
+    |       |   |   core_schema.py
+    |       |   |   py.typed
+    |       |   |   _pydantic_core.cp313-win_amd64.pyd
+    |       |   |   _pydantic_core.pyi
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           core_schema.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---pydantic_core-2.46.4.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   +---licenses
+    |       |   |       LICENSE
+    |       |   |       
+    |       |   \---sboms
+    |       |           pydantic-core.cyclonedx.json
+    |       |           
+    |       +---pygments
+    |       |   |   cmdline.py
+    |       |   |   console.py
+    |       |   |   filter.py
+    |       |   |   formatter.py
+    |       |   |   lexer.py
+    |       |   |   modeline.py
+    |       |   |   plugin.py
+    |       |   |   regexopt.py
+    |       |   |   scanner.py
+    |       |   |   sphinxext.py
+    |       |   |   style.py
+    |       |   |   token.py
+    |       |   |   unistring.py
+    |       |   |   util.py
+    |       |   |   __init__.py
+    |       |   |   __main__.py
+    |       |   |   
+    |       |   +---filters
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---formatters
+    |       |   |   |   bbcode.py
+    |       |   |   |   groff.py
+    |       |   |   |   html.py
+    |       |   |   |   img.py
+    |       |   |   |   irc.py
+    |       |   |   |   latex.py
+    |       |   |   |   other.py
+    |       |   |   |   pangomarkup.py
+    |       |   |   |   rtf.py
+    |       |   |   |   svg.py
+    |       |   |   |   terminal.py
+    |       |   |   |   terminal256.py
+    |       |   |   |   _mapping.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           bbcode.cpython-313.pyc
+    |       |   |           groff.cpython-313.pyc
+    |       |   |           html.cpython-313.pyc
+    |       |   |           img.cpython-313.pyc
+    |       |   |           irc.cpython-313.pyc
+    |       |   |           latex.cpython-313.pyc
+    |       |   |           other.cpython-313.pyc
+    |       |   |           pangomarkup.cpython-313.pyc
+    |       |   |           rtf.cpython-313.pyc
+    |       |   |           svg.cpython-313.pyc
+    |       |   |           terminal.cpython-313.pyc
+    |       |   |           terminal256.cpython-313.pyc

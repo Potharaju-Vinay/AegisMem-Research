@@ -1,0 +1,150 @@
+|   |   |   models.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           manager.cpython-313.pyc
+|   |           models.cpython-313.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   +---recovery
+|   |   |   audit.py
+|   |   |   engine.py
+|   |   |   executor.py
+|   |   |   models.py
+|   |   |   orchestrator.py
+|   |   |   resolver.py
+|   |   |   tcrp.py
+|   |   |   validator.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           audit.cpython-313.pyc
+|   |           engine.cpython-313.pyc
+|   |           executor.cpython-313.pyc
+|   |           models.cpython-313.pyc
+|   |           orchestrator.cpython-313.pyc
+|   |           resolver.cpython-313.pyc
+|   |           tcrp.cpython-313.pyc
+|   |           validator.cpython-313.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   +---revision
+|   |   |   models.py
+|   |   |   planner.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           models.cpython-313.pyc
+|   |           planner.cpython-313.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   +---security
+|   |   |   monitor.py
+|   |   |   watcher.py
+|   |   |   
+|   |   \---__pycache__
+|   |           monitor.cpython-313.pyc
+|   |           watcher.cpython-313.pyc
+|   |           
+|   +---trust
+|   |   |   propagation.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           propagation.cpython-313.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           __init__.cpython-313.pyc
+|           
++---data
+|       aegismem.db
+|       __init__.py
+|       
++---datasets
+|   |   loader.py
+|   |   __init__.py
+|   |   
+|   +---enterprise
+|   |       enterprise_memories.json
+|   |       __init__.py
+|   |       
+|   +---processed
+|   |       __init__.py
+|   |       
+|   +---synthetic
+|   |       __init__.py
+|   |       
+|   \---__pycache__
+|           loader.cpython-313.pyc
+|           __init__.cpython-313.pyc
+|           
++---docs
+|       __init__.py
+|       
++---evaluation
+|       evaluate_recovery.py
+|       
++---experiments
+|   |   agent_deletion_self_healing_demo.py
+|   |   agent_self_healing_demo.py
+|   |   agent_tampering_self_healing_demo.py
+|   |   attack_recovery_demo.py
+|   |   dependency_self_healing_demo.py
+|   |   initialize_api_demo.py
+|   |   runner.py
+|   |   self_healing_demo.py
+|   |   __init__.py
+|   |   
+|   +---benchmark
+|   |   |   attack_generator.py
+|   |   |   baselines.py
+|   |   |   evidence_generator.py
+|   |   |   graph_generator.py
+|   |   |   metrics.py
+|   |   |   multi_seed_runner.py
+|   |   |   runner.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           attack_generator.cpython-313.pyc
+|   |           baselines.cpython-313.pyc
+|   |           evidence_generator.cpython-313.pyc
+|   |           graph_generator.cpython-313.pyc
+|   |           metrics.cpython-313.pyc
+|   |           multi_seed_runner.cpython-313.pyc
+|   |           runner.cpython-313.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   +---results
+|   +---scripts
+|   \---__pycache__
+|           agent_deletion_self_healing_demo.cpython-313.pyc
+|           agent_self_healing_demo.cpython-313.pyc
+|           agent_tampering_self_healing_demo.cpython-313.pyc
+|           attack_recovery_demo.cpython-313.pyc
+|           dependency_self_healing_demo.cpython-313.pyc
+|           initialize_api_demo.cpython-313.pyc
+|           runner.cpython-313.pyc
+|           self_healing_demo.cpython-313.pyc
+|           __init__.cpython-313.pyc
+|           
++---frontend
+|   |   .gitignore
+|   |   eslint.config.js
+|   |   index.html
+|   |   package-lock.json
+|   |   package.json
+|   |   README.md
+|   |   vite.config.js
+|   |   
+|   +---dist
+|   |   |   favicon.svg
+|   |   |   icons.svg
+|   |   |   index.html
+|   |   |   
+|   |   \---assets
+|   |           index-BaIftbXy.css
+|   |           index-Dw-JqdlA.js
+|   |           
+|   +---node_modules

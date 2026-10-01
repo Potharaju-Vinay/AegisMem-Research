@@ -1,0 +1,150 @@
+    |       |   |   |   pony.py
+    |       |   |   |   praat.py
+    |       |   |   |   procfile.py
+    |       |   |   |   prolog.py
+    |       |   |   |   promql.py
+    |       |   |   |   prql.py
+    |       |   |   |   ptx.py
+    |       |   |   |   purescript.py
+    |       |   |   |   python.py
+    |       |   |   |   q.py
+    |       |   |   |   qlik.py
+    |       |   |   |   qvt.py
+    |       |   |   |   r.py
+    |       |   |   |   rdf.py
+    |       |   |   |   rebol.py
+    |       |   |   |   rego.py
+    |       |   |   |   rell.py
+    |       |   |   |   resource.py
+    |       |   |   |   ride.py
+    |       |   |   |   rita.py
+    |       |   |   |   rnc.py
+    |       |   |   |   roboconf.py
+    |       |   |   |   robotframework.py
+    |       |   |   |   ruby.py
+    |       |   |   |   rust.py
+    |       |   |   |   sas.py
+    |       |   |   |   savi.py
+    |       |   |   |   scdoc.py
+    |       |   |   |   scripting.py
+    |       |   |   |   sgf.py
+    |       |   |   |   shell.py
+    |       |   |   |   sieve.py
+    |       |   |   |   slash.py
+    |       |   |   |   smalltalk.py
+    |       |   |   |   smithy.py
+    |       |   |   |   smv.py
+    |       |   |   |   snobol.py
+    |       |   |   |   solidity.py
+    |       |   |   |   soong.py
+    |       |   |   |   sophia.py
+    |       |   |   |   special.py
+    |       |   |   |   spice.py
+    |       |   |   |   sql.py
+    |       |   |   |   srcinfo.py
+    |       |   |   |   stata.py
+    |       |   |   |   supercollider.py
+    |       |   |   |   tablegen.py
+    |       |   |   |   tact.py
+    |       |   |   |   tal.py
+    |       |   |   |   tcl.py
+    |       |   |   |   teal.py
+    |       |   |   |   templates.py
+    |       |   |   |   teraterm.py
+    |       |   |   |   testing.py
+    |       |   |   |   text.py
+    |       |   |   |   textedit.py
+    |       |   |   |   textfmts.py
+    |       |   |   |   theorem.py
+    |       |   |   |   thingsdb.py
+    |       |   |   |   tlb.py
+    |       |   |   |   tls.py
+    |       |   |   |   tnt.py
+    |       |   |   |   trafficscript.py
+    |       |   |   |   typoscript.py
+    |       |   |   |   typst.py
+    |       |   |   |   ul4.py
+    |       |   |   |   unicon.py
+    |       |   |   |   urbi.py
+    |       |   |   |   usd.py
+    |       |   |   |   varnish.py
+    |       |   |   |   verification.py
+    |       |   |   |   verifpal.py
+    |       |   |   |   vip.py
+    |       |   |   |   vyper.py
+    |       |   |   |   web.py
+    |       |   |   |   webassembly.py
+    |       |   |   |   webidl.py
+    |       |   |   |   webmisc.py
+    |       |   |   |   wgsl.py
+    |       |   |   |   whiley.py
+    |       |   |   |   wowtoc.py
+    |       |   |   |   wren.py
+    |       |   |   |   x10.py
+    |       |   |   |   xorg.py
+    |       |   |   |   yang.py
+    |       |   |   |   yara.py
+    |       |   |   |   zig.py
+    |       |   |   |   _ada_builtins.py
+    |       |   |   |   _asy_builtins.py
+    |       |   |   |   _cl_builtins.py
+    |       |   |   |   _cocoa_builtins.py
+    |       |   |   |   _csound_builtins.py
+    |       |   |   |   _css_builtins.py
+    |       |   |   |   _googlesql_builtins.py
+    |       |   |   |   _julia_builtins.py
+    |       |   |   |   _lasso_builtins.py
+    |       |   |   |   _lilypond_builtins.py
+    |       |   |   |   _luau_builtins.py
+    |       |   |   |   _lua_builtins.py
+    |       |   |   |   _mapping.py
+    |       |   |   |   _mql_builtins.py
+    |       |   |   |   _mysql_builtins.py
+    |       |   |   |   _openedge_builtins.py
+    |       |   |   |   _php_builtins.py
+    |       |   |   |   _postgres_builtins.py
+    |       |   |   |   _qlik_builtins.py
+    |       |   |   |   _scheme_builtins.py
+    |       |   |   |   _scilab_builtins.py
+    |       |   |   |   _sourcemod_builtins.py
+    |       |   |   |   _sql_builtins.py
+    |       |   |   |   _stan_builtins.py
+    |       |   |   |   _stata_builtins.py
+    |       |   |   |   _tsql_builtins.py
+    |       |   |   |   _usd_builtins.py
+    |       |   |   |   _vbscript_builtins.py
+    |       |   |   |   _vim_builtins.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           actionscript.cpython-313.pyc
+    |       |   |           ada.cpython-313.pyc
+    |       |   |           agile.cpython-313.pyc
+    |       |   |           algebra.cpython-313.pyc
+    |       |   |           ambient.cpython-313.pyc
+    |       |   |           amdgpu.cpython-313.pyc
+    |       |   |           ampl.cpython-313.pyc
+    |       |   |           apdlexer.cpython-313.pyc
+    |       |   |           apl.cpython-313.pyc
+    |       |   |           archetype.cpython-313.pyc
+    |       |   |           arrow.cpython-313.pyc
+    |       |   |           arturo.cpython-313.pyc
+    |       |   |           asc.cpython-313.pyc
+    |       |   |           asm.cpython-313.pyc
+    |       |   |           asn1.cpython-313.pyc
+    |       |   |           automation.cpython-313.pyc
+    |       |   |           bare.cpython-313.pyc
+    |       |   |           basic.cpython-313.pyc
+    |       |   |           bdd.cpython-313.pyc
+    |       |   |           berry.cpython-313.pyc
+    |       |   |           bibtex.cpython-313.pyc
+    |       |   |           bitbake.cpython-313.pyc
+    |       |   |           blueprint.cpython-313.pyc
+    |       |   |           boa.cpython-313.pyc
+    |       |   |           bqn.cpython-313.pyc
+    |       |   |           business.cpython-313.pyc
+    |       |   |           capnproto.cpython-313.pyc
+    |       |   |           carbon.cpython-313.pyc
+    |       |   |           cddl.cpython-313.pyc
+    |       |   |           cel.cpython-313.pyc
+    |       |   |           chapel.cpython-313.pyc

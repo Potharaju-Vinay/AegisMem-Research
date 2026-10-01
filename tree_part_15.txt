@@ -1,0 +1,150 @@
+|   |   |   |       package.json
+|   |   |   |       README.md
+|   |   |   |       
+|   |   |   +---d3-scale
+|   |   |   |       index.d.ts
+|   |   |   |       LICENSE
+|   |   |   |       package.json
+|   |   |   |       README.md
+|   |   |   |       
+|   |   |   +---d3-shape
+|   |   |   |       index.d.ts
+|   |   |   |       LICENSE
+|   |   |   |       package.json
+|   |   |   |       README.md
+|   |   |   |       
+|   |   |   +---d3-time
+|   |   |   |       index.d.ts
+|   |   |   |       LICENSE
+|   |   |   |       package.json
+|   |   |   |       README.md
+|   |   |   |       
+|   |   |   +---d3-timer
+|   |   |   |       index.d.ts
+|   |   |   |       LICENSE
+|   |   |   |       package.json
+|   |   |   |       README.md
+|   |   |   |       
+|   |   |   +---esrecurse
+|   |   |   |       index.d.ts
+|   |   |   |       LICENSE
+|   |   |   |       package.json
+|   |   |   |       README.md
+|   |   |   |       
+|   |   |   +---estree
+|   |   |   |       flow.d.ts
+|   |   |   |       index.d.ts
+|   |   |   |       LICENSE
+|   |   |   |       package.json
+|   |   |   |       README.md
+|   |   |   |       
+|   |   |   +---json-schema
+|   |   |   |       index.d.ts
+|   |   |   |       LICENSE
+|   |   |   |       package.json
+|   |   |   |       README.md
+|   |   |   |       
+|   |   |   +---react
+|   |   |   |   |   canary.d.ts
+|   |   |   |   |   compiler-runtime.d.ts
+|   |   |   |   |   experimental.d.ts
+|   |   |   |   |   global.d.ts
+|   |   |   |   |   index.d.ts
+|   |   |   |   |   jsx-dev-runtime.d.ts
+|   |   |   |   |   jsx-runtime.d.ts
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   \---ts5.0
+|   |   |   |           canary.d.ts
+|   |   |   |           experimental.d.ts
+|   |   |   |           global.d.ts
+|   |   |   |           index.d.ts
+|   |   |   |           jsx-dev-runtime.d.ts
+|   |   |   |           jsx-runtime.d.ts
+|   |   |   |           
+|   |   |   +---react-dom
+|   |   |   |   |   canary.d.ts
+|   |   |   |   |   client.d.ts
+|   |   |   |   |   experimental.d.ts
+|   |   |   |   |   index.d.ts
+|   |   |   |   |   LICENSE
+|   |   |   |   |   package.json
+|   |   |   |   |   README.md
+|   |   |   |   |   server.browser.d.ts
+|   |   |   |   |   server.bun.d.ts
+|   |   |   |   |   server.d.ts
+|   |   |   |   |   server.edge.d.ts
+|   |   |   |   |   server.node.d.ts
+|   |   |   |   |   static.browser.d.ts
+|   |   |   |   |   static.d.ts
+|   |   |   |   |   static.edge.d.ts
+|   |   |   |   |   static.node.d.ts
+|   |   |   |   |   
+|   |   |   |   \---test-utils
+|   |   |   |           index.d.ts
+|   |   |   |           
+|   |   |   \---use-sync-external-store
+|   |   |       |   index.d.ts
+|   |   |       |   LICENSE
+|   |   |       |   package.json
+|   |   |       |   README.md
+|   |   |       |   with-selector.d.ts
+|   |   |       |   
+|   |   |       \---shim
+|   |   |               index.d.ts
+|   |   |               with-selector.d.ts
+|   |   |               
+|   |   +---@vitejs
+|   |   |   \---plugin-react
+|   |   |       |   LICENSE
+|   |   |       |   package.json
+|   |   |       |   README.md
+|   |   |       |   
+|   |   |       +---dist
+|   |   |       |       index.d.ts
+|   |   |       |       index.js
+|   |   |       |       refresh-runtime.js
+|   |   |       |       
+|   |   |       \---types
+|   |   |               optionalTypes.d.ts
+|   |   |               preamble.d.ts
+|   |   |               
+|   |   +---acorn
+|   |   |   |   CHANGELOG.md
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---bin
+|   |   |   |       acorn
+|   |   |   |       
+|   |   |   \---dist
+|   |   |           acorn.d.mts
+|   |   |           acorn.d.ts
+|   |   |           acorn.js
+|   |   |           acorn.mjs
+|   |   |           bin.js
+|   |   |           
+|   |   +---acorn-jsx
+|   |   |       index.d.ts
+|   |   |       index.js
+|   |   |       LICENSE
+|   |   |       package.json
+|   |   |       README.md
+|   |   |       xhtml.js
+|   |   |       
+|   |   +---ajv
+|   |   |   |   .tonic_example.js
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---dist
+|   |   |   |       ajv.bundle.js
+|   |   |   |       ajv.min.js
+|   |   |   |       ajv.min.js.map
+|   |   |   |       
+|   |   |   +---lib
+|   |   |   |   |   ajv.d.ts

@@ -1,0 +1,150 @@
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           config.cpython-313.pyc
+    |       |   |           dates.cpython-313.pyc
+    |       |   |           display.cpython-313.pyc
+    |       |   |           localization.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---_libs
+    |       |   |   |   algos.cp313-win_amd64.lib
+    |       |   |   |   algos.cp313-win_amd64.pyd
+    |       |   |   |   algos.pyi
+    |       |   |   |   arrays.cp313-win_amd64.lib
+    |       |   |   |   arrays.cp313-win_amd64.pyd
+    |       |   |   |   arrays.pyi
+    |       |   |   |   byteswap.cp313-win_amd64.lib
+    |       |   |   |   byteswap.cp313-win_amd64.pyd
+    |       |   |   |   byteswap.pyi
+    |       |   |   |   groupby.cp313-win_amd64.lib
+    |       |   |   |   groupby.cp313-win_amd64.pyd
+    |       |   |   |   groupby.pyi
+    |       |   |   |   hashing.cp313-win_amd64.lib
+    |       |   |   |   hashing.cp313-win_amd64.pyd
+    |       |   |   |   hashing.pyi
+    |       |   |   |   hashtable.cp313-win_amd64.lib
+    |       |   |   |   hashtable.cp313-win_amd64.pyd
+    |       |   |   |   hashtable.pyi
+    |       |   |   |   index.cp313-win_amd64.lib
+    |       |   |   |   index.cp313-win_amd64.pyd
+    |       |   |   |   index.pyi
+    |       |   |   |   indexing.cp313-win_amd64.lib
+    |       |   |   |   indexing.cp313-win_amd64.pyd
+    |       |   |   |   indexing.pyi
+    |       |   |   |   internals.cp313-win_amd64.lib
+    |       |   |   |   internals.cp313-win_amd64.pyd
+    |       |   |   |   internals.pyi
+    |       |   |   |   interval.cp313-win_amd64.lib
+    |       |   |   |   interval.cp313-win_amd64.pyd
+    |       |   |   |   interval.pyi
+    |       |   |   |   join.cp313-win_amd64.lib
+    |       |   |   |   join.cp313-win_amd64.pyd
+    |       |   |   |   join.pyi
+    |       |   |   |   json.cp313-win_amd64.lib
+    |       |   |   |   json.cp313-win_amd64.pyd
+    |       |   |   |   json.pyi
+    |       |   |   |   lib.cp313-win_amd64.lib
+    |       |   |   |   lib.cp313-win_amd64.pyd
+    |       |   |   |   lib.pyi
+    |       |   |   |   missing.cp313-win_amd64.lib
+    |       |   |   |   missing.cp313-win_amd64.pyd
+    |       |   |   |   missing.pyi
+    |       |   |   |   ops.cp313-win_amd64.lib
+    |       |   |   |   ops.cp313-win_amd64.pyd
+    |       |   |   |   ops.pyi
+    |       |   |   |   ops_dispatch.cp313-win_amd64.lib
+    |       |   |   |   ops_dispatch.cp313-win_amd64.pyd
+    |       |   |   |   ops_dispatch.pyi
+    |       |   |   |   pandas_datetime.cp313-win_amd64.lib
+    |       |   |   |   pandas_datetime.cp313-win_amd64.pyd
+    |       |   |   |   pandas_parser.cp313-win_amd64.lib
+    |       |   |   |   pandas_parser.cp313-win_amd64.pyd
+    |       |   |   |   parsers.cp313-win_amd64.lib
+    |       |   |   |   parsers.cp313-win_amd64.pyd
+    |       |   |   |   parsers.pyi
+    |       |   |   |   properties.cp313-win_amd64.lib
+    |       |   |   |   properties.cp313-win_amd64.pyd
+    |       |   |   |   properties.pyi
+    |       |   |   |   reshape.cp313-win_amd64.lib
+    |       |   |   |   reshape.cp313-win_amd64.pyd
+    |       |   |   |   reshape.pyi
+    |       |   |   |   sas.cp313-win_amd64.lib
+    |       |   |   |   sas.cp313-win_amd64.pyd
+    |       |   |   |   sas.pyi
+    |       |   |   |   sparse.cp313-win_amd64.lib
+    |       |   |   |   sparse.cp313-win_amd64.pyd
+    |       |   |   |   sparse.pyi
+    |       |   |   |   testing.cp313-win_amd64.lib
+    |       |   |   |   testing.cp313-win_amd64.pyd
+    |       |   |   |   testing.pyi
+    |       |   |   |   tslib.cp313-win_amd64.lib
+    |       |   |   |   tslib.cp313-win_amd64.pyd
+    |       |   |   |   tslib.pyi
+    |       |   |   |   writers.cp313-win_amd64.lib
+    |       |   |   |   writers.cp313-win_amd64.pyd
+    |       |   |   |   writers.pyi
+    |       |   |   |   _cyutility.cp313-win_amd64.lib
+    |       |   |   |   _cyutility.cp313-win_amd64.pyd
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---tslibs
+    |       |   |   |   |   base.cp313-win_amd64.lib
+    |       |   |   |   |   base.cp313-win_amd64.pyd
+    |       |   |   |   |   ccalendar.cp313-win_amd64.lib
+    |       |   |   |   |   ccalendar.cp313-win_amd64.pyd
+    |       |   |   |   |   ccalendar.pyi
+    |       |   |   |   |   conversion.cp313-win_amd64.lib
+    |       |   |   |   |   conversion.cp313-win_amd64.pyd
+    |       |   |   |   |   conversion.pyi
+    |       |   |   |   |   dtypes.cp313-win_amd64.lib
+    |       |   |   |   |   dtypes.cp313-win_amd64.pyd
+    |       |   |   |   |   dtypes.pyi
+    |       |   |   |   |   fields.cp313-win_amd64.lib
+    |       |   |   |   |   fields.cp313-win_amd64.pyd
+    |       |   |   |   |   fields.pyi
+    |       |   |   |   |   nattype.cp313-win_amd64.lib
+    |       |   |   |   |   nattype.cp313-win_amd64.pyd
+    |       |   |   |   |   nattype.pyi
+    |       |   |   |   |   np_datetime.cp313-win_amd64.lib
+    |       |   |   |   |   np_datetime.cp313-win_amd64.pyd
+    |       |   |   |   |   np_datetime.pyi
+    |       |   |   |   |   offsets.cp313-win_amd64.lib
+    |       |   |   |   |   offsets.cp313-win_amd64.pyd
+    |       |   |   |   |   offsets.pyi
+    |       |   |   |   |   parsing.cp313-win_amd64.lib
+    |       |   |   |   |   parsing.cp313-win_amd64.pyd
+    |       |   |   |   |   parsing.pyi
+    |       |   |   |   |   period.cp313-win_amd64.lib
+    |       |   |   |   |   period.cp313-win_amd64.pyd
+    |       |   |   |   |   period.pyi
+    |       |   |   |   |   strptime.cp313-win_amd64.lib
+    |       |   |   |   |   strptime.cp313-win_amd64.pyd
+    |       |   |   |   |   strptime.pyi
+    |       |   |   |   |   timedeltas.cp313-win_amd64.lib
+    |       |   |   |   |   timedeltas.cp313-win_amd64.pyd
+    |       |   |   |   |   timedeltas.pyi
+    |       |   |   |   |   timestamps.cp313-win_amd64.lib
+    |       |   |   |   |   timestamps.cp313-win_amd64.pyd
+    |       |   |   |   |   timestamps.pyi
+    |       |   |   |   |   timezones.cp313-win_amd64.lib
+    |       |   |   |   |   timezones.cp313-win_amd64.pyd
+    |       |   |   |   |   timezones.pyi
+    |       |   |   |   |   tzconversion.cp313-win_amd64.lib
+    |       |   |   |   |   tzconversion.cp313-win_amd64.pyd
+    |       |   |   |   |   tzconversion.pyi
+    |       |   |   |   |   vectorized.cp313-win_amd64.lib
+    |       |   |   |   |   vectorized.cp313-win_amd64.pyd
+    |       |   |   |   |   vectorized.pyi
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---window
+    |       |   |   |   |   aggregations.cp313-win_amd64.lib
+    |       |   |   |   |   aggregations.cp313-win_amd64.pyd
+    |       |   |   |   |   aggregations.pyi
+    |       |   |   |   |   indexers.cp313-win_amd64.lib
+    |       |   |   |   |   indexers.cp313-win_amd64.pyd
+    |       |   |   |   |   indexers.pyi

@@ -1,0 +1,150 @@
+|   |   |   |   |   |           properties.test.ts
+|   |   |   |   |   |           prototypes.test.ts
+|   |   |   |   |   |           readonly.test.ts
+|   |   |   |   |   |           record.test.ts
+|   |   |   |   |   |           recursive-types.test.ts
+|   |   |   |   |   |           redos.test.ts
+|   |   |   |   |   |           refine.test.ts
+|   |   |   |   |   |           registries.test.ts
+|   |   |   |   |   |           set.test.ts
+|   |   |   |   |   |           standard-schema.test.ts
+|   |   |   |   |   |           string-formats.test.ts
+|   |   |   |   |   |           string.test.ts
+|   |   |   |   |   |           stringbool.test.ts
+|   |   |   |   |   |           template-literal.test.ts
+|   |   |   |   |   |           to-json-schema-methods.test.ts
+|   |   |   |   |   |           to-json-schema.test.ts
+|   |   |   |   |   |           transform.test.ts
+|   |   |   |   |   |           tuple.test.ts
+|   |   |   |   |   |           union.test.ts
+|   |   |   |   |   |           url.test.ts
+|   |   |   |   |   |           validate.test.ts
+|   |   |   |   |   |           validations.test.ts
+|   |   |   |   |   |           void.test.ts
+|   |   |   |   |   |           
+|   |   |   |   |   +---core
+|   |   |   |   |   |   |   api.ts
+|   |   |   |   |   |   |   checks.ts
+|   |   |   |   |   |   |   compile.ts
+|   |   |   |   |   |   |   core.ts
+|   |   |   |   |   |   |   doc.ts
+|   |   |   |   |   |   |   errors.ts
+|   |   |   |   |   |   |   index.ts
+|   |   |   |   |   |   |   json-schema-generator.ts
+|   |   |   |   |   |   |   json-schema-processors.ts
+|   |   |   |   |   |   |   json-schema.ts
+|   |   |   |   |   |   |   memoizer.ts
+|   |   |   |   |   |   |   parse.ts
+|   |   |   |   |   |   |   regexes.ts
+|   |   |   |   |   |   |   registries.ts
+|   |   |   |   |   |   |   schemas.ts
+|   |   |   |   |   |   |   standard-schema.ts
+|   |   |   |   |   |   |   to-json-schema.ts
+|   |   |   |   |   |   |   util.ts
+|   |   |   |   |   |   |   versions.ts
+|   |   |   |   |   |   |   visit.ts
+|   |   |   |   |   |   |   zsf.ts
+|   |   |   |   |   |   |   
+|   |   |   |   |   |   \---tests
+|   |   |   |   |   |       |   cached.test.ts
+|   |   |   |   |   |       |   compile-differential.test.ts
+|   |   |   |   |   |       |   compile-generative.test.ts
+|   |   |   |   |   |       |   compile-global.test.ts
+|   |   |   |   |   |       |   compile-off-by-default.test.ts
+|   |   |   |   |   |       |   compile-stats.test.ts
+|   |   |   |   |   |       |   compile.test.ts
+|   |   |   |   |   |       |   email-regex.test.ts
+|   |   |   |   |   |       |   extend.test.ts
+|   |   |   |   |   |       |   index.test.ts
+|   |   |   |   |   |       |   polyfill-collision.test.ts
+|   |   |   |   |   |       |   record-constructor.test.ts
+|   |   |   |   |   |       |   recursive-tuples.test.ts
+|   |   |   |   |   |       |   treeshake.test.ts
+|   |   |   |   |   |       |   url-no-canparse.test.ts
+|   |   |   |   |   |       |   
+|   |   |   |   |   |       \---locales
+|   |   |   |   |   |               be.test.ts
+|   |   |   |   |   |               el.test.ts
+|   |   |   |   |   |               en.test.ts
+|   |   |   |   |   |               es.test.ts
+|   |   |   |   |   |               fr.test.ts
+|   |   |   |   |   |               he.test.ts
+|   |   |   |   |   |               hr.test.ts
+|   |   |   |   |   |               nl.test.ts
+|   |   |   |   |   |               parity.test.ts
+|   |   |   |   |   |               ru.test.ts
+|   |   |   |   |   |               tg.test.ts
+|   |   |   |   |   |               tk.test.ts
+|   |   |   |   |   |               tr.test.ts
+|   |   |   |   |   |               uz.test.ts
+|   |   |   |   |   |               
+|   |   |   |   |   +---locales
+|   |   |   |   |   |       ar.ts
+|   |   |   |   |   |       az.ts
+|   |   |   |   |   |       be.ts
+|   |   |   |   |   |       bg.ts
+|   |   |   |   |   |       bn.ts
+|   |   |   |   |   |       ca.ts
+|   |   |   |   |   |       ckb.ts
+|   |   |   |   |   |       cs.ts
+|   |   |   |   |   |       da.ts
+|   |   |   |   |   |       de.ts
+|   |   |   |   |   |       el.ts
+|   |   |   |   |   |       en.ts
+|   |   |   |   |   |       eo.ts
+|   |   |   |   |   |       es.ts
+|   |   |   |   |   |       fa.ts
+|   |   |   |   |   |       fi.ts
+|   |   |   |   |   |       fr-CA.ts
+|   |   |   |   |   |       fr.ts
+|   |   |   |   |   |       gu.ts
+|   |   |   |   |   |       he.ts
+|   |   |   |   |   |       hi.ts
+|   |   |   |   |   |       hr.ts
+|   |   |   |   |   |       hu.ts
+|   |   |   |   |   |       hy.ts
+|   |   |   |   |   |       id.ts
+|   |   |   |   |   |       index.ts
+|   |   |   |   |   |       is.ts
+|   |   |   |   |   |       it.ts
+|   |   |   |   |   |       ja.ts
+|   |   |   |   |   |       ka.ts
+|   |   |   |   |   |       kh.ts
+|   |   |   |   |   |       km.ts
+|   |   |   |   |   |       kn.ts
+|   |   |   |   |   |       ko.ts
+|   |   |   |   |   |       lt.ts
+|   |   |   |   |   |       mk.ts
+|   |   |   |   |   |       ms.ts
+|   |   |   |   |   |       ne.ts
+|   |   |   |   |   |       nl.ts
+|   |   |   |   |   |       nn.ts
+|   |   |   |   |   |       no.ts
+|   |   |   |   |   |       ota.ts
+|   |   |   |   |   |       pl.ts
+|   |   |   |   |   |       ps.ts
+|   |   |   |   |   |       pt-BR.ts
+|   |   |   |   |   |       pt.ts
+|   |   |   |   |   |       ro.ts
+|   |   |   |   |   |       ru.ts
+|   |   |   |   |   |       sk.ts
+|   |   |   |   |   |       sl.ts
+|   |   |   |   |   |       sv.ts
+|   |   |   |   |   |       ta.ts
+|   |   |   |   |   |       tg.ts
+|   |   |   |   |   |       th.ts
+|   |   |   |   |   |       tk.ts
+|   |   |   |   |   |       tr.ts
+|   |   |   |   |   |       ua.ts
+|   |   |   |   |   |       uk.ts
+|   |   |   |   |   |       ur.ts
+|   |   |   |   |   |       uz.ts
+|   |   |   |   |   |       vi.ts
+|   |   |   |   |   |       yo.ts
+|   |   |   |   |   |       zh-CN.ts
+|   |   |   |   |   |       zh-TW.ts
+|   |   |   |   |   |       
+|   |   |   |   |   \---mini
+|   |   |   |   |       |   checks.ts
+|   |   |   |   |       |   coerce.ts
+|   |   |   |   |       |   deep-partial.ts

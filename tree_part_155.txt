@@ -1,0 +1,150 @@
+    |       |   |   |   |   period.py
+    |       |   |   |   |   string_.py
+    |       |   |   |   |   string_arrow.py
+    |       |   |   |   |   timedeltas.py
+    |       |   |   |   |   _arrow_string_mixins.py
+    |       |   |   |   |   _mixins.py
+    |       |   |   |   |   _ranges.py
+    |       |   |   |   |   _utils.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---arrow
+    |       |   |   |   |   |   accessors.py
+    |       |   |   |   |   |   array.py
+    |       |   |   |   |   |   extension_types.py
+    |       |   |   |   |   |   _arrow_utils.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           accessors.cpython-313.pyc
+    |       |   |   |   |           array.cpython-313.pyc
+    |       |   |   |   |           extension_types.cpython-313.pyc
+    |       |   |   |   |           _arrow_utils.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---sparse
+    |       |   |   |   |   |   accessor.py
+    |       |   |   |   |   |   array.py
+    |       |   |   |   |   |   scipy_sparse.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           accessor.cpython-313.pyc
+    |       |   |   |   |           array.cpython-313.pyc
+    |       |   |   |   |           scipy_sparse.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           boolean.cpython-313.pyc
+    |       |   |   |           categorical.cpython-313.pyc
+    |       |   |   |           datetimelike.cpython-313.pyc
+    |       |   |   |           datetimes.cpython-313.pyc
+    |       |   |   |           floating.cpython-313.pyc
+    |       |   |   |           integer.cpython-313.pyc
+    |       |   |   |           interval.cpython-313.pyc
+    |       |   |   |           masked.cpython-313.pyc
+    |       |   |   |           numeric.cpython-313.pyc
+    |       |   |   |           numpy_.cpython-313.pyc
+    |       |   |   |           period.cpython-313.pyc
+    |       |   |   |           string_.cpython-313.pyc
+    |       |   |   |           string_arrow.cpython-313.pyc
+    |       |   |   |           timedeltas.cpython-313.pyc
+    |       |   |   |           _arrow_string_mixins.cpython-313.pyc
+    |       |   |   |           _mixins.cpython-313.pyc
+    |       |   |   |           _ranges.cpython-313.pyc
+    |       |   |   |           _utils.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---array_algos
+    |       |   |   |   |   datetimelike_accumulations.py
+    |       |   |   |   |   masked_accumulations.py
+    |       |   |   |   |   masked_reductions.py
+    |       |   |   |   |   putmask.py
+    |       |   |   |   |   quantile.py
+    |       |   |   |   |   replace.py
+    |       |   |   |   |   take.py
+    |       |   |   |   |   transforms.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           datetimelike_accumulations.cpython-313.pyc
+    |       |   |   |           masked_accumulations.cpython-313.pyc
+    |       |   |   |           masked_reductions.cpython-313.pyc
+    |       |   |   |           putmask.cpython-313.pyc
+    |       |   |   |           quantile.cpython-313.pyc
+    |       |   |   |           replace.cpython-313.pyc
+    |       |   |   |           take.cpython-313.pyc
+    |       |   |   |           transforms.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---computation
+    |       |   |   |   |   align.py
+    |       |   |   |   |   api.py
+    |       |   |   |   |   check.py
+    |       |   |   |   |   common.py
+    |       |   |   |   |   engines.py
+    |       |   |   |   |   eval.py
+    |       |   |   |   |   expr.py
+    |       |   |   |   |   expressions.py
+    |       |   |   |   |   ops.py
+    |       |   |   |   |   parsing.py
+    |       |   |   |   |   pytables.py
+    |       |   |   |   |   scope.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           align.cpython-313.pyc
+    |       |   |   |           api.cpython-313.pyc
+    |       |   |   |           check.cpython-313.pyc
+    |       |   |   |           common.cpython-313.pyc
+    |       |   |   |           engines.cpython-313.pyc
+    |       |   |   |           eval.cpython-313.pyc
+    |       |   |   |           expr.cpython-313.pyc
+    |       |   |   |           expressions.cpython-313.pyc
+    |       |   |   |           ops.cpython-313.pyc
+    |       |   |   |           parsing.cpython-313.pyc
+    |       |   |   |           pytables.cpython-313.pyc
+    |       |   |   |           scope.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---dtypes
+    |       |   |   |   |   api.py
+    |       |   |   |   |   astype.py
+    |       |   |   |   |   base.py
+    |       |   |   |   |   cast.py
+    |       |   |   |   |   common.py
+    |       |   |   |   |   concat.py
+    |       |   |   |   |   dtypes.py
+    |       |   |   |   |   generic.py
+    |       |   |   |   |   inference.py
+    |       |   |   |   |   missing.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           api.cpython-313.pyc
+    |       |   |   |           astype.cpython-313.pyc
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           cast.cpython-313.pyc
+    |       |   |   |           common.cpython-313.pyc
+    |       |   |   |           concat.cpython-313.pyc
+    |       |   |   |           dtypes.cpython-313.pyc
+    |       |   |   |           generic.cpython-313.pyc
+    |       |   |   |           inference.cpython-313.pyc
+    |       |   |   |           missing.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---groupby
+    |       |   |   |   |   base.py
+    |       |   |   |   |   categorical.py
+    |       |   |   |   |   generic.py
+    |       |   |   |   |   groupby.py
+    |       |   |   |   |   grouper.py
+    |       |   |   |   |   indexing.py
+    |       |   |   |   |   numba_.py
+    |       |   |   |   |   ops.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           categorical.cpython-313.pyc

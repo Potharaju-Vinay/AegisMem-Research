@@ -1,0 +1,150 @@
+    |       |   |   |   |       Courier-BoldOblique.afm
+    |       |   |   |   |       Courier-Oblique.afm
+    |       |   |   |   |       Courier.afm
+    |       |   |   |   |       Helvetica-Bold.afm
+    |       |   |   |   |       Helvetica-BoldOblique.afm
+    |       |   |   |   |       Helvetica-Oblique.afm
+    |       |   |   |   |       Helvetica.afm
+    |       |   |   |   |       readme.txt
+    |       |   |   |   |       Symbol.afm
+    |       |   |   |   |       Times-Bold.afm
+    |       |   |   |   |       Times-BoldItalic.afm
+    |       |   |   |   |       Times-Italic.afm
+    |       |   |   |   |       Times-Roman.afm
+    |       |   |   |   |       ZapfDingbats.afm
+    |       |   |   |   |       
+    |       |   |   |   \---ttf
+    |       |   |   |           cmb10.ttf
+    |       |   |   |           cmex10.ttf
+    |       |   |   |           cmmi10.ttf
+    |       |   |   |           cmr10.ttf
+    |       |   |   |           cmss10.ttf
+    |       |   |   |           cmsy10.ttf
+    |       |   |   |           cmti10.ttf
+    |       |   |   |           cmtt10.ttf
+    |       |   |   |           DejaVuSans-Bold.ttf
+    |       |   |   |           DejaVuSans-BoldOblique.ttf
+    |       |   |   |           DejaVuSans-Oblique.ttf
+    |       |   |   |           DejaVuSans.ttf
+    |       |   |   |           DejaVuSansDisplay.ttf
+    |       |   |   |           DejaVuSansMono-Bold.ttf
+    |       |   |   |           DejaVuSansMono-BoldOblique.ttf
+    |       |   |   |           DejaVuSansMono-Oblique.ttf
+    |       |   |   |           DejaVuSansMono.ttf
+    |       |   |   |           DejaVuSerif-Bold.ttf
+    |       |   |   |           DejaVuSerif-BoldItalic.ttf
+    |       |   |   |           DejaVuSerif-Italic.ttf
+    |       |   |   |           DejaVuSerif.ttf
+    |       |   |   |           DejaVuSerifDisplay.ttf
+    |       |   |   |           LastResortHE-Regular.ttf
+    |       |   |   |           LICENSE_DEJAVU
+    |       |   |   |           LICENSE_STIX
+    |       |   |   |           STIXGeneral.ttf
+    |       |   |   |           STIXGeneralBol.ttf
+    |       |   |   |           STIXGeneralBolIta.ttf
+    |       |   |   |           STIXGeneralItalic.ttf
+    |       |   |   |           STIXNonUni.ttf
+    |       |   |   |           STIXNonUniBol.ttf
+    |       |   |   |           STIXNonUniBolIta.ttf
+    |       |   |   |           STIXNonUniIta.ttf
+    |       |   |   |           STIXSizFiveSymReg.ttf
+    |       |   |   |           STIXSizFourSymBol.ttf
+    |       |   |   |           STIXSizFourSymReg.ttf
+    |       |   |   |           STIXSizOneSymBol.ttf
+    |       |   |   |           STIXSizOneSymReg.ttf
+    |       |   |   |           STIXSizThreeSymBol.ttf
+    |       |   |   |           STIXSizThreeSymReg.ttf
+    |       |   |   |           STIXSizTwoSymBol.ttf
+    |       |   |   |           STIXSizTwoSymReg.ttf
+    |       |   |   |           
+    |       |   |   +---images
+    |       |   |   |       back-symbolic.svg
+    |       |   |   |       back.pdf
+    |       |   |   |       back.png
+    |       |   |   |       back.svg
+    |       |   |   |       back_large.png
+    |       |   |   |       filesave-symbolic.svg
+    |       |   |   |       filesave.pdf
+    |       |   |   |       filesave.png
+    |       |   |   |       filesave.svg
+    |       |   |   |       filesave_large.png
+    |       |   |   |       forward-symbolic.svg
+    |       |   |   |       forward.pdf
+    |       |   |   |       forward.png
+    |       |   |   |       forward.svg
+    |       |   |   |       forward_large.png
+    |       |   |   |       hand.pdf
+    |       |   |   |       hand.png
+    |       |   |   |       hand.svg
+    |       |   |   |       help-symbolic.svg
+    |       |   |   |       help.pdf
+    |       |   |   |       help.png
+    |       |   |   |       help.svg
+    |       |   |   |       help_large.png
+    |       |   |   |       home-symbolic.svg
+    |       |   |   |       home.pdf
+    |       |   |   |       home.png
+    |       |   |   |       home.svg
+    |       |   |   |       home_large.png
+    |       |   |   |       matplotlib.pdf
+    |       |   |   |       matplotlib.png
+    |       |   |   |       matplotlib.svg
+    |       |   |   |       matplotlib_large.png
+    |       |   |   |       move-symbolic.svg
+    |       |   |   |       move.pdf
+    |       |   |   |       move.png
+    |       |   |   |       move.svg
+    |       |   |   |       move_large.png
+    |       |   |   |       qt4_editor_options.pdf
+    |       |   |   |       qt4_editor_options.png
+    |       |   |   |       qt4_editor_options.svg
+    |       |   |   |       qt4_editor_options_large.png
+    |       |   |   |       subplots-symbolic.svg
+    |       |   |   |       subplots.pdf
+    |       |   |   |       subplots.png
+    |       |   |   |       subplots.svg
+    |       |   |   |       subplots_large.png
+    |       |   |   |       zoom_to_rect-symbolic.svg
+    |       |   |   |       zoom_to_rect.pdf
+    |       |   |   |       zoom_to_rect.png
+    |       |   |   |       zoom_to_rect.svg
+    |       |   |   |       zoom_to_rect_large.png
+    |       |   |   |       
+    |       |   |   +---plot_directive
+    |       |   |   |       plot_directive.css
+    |       |   |   |       
+    |       |   |   +---sample_data
+    |       |   |   |   |   data_x_x2_x3.csv
+    |       |   |   |   |   eeg.dat
+    |       |   |   |   |   embedding_in_wx3.xrc
+    |       |   |   |   |   goog.npz
+    |       |   |   |   |   grace_hopper.jpg
+    |       |   |   |   |   jacksboro_fault_dem.npz
+    |       |   |   |   |   logo2.png
+    |       |   |   |   |   membrane.dat
+    |       |   |   |   |   Minduka_Present_Blue_Pack.png
+    |       |   |   |   |   msft.csv
+    |       |   |   |   |   README.txt
+    |       |   |   |   |   s1045.ima.gz
+    |       |   |   |   |   Stocks.csv
+    |       |   |   |   |   topobathy.npz
+    |       |   |   |   |   
+    |       |   |   |   \---axes_grid
+    |       |   |   |           bivariate_normal.npy
+    |       |   |   |           
+    |       |   |   \---stylelib
+    |       |   |           bmh.mplstyle
+    |       |   |           classic.mplstyle
+    |       |   |           dark_background.mplstyle
+    |       |   |           fast.mplstyle
+    |       |   |           fivethirtyeight.mplstyle
+    |       |   |           ggplot.mplstyle
+    |       |   |           grayscale.mplstyle
+    |       |   |           petroff10.mplstyle
+    |       |   |           petroff6.mplstyle
+    |       |   |           petroff8.mplstyle
+    |       |   |           seaborn-v0_8-bright.mplstyle
+    |       |   |           seaborn-v0_8-colorblind.mplstyle
+    |       |   |           seaborn-v0_8-dark-palette.mplstyle
+    |       |   |           seaborn-v0_8-dark.mplstyle
+    |       |   |           seaborn-v0_8-darkgrid.mplstyle

@@ -1,0 +1,150 @@
+    |       |   |   |           gomory_hu.cpython-313.pyc
+    |       |   |   |           maxflow.cpython-313.pyc
+    |       |   |   |           mincost.cpython-313.pyc
+    |       |   |   |           networksimplex.cpython-313.pyc
+    |       |   |   |           preflowpush.cpython-313.pyc
+    |       |   |   |           shortestaugmentingpath.cpython-313.pyc
+    |       |   |   |           utils.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---isomorphism
+    |       |   |   |   |   ismags.py
+    |       |   |   |   |   isomorph.py
+    |       |   |   |   |   isomorphvf2.py
+    |       |   |   |   |   matchhelpers.py
+    |       |   |   |   |   temporalisomorphvf2.py
+    |       |   |   |   |   tree_isomorphism.py
+    |       |   |   |   |   vf2pp.py
+    |       |   |   |   |   vf2userfunc.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   iso_r01_s80.A99
+    |       |   |   |   |   |   iso_r01_s80.B99
+    |       |   |   |   |   |   si2_b06_m200.A99
+    |       |   |   |   |   |   si2_b06_m200.B99
+    |       |   |   |   |   |   test_ismags.py
+    |       |   |   |   |   |   test_isomorphism.py
+    |       |   |   |   |   |   test_isomorphvf2.py
+    |       |   |   |   |   |   test_match_helpers.py
+    |       |   |   |   |   |   test_temporalisomorphvf2.py
+    |       |   |   |   |   |   test_tree_isomorphism.py
+    |       |   |   |   |   |   test_vf2pp.py
+    |       |   |   |   |   |   test_vf2pp_helpers.py
+    |       |   |   |   |   |   test_vf2userfunc.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_ismags.cpython-313.pyc
+    |       |   |   |   |           test_isomorphism.cpython-313.pyc
+    |       |   |   |   |           test_isomorphvf2.cpython-313.pyc
+    |       |   |   |   |           test_match_helpers.cpython-313.pyc
+    |       |   |   |   |           test_temporalisomorphvf2.cpython-313.pyc
+    |       |   |   |   |           test_tree_isomorphism.cpython-313.pyc
+    |       |   |   |   |           test_vf2pp.cpython-313.pyc
+    |       |   |   |   |           test_vf2pp_helpers.cpython-313.pyc
+    |       |   |   |   |           test_vf2userfunc.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           ismags.cpython-313.pyc
+    |       |   |   |           isomorph.cpython-313.pyc
+    |       |   |   |           isomorphvf2.cpython-313.pyc
+    |       |   |   |           matchhelpers.cpython-313.pyc
+    |       |   |   |           temporalisomorphvf2.cpython-313.pyc
+    |       |   |   |           tree_isomorphism.cpython-313.pyc
+    |       |   |   |           vf2pp.cpython-313.pyc
+    |       |   |   |           vf2userfunc.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---link_analysis
+    |       |   |   |   |   hits_alg.py
+    |       |   |   |   |   pagerank_alg.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_hits.py
+    |       |   |   |   |   |   test_pagerank.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_hits.cpython-313.pyc
+    |       |   |   |   |           test_pagerank.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           hits_alg.cpython-313.pyc
+    |       |   |   |           pagerank_alg.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---minors
+    |       |   |   |   |   contraction.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_contraction.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_contraction.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           contraction.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---operators
+    |       |   |   |   |   all.py
+    |       |   |   |   |   binary.py
+    |       |   |   |   |   product.py
+    |       |   |   |   |   unary.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_all.py
+    |       |   |   |   |   |   test_binary.py
+    |       |   |   |   |   |   test_product.py
+    |       |   |   |   |   |   test_unary.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_all.cpython-313.pyc
+    |       |   |   |   |           test_binary.cpython-313.pyc
+    |       |   |   |   |           test_product.cpython-313.pyc
+    |       |   |   |   |           test_unary.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           all.cpython-313.pyc
+    |       |   |   |           binary.cpython-313.pyc
+    |       |   |   |           product.cpython-313.pyc
+    |       |   |   |           unary.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---shortest_paths
+    |       |   |   |   |   astar.py
+    |       |   |   |   |   dense.py
+    |       |   |   |   |   generic.py
+    |       |   |   |   |   unweighted.py
+    |       |   |   |   |   weighted.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_astar.py
+    |       |   |   |   |   |   test_dense.py
+    |       |   |   |   |   |   test_dense_numpy.py
+    |       |   |   |   |   |   test_generic.py
+    |       |   |   |   |   |   test_unweighted.py
+    |       |   |   |   |   |   test_weighted.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_astar.cpython-313.pyc
+    |       |   |   |   |           test_dense.cpython-313.pyc
+    |       |   |   |   |           test_dense_numpy.cpython-313.pyc
+    |       |   |   |   |           test_generic.cpython-313.pyc
+    |       |   |   |   |           test_unweighted.cpython-313.pyc
+    |       |   |   |   |           test_weighted.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           astar.cpython-313.pyc
+    |       |   |   |           dense.cpython-313.pyc

@@ -1,0 +1,150 @@
+    |       |   |           _char_codes.cpython-313.pyc
+    |       |   |           _dtype_like.cpython-313.pyc
+    |       |   |           _extended_precision.cpython-313.pyc
+    |       |   |           _nbit.cpython-313.pyc
+    |       |   |           _nbit_base.cpython-313.pyc
+    |       |   |           _nested_sequence.cpython-313.pyc
+    |       |   |           _scalars.cpython-313.pyc
+    |       |   |           _shape.cpython-313.pyc
+    |       |   |           _ufunc.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---_utils
+    |       |   |   |   _conversions.py
+    |       |   |   |   _conversions.pyi
+    |       |   |   |   _inspect.py
+    |       |   |   |   _inspect.pyi
+    |       |   |   |   _pep440.py
+    |       |   |   |   _pep440.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           _conversions.cpython-313.pyc
+    |       |   |           _inspect.cpython-313.pyc
+    |       |   |           _pep440.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           conftest.cpython-313.pyc
+    |       |           dtypes.cpython-313.pyc
+    |       |           exceptions.cpython-313.pyc
+    |       |           matlib.cpython-313.pyc
+    |       |           version.cpython-313.pyc
+    |       |           _array_api_info.cpython-313.pyc
+    |       |           _configtool.cpython-313.pyc
+    |       |           _distributor_init.cpython-313.pyc
+    |       |           _expired_attrs_2_0.cpython-313.pyc
+    |       |           _globals.cpython-313.pyc
+    |       |           _pytesttester.cpython-313.pyc
+    |       |           __config__.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---numpy-2.5.3.dist-info
+    |       |   |   DELVEWHEEL
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |       |   LICENSE.txt
+    |       |       |   
+    |       |       \---numpy
+    |       |           +---fft
+    |       |           |   \---pocketfft
+    |       |           |           LICENSE.md
+    |       |           |           
+    |       |           +---linalg
+    |       |           |   \---lapack_lite
+    |       |           |           LICENSE.txt
+    |       |           |           
+    |       |           +---ma
+    |       |           |       LICENSE
+    |       |           |       
+    |       |           +---random
+    |       |           |   |   LICENSE.md
+    |       |           |   |   
+    |       |           |   \---src
+    |       |           |       +---distributions
+    |       |           |       |       LICENSE.md
+    |       |           |       |       
+    |       |           |       +---mt19937
+    |       |           |       |       LICENSE.md
+    |       |           |       |       
+    |       |           |       +---pcg64
+    |       |           |       |       LICENSE.md
+    |       |           |       |       
+    |       |           |       +---philox
+    |       |           |       |       LICENSE.md
+    |       |           |       |       
+    |       |           |       +---sfc64
+    |       |           |       |       LICENSE.md
+    |       |           |       |       
+    |       |           |       \---splitmix64
+    |       |           |               LICENSE.md
+    |       |           |               
+    |       |           \---_core
+    |       |               +---include
+    |       |               |   \---numpy
+    |       |               |       \---libdivide
+    |       |               |               LICENSE.txt
+    |       |               |               
+    |       |               \---src
+    |       |                   +---common
+    |       |                   |   \---pythoncapi-compat
+    |       |                   |           COPYING
+    |       |                   |           
+    |       |                   +---highway
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---multiarray
+    |       |                   |       dragon4_LICENSE.txt
+    |       |                   |       
+    |       |                   +---npysort
+    |       |                   |   \---x86-simd-sort
+    |       |                   |           LICENSE.md
+    |       |                   |           
+    |       |                   \---umath
+    |       |                       \---svml
+    |       |                               LICENSE
+    |       |                               
+    |       +---numpy.libs
+    |       |       libscipy_openblas64_-ed4f167a5330424524f45258e7ca2c8d.dll
+    |       |       msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll
+    |       |       
+    |       +---packaging
+    |       |   |   dependency_groups.py
+    |       |   |   direct_url.py
+    |       |   |   errors.py
+    |       |   |   markers.py
+    |       |   |   metadata.py
+    |       |   |   py.typed
+    |       |   |   pylock.py
+    |       |   |   ranges.py
+    |       |   |   requirements.py
+    |       |   |   specifiers.py
+    |       |   |   tags.py
+    |       |   |   utils.py
+    |       |   |   version.py
+    |       |   |   _elffile.py
+    |       |   |   _manylinux.py
+    |       |   |   _musllinux.py
+    |       |   |   _parser.py
+    |       |   |   _ranges.py
+    |       |   |   _structures.py
+    |       |   |   _tokenizer.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---licenses
+    |       |   |   |   _spdx.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           _spdx.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           dependency_groups.cpython-313.pyc
+    |       |           direct_url.cpython-313.pyc

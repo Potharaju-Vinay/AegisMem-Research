@@ -1,0 +1,150 @@
+    |       |   |   +---tseries
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---frequencies
+    |       |   |   |   |   |   test_frequencies.py
+    |       |   |   |   |   |   test_freq_code.py
+    |       |   |   |   |   |   test_inference.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_frequencies.cpython-313.pyc
+    |       |   |   |   |           test_freq_code.cpython-313.pyc
+    |       |   |   |   |           test_inference.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---holiday
+    |       |   |   |   |   |   test_calendar.py
+    |       |   |   |   |   |   test_federal.py
+    |       |   |   |   |   |   test_holiday.py
+    |       |   |   |   |   |   test_observance.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_calendar.cpython-313.pyc
+    |       |   |   |   |           test_federal.cpython-313.pyc
+    |       |   |   |   |           test_holiday.cpython-313.pyc
+    |       |   |   |   |           test_observance.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---offsets
+    |       |   |   |   |   |   common.py
+    |       |   |   |   |   |   test_business_day.py
+    |       |   |   |   |   |   test_business_halfyear.py
+    |       |   |   |   |   |   test_business_hour.py
+    |       |   |   |   |   |   test_business_month.py
+    |       |   |   |   |   |   test_business_quarter.py
+    |       |   |   |   |   |   test_business_year.py
+    |       |   |   |   |   |   test_common.py
+    |       |   |   |   |   |   test_custom_business_day.py
+    |       |   |   |   |   |   test_custom_business_hour.py
+    |       |   |   |   |   |   test_custom_business_month.py
+    |       |   |   |   |   |   test_dst.py
+    |       |   |   |   |   |   test_easter.py
+    |       |   |   |   |   |   test_fiscal.py
+    |       |   |   |   |   |   test_halfyear.py
+    |       |   |   |   |   |   test_index.py
+    |       |   |   |   |   |   test_month.py
+    |       |   |   |   |   |   test_offsets.py
+    |       |   |   |   |   |   test_offsets_properties.py
+    |       |   |   |   |   |   test_quarter.py
+    |       |   |   |   |   |   test_ticks.py
+    |       |   |   |   |   |   test_week.py
+    |       |   |   |   |   |   test_year.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           common.cpython-313.pyc
+    |       |   |   |   |           test_business_day.cpython-313.pyc
+    |       |   |   |   |           test_business_halfyear.cpython-313.pyc
+    |       |   |   |   |           test_business_hour.cpython-313.pyc
+    |       |   |   |   |           test_business_month.cpython-313.pyc
+    |       |   |   |   |           test_business_quarter.cpython-313.pyc
+    |       |   |   |   |           test_business_year.cpython-313.pyc
+    |       |   |   |   |           test_common.cpython-313.pyc
+    |       |   |   |   |           test_custom_business_day.cpython-313.pyc
+    |       |   |   |   |           test_custom_business_hour.cpython-313.pyc
+    |       |   |   |   |           test_custom_business_month.cpython-313.pyc
+    |       |   |   |   |           test_dst.cpython-313.pyc
+    |       |   |   |   |           test_easter.cpython-313.pyc
+    |       |   |   |   |           test_fiscal.cpython-313.pyc
+    |       |   |   |   |           test_halfyear.cpython-313.pyc
+    |       |   |   |   |           test_index.cpython-313.pyc
+    |       |   |   |   |           test_month.cpython-313.pyc
+    |       |   |   |   |           test_offsets.cpython-313.pyc
+    |       |   |   |   |           test_offsets_properties.cpython-313.pyc
+    |       |   |   |   |           test_quarter.cpython-313.pyc
+    |       |   |   |   |           test_ticks.cpython-313.pyc
+    |       |   |   |   |           test_week.cpython-313.pyc
+    |       |   |   |   |           test_year.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---tslibs
+    |       |   |   |   |   test_api.py
+    |       |   |   |   |   test_array_to_datetime.py
+    |       |   |   |   |   test_ccalendar.py
+    |       |   |   |   |   test_conversion.py
+    |       |   |   |   |   test_fields.py
+    |       |   |   |   |   test_libfrequencies.py
+    |       |   |   |   |   test_liboffsets.py
+    |       |   |   |   |   test_npy_units.py
+    |       |   |   |   |   test_np_datetime.py
+    |       |   |   |   |   test_parse_iso8601.py
+    |       |   |   |   |   test_parsing.py
+    |       |   |   |   |   test_period.py
+    |       |   |   |   |   test_resolution.py
+    |       |   |   |   |   test_strptime.py
+    |       |   |   |   |   test_timedeltas.py
+    |       |   |   |   |   test_timezones.py
+    |       |   |   |   |   test_to_offset.py
+    |       |   |   |   |   test_tzconversion.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_api.cpython-313.pyc
+    |       |   |   |           test_array_to_datetime.cpython-313.pyc
+    |       |   |   |           test_ccalendar.cpython-313.pyc
+    |       |   |   |           test_conversion.cpython-313.pyc
+    |       |   |   |           test_fields.cpython-313.pyc
+    |       |   |   |           test_libfrequencies.cpython-313.pyc
+    |       |   |   |           test_liboffsets.cpython-313.pyc
+    |       |   |   |           test_npy_units.cpython-313.pyc
+    |       |   |   |           test_np_datetime.cpython-313.pyc
+    |       |   |   |           test_parse_iso8601.cpython-313.pyc
+    |       |   |   |           test_parsing.cpython-313.pyc
+    |       |   |   |           test_period.cpython-313.pyc
+    |       |   |   |           test_resolution.cpython-313.pyc
+    |       |   |   |           test_strptime.cpython-313.pyc
+    |       |   |   |           test_timedeltas.cpython-313.pyc
+    |       |   |   |           test_timezones.cpython-313.pyc
+    |       |   |   |           test_to_offset.cpython-313.pyc
+    |       |   |   |           test_tzconversion.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---util
+    |       |   |   |   |   conftest.py
+    |       |   |   |   |   test_assert_almost_equal.py
+    |       |   |   |   |   test_assert_attr_equal.py
+    |       |   |   |   |   test_assert_categorical_equal.py
+    |       |   |   |   |   test_assert_extension_array_equal.py
+    |       |   |   |   |   test_assert_frame_equal.py
+    |       |   |   |   |   test_assert_index_equal.py
+    |       |   |   |   |   test_assert_interval_array_equal.py
+    |       |   |   |   |   test_assert_numpy_array_equal.py
+    |       |   |   |   |   test_assert_produces_warning.py
+    |       |   |   |   |   test_assert_series_equal.py
+    |       |   |   |   |   test_deprecate.py
+    |       |   |   |   |   test_deprecate_kwarg.py
+    |       |   |   |   |   test_deprecate_nonkeyword_arguments.py
+    |       |   |   |   |   test_doc.py
+    |       |   |   |   |   test_hashing.py
+    |       |   |   |   |   test_numba.py
+    |       |   |   |   |   test_rewrite_warning.py
+    |       |   |   |   |   test_shares_memory.py
+    |       |   |   |   |   test_show_versions.py
+    |       |   |   |   |   test_util.py
+    |       |   |   |   |   test_validate_args.py
+    |       |   |   |   |   test_validate_args_and_kwargs.py

@@ -1,0 +1,150 @@
+    |       |   |   |   test_legend.py
+    |       |   |   |   test_lines.py
+    |       |   |   |   test_marker.py
+    |       |   |   |   test_mathtext.py
+    |       |   |   |   test_matplotlib.py
+    |       |   |   |   test_mlab.py
+    |       |   |   |   test_multivariate_colormaps.py
+    |       |   |   |   test_offsetbox.py
+    |       |   |   |   test_patches.py
+    |       |   |   |   test_path.py
+    |       |   |   |   test_patheffects.py
+    |       |   |   |   test_pickle.py
+    |       |   |   |   test_png.py
+    |       |   |   |   test_polar.py
+    |       |   |   |   test_preprocess_data.py
+    |       |   |   |   test_pyplot.py
+    |       |   |   |   test_quiver.py
+    |       |   |   |   test_rcparams.py
+    |       |   |   |   test_sankey.py
+    |       |   |   |   test_scale.py
+    |       |   |   |   test_simplification.py
+    |       |   |   |   test_skew.py
+    |       |   |   |   test_sphinxext.py
+    |       |   |   |   test_spines.py
+    |       |   |   |   test_streamplot.py
+    |       |   |   |   test_style.py
+    |       |   |   |   test_subplots.py
+    |       |   |   |   test_table.py
+    |       |   |   |   test_testing.py
+    |       |   |   |   test_texmanager.py
+    |       |   |   |   test_text.py
+    |       |   |   |   test_textpath.py
+    |       |   |   |   test_ticker.py
+    |       |   |   |   test_tightlayout.py
+    |       |   |   |   test_transforms.py
+    |       |   |   |   test_triangulation.py
+    |       |   |   |   test_type1font.py
+    |       |   |   |   test_units.py
+    |       |   |   |   test_usetex.py
+    |       |   |   |   test_widgets.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           conftest.cpython-313.pyc
+    |       |   |           test_afm.cpython-313.pyc
+    |       |   |           test_agg.cpython-313.pyc
+    |       |   |           test_agg_filter.cpython-313.pyc
+    |       |   |           test_animation.cpython-313.pyc
+    |       |   |           test_api.cpython-313.pyc
+    |       |   |           test_arrow_patches.cpython-313.pyc
+    |       |   |           test_artist.cpython-313.pyc
+    |       |   |           test_axes.cpython-313.pyc
+    |       |   |           test_axis.cpython-313.pyc
+    |       |   |           test_backends_interactive.cpython-313.pyc
+    |       |   |           test_backend_bases.cpython-313.pyc
+    |       |   |           test_backend_cairo.cpython-313.pyc
+    |       |   |           test_backend_gtk3.cpython-313.pyc
+    |       |   |           test_backend_inline.cpython-313.pyc
+    |       |   |           test_backend_macosx.cpython-313.pyc
+    |       |   |           test_backend_nbagg.cpython-313.pyc
+    |       |   |           test_backend_pdf.cpython-313.pyc
+    |       |   |           test_backend_pgf.cpython-313.pyc
+    |       |   |           test_backend_ps.cpython-313.pyc
+    |       |   |           test_backend_qt.cpython-313.pyc
+    |       |   |           test_backend_registry.cpython-313.pyc
+    |       |   |           test_backend_svg.cpython-313.pyc
+    |       |   |           test_backend_template.cpython-313.pyc
+    |       |   |           test_backend_tk.cpython-313.pyc
+    |       |   |           test_backend_tools.cpython-313.pyc
+    |       |   |           test_backend_webagg.cpython-313.pyc
+    |       |   |           test_basic.cpython-313.pyc
+    |       |   |           test_bbox_tight.cpython-313.pyc
+    |       |   |           test_bezier.cpython-313.pyc
+    |       |   |           test_category.cpython-313.pyc
+    |       |   |           test_cbook.cpython-313.pyc
+    |       |   |           test_collections.cpython-313.pyc
+    |       |   |           test_colorbar.cpython-313.pyc
+    |       |   |           test_colors.cpython-313.pyc
+    |       |   |           test_compare_images.cpython-313.pyc
+    |       |   |           test_constrainedlayout.cpython-313.pyc
+    |       |   |           test_container.cpython-313.pyc
+    |       |   |           test_contour.cpython-313.pyc
+    |       |   |           test_cycles.cpython-313.pyc
+    |       |   |           test_dates.cpython-313.pyc
+    |       |   |           test_datetime.cpython-313.pyc
+    |       |   |           test_determinism.cpython-313.pyc
+    |       |   |           test_doc.cpython-313.pyc
+    |       |   |           test_dviread.cpython-313.pyc
+    |       |   |           test_figure.cpython-313.pyc
+    |       |   |           test_fontconfig_pattern.cpython-313.pyc
+    |       |   |           test_font_manager.cpython-313.pyc
+    |       |   |           test_ft2font.cpython-313.pyc
+    |       |   |           test_getattr.cpython-313.pyc
+    |       |   |           test_gridspec.cpython-313.pyc
+    |       |   |           test_image.cpython-313.pyc
+    |       |   |           test_legend.cpython-313.pyc
+    |       |   |           test_lines.cpython-313.pyc
+    |       |   |           test_marker.cpython-313.pyc
+    |       |   |           test_mathtext.cpython-313.pyc
+    |       |   |           test_matplotlib.cpython-313.pyc
+    |       |   |           test_mlab.cpython-313.pyc
+    |       |   |           test_multivariate_colormaps.cpython-313.pyc
+    |       |   |           test_offsetbox.cpython-313.pyc
+    |       |   |           test_patches.cpython-313.pyc
+    |       |   |           test_path.cpython-313.pyc
+    |       |   |           test_patheffects.cpython-313.pyc
+    |       |   |           test_pickle.cpython-313.pyc
+    |       |   |           test_png.cpython-313.pyc
+    |       |   |           test_polar.cpython-313.pyc
+    |       |   |           test_preprocess_data.cpython-313.pyc
+    |       |   |           test_pyplot.cpython-313.pyc
+    |       |   |           test_quiver.cpython-313.pyc
+    |       |   |           test_rcparams.cpython-313.pyc
+    |       |   |           test_sankey.cpython-313.pyc
+    |       |   |           test_scale.cpython-313.pyc
+    |       |   |           test_simplification.cpython-313.pyc
+    |       |   |           test_skew.cpython-313.pyc
+    |       |   |           test_sphinxext.cpython-313.pyc
+    |       |   |           test_spines.cpython-313.pyc
+    |       |   |           test_streamplot.cpython-313.pyc
+    |       |   |           test_style.cpython-313.pyc
+    |       |   |           test_subplots.cpython-313.pyc
+    |       |   |           test_table.cpython-313.pyc
+    |       |   |           test_testing.cpython-313.pyc
+    |       |   |           test_texmanager.cpython-313.pyc
+    |       |   |           test_text.cpython-313.pyc
+    |       |   |           test_textpath.cpython-313.pyc
+    |       |   |           test_ticker.cpython-313.pyc
+    |       |   |           test_tightlayout.cpython-313.pyc
+    |       |   |           test_transforms.cpython-313.pyc
+    |       |   |           test_triangulation.cpython-313.pyc
+    |       |   |           test_type1font.cpython-313.pyc
+    |       |   |           test_units.cpython-313.pyc
+    |       |   |           test_usetex.cpython-313.pyc
+    |       |   |           test_widgets.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---tri
+    |       |   |   |   _triangulation.py
+    |       |   |   |   _triangulation.pyi
+    |       |   |   |   _tricontour.py
+    |       |   |   |   _tricontour.pyi
+    |       |   |   |   _trifinder.py
+    |       |   |   |   _trifinder.pyi
+    |       |   |   |   _triinterpolate.py
+    |       |   |   |   _triinterpolate.pyi
+    |       |   |   |   _tripcolor.py
+    |       |   |   |   _tripcolor.pyi
+    |       |   |   |   _triplot.py
+    |       |   |   |   _triplot.pyi

@@ -1,0 +1,150 @@
+    |       |   |   |           spectral.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---centrality
+    |       |   |   |   |   betweenness.py
+    |       |   |   |   |   betweenness_subset.py
+    |       |   |   |   |   closeness.py
+    |       |   |   |   |   current_flow_betweenness.py
+    |       |   |   |   |   current_flow_betweenness_subset.py
+    |       |   |   |   |   current_flow_closeness.py
+    |       |   |   |   |   degree_alg.py
+    |       |   |   |   |   dispersion.py
+    |       |   |   |   |   eigenvector.py
+    |       |   |   |   |   flow_matrix.py
+    |       |   |   |   |   group.py
+    |       |   |   |   |   harmonic.py
+    |       |   |   |   |   katz.py
+    |       |   |   |   |   laplacian.py
+    |       |   |   |   |   load.py
+    |       |   |   |   |   percolation.py
+    |       |   |   |   |   reaching.py
+    |       |   |   |   |   second_order.py
+    |       |   |   |   |   subgraph_alg.py
+    |       |   |   |   |   trophic.py
+    |       |   |   |   |   voterank_alg.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_betweenness_centrality.py
+    |       |   |   |   |   |   test_betweenness_centrality_subset.py
+    |       |   |   |   |   |   test_closeness_centrality.py
+    |       |   |   |   |   |   test_current_flow_betweenness_centrality.py
+    |       |   |   |   |   |   test_current_flow_betweenness_centrality_subset.py
+    |       |   |   |   |   |   test_current_flow_closeness.py
+    |       |   |   |   |   |   test_degree_centrality.py
+    |       |   |   |   |   |   test_dispersion.py
+    |       |   |   |   |   |   test_eigenvector_centrality.py
+    |       |   |   |   |   |   test_group.py
+    |       |   |   |   |   |   test_harmonic_centrality.py
+    |       |   |   |   |   |   test_katz_centrality.py
+    |       |   |   |   |   |   test_laplacian_centrality.py
+    |       |   |   |   |   |   test_load_centrality.py
+    |       |   |   |   |   |   test_percolation_centrality.py
+    |       |   |   |   |   |   test_reaching.py
+    |       |   |   |   |   |   test_second_order_centrality.py
+    |       |   |   |   |   |   test_subgraph.py
+    |       |   |   |   |   |   test_trophic.py
+    |       |   |   |   |   |   test_voterank.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_betweenness_centrality.cpython-313.pyc
+    |       |   |   |   |           test_betweenness_centrality_subset.cpython-313.pyc
+    |       |   |   |   |           test_closeness_centrality.cpython-313.pyc
+    |       |   |   |   |           test_current_flow_betweenness_centrality.cpython-313.pyc
+    |       |   |   |   |           test_current_flow_betweenness_centrality_subset.cpython-313.pyc
+    |       |   |   |   |           test_current_flow_closeness.cpython-313.pyc
+    |       |   |   |   |           test_degree_centrality.cpython-313.pyc
+    |       |   |   |   |           test_dispersion.cpython-313.pyc
+    |       |   |   |   |           test_eigenvector_centrality.cpython-313.pyc
+    |       |   |   |   |           test_group.cpython-313.pyc
+    |       |   |   |   |           test_harmonic_centrality.cpython-313.pyc
+    |       |   |   |   |           test_katz_centrality.cpython-313.pyc
+    |       |   |   |   |           test_laplacian_centrality.cpython-313.pyc
+    |       |   |   |   |           test_load_centrality.cpython-313.pyc
+    |       |   |   |   |           test_percolation_centrality.cpython-313.pyc
+    |       |   |   |   |           test_reaching.cpython-313.pyc
+    |       |   |   |   |           test_second_order_centrality.cpython-313.pyc
+    |       |   |   |   |           test_subgraph.cpython-313.pyc
+    |       |   |   |   |           test_trophic.cpython-313.pyc
+    |       |   |   |   |           test_voterank.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           betweenness.cpython-313.pyc
+    |       |   |   |           betweenness_subset.cpython-313.pyc
+    |       |   |   |           closeness.cpython-313.pyc
+    |       |   |   |           current_flow_betweenness.cpython-313.pyc
+    |       |   |   |           current_flow_betweenness_subset.cpython-313.pyc
+    |       |   |   |           current_flow_closeness.cpython-313.pyc
+    |       |   |   |           degree_alg.cpython-313.pyc
+    |       |   |   |           dispersion.cpython-313.pyc
+    |       |   |   |           eigenvector.cpython-313.pyc
+    |       |   |   |           flow_matrix.cpython-313.pyc
+    |       |   |   |           group.cpython-313.pyc
+    |       |   |   |           harmonic.cpython-313.pyc
+    |       |   |   |           katz.cpython-313.pyc
+    |       |   |   |           laplacian.cpython-313.pyc
+    |       |   |   |           load.cpython-313.pyc
+    |       |   |   |           percolation.cpython-313.pyc
+    |       |   |   |           reaching.cpython-313.pyc
+    |       |   |   |           second_order.cpython-313.pyc
+    |       |   |   |           subgraph_alg.cpython-313.pyc
+    |       |   |   |           trophic.cpython-313.pyc
+    |       |   |   |           voterank_alg.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---coloring
+    |       |   |   |   |   equitable_coloring.py
+    |       |   |   |   |   greedy_coloring.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_coloring.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_coloring.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           equitable_coloring.cpython-313.pyc
+    |       |   |   |           greedy_coloring.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---community
+    |       |   |   |   |   asyn_fluid.py
+    |       |   |   |   |   bipartitions.py
+    |       |   |   |   |   centrality.py
+    |       |   |   |   |   community_utils.py
+    |       |   |   |   |   divisive.py
+    |       |   |   |   |   kclique.py
+    |       |   |   |   |   label_propagation.py
+    |       |   |   |   |   leiden.py
+    |       |   |   |   |   local.py
+    |       |   |   |   |   louvain.py
+    |       |   |   |   |   lukes.py
+    |       |   |   |   |   modularity_max.py
+    |       |   |   |   |   quality.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_asyn_fluid.py
+    |       |   |   |   |   |   test_bipartitions.py
+    |       |   |   |   |   |   test_centrality.py
+    |       |   |   |   |   |   test_divisive.py
+    |       |   |   |   |   |   test_kclique.py
+    |       |   |   |   |   |   test_label_propagation.py
+    |       |   |   |   |   |   test_leiden.py
+    |       |   |   |   |   |   test_local.py
+    |       |   |   |   |   |   test_louvain.py
+    |       |   |   |   |   |   test_lukes.py
+    |       |   |   |   |   |   test_modularity_max.py
+    |       |   |   |   |   |   test_quality.py
+    |       |   |   |   |   |   test_utils.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_asyn_fluid.cpython-313.pyc
+    |       |   |   |   |           test_bipartitions.cpython-313.pyc

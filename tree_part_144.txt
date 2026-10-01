@@ -1,0 +1,150 @@
+    |       |   |   |   |   +---abstract_interface
+    |       |   |   |   |   |       foo.f90
+    |       |   |   |   |   |       gh18403_mod.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---array_from_pyobj
+    |       |   |   |   |   |       wrapmodule.c
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---assumed_shape
+    |       |   |   |   |   |       .f2py_f2cmap
+    |       |   |   |   |   |       foo_free.f90
+    |       |   |   |   |   |       foo_mod.f90
+    |       |   |   |   |   |       foo_use.f90
+    |       |   |   |   |   |       precision.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---block_docstring
+    |       |   |   |   |   |       foo.f
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---callback
+    |       |   |   |   |   |       foo.f
+    |       |   |   |   |   |       gh17797.f90
+    |       |   |   |   |   |       gh18335.f90
+    |       |   |   |   |   |       gh25211.f
+    |       |   |   |   |   |       gh25211.pyf
+    |       |   |   |   |   |       gh26681.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---cli
+    |       |   |   |   |   |       gh_22819.pyf
+    |       |   |   |   |   |       hi77.f
+    |       |   |   |   |   |       hiworld.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---common
+    |       |   |   |   |   |       block.f
+    |       |   |   |   |   |       gh19161.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---crackfortran
+    |       |   |   |   |   |       accesstype.f90
+    |       |   |   |   |   |       common_with_division.f
+    |       |   |   |   |   |       data_common.f
+    |       |   |   |   |   |       data_multiplier.f
+    |       |   |   |   |   |       data_stmts.f90
+    |       |   |   |   |   |       data_with_comments.f
+    |       |   |   |   |   |       foo_deps.f90
+    |       |   |   |   |   |       gh15035.f
+    |       |   |   |   |   |       gh17859.f
+    |       |   |   |   |   |       gh22648.pyf
+    |       |   |   |   |   |       gh23533.f
+    |       |   |   |   |   |       gh23598.f90
+    |       |   |   |   |   |       gh23598Warn.f90
+    |       |   |   |   |   |       gh23879.f90
+    |       |   |   |   |   |       gh27697.f90
+    |       |   |   |   |   |       gh2848.f90
+    |       |   |   |   |   |       operators.f90
+    |       |   |   |   |   |       privatemod.f90
+    |       |   |   |   |   |       publicmod.f90
+    |       |   |   |   |   |       pubprivmod.f90
+    |       |   |   |   |   |       unicode_comment.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---f2cmap
+    |       |   |   |   |   |       .f2py_f2cmap
+    |       |   |   |   |   |       isoFortranEnvMap.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---inplace
+    |       |   |   |   |   |       foo.f
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---isocintrin
+    |       |   |   |   |   |       isoCtests.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---kind
+    |       |   |   |   |   |       foo.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---mixed
+    |       |   |   |   |   |       foo.f
+    |       |   |   |   |   |       foo_fixed.f90
+    |       |   |   |   |   |       foo_free.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---modules
+    |       |   |   |   |   |   |   module_data_docstring.f90
+    |       |   |   |   |   |   |   use_modules.f90
+    |       |   |   |   |   |   |   
+    |       |   |   |   |   |   +---gh25337
+    |       |   |   |   |   |   |       data.f90
+    |       |   |   |   |   |   |       use_data.f90
+    |       |   |   |   |   |   |       
+    |       |   |   |   |   |   \---gh26920
+    |       |   |   |   |   |           two_mods_with_no_public_entities.f90
+    |       |   |   |   |   |           two_mods_with_one_public_routine.f90
+    |       |   |   |   |   |           
+    |       |   |   |   |   +---negative_bounds
+    |       |   |   |   |   |       issue_20853.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---parameter
+    |       |   |   |   |   |       constant_array.f90
+    |       |   |   |   |   |       constant_both.f90
+    |       |   |   |   |   |       constant_compound.f90
+    |       |   |   |   |   |       constant_integer.f90
+    |       |   |   |   |   |       constant_non_compound.f90
+    |       |   |   |   |   |       constant_real.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---quoted_character
+    |       |   |   |   |   |       foo.f
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---regression
+    |       |   |   |   |   |       AB.inc
+    |       |   |   |   |   |       assignOnlyModule.f90
+    |       |   |   |   |   |       complex_struct_compat.f90
+    |       |   |   |   |   |       complex_struct_compat.pyf
+    |       |   |   |   |   |       datonly.f90
+    |       |   |   |   |   |       f77comments.f
+    |       |   |   |   |   |       f77fixedform.f95
+    |       |   |   |   |   |       f90continuation.f90
+    |       |   |   |   |   |       incfile.f90
+    |       |   |   |   |   |       inout.f90
+    |       |   |   |   |   |       lower_f2py_fortran.f90
+    |       |   |   |   |   |       mod_derived_types.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---return_character
+    |       |   |   |   |   |       foo77.f
+    |       |   |   |   |   |       foo90.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---return_complex
+    |       |   |   |   |   |       foo77.f
+    |       |   |   |   |   |       foo90.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---return_integer
+    |       |   |   |   |   |       foo77.f
+    |       |   |   |   |   |       foo90.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---return_logical
+    |       |   |   |   |   |       foo77.f
+    |       |   |   |   |   |       foo90.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---return_real
+    |       |   |   |   |   |       foo77.f
+    |       |   |   |   |   |       foo90.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---routines
+    |       |   |   |   |   |       funcfortranname.f
+    |       |   |   |   |   |       funcfortranname.pyf
+    |       |   |   |   |   |       subrout.f
+    |       |   |   |   |   |       subrout.pyf
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---size
+    |       |   |   |   |   |       foo.f90
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---string
+    |       |   |   |   |   |       char.f90
+    |       |   |   |   |   |       fixed_string.f90
+    |       |   |   |   |   |       gh24008.f
+    |       |   |   |   |   |       gh24662.f90
+    |       |   |   |   |   |       gh25286.f90

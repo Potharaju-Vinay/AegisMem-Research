@@ -1,0 +1,150 @@
+|   |   |   |   |   |   |   barStackSelectors.d.ts
+|   |   |   |   |   |   |   brushSelectors.d.ts
+|   |   |   |   |   |   |   containerSelectors.d.ts
+|   |   |   |   |   |   |   dataSelectors.d.ts
+|   |   |   |   |   |   |   funnelSelectors.d.ts
+|   |   |   |   |   |   |   graphicalItemSelectors.d.ts
+|   |   |   |   |   |   |   legendSelectors.d.ts
+|   |   |   |   |   |   |   lineSelectors.d.ts
+|   |   |   |   |   |   |   numberDomainEqualityCheck.d.ts
+|   |   |   |   |   |   |   pickAxisId.d.ts
+|   |   |   |   |   |   |   pickAxisType.d.ts
+|   |   |   |   |   |   |   pieSelectors.d.ts
+|   |   |   |   |   |   |   polarAxisSelectors.d.ts
+|   |   |   |   |   |   |   polarGridSelectors.d.ts
+|   |   |   |   |   |   |   polarScaleSelectors.d.ts
+|   |   |   |   |   |   |   polarSelectors.d.ts
+|   |   |   |   |   |   |   radarSelectors.d.ts
+|   |   |   |   |   |   |   radialBarSelectors.d.ts
+|   |   |   |   |   |   |   rootPropsSelectors.d.ts
+|   |   |   |   |   |   |   scatterSelectors.d.ts
+|   |   |   |   |   |   |   selectActivePropsFromChartPointer.d.ts
+|   |   |   |   |   |   |   selectAllAxes.d.ts
+|   |   |   |   |   |   |   selectChartOffset.d.ts
+|   |   |   |   |   |   |   selectChartOffsetInternal.d.ts
+|   |   |   |   |   |   |   selectLegendArea.d.ts
+|   |   |   |   |   |   |   selectors.d.ts
+|   |   |   |   |   |   |   selectPlotArea.d.ts
+|   |   |   |   |   |   |   selectTooltipAxisId.d.ts
+|   |   |   |   |   |   |   selectTooltipAxisType.d.ts
+|   |   |   |   |   |   |   selectTooltipEventType.d.ts
+|   |   |   |   |   |   |   selectTooltipPayloadSearcher.d.ts
+|   |   |   |   |   |   |   selectTooltipSettings.d.ts
+|   |   |   |   |   |   |   selectTooltipState.d.ts
+|   |   |   |   |   |   |   tooltipSelectors.d.ts
+|   |   |   |   |   |   |   touchSelectors.d.ts
+|   |   |   |   |   |   |   
+|   |   |   |   |   |   \---combiners
+|   |   |   |   |   |           combineActiveLabel.d.ts
+|   |   |   |   |   |           combineActiveTooltipIndex.d.ts
+|   |   |   |   |   |           combineAllBarPositions.d.ts
+|   |   |   |   |   |           combineAxisRangeWithReverse.d.ts
+|   |   |   |   |   |           combineBarPosition.d.ts
+|   |   |   |   |   |           combineBarSizeList.d.ts
+|   |   |   |   |   |           combineCheckedDomain.d.ts
+|   |   |   |   |   |           combineConfiguredScale.d.ts
+|   |   |   |   |   |           combineCoordinateForDefaultIndex.d.ts
+|   |   |   |   |   |           combineDisplayedStackedData.d.ts
+|   |   |   |   |   |           combineInverseScaleFunction.d.ts
+|   |   |   |   |   |           combineRealScaleType.d.ts
+|   |   |   |   |   |           combineStackedData.d.ts
+|   |   |   |   |   |           combineTooltipInteractionState.d.ts
+|   |   |   |   |   |           combineTooltipPayload.d.ts
+|   |   |   |   |   |           combineTooltipPayloadConfigurations.d.ts
+|   |   |   |   |   |           
+|   |   |   |   |   \---types
+|   |   |   |   |           AreaSettings.d.ts
+|   |   |   |   |           BarSettings.d.ts
+|   |   |   |   |           LineSettings.d.ts
+|   |   |   |   |           PieSettings.d.ts
+|   |   |   |   |           RadarSettings.d.ts
+|   |   |   |   |           RadialBarSettings.d.ts
+|   |   |   |   |           ScatterSettings.d.ts
+|   |   |   |   |           StackedGraphicalItem.d.ts
+|   |   |   |   |           
+|   |   |   |   +---synchronisation
+|   |   |   |   |       syncSelectors.d.ts
+|   |   |   |   |       types.d.ts
+|   |   |   |   |       useChartSynchronisation.d.ts
+|   |   |   |   |       
+|   |   |   |   +---theme
+|   |   |   |   |       darkTheme.d.ts
+|   |   |   |   |       graphicalItemIdentity.d.ts
+|   |   |   |   |       legacyTheme.d.ts
+|   |   |   |   |       lightTheme.d.ts
+|   |   |   |   |       RechartsTheme.d.ts
+|   |   |   |   |       RechartsThemeContext.d.ts
+|   |   |   |   |       
+|   |   |   |   +---util
+|   |   |   |   |   |   ActiveShapeUtils.d.ts
+|   |   |   |   |   |   axisPropsAreEqual.d.ts
+|   |   |   |   |   |   BarUtils.d.ts
+|   |   |   |   |   |   CartesianUtils.d.ts
+|   |   |   |   |   |   ChartUtils.d.ts
+|   |   |   |   |   |   Constants.d.ts
+|   |   |   |   |   |   createCartesianCharts.d.ts
+|   |   |   |   |   |   createEventProxy.d.ts
+|   |   |   |   |   |   createPolarCharts.d.ts
+|   |   |   |   |   |   CssPrefixUtils.d.ts
+|   |   |   |   |   |   DataUtils.d.ts
+|   |   |   |   |   |   DOMUtils.d.ts
+|   |   |   |   |   |   Events.d.ts
+|   |   |   |   |   |   excludeEventProps.d.ts
+|   |   |   |   |   |   FunnelUtils.d.ts
+|   |   |   |   |   |   getActiveCoordinate.d.ts
+|   |   |   |   |   |   getAxisTypeBasedOnLayout.d.ts
+|   |   |   |   |   |   getClassNameFromUnknown.d.ts
+|   |   |   |   |   |   getEveryNth.d.ts
+|   |   |   |   |   |   getRadiusAndStrokeWidthFromDot.d.ts
+|   |   |   |   |   |   getRelativeCoordinate.d.ts
+|   |   |   |   |   |   getSliced.d.ts
+|   |   |   |   |   |   Global.d.ts
+|   |   |   |   |   |   IfOverflow.d.ts
+|   |   |   |   |   |   isDomainSpecifiedByUser.d.ts
+|   |   |   |   |   |   isWellBehavedNumber.d.ts
+|   |   |   |   |   |   LogUtils.d.ts
+|   |   |   |   |   |   LRUCache.d.ts
+|   |   |   |   |   |   PolarUtils.d.ts
+|   |   |   |   |   |   propsAreEqual.d.ts
+|   |   |   |   |   |   RadialBarUtils.d.ts
+|   |   |   |   |   |   ReactUtils.d.ts
+|   |   |   |   |   |   ReduceCSSCalc.d.ts
+|   |   |   |   |   |   resolveDefaultProps.d.ts
+|   |   |   |   |   |   round.d.ts
+|   |   |   |   |   |   ScatterUtils.d.ts
+|   |   |   |   |   |   svgPropertiesAndEvents.d.ts
+|   |   |   |   |   |   svgPropertiesNoEvents.d.ts
+|   |   |   |   |   |   TickUtils.d.ts
+|   |   |   |   |   |   typedDataKey.d.ts
+|   |   |   |   |   |   types.d.ts
+|   |   |   |   |   |   useAnimationId.d.ts
+|   |   |   |   |   |   useElementOffset.d.ts
+|   |   |   |   |   |   useId.d.ts
+|   |   |   |   |   |   usePrefersReducedMotion.d.ts
+|   |   |   |   |   |   useReportScale.d.ts
+|   |   |   |   |   |   useUniqueId.d.ts
+|   |   |   |   |   |   XAxisUtils.d.ts
+|   |   |   |   |   |   YAxisUtils.d.ts
+|   |   |   |   |   |   
+|   |   |   |   |   +---cursor
+|   |   |   |   |   |       getCursorPoints.d.ts
+|   |   |   |   |   |       getCursorRectangle.d.ts
+|   |   |   |   |   |       getRadialCursorPoints.d.ts
+|   |   |   |   |   |       
+|   |   |   |   |   +---payload
+|   |   |   |   |   |       getUniqPayload.d.ts
+|   |   |   |   |   |       
+|   |   |   |   |   +---scale
+|   |   |   |   |   |   |   CartesianScaleHelper.d.ts
+|   |   |   |   |   |   |   createCategoricalInverse.d.ts
+|   |   |   |   |   |   |   CustomScaleDefinition.d.ts
+|   |   |   |   |   |   |   getNiceTickValues.d.ts
+|   |   |   |   |   |   |   index.d.ts
+|   |   |   |   |   |   |   RechartsScale.d.ts
+|   |   |   |   |   |   |   
+|   |   |   |   |   |   \---util
+|   |   |   |   |   |           arithmetic.d.ts
+|   |   |   |   |   |           
+|   |   |   |   |   +---stacks
+|   |   |   |   |   |       getStackSeriesIdentifier.d.ts
+|   |   |   |   |   |       stackTypes.d.ts

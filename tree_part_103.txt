@@ -1,0 +1,150 @@
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   yarn.lock
+|   |   |   |   
+|   |   |   \---dist
+|   |   |       +---es5
+|   |   |       |       uri.all.d.ts
+|   |   |       |       uri.all.js
+|   |   |       |       uri.all.js.map
+|   |   |       |       uri.all.min.d.ts
+|   |   |       |       uri.all.min.js
+|   |   |       |       uri.all.min.js.map
+|   |   |       |       
+|   |   |       \---esnext
+|   |   |           |   index.d.ts
+|   |   |           |   index.js
+|   |   |           |   index.js.map
+|   |   |           |   regexps-iri.d.ts
+|   |   |           |   regexps-iri.js
+|   |   |           |   regexps-iri.js.map
+|   |   |           |   regexps-uri.d.ts
+|   |   |           |   regexps-uri.js
+|   |   |           |   regexps-uri.js.map
+|   |   |           |   uri.d.ts
+|   |   |           |   uri.js
+|   |   |           |   uri.js.map
+|   |   |           |   util.d.ts
+|   |   |           |   util.js
+|   |   |           |   util.js.map
+|   |   |           |   
+|   |   |           \---schemes
+|   |   |                   http.d.ts
+|   |   |                   http.js
+|   |   |                   http.js.map
+|   |   |                   https.d.ts
+|   |   |                   https.js
+|   |   |                   https.js.map
+|   |   |                   mailto.d.ts
+|   |   |                   mailto.js
+|   |   |                   mailto.js.map
+|   |   |                   urn-uuid.d.ts
+|   |   |                   urn-uuid.js
+|   |   |                   urn-uuid.js.map
+|   |   |                   urn.d.ts
+|   |   |                   urn.js
+|   |   |                   urn.js.map
+|   |   |                   ws.d.ts
+|   |   |                   ws.js
+|   |   |                   ws.js.map
+|   |   |                   wss.d.ts
+|   |   |                   wss.js
+|   |   |                   wss.js.map
+|   |   |                   
+|   |   +---use-sync-external-store
+|   |   |   |   index.js
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   with-selector.js
+|   |   |   |   
+|   |   |   +---cjs
+|   |   |   |   |   use-sync-external-store-shim.development.js
+|   |   |   |   |   use-sync-external-store-shim.native.development.js
+|   |   |   |   |   use-sync-external-store-shim.native.production.js
+|   |   |   |   |   use-sync-external-store-shim.production.js
+|   |   |   |   |   use-sync-external-store-with-selector.development.js
+|   |   |   |   |   use-sync-external-store-with-selector.production.js
+|   |   |   |   |   use-sync-external-store.development.js
+|   |   |   |   |   use-sync-external-store.production.js
+|   |   |   |   |   
+|   |   |   |   \---use-sync-external-store-shim
+|   |   |   |           with-selector.development.js
+|   |   |   |           with-selector.production.js
+|   |   |   |           
+|   |   |   \---shim
+|   |   |           index.js
+|   |   |           index.native.js
+|   |   |           with-selector.js
+|   |   |           
+|   |   +---victory-vendor
+|   |   |   |   CHANGELOG.md
+|   |   |   |   d3-array.d.ts
+|   |   |   |   d3-array.js
+|   |   |   |   d3-ease.d.ts
+|   |   |   |   d3-ease.js
+|   |   |   |   d3-interpolate.d.ts
+|   |   |   |   d3-interpolate.js
+|   |   |   |   d3-scale.d.ts
+|   |   |   |   d3-scale.js
+|   |   |   |   d3-shape.d.ts
+|   |   |   |   d3-shape.js
+|   |   |   |   d3-time.d.ts
+|   |   |   |   d3-time.js
+|   |   |   |   d3-timer.d.ts
+|   |   |   |   d3-timer.js
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---es
+|   |   |   |       d3-array.js
+|   |   |   |       d3-color.js
+|   |   |   |       d3-ease.js
+|   |   |   |       d3-format.js
+|   |   |   |       d3-interpolate.js
+|   |   |   |       d3-path.js
+|   |   |   |       d3-scale.js
+|   |   |   |       d3-shape.js
+|   |   |   |       d3-time-format.js
+|   |   |   |       d3-time.js
+|   |   |   |       d3-timer.js
+|   |   |   |       d3-voronoi.js
+|   |   |   |       internmap.js
+|   |   |   |       
+|   |   |   +---lib
+|   |   |   |       d3-array.js
+|   |   |   |       d3-color.js
+|   |   |   |       d3-ease.js
+|   |   |   |       d3-format.js
+|   |   |   |       d3-interpolate.js
+|   |   |   |       d3-path.js
+|   |   |   |       d3-scale.js
+|   |   |   |       d3-shape.js
+|   |   |   |       d3-time-format.js
+|   |   |   |       d3-time.js
+|   |   |   |       d3-timer.js
+|   |   |   |       d3-voronoi.js
+|   |   |   |       internmap.js
+|   |   |   |       
+|   |   |   \---lib-vendor
+|   |   |       +---d3-array
+|   |   |       |   |   LICENSE
+|   |   |       |   |   
+|   |   |       |   \---src
+|   |   |       |       |   array.js
+|   |   |       |       |   ascending.js
+|   |   |       |       |   bin.js
+|   |   |       |       |   bisect.js
+|   |   |       |       |   bisector.js
+|   |   |       |       |   constant.js
+|   |   |       |       |   count.js
+|   |   |       |       |   cross.js
+|   |   |       |       |   cumsum.js
+|   |   |       |       |   descending.js
+|   |   |       |       |   deviation.js
+|   |   |       |       |   difference.js
+|   |   |       |       |   disjoint.js
+|   |   |       |       |   every.js
+|   |   |       |       |   extent.js
+|   |   |       |       |   filter.js
+|   |   |       |       |   fsum.js

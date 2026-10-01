@@ -1,0 +1,150 @@
+|   |   |   |   |       |   external.ts
+|   |   |   |   |       |   in-out.ts
+|   |   |   |   |       |   index.ts
+|   |   |   |   |       |   iso.ts
+|   |   |   |   |       |   parse.ts
+|   |   |   |   |       |   schemas.ts
+|   |   |   |   |       |   
+|   |   |   |   |       \---tests
+|   |   |   |   |               apply.test.ts
+|   |   |   |   |               assignability.test.ts
+|   |   |   |   |               brand.test.ts
+|   |   |   |   |               checks.test.ts
+|   |   |   |   |               codec.test.ts
+|   |   |   |   |               computed.test.ts
+|   |   |   |   |               cyclic-data.test.ts
+|   |   |   |   |               deep-partial.test.ts
+|   |   |   |   |               error.test.ts
+|   |   |   |   |               functions.test.ts
+|   |   |   |   |               index.test.ts
+|   |   |   |   |               number.test.ts
+|   |   |   |   |               object.test.ts
+|   |   |   |   |               prototypes.test.ts
+|   |   |   |   |               recursive-types.test.ts
+|   |   |   |   |               standard-schema.test.ts
+|   |   |   |   |               string.test.ts
+|   |   |   |   |               
+|   |   |   |   \---v4-mini
+|   |   |   |           index.ts
+|   |   |   |           
+|   |   |   +---v3
+|   |   |   |   |   errors.cjs
+|   |   |   |   |   errors.d.cts
+|   |   |   |   |   errors.d.ts
+|   |   |   |   |   errors.js
+|   |   |   |   |   external.cjs
+|   |   |   |   |   external.d.cts
+|   |   |   |   |   external.d.ts
+|   |   |   |   |   external.js
+|   |   |   |   |   index.cjs
+|   |   |   |   |   index.d.cts
+|   |   |   |   |   index.d.ts
+|   |   |   |   |   index.js
+|   |   |   |   |   package.json
+|   |   |   |   |   standard-schema.cjs
+|   |   |   |   |   standard-schema.d.cts
+|   |   |   |   |   standard-schema.d.ts
+|   |   |   |   |   standard-schema.js
+|   |   |   |   |   types.cjs
+|   |   |   |   |   types.d.cts
+|   |   |   |   |   types.d.ts
+|   |   |   |   |   types.js
+|   |   |   |   |   ZodError.cjs
+|   |   |   |   |   ZodError.d.cts
+|   |   |   |   |   ZodError.d.ts
+|   |   |   |   |   ZodError.js
+|   |   |   |   |   
+|   |   |   |   +---helpers
+|   |   |   |   |       enumUtil.cjs
+|   |   |   |   |       enumUtil.d.cts
+|   |   |   |   |       enumUtil.d.ts
+|   |   |   |   |       enumUtil.js
+|   |   |   |   |       errorUtil.cjs
+|   |   |   |   |       errorUtil.d.cts
+|   |   |   |   |       errorUtil.d.ts
+|   |   |   |   |       errorUtil.js
+|   |   |   |   |       parseUtil.cjs
+|   |   |   |   |       parseUtil.d.cts
+|   |   |   |   |       parseUtil.d.ts
+|   |   |   |   |       parseUtil.js
+|   |   |   |   |       partialUtil.cjs
+|   |   |   |   |       partialUtil.d.cts
+|   |   |   |   |       partialUtil.d.ts
+|   |   |   |   |       partialUtil.js
+|   |   |   |   |       typeAliases.cjs
+|   |   |   |   |       typeAliases.d.cts
+|   |   |   |   |       typeAliases.d.ts
+|   |   |   |   |       typeAliases.js
+|   |   |   |   |       util.cjs
+|   |   |   |   |       util.d.cts
+|   |   |   |   |       util.d.ts
+|   |   |   |   |       util.js
+|   |   |   |   |       
+|   |   |   |   \---locales
+|   |   |   |           en.cjs
+|   |   |   |           en.d.cts
+|   |   |   |           en.d.ts
+|   |   |   |           en.js
+|   |   |   |           
+|   |   |   +---v4
+|   |   |   |   |   index.cjs
+|   |   |   |   |   index.d.cts
+|   |   |   |   |   index.d.ts
+|   |   |   |   |   index.js
+|   |   |   |   |   package.json
+|   |   |   |   |   
+|   |   |   |   +---classic
+|   |   |   |   |       checks.cjs
+|   |   |   |   |       checks.d.cts
+|   |   |   |   |       checks.d.ts
+|   |   |   |   |       checks.js
+|   |   |   |   |       coerce.cjs
+|   |   |   |   |       coerce.d.cts
+|   |   |   |   |       coerce.d.ts
+|   |   |   |   |       coerce.js
+|   |   |   |   |       compat.cjs
+|   |   |   |   |       compat.d.cts
+|   |   |   |   |       compat.d.ts
+|   |   |   |   |       compat.js
+|   |   |   |   |       deep-partial.cjs
+|   |   |   |   |       deep-partial.d.cts
+|   |   |   |   |       deep-partial.d.ts
+|   |   |   |   |       deep-partial.js
+|   |   |   |   |       errors.cjs
+|   |   |   |   |       errors.d.cts
+|   |   |   |   |       errors.d.ts
+|   |   |   |   |       errors.js
+|   |   |   |   |       external.cjs
+|   |   |   |   |       external.d.cts
+|   |   |   |   |       external.d.ts
+|   |   |   |   |       external.js
+|   |   |   |   |       from-json-schema.cjs
+|   |   |   |   |       from-json-schema.d.cts
+|   |   |   |   |       from-json-schema.d.ts
+|   |   |   |   |       from-json-schema.js
+|   |   |   |   |       in-out.cjs
+|   |   |   |   |       in-out.d.cts
+|   |   |   |   |       in-out.d.ts
+|   |   |   |   |       in-out.js
+|   |   |   |   |       index.cjs
+|   |   |   |   |       index.d.cts
+|   |   |   |   |       index.d.ts
+|   |   |   |   |       index.js
+|   |   |   |   |       iso.cjs
+|   |   |   |   |       iso.d.cts
+|   |   |   |   |       iso.d.ts
+|   |   |   |   |       iso.js
+|   |   |   |   |       package.json
+|   |   |   |   |       parse.cjs
+|   |   |   |   |       parse.d.cts
+|   |   |   |   |       parse.d.ts
+|   |   |   |   |       parse.js
+|   |   |   |   |       schemas.cjs
+|   |   |   |   |       schemas.d.cts
+|   |   |   |   |       schemas.d.ts
+|   |   |   |   |       schemas.js
+|   |   |   |   |       
+|   |   |   |   +---core
+|   |   |   |   |       api.cjs
+|   |   |   |   |       api.d.cts
+|   |   |   |   |       api.d.ts

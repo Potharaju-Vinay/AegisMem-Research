@@ -1,0 +1,150 @@
+    |       |   |   |   |   |   test_construct_from_scalar.py
+    |       |   |   |   |   |   test_construct_ndarray.py
+    |       |   |   |   |   |   test_construct_object_arr.py
+    |       |   |   |   |   |   test_dict_compat.py
+    |       |   |   |   |   |   test_downcast.py
+    |       |   |   |   |   |   test_find_common_type.py
+    |       |   |   |   |   |   test_infer_datetimelike.py
+    |       |   |   |   |   |   test_infer_dtype.py
+    |       |   |   |   |   |   test_promote.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_box_unbox.cpython-313.pyc
+    |       |   |   |   |           test_can_hold_element.cpython-313.pyc
+    |       |   |   |   |           test_construct_from_scalar.cpython-313.pyc
+    |       |   |   |   |           test_construct_ndarray.cpython-313.pyc
+    |       |   |   |   |           test_construct_object_arr.cpython-313.pyc
+    |       |   |   |   |           test_dict_compat.cpython-313.pyc
+    |       |   |   |   |           test_downcast.cpython-313.pyc
+    |       |   |   |   |           test_find_common_type.cpython-313.pyc
+    |       |   |   |   |           test_infer_datetimelike.cpython-313.pyc
+    |       |   |   |   |           test_infer_dtype.cpython-313.pyc
+    |       |   |   |   |           test_promote.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_common.cpython-313.pyc
+    |       |   |   |           test_concat.cpython-313.pyc
+    |       |   |   |           test_dtypes.cpython-313.pyc
+    |       |   |   |           test_generic.cpython-313.pyc
+    |       |   |   |           test_inference.cpython-313.pyc
+    |       |   |   |           test_missing.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---extension
+    |       |   |   |   |   conftest.py
+    |       |   |   |   |   test_arrow.py
+    |       |   |   |   |   test_categorical.py
+    |       |   |   |   |   test_common.py
+    |       |   |   |   |   test_datetime.py
+    |       |   |   |   |   test_extension.py
+    |       |   |   |   |   test_interval.py
+    |       |   |   |   |   test_masked.py
+    |       |   |   |   |   test_numpy.py
+    |       |   |   |   |   test_period.py
+    |       |   |   |   |   test_sparse.py
+    |       |   |   |   |   test_string.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---array_with_attr
+    |       |   |   |   |   |   array.py
+    |       |   |   |   |   |   test_array_with_attr.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           array.cpython-313.pyc
+    |       |   |   |   |           test_array_with_attr.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---base
+    |       |   |   |   |   |   accumulate.py
+    |       |   |   |   |   |   base.py
+    |       |   |   |   |   |   casting.py
+    |       |   |   |   |   |   constructors.py
+    |       |   |   |   |   |   dim2.py
+    |       |   |   |   |   |   dtype.py
+    |       |   |   |   |   |   getitem.py
+    |       |   |   |   |   |   groupby.py
+    |       |   |   |   |   |   index.py
+    |       |   |   |   |   |   interface.py
+    |       |   |   |   |   |   io.py
+    |       |   |   |   |   |   methods.py
+    |       |   |   |   |   |   missing.py
+    |       |   |   |   |   |   ops.py
+    |       |   |   |   |   |   printing.py
+    |       |   |   |   |   |   reduce.py
+    |       |   |   |   |   |   reshaping.py
+    |       |   |   |   |   |   setitem.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           accumulate.cpython-313.pyc
+    |       |   |   |   |           base.cpython-313.pyc
+    |       |   |   |   |           casting.cpython-313.pyc
+    |       |   |   |   |           constructors.cpython-313.pyc
+    |       |   |   |   |           dim2.cpython-313.pyc
+    |       |   |   |   |           dtype.cpython-313.pyc
+    |       |   |   |   |           getitem.cpython-313.pyc
+    |       |   |   |   |           groupby.cpython-313.pyc
+    |       |   |   |   |           index.cpython-313.pyc
+    |       |   |   |   |           interface.cpython-313.pyc
+    |       |   |   |   |           io.cpython-313.pyc
+    |       |   |   |   |           methods.cpython-313.pyc
+    |       |   |   |   |           missing.cpython-313.pyc
+    |       |   |   |   |           ops.cpython-313.pyc
+    |       |   |   |   |           printing.cpython-313.pyc
+    |       |   |   |   |           reduce.cpython-313.pyc
+    |       |   |   |   |           reshaping.cpython-313.pyc
+    |       |   |   |   |           setitem.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---date
+    |       |   |   |   |   |   array.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           array.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---decimal
+    |       |   |   |   |   |   array.py
+    |       |   |   |   |   |   test_decimal.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           array.cpython-313.pyc
+    |       |   |   |   |           test_decimal.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---json
+    |       |   |   |   |   |   array.py
+    |       |   |   |   |   |   test_json.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           array.cpython-313.pyc
+    |       |   |   |   |           test_json.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---list
+    |       |   |   |   |   |   array.py
+    |       |   |   |   |   |   test_list.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           array.cpython-313.pyc
+    |       |   |   |   |           test_list.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---uuid
+    |       |   |   |   |   |   test_uuid.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_uuid.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           conftest.cpython-313.pyc
+    |       |   |   |           test_arrow.cpython-313.pyc

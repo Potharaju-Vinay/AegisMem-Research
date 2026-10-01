@@ -1,0 +1,150 @@
+    |       |   |   |   einsumfunc.py
+    |       |   |   |   einsumfunc.pyi
+    |       |   |   |   fromnumeric.py
+    |       |   |   |   fromnumeric.pyi
+    |       |   |   |   function_base.py
+    |       |   |   |   function_base.pyi
+    |       |   |   |   getlimits.py
+    |       |   |   |   getlimits.pyi
+    |       |   |   |   multiarray.py
+    |       |   |   |   multiarray.pyi
+    |       |   |   |   numeric.py
+    |       |   |   |   numeric.pyi
+    |       |   |   |   numerictypes.py
+    |       |   |   |   numerictypes.pyi
+    |       |   |   |   overrides.py
+    |       |   |   |   overrides.pyi
+    |       |   |   |   records.py
+    |       |   |   |   records.pyi
+    |       |   |   |   shape_base.py
+    |       |   |   |   shape_base.pyi
+    |       |   |   |   umath.py
+    |       |   |   |   umath.pyi
+    |       |   |   |   _dtype.py
+    |       |   |   |   _dtype.pyi
+    |       |   |   |   _dtype_ctypes.py
+    |       |   |   |   _dtype_ctypes.pyi
+    |       |   |   |   _internal.py
+    |       |   |   |   _internal.pyi
+    |       |   |   |   _multiarray_umath.py
+    |       |   |   |   _utils.py
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           arrayprint.cpython-313.pyc
+    |       |   |           defchararray.cpython-313.pyc
+    |       |   |           einsumfunc.cpython-313.pyc
+    |       |   |           fromnumeric.cpython-313.pyc
+    |       |   |           function_base.cpython-313.pyc
+    |       |   |           getlimits.cpython-313.pyc
+    |       |   |           multiarray.cpython-313.pyc
+    |       |   |           numeric.cpython-313.pyc
+    |       |   |           numerictypes.cpython-313.pyc
+    |       |   |           overrides.cpython-313.pyc
+    |       |   |           records.cpython-313.pyc
+    |       |   |           shape_base.cpython-313.pyc
+    |       |   |           umath.cpython-313.pyc
+    |       |   |           _dtype.cpython-313.pyc
+    |       |   |           _dtype_ctypes.cpython-313.pyc
+    |       |   |           _internal.cpython-313.pyc
+    |       |   |           _multiarray_umath.cpython-313.pyc
+    |       |   |           _utils.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---ctypeslib
+    |       |   |   |   _ctypeslib.py
+    |       |   |   |   _ctypeslib.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           _ctypeslib.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---doc
+    |       |   |   |   ufuncs.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           ufuncs.cpython-313.pyc
+    |       |   |           
+    |       |   +---f2py
+    |       |   |   |   auxfuncs.py
+    |       |   |   |   auxfuncs.pyi
+    |       |   |   |   capi_maps.py
+    |       |   |   |   capi_maps.pyi
+    |       |   |   |   cb_rules.py
+    |       |   |   |   cb_rules.pyi
+    |       |   |   |   cfuncs.py
+    |       |   |   |   cfuncs.pyi
+    |       |   |   |   common_rules.py
+    |       |   |   |   common_rules.pyi
+    |       |   |   |   crackfortran.py
+    |       |   |   |   crackfortran.pyi
+    |       |   |   |   diagnose.py
+    |       |   |   |   diagnose.pyi
+    |       |   |   |   f2py2e.py
+    |       |   |   |   f2py2e.pyi
+    |       |   |   |   f90mod_rules.py
+    |       |   |   |   f90mod_rules.pyi
+    |       |   |   |   func2subr.py
+    |       |   |   |   func2subr.pyi
+    |       |   |   |   rules.py
+    |       |   |   |   rules.pyi
+    |       |   |   |   setup.cfg
+    |       |   |   |   symbolic.py
+    |       |   |   |   symbolic.pyi
+    |       |   |   |   use_rules.py
+    |       |   |   |   use_rules.pyi
+    |       |   |   |   _isocbind.py
+    |       |   |   |   _isocbind.pyi
+    |       |   |   |   _src_pyf.py
+    |       |   |   |   _src_pyf.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   __main__.py
+    |       |   |   |   __version__.py
+    |       |   |   |   __version__.pyi
+    |       |   |   |   
+    |       |   |   +---src
+    |       |   |   |       fortranobject.c
+    |       |   |   |       fortranobject.h
+    |       |   |   |       
+    |       |   |   +---tests
+    |       |   |   |   |   test_abstract_interface.py
+    |       |   |   |   |   test_array_from_pyobj.py
+    |       |   |   |   |   test_assumed_shape.py
+    |       |   |   |   |   test_block_docstring.py
+    |       |   |   |   |   test_callback.py
+    |       |   |   |   |   test_capi_maps.py
+    |       |   |   |   |   test_character.py
+    |       |   |   |   |   test_common.py
+    |       |   |   |   |   test_crackfortran.py
+    |       |   |   |   |   test_data.py
+    |       |   |   |   |   test_docs.py
+    |       |   |   |   |   test_f2cmap.py
+    |       |   |   |   |   test_f2py2e.py
+    |       |   |   |   |   test_inplace.py
+    |       |   |   |   |   test_isoc.py
+    |       |   |   |   |   test_kind.py
+    |       |   |   |   |   test_mixed.py
+    |       |   |   |   |   test_modules.py
+    |       |   |   |   |   test_parameter.py
+    |       |   |   |   |   test_pyf_src.py
+    |       |   |   |   |   test_quoted_character.py
+    |       |   |   |   |   test_regression.py
+    |       |   |   |   |   test_return_character.py
+    |       |   |   |   |   test_return_complex.py
+    |       |   |   |   |   test_return_integer.py
+    |       |   |   |   |   test_return_logical.py
+    |       |   |   |   |   test_return_real.py
+    |       |   |   |   |   test_routines.py
+    |       |   |   |   |   test_semicolon_split.py
+    |       |   |   |   |   test_size.py
+    |       |   |   |   |   test_string.py
+    |       |   |   |   |   test_symbolic.py
+    |       |   |   |   |   test_value_attrspec.py
+    |       |   |   |   |   util.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---src

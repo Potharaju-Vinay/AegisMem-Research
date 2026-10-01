@@ -1,0 +1,150 @@
+    |       |   |   |           test_triads.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           atlas.cpython-313.pyc
+    |       |   |           classic.cpython-313.pyc
+    |       |   |           cographs.cpython-313.pyc
+    |       |   |           community.cpython-313.pyc
+    |       |   |           degree_seq.cpython-313.pyc
+    |       |   |           directed.cpython-313.pyc
+    |       |   |           duplication.cpython-313.pyc
+    |       |   |           ego.cpython-313.pyc
+    |       |   |           expanders.cpython-313.pyc
+    |       |   |           geometric.cpython-313.pyc
+    |       |   |           harary_graph.cpython-313.pyc
+    |       |   |           internet_as_graphs.cpython-313.pyc
+    |       |   |           intersection.cpython-313.pyc
+    |       |   |           interval_graph.cpython-313.pyc
+    |       |   |           joint_degree_seq.cpython-313.pyc
+    |       |   |           lattice.cpython-313.pyc
+    |       |   |           line.cpython-313.pyc
+    |       |   |           mycielski.cpython-313.pyc
+    |       |   |           nonisomorphic_trees.cpython-313.pyc
+    |       |   |           random_clustered.cpython-313.pyc
+    |       |   |           random_graphs.cpython-313.pyc
+    |       |   |           small.cpython-313.pyc
+    |       |   |           social.cpython-313.pyc
+    |       |   |           spectral_graph_forge.cpython-313.pyc
+    |       |   |           stochastic.cpython-313.pyc
+    |       |   |           sudoku.cpython-313.pyc
+    |       |   |           time_series.cpython-313.pyc
+    |       |   |           trees.cpython-313.pyc
+    |       |   |           triads.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---linalg
+    |       |   |   |   algebraicconnectivity.py
+    |       |   |   |   attrmatrix.py
+    |       |   |   |   bethehessianmatrix.py
+    |       |   |   |   graphmatrix.py
+    |       |   |   |   laplacianmatrix.py
+    |       |   |   |   modularitymatrix.py
+    |       |   |   |   spectrum.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_algebraic_connectivity.py
+    |       |   |   |   |   test_attrmatrix.py
+    |       |   |   |   |   test_bethehessian.py
+    |       |   |   |   |   test_graphmatrix.py
+    |       |   |   |   |   test_laplacian.py
+    |       |   |   |   |   test_modularity.py
+    |       |   |   |   |   test_spectrum.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_algebraic_connectivity.cpython-313.pyc
+    |       |   |   |           test_attrmatrix.cpython-313.pyc
+    |       |   |   |           test_bethehessian.cpython-313.pyc
+    |       |   |   |           test_graphmatrix.cpython-313.pyc
+    |       |   |   |           test_laplacian.cpython-313.pyc
+    |       |   |   |           test_modularity.cpython-313.pyc
+    |       |   |   |           test_spectrum.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           algebraicconnectivity.cpython-313.pyc
+    |       |   |           attrmatrix.cpython-313.pyc
+    |       |   |           bethehessianmatrix.cpython-313.pyc
+    |       |   |           graphmatrix.cpython-313.pyc
+    |       |   |           laplacianmatrix.cpython-313.pyc
+    |       |   |           modularitymatrix.cpython-313.pyc
+    |       |   |           spectrum.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---readwrite
+    |       |   |   |   adjlist.py
+    |       |   |   |   edgelist.py
+    |       |   |   |   gexf.py
+    |       |   |   |   gml.py
+    |       |   |   |   graph6.py
+    |       |   |   |   graphml.py
+    |       |   |   |   leda.py
+    |       |   |   |   multiline_adjlist.py
+    |       |   |   |   p2g.py
+    |       |   |   |   pajek.py
+    |       |   |   |   sparse6.py
+    |       |   |   |   text.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---json_graph
+    |       |   |   |   |   adjacency.py
+    |       |   |   |   |   cytoscape.py
+    |       |   |   |   |   node_link.py
+    |       |   |   |   |   tree.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_adjacency.py
+    |       |   |   |   |   |   test_cytoscape.py
+    |       |   |   |   |   |   test_node_link.py
+    |       |   |   |   |   |   test_tree.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_adjacency.cpython-313.pyc
+    |       |   |   |   |           test_cytoscape.cpython-313.pyc
+    |       |   |   |   |           test_node_link.cpython-313.pyc
+    |       |   |   |   |           test_tree.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           adjacency.cpython-313.pyc
+    |       |   |   |           cytoscape.cpython-313.pyc
+    |       |   |   |           node_link.cpython-313.pyc
+    |       |   |   |           tree.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---tests
+    |       |   |   |   |   test_adjlist.py
+    |       |   |   |   |   test_edgelist.py
+    |       |   |   |   |   test_gexf.py
+    |       |   |   |   |   test_gml.py
+    |       |   |   |   |   test_graph6.py
+    |       |   |   |   |   test_graphml.py
+    |       |   |   |   |   test_leda.py
+    |       |   |   |   |   test_p2g.py
+    |       |   |   |   |   test_pajek.py
+    |       |   |   |   |   test_sparse6.py
+    |       |   |   |   |   test_text.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_adjlist.cpython-313.pyc
+    |       |   |   |           test_edgelist.cpython-313.pyc
+    |       |   |   |           test_gexf.cpython-313.pyc
+    |       |   |   |           test_gml.cpython-313.pyc
+    |       |   |   |           test_graph6.cpython-313.pyc
+    |       |   |   |           test_graphml.cpython-313.pyc
+    |       |   |   |           test_leda.cpython-313.pyc
+    |       |   |   |           test_p2g.cpython-313.pyc
+    |       |   |   |           test_pajek.cpython-313.pyc
+    |       |   |   |           test_sparse6.cpython-313.pyc
+    |       |   |   |           test_text.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           adjlist.cpython-313.pyc
+    |       |   |           edgelist.cpython-313.pyc
+    |       |   |           gexf.cpython-313.pyc

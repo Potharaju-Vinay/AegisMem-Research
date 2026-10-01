@@ -1,0 +1,150 @@
+|       benchmark_seed44_nodes100.csv
+|       benchmark_seed44_nodes25.csv
+|       benchmark_seed44_nodes50.csv
+|       benchmark_seed45_nodes10.csv
+|       benchmark_seed45_nodes100.csv
+|       benchmark_seed45_nodes25.csv
+|       benchmark_seed45_nodes50.csv
+|       benchmark_seed46_nodes10.csv
+|       benchmark_seed46_nodes100.csv
+|       benchmark_seed46_nodes25.csv
+|       benchmark_seed46_nodes50.csv
+|       multi_seed_benchmark.csv
+|       strategy_precision_recall.png
+|       tcrp_cost_vs_graph_size.png
+|       tcrp_f1_vs_graph_size.png
+|       tcrp_residual_vs_graph_size.png
+|       test_evidence_benchmark.csv
+|       test_seed43.csv
+|       
++---tcrp
+|   |   __init__.py
+|   |   
+|   +---recovery
+|   |       __init__.py
+|   |       
+|   \---trust
+|           __init__.py
+|           
++---tests
+|   |   test_attack_impact.py
+|   |   test_attack_lab.py
+|   |   test_baseline.py
+|   |   test_corruption_generator.py
+|   |   test_corruption_strategies.py
+|   |   test_dataset_loader.py
+|   |   test_dependency_graph.py
+|   |   test_end_to_end_attack.py
+|   |   test_enterprise_attack.py
+|   |   test_impact_metrics.py
+|   |   test_integrity.py
+|   |   test_memory_repository.py
+|   |   test_memory_tampering.py
+|   |   test_provenance.py
+|   |   test_provenance_chain.py
+|   |   test_revision_planner.py
+|   |   test_tcrp_recovery.py
+|   |   test_tcrp_self_healing.py
+|   |   test_temporal_dependency.py
+|   |   test_trust_propagation.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           test_attack_impact.cpython-313-pytest-9.1.1.pyc
+|           test_attack_lab.cpython-313-pytest-9.1.1.pyc
+|           test_baseline.cpython-313-pytest-9.1.1.pyc
+|           test_corruption_generator.cpython-313-pytest-9.1.1.pyc
+|           test_corruption_strategies.cpython-313-pytest-9.1.1.pyc
+|           test_dataset_loader.cpython-313-pytest-9.1.1.pyc
+|           test_dependency_graph.cpython-313-pytest-9.1.1.pyc
+|           test_end_to_end_attack.cpython-313-pytest-9.1.1.pyc
+|           test_enterprise_attack.cpython-313-pytest-9.1.1.pyc
+|           test_impact_metrics.cpython-313-pytest-9.1.1.pyc
+|           test_integrity.cpython-313-pytest-9.1.1.pyc
+|           test_memory_repository.cpython-313-pytest-9.1.1.pyc
+|           test_memory_tampering.cpython-313-pytest-9.1.1.pyc
+|           test_provenance.cpython-313-pytest-9.1.1.pyc
+|           test_provenance_chain.cpython-313-pytest-9.1.1.pyc
+|           test_revision_planner.cpython-313-pytest-9.1.1.pyc
+|           test_tcrp_recovery.cpython-313-pytest-9.1.1.pyc
+|           test_tcrp_self_healing.cpython-313-pytest-9.1.1.pyc
+|           test_temporal_dependency.cpython-313-pytest-9.1.1.pyc
+|           test_trust_propagation.cpython-313-pytest-9.1.1.pyc
+|           __init__.cpython-313.pyc
+|           
++---validation
+|       __init__.py
+|       
+\---venv
+    |   .gitignore
+    |   pyvenv.cfg
+    |   
+    +---Include
+    |   \---site
+    |       \---python3.13
+    |           \---greenlet
+    |                   greenlet.h
+    |                   
+    +---Lib
+    |   \---site-packages
+    |       |   autopep8.py
+    |       |   py.py
+    |       |   pycodestyle.py
+    |       |   pylab.py
+    |       |   six.py
+    |       |   typing_extensions.py
+    |       |   _cffi_backend.cp313-win_amd64.pyd
+    |       |   
+    |       +---annotated_doc
+    |       |   |   main.py
+    |       |   |   py.typed
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           main.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---annotated_doc-0.0.5.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---annotated_types
+    |       |   |   py.typed
+    |       |   |   test_cases.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           test_cases.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---annotated_types-0.8.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---anyio
+    |       |   |   from_thread.py
+    |       |   |   functools.py
+    |       |   |   itertools.py
+    |       |   |   lowlevel.py
+    |       |   |   py.typed
+    |       |   |   pytest_plugin.py
+    |       |   |   to_interpreter.py
+    |       |   |   to_process.py
+    |       |   |   to_thread.py
+    |       |   |   _lazyimport.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---abc
+    |       |   |   |   _eventloop.py
+    |       |   |   |   _resources.py

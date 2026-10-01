@@ -1,0 +1,150 @@
+|   |   |   |       |   |   
+|   |   |   |       |   +---inference
+|   |   |   |       |   |       index.js
+|   |   |   |       |   |       index.js.map
+|   |   |   |       |   |       inferer-reference.js
+|   |   |   |       |   |       inferer-reference.js.map
+|   |   |   |       |   |       inferers.js
+|   |   |   |       |   |       inferers.js.map
+|   |   |   |       |   |       util.js
+|   |   |   |       |   |       util.js.map
+|   |   |   |       |   |       
+|   |   |   |       |   \---lib
+|   |   |   |       |           hoister.js
+|   |   |   |       |           hoister.js.map
+|   |   |   |       |           removal-hooks.js
+|   |   |   |       |           removal-hooks.js.map
+|   |   |   |       |           virtual-types-validator.js
+|   |   |   |       |           virtual-types-validator.js.map
+|   |   |   |       |           virtual-types.js
+|   |   |   |       |           virtual-types.js.map
+|   |   |   |       |           
+|   |   |   |       \---scope
+|   |   |   |           |   binding.js
+|   |   |   |           |   binding.js.map
+|   |   |   |           |   index.js
+|   |   |   |           |   index.js.map
+|   |   |   |           |   traverseForScope.js
+|   |   |   |           |   traverseForScope.js.map
+|   |   |   |           |   
+|   |   |   |           \---lib
+|   |   |   |                   renamer.js
+|   |   |   |                   renamer.js.map
+|   |   |   |                   
+|   |   |   \---types
+|   |   |       |   LICENSE
+|   |   |       |   package.json
+|   |   |       |   README.md
+|   |   |       |   
+|   |   |       \---lib
+|   |   |           |   index-legacy.d.ts
+|   |   |           |   index.d.ts
+|   |   |           |   index.js
+|   |   |           |   index.js.flow
+|   |   |           |   index.js.map
+|   |   |           |   
+|   |   |           +---asserts
+|   |   |           |   |   assertNode.js
+|   |   |           |   |   assertNode.js.map
+|   |   |           |   |   
+|   |   |           |   \---generated
+|   |   |           |           index.js
+|   |   |           |           index.js.map
+|   |   |           |           
+|   |   |           +---ast-types
+|   |   |           |   \---generated
+|   |   |           |           index.js
+|   |   |           |           index.js.map
+|   |   |           |           
+|   |   |           +---builders
+|   |   |           |   |   productions.js
+|   |   |           |   |   productions.js.map
+|   |   |           |   |   validateNode.js
+|   |   |           |   |   validateNode.js.map
+|   |   |           |   |   
+|   |   |           |   +---flow
+|   |   |           |   |       createFlowUnionType.js
+|   |   |           |   |       createFlowUnionType.js.map
+|   |   |           |   |       createTypeAnnotationBasedOnTypeof.js
+|   |   |           |   |       createTypeAnnotationBasedOnTypeof.js.map
+|   |   |           |   |       
+|   |   |           |   +---generated
+|   |   |           |   |       index.js
+|   |   |           |   |       index.js.map
+|   |   |           |   |       lowercase.js
+|   |   |           |   |       lowercase.js.map
+|   |   |           |   |       uppercase.js
+|   |   |           |   |       uppercase.js.map
+|   |   |           |   |       
+|   |   |           |   +---react
+|   |   |           |   |       buildChildren.js
+|   |   |           |   |       buildChildren.js.map
+|   |   |           |   |       
+|   |   |           |   \---typescript
+|   |   |           |           createTSUnionType.js
+|   |   |           |           createTSUnionType.js.map
+|   |   |           |           
+|   |   |           +---clone
+|   |   |           |       clone.js
+|   |   |           |       clone.js.map
+|   |   |           |       cloneDeep.js
+|   |   |           |       cloneDeep.js.map
+|   |   |           |       cloneDeepWithoutLoc.js
+|   |   |           |       cloneDeepWithoutLoc.js.map
+|   |   |           |       cloneNode.js
+|   |   |           |       cloneNode.js.map
+|   |   |           |       cloneWithoutLoc.js
+|   |   |           |       cloneWithoutLoc.js.map
+|   |   |           |       
+|   |   |           +---comments
+|   |   |           |       addComment.js
+|   |   |           |       addComment.js.map
+|   |   |           |       addComments.js
+|   |   |           |       addComments.js.map
+|   |   |           |       inheritInnerComments.js
+|   |   |           |       inheritInnerComments.js.map
+|   |   |           |       inheritLeadingComments.js
+|   |   |           |       inheritLeadingComments.js.map
+|   |   |           |       inheritsComments.js
+|   |   |           |       inheritsComments.js.map
+|   |   |           |       inheritTrailingComments.js
+|   |   |           |       inheritTrailingComments.js.map
+|   |   |           |       removeComments.js
+|   |   |           |       removeComments.js.map
+|   |   |           |       
+|   |   |           +---constants
+|   |   |           |   |   index.js
+|   |   |           |   |   index.js.map
+|   |   |           |   |   
+|   |   |           |   \---generated
+|   |   |           |           index.js
+|   |   |           |           index.js.map
+|   |   |           |           
+|   |   |           +---converters
+|   |   |           |       ensureBlock.js
+|   |   |           |       ensureBlock.js.map
+|   |   |           |       gatherSequenceExpressions.js
+|   |   |           |       gatherSequenceExpressions.js.map
+|   |   |           |       toBindingIdentifierName.js
+|   |   |           |       toBindingIdentifierName.js.map
+|   |   |           |       toBlock.js
+|   |   |           |       toBlock.js.map
+|   |   |           |       toComputedKey.js
+|   |   |           |       toComputedKey.js.map
+|   |   |           |       toExpression.js
+|   |   |           |       toExpression.js.map
+|   |   |           |       toIdentifier.js
+|   |   |           |       toIdentifier.js.map
+|   |   |           |       toKeyAlias.js
+|   |   |           |       toKeyAlias.js.map
+|   |   |           |       toSequenceExpression.js
+|   |   |           |       toSequenceExpression.js.map
+|   |   |           |       toStatement.js
+|   |   |           |       toStatement.js.map
+|   |   |           |       valueToNode.js
+|   |   |           |       valueToNode.js.map
+|   |   |           |       
+|   |   |           +---definitions
+|   |   |           |       core.js
+|   |   |           |       core.js.map
+|   |   |           |       deprecated-aliases.js

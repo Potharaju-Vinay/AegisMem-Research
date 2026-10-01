@@ -1,0 +1,150 @@
+    |       |   |   |   +---string_
+    |       |   |   |   |   |   test_concat.py
+    |       |   |   |   |   |   test_string.py
+    |       |   |   |   |   |   test_string_arrow.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_concat.cpython-313.pyc
+    |       |   |   |   |           test_string.cpython-313.pyc
+    |       |   |   |   |           test_string_arrow.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---timedeltas
+    |       |   |   |   |   |   test_constructors.py
+    |       |   |   |   |   |   test_cumulative.py
+    |       |   |   |   |   |   test_reductions.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_constructors.cpython-313.pyc
+    |       |   |   |   |           test_cumulative.cpython-313.pyc
+    |       |   |   |   |           test_reductions.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           masked_shared.cpython-313.pyc
+    |       |   |   |           test_array.cpython-313.pyc
+    |       |   |   |           test_datetimelike.cpython-313.pyc
+    |       |   |   |           test_datetimes.cpython-313.pyc
+    |       |   |   |           test_ndarray_backed.cpython-313.pyc
+    |       |   |   |           test_period.cpython-313.pyc
+    |       |   |   |           test_timedeltas.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---base
+    |       |   |   |   |   common.py
+    |       |   |   |   |   test_constructors.py
+    |       |   |   |   |   test_conversion.py
+    |       |   |   |   |   test_fillna.py
+    |       |   |   |   |   test_misc.py
+    |       |   |   |   |   test_transpose.py
+    |       |   |   |   |   test_unique.py
+    |       |   |   |   |   test_value_counts.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           common.cpython-313.pyc
+    |       |   |   |           test_constructors.cpython-313.pyc
+    |       |   |   |           test_conversion.cpython-313.pyc
+    |       |   |   |           test_fillna.cpython-313.pyc
+    |       |   |   |           test_misc.cpython-313.pyc
+    |       |   |   |           test_transpose.cpython-313.pyc
+    |       |   |   |           test_unique.cpython-313.pyc
+    |       |   |   |           test_value_counts.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---computation
+    |       |   |   |   |   test_compat.py
+    |       |   |   |   |   test_eval.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_compat.cpython-313.pyc
+    |       |   |   |           test_eval.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---config
+    |       |   |   |   |   test_config.py
+    |       |   |   |   |   test_localization.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_config.cpython-313.pyc
+    |       |   |   |           test_localization.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---construction
+    |       |   |   |   |   test_extract_array.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_extract_array.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---copy_view
+    |       |   |   |   |   test_array.py
+    |       |   |   |   |   test_astype.py
+    |       |   |   |   |   test_chained_assignment_deprecation.py
+    |       |   |   |   |   test_clip.py
+    |       |   |   |   |   test_constructors.py
+    |       |   |   |   |   test_copy_deprecation.py
+    |       |   |   |   |   test_core_functionalities.py
+    |       |   |   |   |   test_functions.py
+    |       |   |   |   |   test_indexing.py
+    |       |   |   |   |   test_internals.py
+    |       |   |   |   |   test_interp_fillna.py
+    |       |   |   |   |   test_methods.py
+    |       |   |   |   |   test_replace.py
+    |       |   |   |   |   test_setitem.py
+    |       |   |   |   |   test_util.py
+    |       |   |   |   |   util.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---index
+    |       |   |   |   |   |   test_datetimeindex.py
+    |       |   |   |   |   |   test_index.py
+    |       |   |   |   |   |   test_intervalindex.py
+    |       |   |   |   |   |   test_periodindex.py
+    |       |   |   |   |   |   test_timedeltaindex.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_datetimeindex.cpython-313.pyc
+    |       |   |   |   |           test_index.cpython-313.pyc
+    |       |   |   |   |           test_intervalindex.cpython-313.pyc
+    |       |   |   |   |           test_periodindex.cpython-313.pyc
+    |       |   |   |   |           test_timedeltaindex.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_array.cpython-313.pyc
+    |       |   |   |           test_astype.cpython-313.pyc
+    |       |   |   |           test_chained_assignment_deprecation.cpython-313.pyc
+    |       |   |   |           test_clip.cpython-313.pyc
+    |       |   |   |           test_constructors.cpython-313.pyc
+    |       |   |   |           test_copy_deprecation.cpython-313.pyc
+    |       |   |   |           test_core_functionalities.cpython-313.pyc
+    |       |   |   |           test_functions.cpython-313.pyc
+    |       |   |   |           test_indexing.cpython-313.pyc
+    |       |   |   |           test_internals.cpython-313.pyc
+    |       |   |   |           test_interp_fillna.cpython-313.pyc
+    |       |   |   |           test_methods.cpython-313.pyc
+    |       |   |   |           test_replace.cpython-313.pyc
+    |       |   |   |           test_setitem.cpython-313.pyc
+    |       |   |   |           test_util.cpython-313.pyc
+    |       |   |   |           util.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---dtypes
+    |       |   |   |   |   test_common.py
+    |       |   |   |   |   test_concat.py
+    |       |   |   |   |   test_dtypes.py
+    |       |   |   |   |   test_generic.py
+    |       |   |   |   |   test_inference.py
+    |       |   |   |   |   test_missing.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---cast
+    |       |   |   |   |   |   test_box_unbox.py
+    |       |   |   |   |   |   test_can_hold_element.py

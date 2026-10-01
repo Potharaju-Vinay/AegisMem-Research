@@ -1,0 +1,150 @@
+    |       |   |   |   +---formatters
+    |       |   |   |   |   |   _mapping.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           _mapping.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---lexers
+    |       |   |   |   |   |   python.py
+    |       |   |   |   |   |   _mapping.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           python.cpython-313.pyc
+    |       |   |   |   |           _mapping.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---styles
+    |       |   |   |   |   |   _mapping.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           _mapping.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           console.cpython-313.pyc
+    |       |   |   |           filter.cpython-313.pyc
+    |       |   |   |           formatter.cpython-313.pyc
+    |       |   |   |           lexer.cpython-313.pyc
+    |       |   |   |           modeline.cpython-313.pyc
+    |       |   |   |           plugin.cpython-313.pyc
+    |       |   |   |           regexopt.cpython-313.pyc
+    |       |   |   |           scanner.cpython-313.pyc
+    |       |   |   |           sphinxext.cpython-313.pyc
+    |       |   |   |           style.cpython-313.pyc
+    |       |   |   |           token.cpython-313.pyc
+    |       |   |   |           unistring.cpython-313.pyc
+    |       |   |   |           util.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           __main__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---pyproject_hooks
+    |       |   |   |   |   LICENSE
+    |       |   |   |   |   py.typed
+    |       |   |   |   |   _impl.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---_in_process
+    |       |   |   |   |   |   _in_process.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           _in_process.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _impl.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---requests
+    |       |   |   |   |   adapters.py
+    |       |   |   |   |   api.py
+    |       |   |   |   |   auth.py
+    |       |   |   |   |   certs.py
+    |       |   |   |   |   compat.py
+    |       |   |   |   |   cookies.py
+    |       |   |   |   |   exceptions.py
+    |       |   |   |   |   help.py
+    |       |   |   |   |   hooks.py
+    |       |   |   |   |   LICENSE
+    |       |   |   |   |   models.py
+    |       |   |   |   |   packages.py
+    |       |   |   |   |   py.typed
+    |       |   |   |   |   sessions.py
+    |       |   |   |   |   status_codes.py
+    |       |   |   |   |   structures.py
+    |       |   |   |   |   utils.py
+    |       |   |   |   |   _internal_utils.py
+    |       |   |   |   |   _types.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   __version__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           adapters.cpython-313.pyc
+    |       |   |   |           api.cpython-313.pyc
+    |       |   |   |           auth.cpython-313.pyc
+    |       |   |   |           certs.cpython-313.pyc
+    |       |   |   |           compat.cpython-313.pyc
+    |       |   |   |           cookies.cpython-313.pyc
+    |       |   |   |           exceptions.cpython-313.pyc
+    |       |   |   |           help.cpython-313.pyc
+    |       |   |   |           hooks.cpython-313.pyc
+    |       |   |   |           models.cpython-313.pyc
+    |       |   |   |           packages.cpython-313.pyc
+    |       |   |   |           sessions.cpython-313.pyc
+    |       |   |   |           status_codes.cpython-313.pyc
+    |       |   |   |           structures.cpython-313.pyc
+    |       |   |   |           utils.cpython-313.pyc
+    |       |   |   |           _internal_utils.cpython-313.pyc
+    |       |   |   |           _types.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           __version__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---resolvelib
+    |       |   |   |   |   LICENSE
+    |       |   |   |   |   providers.py
+    |       |   |   |   |   py.typed
+    |       |   |   |   |   reporters.py
+    |       |   |   |   |   structs.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---resolvers
+    |       |   |   |   |   |   abstract.py
+    |       |   |   |   |   |   criterion.py
+    |       |   |   |   |   |   exceptions.py
+    |       |   |   |   |   |   resolution.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           abstract.cpython-313.pyc
+    |       |   |   |   |           criterion.cpython-313.pyc
+    |       |   |   |   |           exceptions.cpython-313.pyc
+    |       |   |   |   |           resolution.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           providers.cpython-313.pyc
+    |       |   |   |           reporters.cpython-313.pyc
+    |       |   |   |           structs.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---rich
+    |       |   |   |   |   abc.py
+    |       |   |   |   |   align.py
+    |       |   |   |   |   ansi.py
+    |       |   |   |   |   bar.py
+    |       |   |   |   |   box.py
+    |       |   |   |   |   cells.py
+    |       |   |   |   |   color.py
+    |       |   |   |   |   color_triplet.py
+    |       |   |   |   |   columns.py
+    |       |   |   |   |   console.py
+    |       |   |   |   |   constrain.py
+    |       |   |   |   |   containers.py
+    |       |   |   |   |   control.py
+    |       |   |   |   |   default_styles.py
+    |       |   |   |   |   diagnose.py
+    |       |   |   |   |   emoji.py

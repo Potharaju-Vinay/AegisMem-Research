@@ -1,0 +1,150 @@
+    |       |   |   |   test_warnings.py
+    |       |   |   |   test__all__.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           test_configtool.cpython-313.pyc
+    |       |   |           test_ctypeslib.cpython-313.pyc
+    |       |   |           test_lazyloading.cpython-313.pyc
+    |       |   |           test_matlib.cpython-313.pyc
+    |       |   |           test_numpy_config.cpython-313.pyc
+    |       |   |           test_numpy_version.cpython-313.pyc
+    |       |   |           test_public_api.cpython-313.pyc
+    |       |   |           test_reloading.cpython-313.pyc
+    |       |   |           test_scripts.cpython-313.pyc
+    |       |   |           test_warnings.cpython-313.pyc
+    |       |   |           test__all__.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---typing
+    |       |   |   |   mypy_plugin.py
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_isfile.py
+    |       |   |   |   |   test_runtime.py
+    |       |   |   |   |   test_typing.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---data
+    |       |   |   |   |   |   mypy.ini
+    |       |   |   |   |   |   
+    |       |   |   |   |   +---fail
+    |       |   |   |   |   |       arithmetic.pyi
+    |       |   |   |   |   |       arrayprint.pyi
+    |       |   |   |   |   |       arrayterator.pyi
+    |       |   |   |   |   |       array_constructors.pyi
+    |       |   |   |   |   |       array_like.pyi
+    |       |   |   |   |   |       array_pad.pyi
+    |       |   |   |   |   |       bitwise_ops.pyi
+    |       |   |   |   |   |       char.pyi
+    |       |   |   |   |   |       chararray.pyi
+    |       |   |   |   |   |       comparisons.pyi
+    |       |   |   |   |   |       constants.pyi
+    |       |   |   |   |   |       datasource.pyi
+    |       |   |   |   |   |       dtype.pyi
+    |       |   |   |   |   |       einsumfunc.pyi
+    |       |   |   |   |   |       flatiter.pyi
+    |       |   |   |   |   |       fromnumeric.pyi
+    |       |   |   |   |   |       histograms.pyi
+    |       |   |   |   |   |       index_tricks.pyi
+    |       |   |   |   |   |       lib_function_base.pyi
+    |       |   |   |   |   |       lib_polynomial.pyi
+    |       |   |   |   |   |       lib_utils.pyi
+    |       |   |   |   |   |       lib_version.pyi
+    |       |   |   |   |   |       linalg.pyi
+    |       |   |   |   |   |       ma.pyi
+    |       |   |   |   |   |       memmap.pyi
+    |       |   |   |   |   |       modules.pyi
+    |       |   |   |   |   |       multiarray.pyi
+    |       |   |   |   |   |       ndarray.pyi
+    |       |   |   |   |   |       ndarray_misc.pyi
+    |       |   |   |   |   |       nditer.pyi
+    |       |   |   |   |   |       nested_sequence.pyi
+    |       |   |   |   |   |       npyio.pyi
+    |       |   |   |   |   |       numerictypes.pyi
+    |       |   |   |   |   |       random.pyi
+    |       |   |   |   |   |       rec.pyi
+    |       |   |   |   |   |       scalars.pyi
+    |       |   |   |   |   |       shape.pyi
+    |       |   |   |   |   |       shape_base.pyi
+    |       |   |   |   |   |       stride_tricks.pyi
+    |       |   |   |   |   |       strings.pyi
+    |       |   |   |   |   |       testing.pyi
+    |       |   |   |   |   |       twodim_base.pyi
+    |       |   |   |   |   |       type_check.pyi
+    |       |   |   |   |   |       ufunclike.pyi
+    |       |   |   |   |   |       ufuncs.pyi
+    |       |   |   |   |   |       ufunc_config.pyi
+    |       |   |   |   |   |       warnings_and_errors.pyi
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---misc
+    |       |   |   |   |   |       extended_precision.pyi
+    |       |   |   |   |   |       
+    |       |   |   |   |   +---pass
+    |       |   |   |   |   |   |   arithmetic.py
+    |       |   |   |   |   |   |   arrayprint.py
+    |       |   |   |   |   |   |   arrayterator.py
+    |       |   |   |   |   |   |   array_constructors.py
+    |       |   |   |   |   |   |   array_like.py
+    |       |   |   |   |   |   |   bitwise_ops.py
+    |       |   |   |   |   |   |   comparisons.py
+    |       |   |   |   |   |   |   dtype.py
+    |       |   |   |   |   |   |   einsumfunc.py
+    |       |   |   |   |   |   |   flatiter.py
+    |       |   |   |   |   |   |   fromnumeric.py
+    |       |   |   |   |   |   |   index_tricks.py
+    |       |   |   |   |   |   |   lib_user_array.py
+    |       |   |   |   |   |   |   lib_utils.py
+    |       |   |   |   |   |   |   lib_version.py
+    |       |   |   |   |   |   |   literal.py
+    |       |   |   |   |   |   |   ma.py
+    |       |   |   |   |   |   |   mod.py
+    |       |   |   |   |   |   |   modules.py
+    |       |   |   |   |   |   |   multiarray.py
+    |       |   |   |   |   |   |   ndarray_conversion.py
+    |       |   |   |   |   |   |   ndarray_misc.py
+    |       |   |   |   |   |   |   ndarray_shape_manipulation.py
+    |       |   |   |   |   |   |   nditer.py
+    |       |   |   |   |   |   |   numeric.py
+    |       |   |   |   |   |   |   numerictypes.py
+    |       |   |   |   |   |   |   random.py
+    |       |   |   |   |   |   |   recfunctions.py
+    |       |   |   |   |   |   |   scalars.py
+    |       |   |   |   |   |   |   shape.py
+    |       |   |   |   |   |   |   simple.py
+    |       |   |   |   |   |   |   ufunclike.py
+    |       |   |   |   |   |   |   ufuncs.py
+    |       |   |   |   |   |   |   ufunc_config.py
+    |       |   |   |   |   |   |   warnings_and_errors.py
+    |       |   |   |   |   |   |   
+    |       |   |   |   |   |   \---__pycache__
+    |       |   |   |   |   |           arithmetic.cpython-313.pyc
+    |       |   |   |   |   |           arrayprint.cpython-313.pyc
+    |       |   |   |   |   |           arrayterator.cpython-313.pyc
+    |       |   |   |   |   |           array_constructors.cpython-313.pyc
+    |       |   |   |   |   |           array_like.cpython-313.pyc
+    |       |   |   |   |   |           bitwise_ops.cpython-313.pyc
+    |       |   |   |   |   |           comparisons.cpython-313.pyc
+    |       |   |   |   |   |           dtype.cpython-313.pyc
+    |       |   |   |   |   |           einsumfunc.cpython-313.pyc
+    |       |   |   |   |   |           flatiter.cpython-313.pyc
+    |       |   |   |   |   |           fromnumeric.cpython-313.pyc
+    |       |   |   |   |   |           index_tricks.cpython-313.pyc
+    |       |   |   |   |   |           lib_user_array.cpython-313.pyc
+    |       |   |   |   |   |           lib_utils.cpython-313.pyc
+    |       |   |   |   |   |           lib_version.cpython-313.pyc
+    |       |   |   |   |   |           literal.cpython-313.pyc
+    |       |   |   |   |   |           ma.cpython-313.pyc
+    |       |   |   |   |   |           mod.cpython-313.pyc
+    |       |   |   |   |   |           modules.cpython-313.pyc
+    |       |   |   |   |   |           multiarray.cpython-313.pyc
+    |       |   |   |   |   |           ndarray_conversion.cpython-313.pyc
+    |       |   |   |   |   |           ndarray_misc.cpython-313.pyc
+    |       |   |   |   |   |           ndarray_shape_manipulation.cpython-313.pyc
+    |       |   |   |   |   |           nditer.cpython-313.pyc
+    |       |   |   |   |   |           numeric.cpython-313.pyc
+    |       |   |   |   |   |           numerictypes.cpython-313.pyc
+    |       |   |   |   |   |           random.cpython-313.pyc
+    |       |   |   |   |   |           recfunctions.cpython-313.pyc

@@ -1,0 +1,150 @@
+|   |   |       |   |       redux-toolkit.production.min.cjs.map
+|   |   |       |   |       
+|   |   |       |   +---query
+|   |   |       |   |   |   index.d.mts
+|   |   |       |   |   |   index.d.ts
+|   |   |       |   |   |   rtk-query.browser.mjs
+|   |   |       |   |   |   rtk-query.browser.mjs.map
+|   |   |       |   |   |   rtk-query.legacy-esm.js
+|   |   |       |   |   |   rtk-query.legacy-esm.js.map
+|   |   |       |   |   |   rtk-query.modern.mjs
+|   |   |       |   |   |   rtk-query.modern.mjs.map
+|   |   |       |   |   |   
+|   |   |       |   |   +---cjs
+|   |   |       |   |   |       index.js
+|   |   |       |   |   |       rtk-query.development.cjs
+|   |   |       |   |   |       rtk-query.development.cjs.map
+|   |   |       |   |   |       rtk-query.production.min.cjs
+|   |   |       |   |   |       rtk-query.production.min.cjs.map
+|   |   |       |   |   |       
+|   |   |       |   |   \---react
+|   |   |       |   |       |   index.d.mts
+|   |   |       |   |       |   index.d.ts
+|   |   |       |   |       |   rtk-query-react.browser.mjs
+|   |   |       |   |       |   rtk-query-react.browser.mjs.map
+|   |   |       |   |       |   rtk-query-react.legacy-esm.js
+|   |   |       |   |       |   rtk-query-react.legacy-esm.js.map
+|   |   |       |   |       |   rtk-query-react.modern.mjs
+|   |   |       |   |       |   rtk-query-react.modern.mjs.map
+|   |   |       |   |       |   
+|   |   |       |   |       \---cjs
+|   |   |       |   |               index.js
+|   |   |       |   |               rtk-query-react.development.cjs
+|   |   |       |   |               rtk-query-react.development.cjs.map
+|   |   |       |   |               rtk-query-react.production.min.cjs
+|   |   |       |   |               rtk-query-react.production.min.cjs.map
+|   |   |       |   |               
+|   |   |       |   \---react
+|   |   |       |       |   index.d.mts
+|   |   |       |       |   index.d.ts
+|   |   |       |       |   redux-toolkit-react.browser.mjs
+|   |   |       |       |   redux-toolkit-react.browser.mjs.map
+|   |   |       |       |   redux-toolkit-react.legacy-esm.js
+|   |   |       |       |   redux-toolkit-react.legacy-esm.js.map
+|   |   |       |       |   redux-toolkit-react.modern.mjs
+|   |   |       |       |   redux-toolkit-react.modern.mjs.map
+|   |   |       |       |   
+|   |   |       |       \---cjs
+|   |   |       |               index.js
+|   |   |       |               redux-toolkit-react.development.cjs
+|   |   |       |               redux-toolkit-react.development.cjs.map
+|   |   |       |               redux-toolkit-react.production.min.cjs
+|   |   |       |               redux-toolkit-react.production.min.cjs.map
+|   |   |       |               
+|   |   |       +---query
+|   |   |       |   |   package.json
+|   |   |       |   |   
+|   |   |       |   \---react
+|   |   |       |           package.json
+|   |   |       |           
+|   |   |       +---react
+|   |   |       |       package.json
+|   |   |       |       
+|   |   |       +---skills
+|   |   |       |   +---build-modern-redux-apps
+|   |   |       |   |   +---modern-redux
+|   |   |       |   |   |   |   SKILL.md
+|   |   |       |   |   |   |   
+|   |   |       |   |   |   \---references
+|   |   |       |   |   |           store-lifetime.md
+|   |   |       |   |   |           
+|   |   |       |   |   \---redux-dataflow
+|   |   |       |   |           SKILL.md
+|   |   |       |   |           
+|   |   |       |   +---evolve-and-diagnose-redux-apps
+|   |   |       |   |   +---debug-redux-toolkit-apps
+|   |   |       |   |   |       SKILL.md
+|   |   |       |   |   |       
+|   |   |       |   |   \---migrate-to-modern-redux
+|   |   |       |   |           SKILL.md
+|   |   |       |   |           
+|   |   |       |   +---manage-server-data
+|   |   |       |   |   \---adopt-rtk-query
+|   |   |       |   |       |   SKILL.md
+|   |   |       |   |       |   
+|   |   |       |   |       \---references
+|   |   |       |   |               endpoint-lifecycle.md
+|   |   |       |   |               
+|   |   |       |   +---model-redux-state
+|   |   |       |   |   +---build-slices-and-selectors
+|   |   |       |   |   |   |   SKILL.md
+|   |   |       |   |   |   |   
+|   |   |       |   |   |   \---references
+|   |   |       |   |   |           slice-patterns.md
+|   |   |       |   |   |           
+|   |   |       |   |   \---design-state-ownership
+|   |   |       |   |       |   SKILL.md
+|   |   |       |   |       |   
+|   |   |       |   |       \---references
+|   |   |       |   |               state-ownership.md
+|   |   |       |   |               
+|   |   |       |   \---orchestrate-side-effects
+|   |   |       |       \---handle-side-effects
+|   |   |       |           |   SKILL.md
+|   |   |       |           |   
+|   |   |       |           \---references
+|   |   |       |                   listener-workflows.md
+|   |   |       |                   
+|   |   |       \---src
+|   |   |           |   actionCreatorInvariantMiddleware.ts
+|   |   |           |   autoBatchEnhancer.ts
+|   |   |           |   combineSlices.ts
+|   |   |           |   configureStore.ts
+|   |   |           |   createAction.ts
+|   |   |           |   createAsyncThunk.ts
+|   |   |           |   createDraftSafeSelector.ts
+|   |   |           |   createReducer.ts
+|   |   |           |   createSlice.ts
+|   |   |           |   devtoolsExtension.ts
+|   |   |           |   formatProdErrorMessage.ts
+|   |   |           |   getDefaultEnhancers.ts
+|   |   |           |   getDefaultMiddleware.ts
+|   |   |           |   immerImports.ts
+|   |   |           |   immutableStateInvariantMiddleware.ts
+|   |   |           |   index.ts
+|   |   |           |   mapBuilders.ts
+|   |   |           |   matchers.ts
+|   |   |           |   nanoid.ts
+|   |   |           |   reduxImports.ts
+|   |   |           |   reselectImports.ts
+|   |   |           |   serializableStateInvariantMiddleware.ts
+|   |   |           |   tsHelpers.ts
+|   |   |           |   uncheckedindexed.ts
+|   |   |           |   utils.ts
+|   |   |           |   
+|   |   |           +---dynamicMiddleware
+|   |   |           |   |   index.ts
+|   |   |           |   |   types.ts
+|   |   |           |   |   
+|   |   |           |   \---react
+|   |   |           |           index.ts
+|   |   |           |           
+|   |   |           +---entities
+|   |   |           |       create_adapter.ts
+|   |   |           |       entity_state.ts
+|   |   |           |       index.ts
+|   |   |           |       models.ts
+|   |   |           |       sorted_state_adapter.ts
+|   |   |           |       state_adapter.ts
+|   |   |           |       state_selectors.ts
+|   |   |           |       unsorted_state_adapter.ts

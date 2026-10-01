@@ -1,0 +1,150 @@
+    |       |   |   |   _scimath_impl.pyi
+    |       |   |   |   _shape_base_impl.py
+    |       |   |   |   _shape_base_impl.pyi
+    |       |   |   |   _stride_tricks_impl.py
+    |       |   |   |   _stride_tricks_impl.pyi
+    |       |   |   |   _twodim_base_impl.py
+    |       |   |   |   _twodim_base_impl.pyi
+    |       |   |   |   _type_check_impl.py
+    |       |   |   |   _type_check_impl.pyi
+    |       |   |   |   _ufunclike_impl.py
+    |       |   |   |   _ufunclike_impl.pyi
+    |       |   |   |   _user_array_impl.py
+    |       |   |   |   _user_array_impl.pyi
+    |       |   |   |   _utils_impl.py
+    |       |   |   |   _utils_impl.pyi
+    |       |   |   |   _version.py
+    |       |   |   |   _version.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_arraypad.py
+    |       |   |   |   |   test_arraysetops.py
+    |       |   |   |   |   test_arrayterator.py
+    |       |   |   |   |   test_array_utils.py
+    |       |   |   |   |   test_format.py
+    |       |   |   |   |   test_function_base.py
+    |       |   |   |   |   test_histograms.py
+    |       |   |   |   |   test_index_tricks.py
+    |       |   |   |   |   test_io.py
+    |       |   |   |   |   test_loadtxt.py
+    |       |   |   |   |   test_mixins.py
+    |       |   |   |   |   test_nanfunctions.py
+    |       |   |   |   |   test_packbits.py
+    |       |   |   |   |   test_polynomial.py
+    |       |   |   |   |   test_recfunctions.py
+    |       |   |   |   |   test_regression.py
+    |       |   |   |   |   test_shape_base.py
+    |       |   |   |   |   test_stride_tricks.py
+    |       |   |   |   |   test_twodim_base.py
+    |       |   |   |   |   test_type_check.py
+    |       |   |   |   |   test_ufunclike.py
+    |       |   |   |   |   test_utils.py
+    |       |   |   |   |   test__datasource.py
+    |       |   |   |   |   test__iotools.py
+    |       |   |   |   |   test__version.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---data
+    |       |   |   |   |       py2-np0-objarr.npy
+    |       |   |   |   |       py2-objarr.npy
+    |       |   |   |   |       py2-objarr.npz
+    |       |   |   |   |       py3-objarr.npy
+    |       |   |   |   |       py3-objarr.npz
+    |       |   |   |   |       python3.npy
+    |       |   |   |   |       win64python2.npy
+    |       |   |   |   |       
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_arraypad.cpython-313.pyc
+    |       |   |   |           test_arraysetops.cpython-313.pyc
+    |       |   |   |           test_arrayterator.cpython-313.pyc
+    |       |   |   |           test_array_utils.cpython-313.pyc
+    |       |   |   |           test_format.cpython-313.pyc
+    |       |   |   |           test_function_base.cpython-313.pyc
+    |       |   |   |           test_histograms.cpython-313.pyc
+    |       |   |   |           test_index_tricks.cpython-313.pyc
+    |       |   |   |           test_io.cpython-313.pyc
+    |       |   |   |           test_loadtxt.cpython-313.pyc
+    |       |   |   |           test_mixins.cpython-313.pyc
+    |       |   |   |           test_nanfunctions.cpython-313.pyc
+    |       |   |   |           test_packbits.cpython-313.pyc
+    |       |   |   |           test_polynomial.cpython-313.pyc
+    |       |   |   |           test_recfunctions.cpython-313.pyc
+    |       |   |   |           test_regression.cpython-313.pyc
+    |       |   |   |           test_shape_base.cpython-313.pyc
+    |       |   |   |           test_stride_tricks.cpython-313.pyc
+    |       |   |   |           test_twodim_base.cpython-313.pyc
+    |       |   |   |           test_type_check.cpython-313.pyc
+    |       |   |   |           test_ufunclike.cpython-313.pyc
+    |       |   |   |           test_utils.cpython-313.pyc
+    |       |   |   |           test__datasource.cpython-313.pyc
+    |       |   |   |           test__iotools.cpython-313.pyc
+    |       |   |   |           test__version.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           array_utils.cpython-313.pyc
+    |       |   |           format.cpython-313.pyc
+    |       |   |           introspect.cpython-313.pyc
+    |       |   |           mixins.cpython-313.pyc
+    |       |   |           npyio.cpython-313.pyc
+    |       |   |           recfunctions.cpython-313.pyc
+    |       |   |           scimath.cpython-313.pyc
+    |       |   |           stride_tricks.cpython-313.pyc
+    |       |   |           user_array.cpython-313.pyc
+    |       |   |           _arraypad_impl.cpython-313.pyc
+    |       |   |           _arraysetops_impl.cpython-313.pyc
+    |       |   |           _arrayterator_impl.cpython-313.pyc
+    |       |   |           _array_utils_impl.cpython-313.pyc
+    |       |   |           _datasource.cpython-313.pyc
+    |       |   |           _format_impl.cpython-313.pyc
+    |       |   |           _function_base_impl.cpython-313.pyc
+    |       |   |           _histograms_impl.cpython-313.pyc
+    |       |   |           _index_tricks_impl.cpython-313.pyc
+    |       |   |           _iotools.cpython-313.pyc
+    |       |   |           _nanfunctions_impl.cpython-313.pyc
+    |       |   |           _npyio_impl.cpython-313.pyc
+    |       |   |           _polynomial_impl.cpython-313.pyc
+    |       |   |           _scimath_impl.cpython-313.pyc
+    |       |   |           _shape_base_impl.cpython-313.pyc
+    |       |   |           _stride_tricks_impl.cpython-313.pyc
+    |       |   |           _twodim_base_impl.cpython-313.pyc
+    |       |   |           _type_check_impl.cpython-313.pyc
+    |       |   |           _ufunclike_impl.cpython-313.pyc
+    |       |   |           _user_array_impl.cpython-313.pyc
+    |       |   |           _utils_impl.cpython-313.pyc
+    |       |   |           _version.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---linalg
+    |       |   |   |   lapack_lite.cp313-win_amd64.lib
+    |       |   |   |   lapack_lite.cp313-win_amd64.pyd
+    |       |   |   |   lapack_lite.pyi
+    |       |   |   |   _linalg.py
+    |       |   |   |   _linalg.pyi
+    |       |   |   |   _umath_linalg.cp313-win_amd64.lib
+    |       |   |   |   _umath_linalg.cp313-win_amd64.pyd
+    |       |   |   |   _umath_linalg.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_deprecations.py
+    |       |   |   |   |   test_linalg.py
+    |       |   |   |   |   test_regression.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_deprecations.cpython-313.pyc
+    |       |   |   |           test_linalg.cpython-313.pyc
+    |       |   |   |           test_regression.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           _linalg.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---ma
+    |       |   |   |   API_CHANGES.txt
+    |       |   |   |   core.py

@@ -1,0 +1,150 @@
+    |       |   |   |   |   |   test_to_timestamp.py
+    |       |   |   |   |   |   test_transpose.py
+    |       |   |   |   |   |   test_truncate.py
+    |       |   |   |   |   |   test_tz_convert.py
+    |       |   |   |   |   |   test_tz_localize.py
+    |       |   |   |   |   |   test_update.py
+    |       |   |   |   |   |   test_values.py
+    |       |   |   |   |   |   test_value_counts.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_add_prefix_suffix.cpython-313.pyc
+    |       |   |   |   |           test_align.cpython-313.pyc
+    |       |   |   |   |           test_asfreq.cpython-313.pyc
+    |       |   |   |   |           test_asof.cpython-313.pyc
+    |       |   |   |   |           test_assign.cpython-313.pyc
+    |       |   |   |   |           test_astype.cpython-313.pyc
+    |       |   |   |   |           test_at_time.cpython-313.pyc
+    |       |   |   |   |           test_between_time.cpython-313.pyc
+    |       |   |   |   |           test_clip.cpython-313.pyc
+    |       |   |   |   |           test_combine.cpython-313.pyc
+    |       |   |   |   |           test_combine_first.cpython-313.pyc
+    |       |   |   |   |           test_compare.cpython-313.pyc
+    |       |   |   |   |           test_convert_dtypes.cpython-313.pyc
+    |       |   |   |   |           test_copy.cpython-313.pyc
+    |       |   |   |   |           test_count.cpython-313.pyc
+    |       |   |   |   |           test_cov_corr.cpython-313.pyc
+    |       |   |   |   |           test_describe.cpython-313.pyc
+    |       |   |   |   |           test_diff.cpython-313.pyc
+    |       |   |   |   |           test_dot.cpython-313.pyc
+    |       |   |   |   |           test_drop.cpython-313.pyc
+    |       |   |   |   |           test_droplevel.cpython-313.pyc
+    |       |   |   |   |           test_dropna.cpython-313.pyc
+    |       |   |   |   |           test_drop_duplicates.cpython-313.pyc
+    |       |   |   |   |           test_dtypes.cpython-313.pyc
+    |       |   |   |   |           test_duplicated.cpython-313.pyc
+    |       |   |   |   |           test_equals.cpython-313.pyc
+    |       |   |   |   |           test_explode.cpython-313.pyc
+    |       |   |   |   |           test_fillna.cpython-313.pyc
+    |       |   |   |   |           test_filter.cpython-313.pyc
+    |       |   |   |   |           test_first_valid_index.cpython-313.pyc
+    |       |   |   |   |           test_get_numeric_data.cpython-313.pyc
+    |       |   |   |   |           test_head_tail.cpython-313.pyc
+    |       |   |   |   |           test_infer_objects.cpython-313.pyc
+    |       |   |   |   |           test_info.cpython-313.pyc
+    |       |   |   |   |           test_interpolate.cpython-313.pyc
+    |       |   |   |   |           test_isetitem.cpython-313.pyc
+    |       |   |   |   |           test_isin.cpython-313.pyc
+    |       |   |   |   |           test_is_homogeneous_dtype.cpython-313.pyc
+    |       |   |   |   |           test_iterrows.cpython-313.pyc
+    |       |   |   |   |           test_join.cpython-313.pyc
+    |       |   |   |   |           test_map.cpython-313.pyc
+    |       |   |   |   |           test_matmul.cpython-313.pyc
+    |       |   |   |   |           test_nlargest.cpython-313.pyc
+    |       |   |   |   |           test_pct_change.cpython-313.pyc
+    |       |   |   |   |           test_pipe.cpython-313.pyc
+    |       |   |   |   |           test_pop.cpython-313.pyc
+    |       |   |   |   |           test_quantile.cpython-313.pyc
+    |       |   |   |   |           test_rank.cpython-313.pyc
+    |       |   |   |   |           test_reindex.cpython-313.pyc
+    |       |   |   |   |           test_reindex_like.cpython-313.pyc
+    |       |   |   |   |           test_rename.cpython-313.pyc
+    |       |   |   |   |           test_rename_axis.cpython-313.pyc
+    |       |   |   |   |           test_reorder_levels.cpython-313.pyc
+    |       |   |   |   |           test_replace.cpython-313.pyc
+    |       |   |   |   |           test_reset_index.cpython-313.pyc
+    |       |   |   |   |           test_round.cpython-313.pyc
+    |       |   |   |   |           test_sample.cpython-313.pyc
+    |       |   |   |   |           test_select_dtypes.cpython-313.pyc
+    |       |   |   |   |           test_set_axis.cpython-313.pyc
+    |       |   |   |   |           test_set_index.cpython-313.pyc
+    |       |   |   |   |           test_shift.cpython-313.pyc
+    |       |   |   |   |           test_size.cpython-313.pyc
+    |       |   |   |   |           test_sort_index.cpython-313.pyc
+    |       |   |   |   |           test_sort_values.cpython-313.pyc
+    |       |   |   |   |           test_swaplevel.cpython-313.pyc
+    |       |   |   |   |           test_to_csv.cpython-313.pyc
+    |       |   |   |   |           test_to_dict.cpython-313.pyc
+    |       |   |   |   |           test_to_dict_of_blocks.cpython-313.pyc
+    |       |   |   |   |           test_to_numpy.cpython-313.pyc
+    |       |   |   |   |           test_to_period.cpython-313.pyc
+    |       |   |   |   |           test_to_records.cpython-313.pyc
+    |       |   |   |   |           test_to_timestamp.cpython-313.pyc
+    |       |   |   |   |           test_transpose.cpython-313.pyc
+    |       |   |   |   |           test_truncate.cpython-313.pyc
+    |       |   |   |   |           test_tz_convert.cpython-313.pyc
+    |       |   |   |   |           test_tz_localize.cpython-313.pyc
+    |       |   |   |   |           test_update.cpython-313.pyc
+    |       |   |   |   |           test_values.cpython-313.pyc
+    |       |   |   |   |           test_value_counts.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           common.cpython-313.pyc
+    |       |   |   |           conftest.cpython-313.pyc
+    |       |   |   |           test_alter_axes.cpython-313.pyc
+    |       |   |   |           test_api.cpython-313.pyc
+    |       |   |   |           test_arithmetic.cpython-313.pyc
+    |       |   |   |           test_arrow_interface.cpython-313.pyc
+    |       |   |   |           test_block_internals.cpython-313.pyc
+    |       |   |   |           test_constructors.cpython-313.pyc
+    |       |   |   |           test_cumulative.cpython-313.pyc
+    |       |   |   |           test_iteration.cpython-313.pyc
+    |       |   |   |           test_logical_ops.cpython-313.pyc
+    |       |   |   |           test_nonunique_indexes.cpython-313.pyc
+    |       |   |   |           test_npfuncs.cpython-313.pyc
+    |       |   |   |           test_query_eval.cpython-313.pyc
+    |       |   |   |           test_reductions.cpython-313.pyc
+    |       |   |   |           test_repr.cpython-313.pyc
+    |       |   |   |           test_stack_unstack.cpython-313.pyc
+    |       |   |   |           test_subclass.cpython-313.pyc
+    |       |   |   |           test_ufunc.cpython-313.pyc
+    |       |   |   |           test_unary.cpython-313.pyc
+    |       |   |   |           test_validate.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---generic
+    |       |   |   |   |   test_duplicate_labels.py
+    |       |   |   |   |   test_finalize.py
+    |       |   |   |   |   test_frame.py
+    |       |   |   |   |   test_generic.py
+    |       |   |   |   |   test_label_or_level_utils.py
+    |       |   |   |   |   test_series.py
+    |       |   |   |   |   test_to_xarray.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_duplicate_labels.cpython-313.pyc
+    |       |   |   |           test_finalize.cpython-313.pyc
+    |       |   |   |           test_frame.cpython-313.pyc
+    |       |   |   |           test_generic.cpython-313.pyc
+    |       |   |   |           test_label_or_level_utils.cpython-313.pyc
+    |       |   |   |           test_series.cpython-313.pyc
+    |       |   |   |           test_to_xarray.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---groupby
+    |       |   |   |   |   conftest.py
+    |       |   |   |   |   test_all_methods.py
+    |       |   |   |   |   test_api.py
+    |       |   |   |   |   test_apply.py
+    |       |   |   |   |   test_bin_groupby.py
+    |       |   |   |   |   test_categorical.py
+    |       |   |   |   |   test_counting.py
+    |       |   |   |   |   test_cumulative.py
+    |       |   |   |   |   test_filters.py
+    |       |   |   |   |   test_groupby.py
+    |       |   |   |   |   test_groupby_dropna.py
+    |       |   |   |   |   test_groupby_subclass.py
+    |       |   |   |   |   test_grouping.py

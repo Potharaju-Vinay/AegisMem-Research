@@ -1,0 +1,150 @@
+    |       |   |   |           test_check_indexer.cpython-313.pyc
+    |       |   |   |           test_coercion.cpython-313.pyc
+    |       |   |   |           test_datetime.cpython-313.pyc
+    |       |   |   |           test_floats.cpython-313.pyc
+    |       |   |   |           test_iat.cpython-313.pyc
+    |       |   |   |           test_iloc.cpython-313.pyc
+    |       |   |   |           test_indexers.cpython-313.pyc
+    |       |   |   |           test_indexing.cpython-313.pyc
+    |       |   |   |           test_loc.cpython-313.pyc
+    |       |   |   |           test_na_indexing.cpython-313.pyc
+    |       |   |   |           test_partial.cpython-313.pyc
+    |       |   |   |           test_scalar.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---interchange
+    |       |   |   |   |   test_impl.py
+    |       |   |   |   |   test_spec_conformance.py
+    |       |   |   |   |   test_utils.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_impl.cpython-313.pyc
+    |       |   |   |           test_spec_conformance.cpython-313.pyc
+    |       |   |   |           test_utils.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---internals
+    |       |   |   |   |   test_api.py
+    |       |   |   |   |   test_internals.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_api.cpython-313.pyc
+    |       |   |   |           test_internals.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---io
+    |       |   |   |   |   conftest.py
+    |       |   |   |   |   generate_legacy_storage_files.py
+    |       |   |   |   |   test_clipboard.py
+    |       |   |   |   |   test_common.py
+    |       |   |   |   |   test_compression.py
+    |       |   |   |   |   test_feather.py
+    |       |   |   |   |   test_fsspec.py
+    |       |   |   |   |   test_gcs.py
+    |       |   |   |   |   test_html.py
+    |       |   |   |   |   test_http_headers.py
+    |       |   |   |   |   test_iceberg.py
+    |       |   |   |   |   test_orc.py
+    |       |   |   |   |   test_parquet.py
+    |       |   |   |   |   test_pickle.py
+    |       |   |   |   |   test_s3.py
+    |       |   |   |   |   test_spss.py
+    |       |   |   |   |   test_sql.py
+    |       |   |   |   |   test_stata.py
+    |       |   |   |   |   test_util.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---excel
+    |       |   |   |   |   |   test_odf.py
+    |       |   |   |   |   |   test_odswriter.py
+    |       |   |   |   |   |   test_openpyxl.py
+    |       |   |   |   |   |   test_readers.py
+    |       |   |   |   |   |   test_style.py
+    |       |   |   |   |   |   test_writers.py
+    |       |   |   |   |   |   test_xlrd.py
+    |       |   |   |   |   |   test_xlsxwriter.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_odf.cpython-313.pyc
+    |       |   |   |   |           test_odswriter.cpython-313.pyc
+    |       |   |   |   |           test_openpyxl.cpython-313.pyc
+    |       |   |   |   |           test_readers.cpython-313.pyc
+    |       |   |   |   |           test_style.cpython-313.pyc
+    |       |   |   |   |           test_writers.cpython-313.pyc
+    |       |   |   |   |           test_xlrd.cpython-313.pyc
+    |       |   |   |   |           test_xlsxwriter.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---formats
+    |       |   |   |   |   |   test_console.py
+    |       |   |   |   |   |   test_css.py
+    |       |   |   |   |   |   test_eng_formatting.py
+    |       |   |   |   |   |   test_format.py
+    |       |   |   |   |   |   test_ipython_compat.py
+    |       |   |   |   |   |   test_printing.py
+    |       |   |   |   |   |   test_to_csv.py
+    |       |   |   |   |   |   test_to_excel.py
+    |       |   |   |   |   |   test_to_html.py
+    |       |   |   |   |   |   test_to_latex.py
+    |       |   |   |   |   |   test_to_markdown.py
+    |       |   |   |   |   |   test_to_string.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   +---style
+    |       |   |   |   |   |   |   test_bar.py
+    |       |   |   |   |   |   |   test_exceptions.py
+    |       |   |   |   |   |   |   test_format.py
+    |       |   |   |   |   |   |   test_highlight.py
+    |       |   |   |   |   |   |   test_html.py
+    |       |   |   |   |   |   |   test_matplotlib.py
+    |       |   |   |   |   |   |   test_non_unique.py
+    |       |   |   |   |   |   |   test_style.py
+    |       |   |   |   |   |   |   test_tooltip.py
+    |       |   |   |   |   |   |   test_to_latex.py
+    |       |   |   |   |   |   |   test_to_string.py
+    |       |   |   |   |   |   |   test_to_typst.py
+    |       |   |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   |   
+    |       |   |   |   |   |   \---__pycache__
+    |       |   |   |   |   |           test_bar.cpython-313.pyc
+    |       |   |   |   |   |           test_exceptions.cpython-313.pyc
+    |       |   |   |   |   |           test_format.cpython-313.pyc
+    |       |   |   |   |   |           test_highlight.cpython-313.pyc
+    |       |   |   |   |   |           test_html.cpython-313.pyc
+    |       |   |   |   |   |           test_matplotlib.cpython-313.pyc
+    |       |   |   |   |   |           test_non_unique.cpython-313.pyc
+    |       |   |   |   |   |           test_style.cpython-313.pyc
+    |       |   |   |   |   |           test_tooltip.cpython-313.pyc
+    |       |   |   |   |   |           test_to_latex.cpython-313.pyc
+    |       |   |   |   |   |           test_to_string.cpython-313.pyc
+    |       |   |   |   |   |           test_to_typst.cpython-313.pyc
+    |       |   |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |   |           
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_console.cpython-313.pyc
+    |       |   |   |   |           test_css.cpython-313.pyc
+    |       |   |   |   |           test_eng_formatting.cpython-313.pyc
+    |       |   |   |   |           test_format.cpython-313.pyc
+    |       |   |   |   |           test_ipython_compat.cpython-313.pyc
+    |       |   |   |   |           test_printing.cpython-313.pyc
+    |       |   |   |   |           test_to_csv.cpython-313.pyc
+    |       |   |   |   |           test_to_excel.cpython-313.pyc
+    |       |   |   |   |           test_to_html.cpython-313.pyc
+    |       |   |   |   |           test_to_latex.cpython-313.pyc
+    |       |   |   |   |           test_to_markdown.cpython-313.pyc
+    |       |   |   |   |           test_to_string.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---json
+    |       |   |   |   |   |   conftest.py
+    |       |   |   |   |   |   test_compression.py
+    |       |   |   |   |   |   test_deprecated_kwargs.py
+    |       |   |   |   |   |   test_json_table_schema.py
+    |       |   |   |   |   |   test_json_table_schema_ext_dtype.py
+    |       |   |   |   |   |   test_normalize.py
+    |       |   |   |   |   |   test_pandas.py
+    |       |   |   |   |   |   test_readlines.py
+    |       |   |   |   |   |   test_ujson.py

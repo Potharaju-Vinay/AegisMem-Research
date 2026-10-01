@@ -1,0 +1,77 @@
+    |       |           logging.cpython-313.pyc
+    |       |           main.cpython-313.pyc
+    |       |           monkeypatch.cpython-313.pyc
+    |       |           nodes.cpython-313.pyc
+    |       |           outcomes.cpython-313.pyc
+    |       |           pastebin.cpython-313.pyc
+    |       |           pathlib.cpython-313.pyc
+    |       |           pytester.cpython-313.pyc
+    |       |           pytester_assertions.cpython-313.pyc
+    |       |           python.cpython-313.pyc
+    |       |           python_api.cpython-313.pyc
+    |       |           raises.cpython-313.pyc
+    |       |           recwarn.cpython-313.pyc
+    |       |           reports.cpython-313.pyc
+    |       |           runner.cpython-313.pyc
+    |       |           scope.cpython-313.pyc
+    |       |           setuponly.cpython-313.pyc
+    |       |           setupplan.cpython-313.pyc
+    |       |           skipping.cpython-313.pyc
+    |       |           stash.cpython-313.pyc
+    |       |           stepwise.cpython-313.pyc
+    |       |           subtests.cpython-313.pyc
+    |       |           terminal.cpython-313.pyc
+    |       |           terminalprogress.cpython-313-pytest-9.1.1.pyc
+    |       |           terminalprogress.cpython-313.pyc
+    |       |           threadexception.cpython-313.pyc
+    |       |           timing.cpython-313.pyc
+    |       |           tmpdir.cpython-313.pyc
+    |       |           tracemalloc.cpython-313.pyc
+    |       |           unittest.cpython-313.pyc
+    |       |           unraisableexception.cpython-313.pyc
+    |       |           warnings.cpython-313.pyc
+    |       |           warning_types.cpython-313.pyc
+    |       |           _argcomplete.cpython-313.pyc
+    |       |           _version.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       \---__pycache__
+    |               autopep8.cpython-313.pyc
+    |               py.cpython-313.pyc
+    |               pycodestyle.cpython-313.pyc
+    |               pylab.cpython-313.pyc
+    |               six.cpython-313.pyc
+    |               typing_extensions.cpython-313.pyc
+    |               
+    +---Scripts
+    |       activate
+    |       activate.bat
+    |       activate.fish
+    |       Activate.ps1
+    |       autopep8.exe
+    |       cffi-gen-src.exe
+    |       deactivate.bat
+    |       f2py.exe
+    |       fastapi.exe
+    |       fonttools.exe
+    |       idna.exe
+    |       numpy-config.exe
+    |       pip.exe
+    |       pip3.13.exe
+    |       pip3.exe
+    |       py.test.exe
+    |       pycodestyle.exe
+    |       pyftmerge.exe
+    |       pyftsubset.exe
+    |       pygmentize.exe
+    |       pytest.exe
+    |       python.exe
+    |       pythonw.exe
+    |       ttx.exe
+    |       uvicorn.exe
+    |       
+    \---share
+        \---man
+            \---man1
+                    ttx.1
+                    

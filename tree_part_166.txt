@@ -1,0 +1,150 @@
+    |       |   |   |   |           test_indexing.cpython-313.pyc
+    |       |   |   |   |           test_map.cpython-313.pyc
+    |       |   |   |   |           test_reindex.cpython-313.pyc
+    |       |   |   |   |           test_setops.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---datetimelike_
+    |       |   |   |   |   |   test_drop_duplicates.py
+    |       |   |   |   |   |   test_equals.py
+    |       |   |   |   |   |   test_indexing.py
+    |       |   |   |   |   |   test_is_monotonic.py
+    |       |   |   |   |   |   test_nat.py
+    |       |   |   |   |   |   test_sort_values.py
+    |       |   |   |   |   |   test_value_counts.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_drop_duplicates.cpython-313.pyc
+    |       |   |   |   |           test_equals.cpython-313.pyc
+    |       |   |   |   |           test_indexing.cpython-313.pyc
+    |       |   |   |   |           test_is_monotonic.cpython-313.pyc
+    |       |   |   |   |           test_nat.cpython-313.pyc
+    |       |   |   |   |           test_sort_values.cpython-313.pyc
+    |       |   |   |   |           test_value_counts.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---datetimes
+    |       |   |   |   |   |   test_arithmetic.py
+    |       |   |   |   |   |   test_constructors.py
+    |       |   |   |   |   |   test_datetime.py
+    |       |   |   |   |   |   test_date_range.py
+    |       |   |   |   |   |   test_formats.py
+    |       |   |   |   |   |   test_freq_attr.py
+    |       |   |   |   |   |   test_indexing.py
+    |       |   |   |   |   |   test_iter.py
+    |       |   |   |   |   |   test_join.py
+    |       |   |   |   |   |   test_npfuncs.py
+    |       |   |   |   |   |   test_ops.py
+    |       |   |   |   |   |   test_partial_slicing.py
+    |       |   |   |   |   |   test_pickle.py
+    |       |   |   |   |   |   test_reindex.py
+    |       |   |   |   |   |   test_scalar_compat.py
+    |       |   |   |   |   |   test_setops.py
+    |       |   |   |   |   |   test_timezones.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   +---methods
+    |       |   |   |   |   |   |   test_asof.py
+    |       |   |   |   |   |   |   test_astype.py
+    |       |   |   |   |   |   |   test_delete.py
+    |       |   |   |   |   |   |   test_factorize.py
+    |       |   |   |   |   |   |   test_fillna.py
+    |       |   |   |   |   |   |   test_insert.py
+    |       |   |   |   |   |   |   test_isocalendar.py
+    |       |   |   |   |   |   |   test_map.py
+    |       |   |   |   |   |   |   test_normalize.py
+    |       |   |   |   |   |   |   test_repeat.py
+    |       |   |   |   |   |   |   test_resolution.py
+    |       |   |   |   |   |   |   test_round.py
+    |       |   |   |   |   |   |   test_shift.py
+    |       |   |   |   |   |   |   test_snap.py
+    |       |   |   |   |   |   |   test_to_frame.py
+    |       |   |   |   |   |   |   test_to_julian_date.py
+    |       |   |   |   |   |   |   test_to_period.py
+    |       |   |   |   |   |   |   test_to_pydatetime.py
+    |       |   |   |   |   |   |   test_to_series.py
+    |       |   |   |   |   |   |   test_tz_convert.py
+    |       |   |   |   |   |   |   test_tz_localize.py
+    |       |   |   |   |   |   |   test_unique.py
+    |       |   |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   |   
+    |       |   |   |   |   |   \---__pycache__
+    |       |   |   |   |   |           test_asof.cpython-313.pyc
+    |       |   |   |   |   |           test_astype.cpython-313.pyc
+    |       |   |   |   |   |           test_delete.cpython-313.pyc
+    |       |   |   |   |   |           test_factorize.cpython-313.pyc
+    |       |   |   |   |   |           test_fillna.cpython-313.pyc
+    |       |   |   |   |   |           test_insert.cpython-313.pyc
+    |       |   |   |   |   |           test_isocalendar.cpython-313.pyc
+    |       |   |   |   |   |           test_map.cpython-313.pyc
+    |       |   |   |   |   |           test_normalize.cpython-313.pyc
+    |       |   |   |   |   |           test_repeat.cpython-313.pyc
+    |       |   |   |   |   |           test_resolution.cpython-313.pyc
+    |       |   |   |   |   |           test_round.cpython-313.pyc
+    |       |   |   |   |   |           test_shift.cpython-313.pyc
+    |       |   |   |   |   |           test_snap.cpython-313.pyc
+    |       |   |   |   |   |           test_to_frame.cpython-313.pyc
+    |       |   |   |   |   |           test_to_julian_date.cpython-313.pyc
+    |       |   |   |   |   |           test_to_period.cpython-313.pyc
+    |       |   |   |   |   |           test_to_pydatetime.cpython-313.pyc
+    |       |   |   |   |   |           test_to_series.cpython-313.pyc
+    |       |   |   |   |   |           test_tz_convert.cpython-313.pyc
+    |       |   |   |   |   |           test_tz_localize.cpython-313.pyc
+    |       |   |   |   |   |           test_unique.cpython-313.pyc
+    |       |   |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |   |           
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_arithmetic.cpython-313.pyc
+    |       |   |   |   |           test_constructors.cpython-313.pyc
+    |       |   |   |   |           test_datetime.cpython-313.pyc
+    |       |   |   |   |           test_date_range.cpython-313.pyc
+    |       |   |   |   |           test_formats.cpython-313.pyc
+    |       |   |   |   |           test_freq_attr.cpython-313.pyc
+    |       |   |   |   |           test_indexing.cpython-313.pyc
+    |       |   |   |   |           test_iter.cpython-313.pyc
+    |       |   |   |   |           test_join.cpython-313.pyc
+    |       |   |   |   |           test_npfuncs.cpython-313.pyc
+    |       |   |   |   |           test_ops.cpython-313.pyc
+    |       |   |   |   |           test_partial_slicing.cpython-313.pyc
+    |       |   |   |   |           test_pickle.cpython-313.pyc
+    |       |   |   |   |           test_reindex.cpython-313.pyc
+    |       |   |   |   |           test_scalar_compat.cpython-313.pyc
+    |       |   |   |   |           test_setops.cpython-313.pyc
+    |       |   |   |   |           test_timezones.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---interval
+    |       |   |   |   |   |   test_astype.py
+    |       |   |   |   |   |   test_constructors.py
+    |       |   |   |   |   |   test_equals.py
+    |       |   |   |   |   |   test_formats.py
+    |       |   |   |   |   |   test_indexing.py
+    |       |   |   |   |   |   test_interval.py
+    |       |   |   |   |   |   test_interval_range.py
+    |       |   |   |   |   |   test_interval_tree.py
+    |       |   |   |   |   |   test_join.py
+    |       |   |   |   |   |   test_pickle.py
+    |       |   |   |   |   |   test_setops.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_astype.cpython-313.pyc
+    |       |   |   |   |           test_constructors.cpython-313.pyc
+    |       |   |   |   |           test_equals.cpython-313.pyc
+    |       |   |   |   |           test_formats.cpython-313.pyc
+    |       |   |   |   |           test_indexing.cpython-313.pyc
+    |       |   |   |   |           test_interval.cpython-313.pyc
+    |       |   |   |   |           test_interval_range.cpython-313.pyc
+    |       |   |   |   |           test_interval_tree.cpython-313.pyc
+    |       |   |   |   |           test_join.cpython-313.pyc
+    |       |   |   |   |           test_pickle.cpython-313.pyc
+    |       |   |   |   |           test_setops.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---multi
+    |       |   |   |   |   |   conftest.py
+    |       |   |   |   |   |   test_analytics.py
+    |       |   |   |   |   |   test_astype.py
+    |       |   |   |   |   |   test_compat.py
+    |       |   |   |   |   |   test_constructors.py

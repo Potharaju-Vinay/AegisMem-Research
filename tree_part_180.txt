@@ -1,0 +1,150 @@
+    |       |   |   |   \---__pycache__
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           installer.cpython-313.pyc
+    |       |   |   |           noop.cpython-313.pyc
+    |       |   |   |           venv.cpython-313.pyc
+    |       |   |   |           virtual.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---cli
+    |       |   |   |   |   autocompletion.py
+    |       |   |   |   |   base_command.py
+    |       |   |   |   |   cmdoptions.py
+    |       |   |   |   |   command_context.py
+    |       |   |   |   |   index_command.py
+    |       |   |   |   |   main.py
+    |       |   |   |   |   main_parser.py
+    |       |   |   |   |   parser.py
+    |       |   |   |   |   progress_bars.py
+    |       |   |   |   |   req_command.py
+    |       |   |   |   |   spinners.py
+    |       |   |   |   |   status_codes.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           autocompletion.cpython-313.pyc
+    |       |   |   |           base_command.cpython-313.pyc
+    |       |   |   |           cmdoptions.cpython-313.pyc
+    |       |   |   |           command_context.cpython-313.pyc
+    |       |   |   |           index_command.cpython-313.pyc
+    |       |   |   |           main.cpython-313.pyc
+    |       |   |   |           main_parser.cpython-313.pyc
+    |       |   |   |           parser.cpython-313.pyc
+    |       |   |   |           progress_bars.cpython-313.pyc
+    |       |   |   |           req_command.cpython-313.pyc
+    |       |   |   |           spinners.cpython-313.pyc
+    |       |   |   |           status_codes.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---commands
+    |       |   |   |   |   cache.py
+    |       |   |   |   |   check.py
+    |       |   |   |   |   completion.py
+    |       |   |   |   |   configuration.py
+    |       |   |   |   |   debug.py
+    |       |   |   |   |   download.py
+    |       |   |   |   |   freeze.py
+    |       |   |   |   |   hash.py
+    |       |   |   |   |   help.py
+    |       |   |   |   |   index.py
+    |       |   |   |   |   inspect.py
+    |       |   |   |   |   install.py
+    |       |   |   |   |   list.py
+    |       |   |   |   |   lock.py
+    |       |   |   |   |   search.py
+    |       |   |   |   |   show.py
+    |       |   |   |   |   uninstall.py
+    |       |   |   |   |   wheel.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           cache.cpython-313.pyc
+    |       |   |   |           check.cpython-313.pyc
+    |       |   |   |           completion.cpython-313.pyc
+    |       |   |   |           configuration.cpython-313.pyc
+    |       |   |   |           debug.cpython-313.pyc
+    |       |   |   |           download.cpython-313.pyc
+    |       |   |   |           freeze.cpython-313.pyc
+    |       |   |   |           hash.cpython-313.pyc
+    |       |   |   |           help.cpython-313.pyc
+    |       |   |   |           index.cpython-313.pyc
+    |       |   |   |           inspect.cpython-313.pyc
+    |       |   |   |           install.cpython-313.pyc
+    |       |   |   |           list.cpython-313.pyc
+    |       |   |   |           lock.cpython-313.pyc
+    |       |   |   |           search.cpython-313.pyc
+    |       |   |   |           show.cpython-313.pyc
+    |       |   |   |           uninstall.cpython-313.pyc
+    |       |   |   |           wheel.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---distributions
+    |       |   |   |   |   base.py
+    |       |   |   |   |   installed.py
+    |       |   |   |   |   sdist.py
+    |       |   |   |   |   wheel.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           installed.cpython-313.pyc
+    |       |   |   |           sdist.cpython-313.pyc
+    |       |   |   |           wheel.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---index
+    |       |   |   |   |   collector.py
+    |       |   |   |   |   package_finder.py
+    |       |   |   |   |   sources.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           collector.cpython-313.pyc
+    |       |   |   |           package_finder.cpython-313.pyc
+    |       |   |   |           sources.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---locations
+    |       |   |   |   |   base.py
+    |       |   |   |   |   _distutils.py
+    |       |   |   |   |   _sysconfig.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           _distutils.cpython-313.pyc
+    |       |   |   |           _sysconfig.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---metadata
+    |       |   |   |   |   base.py
+    |       |   |   |   |   pkg_resources.py
+    |       |   |   |   |   _json.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---importlib
+    |       |   |   |   |   |   _compat.py
+    |       |   |   |   |   |   _dists.py
+    |       |   |   |   |   |   _envs.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           _compat.cpython-313.pyc
+    |       |   |   |   |           _dists.cpython-313.pyc
+    |       |   |   |   |           _envs.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           pkg_resources.cpython-313.pyc
+    |       |   |   |           _json.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---models
+    |       |   |   |   |   candidate.py
+    |       |   |   |   |   direct_url.py
+    |       |   |   |   |   format_control.py
+    |       |   |   |   |   index.py
+    |       |   |   |   |   installation_report.py
+    |       |   |   |   |   link.py
+    |       |   |   |   |   release_control.py

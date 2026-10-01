@@ -1,0 +1,150 @@
+    |       |   |   api.py
+    |       |   |   backend_ctypes.py
+    |       |   |   cffi_opcode.py
+    |       |   |   commontypes.py
+    |       |   |   cparser.py
+    |       |   |   error.py
+    |       |   |   ffiplatform.py
+    |       |   |   gen_src.py
+    |       |   |   lock.py
+    |       |   |   model.py
+    |       |   |   parse_c_type.h
+    |       |   |   pkgconfig.py
+    |       |   |   recompiler.py
+    |       |   |   setuptools_ext.py
+    |       |   |   vengine_cpy.py
+    |       |   |   vengine_gen.py
+    |       |   |   verifier.py
+    |       |   |   _cffi_errors.h
+    |       |   |   _cffi_gen_src.py
+    |       |   |   _cffi_include.h
+    |       |   |   _embedding.h
+    |       |   |   _imp_emulation.py
+    |       |   |   _shimmed_dist_utils.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           api.cpython-313.pyc
+    |       |           backend_ctypes.cpython-313.pyc
+    |       |           cffi_opcode.cpython-313.pyc
+    |       |           commontypes.cpython-313.pyc
+    |       |           cparser.cpython-313.pyc
+    |       |           error.cpython-313.pyc
+    |       |           ffiplatform.cpython-313.pyc
+    |       |           gen_src.cpython-313.pyc
+    |       |           lock.cpython-313.pyc
+    |       |           model.cpython-313.pyc
+    |       |           pkgconfig.cpython-313.pyc
+    |       |           recompiler.cpython-313.pyc
+    |       |           setuptools_ext.cpython-313.pyc
+    |       |           vengine_cpy.cpython-313.pyc
+    |       |           vengine_gen.cpython-313.pyc
+    |       |           verifier.cpython-313.pyc
+    |       |           _cffi_gen_src.cpython-313.pyc
+    |       |           _imp_emulation.cpython-313.pyc
+    |       |           _shimmed_dist_utils.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---cffi-2.1.1.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---click
+    |       |   |   core.py
+    |       |   |   decorators.py
+    |       |   |   exceptions.py
+    |       |   |   formatting.py
+    |       |   |   globals.py
+    |       |   |   parser.py
+    |       |   |   py.typed
+    |       |   |   shell_completion.py
+    |       |   |   termui.py
+    |       |   |   testing.py
+    |       |   |   types.py
+    |       |   |   utils.py
+    |       |   |   _compat.py
+    |       |   |   _termui_impl.py
+    |       |   |   _textwrap.py
+    |       |   |   _utils.py
+    |       |   |   _winconsole.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           core.cpython-313.pyc
+    |       |           decorators.cpython-313.pyc
+    |       |           exceptions.cpython-313.pyc
+    |       |           formatting.cpython-313.pyc
+    |       |           globals.cpython-313.pyc
+    |       |           parser.cpython-313.pyc
+    |       |           shell_completion.cpython-313.pyc
+    |       |           termui.cpython-313.pyc
+    |       |           testing.cpython-313.pyc
+    |       |           types.cpython-313.pyc
+    |       |           utils.cpython-313.pyc
+    |       |           _compat.cpython-313.pyc
+    |       |           _termui_impl.cpython-313.pyc
+    |       |           _textwrap.cpython-313.pyc
+    |       |           _utils.cpython-313.pyc
+    |       |           _winconsole.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---click-8.5.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.txt
+    |       |           
+    |       +---colorama
+    |       |   |   ansi.py
+    |       |   |   ansitowin32.py
+    |       |   |   initialise.py
+    |       |   |   win32.py
+    |       |   |   winterm.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---tests
+    |       |   |   |   ansitowin32_test.py
+    |       |   |   |   ansi_test.py
+    |       |   |   |   initialise_test.py
+    |       |   |   |   isatty_test.py
+    |       |   |   |   utils.py
+    |       |   |   |   winterm_test.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           ansitowin32_test.cpython-313.pyc
+    |       |   |           ansi_test.cpython-313.pyc
+    |       |   |           initialise_test.cpython-313.pyc
+    |       |   |           isatty_test.cpython-313.pyc
+    |       |   |           utils.cpython-313.pyc
+    |       |   |           winterm_test.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           ansi.cpython-313.pyc
+    |       |           ansitowin32.cpython-313.pyc
+    |       |           initialise.cpython-313.pyc
+    |       |           win32.cpython-313.pyc
+    |       |           winterm.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---colorama-0.4.6.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.txt
+    |       |           
+    |       +---contourpy

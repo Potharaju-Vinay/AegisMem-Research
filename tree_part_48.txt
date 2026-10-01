@@ -1,0 +1,150 @@
+|   |   |   |   |   |       zip.d.mts
+|   |   |   |   |   |       zip.d.ts
+|   |   |   |   |   |       zip.js
+|   |   |   |   |   |       zip.mjs
+|   |   |   |   |   |       zipObject.d.mts
+|   |   |   |   |   |       zipObject.d.ts
+|   |   |   |   |   |       zipObject.js
+|   |   |   |   |   |       zipObject.mjs
+|   |   |   |   |   |       zipWith.d.mts
+|   |   |   |   |   |       zipWith.d.ts
+|   |   |   |   |   |       zipWith.js
+|   |   |   |   |   |       zipWith.mjs
+|   |   |   |   |   |       
+|   |   |   |   |   +---iterator
+|   |   |   |   |   |       cartesianProduct.d.mts
+|   |   |   |   |   |       cartesianProduct.d.ts
+|   |   |   |   |   |       cartesianProduct.js
+|   |   |   |   |   |       cartesianProduct.mjs
+|   |   |   |   |   |       chunk.d.mts
+|   |   |   |   |   |       chunk.d.ts
+|   |   |   |   |   |       chunk.js
+|   |   |   |   |   |       chunk.mjs
+|   |   |   |   |   |       count.d.mts
+|   |   |   |   |   |       count.d.ts
+|   |   |   |   |   |       count.js
+|   |   |   |   |   |       count.mjs
+|   |   |   |   |   |       drop.d.mts
+|   |   |   |   |   |       drop.d.ts
+|   |   |   |   |   |       drop.js
+|   |   |   |   |   |       drop.mjs
+|   |   |   |   |   |       dropWhile.d.mts
+|   |   |   |   |   |       dropWhile.d.ts
+|   |   |   |   |   |       dropWhile.js
+|   |   |   |   |   |       dropWhile.mjs
+|   |   |   |   |   |       every.d.mts
+|   |   |   |   |   |       every.d.ts
+|   |   |   |   |   |       every.js
+|   |   |   |   |   |       every.mjs
+|   |   |   |   |   |       filter.d.mts
+|   |   |   |   |   |       filter.d.ts
+|   |   |   |   |   |       filter.js
+|   |   |   |   |   |       filter.mjs
+|   |   |   |   |   |       find.d.mts
+|   |   |   |   |   |       find.d.ts
+|   |   |   |   |   |       find.js
+|   |   |   |   |   |       find.mjs
+|   |   |   |   |   |       flatMap.d.mts
+|   |   |   |   |   |       flatMap.d.ts
+|   |   |   |   |   |       flatMap.js
+|   |   |   |   |   |       flatMap.mjs
+|   |   |   |   |   |       forEach.d.mts
+|   |   |   |   |   |       forEach.d.ts
+|   |   |   |   |   |       forEach.js
+|   |   |   |   |   |       forEach.mjs
+|   |   |   |   |   |       head.d.mts
+|   |   |   |   |   |       head.d.ts
+|   |   |   |   |   |       head.js
+|   |   |   |   |   |       head.mjs
+|   |   |   |   |   |       index.d.mts
+|   |   |   |   |   |       index.d.ts
+|   |   |   |   |   |       index.js
+|   |   |   |   |   |       index.mjs
+|   |   |   |   |   |       map.d.mts
+|   |   |   |   |   |       map.d.ts
+|   |   |   |   |   |       map.js
+|   |   |   |   |   |       map.mjs
+|   |   |   |   |   |       partition.d.mts
+|   |   |   |   |   |       partition.d.ts
+|   |   |   |   |   |       partition.js
+|   |   |   |   |   |       partition.mjs
+|   |   |   |   |   |       reduce.d.mts
+|   |   |   |   |   |       reduce.d.ts
+|   |   |   |   |   |       reduce.js
+|   |   |   |   |   |       reduce.mjs
+|   |   |   |   |   |       scan.d.mts
+|   |   |   |   |   |       scan.d.ts
+|   |   |   |   |   |       scan.js
+|   |   |   |   |   |       scan.mjs
+|   |   |   |   |   |       some.d.mts
+|   |   |   |   |   |       some.d.ts
+|   |   |   |   |   |       some.js
+|   |   |   |   |   |       some.mjs
+|   |   |   |   |   |       take.d.mts
+|   |   |   |   |   |       take.d.ts
+|   |   |   |   |   |       take.js
+|   |   |   |   |   |       take.mjs
+|   |   |   |   |   |       takeWhile.d.mts
+|   |   |   |   |   |       takeWhile.d.ts
+|   |   |   |   |   |       takeWhile.js
+|   |   |   |   |   |       takeWhile.mjs
+|   |   |   |   |   |       toArray.d.mts
+|   |   |   |   |   |       toArray.d.ts
+|   |   |   |   |   |       toArray.js
+|   |   |   |   |   |       toArray.mjs
+|   |   |   |   |   |       uniqBy.d.mts
+|   |   |   |   |   |       uniqBy.d.ts
+|   |   |   |   |   |       uniqBy.js
+|   |   |   |   |   |       uniqBy.mjs
+|   |   |   |   |   |       zip.d.mts
+|   |   |   |   |   |       zip.d.ts
+|   |   |   |   |   |       zip.js
+|   |   |   |   |   |       zip.mjs
+|   |   |   |   |   |       
+|   |   |   |   |   +---math
+|   |   |   |   |   |       add.d.mts
+|   |   |   |   |   |       add.d.ts
+|   |   |   |   |   |       add.js
+|   |   |   |   |   |       add.mjs
+|   |   |   |   |   |       index.d.mts
+|   |   |   |   |   |       index.d.ts
+|   |   |   |   |   |       index.js
+|   |   |   |   |   |       index.mjs
+|   |   |   |   |   |       multiply.d.mts
+|   |   |   |   |   |       multiply.d.ts
+|   |   |   |   |   |       multiply.js
+|   |   |   |   |   |       multiply.mjs
+|   |   |   |   |   |       
+|   |   |   |   |   +---object
+|   |   |   |   |   |       index.d.mts
+|   |   |   |   |   |       index.d.ts
+|   |   |   |   |   |       index.js
+|   |   |   |   |   |       index.mjs
+|   |   |   |   |   |       omit.d.mts
+|   |   |   |   |   |       omit.d.ts
+|   |   |   |   |   |       omit.js
+|   |   |   |   |   |       omit.mjs
+|   |   |   |   |   |       pick.d.mts
+|   |   |   |   |   |       pick.d.ts
+|   |   |   |   |   |       pick.js
+|   |   |   |   |   |       pick.mjs
+|   |   |   |   |   |       
+|   |   |   |   |   \---_internal
+|   |   |   |   |           lazy.js
+|   |   |   |   |           lazy.mjs
+|   |   |   |   |           
+|   |   |   |   +---function
+|   |   |   |   |       after.d.mts
+|   |   |   |   |       after.d.ts
+|   |   |   |   |       after.js
+|   |   |   |   |       after.mjs
+|   |   |   |   |       ary.d.mts
+|   |   |   |   |       ary.d.ts
+|   |   |   |   |       ary.js
+|   |   |   |   |       ary.mjs
+|   |   |   |   |       asyncNoop.d.mts
+|   |   |   |   |       asyncNoop.d.ts
+|   |   |   |   |       asyncNoop.js
+|   |   |   |   |       asyncNoop.mjs
+|   |   |   |   |       before.d.mts
+|   |   |   |   |       before.d.ts

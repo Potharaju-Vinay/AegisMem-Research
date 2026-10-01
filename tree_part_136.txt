@@ -1,0 +1,150 @@
+    |       |   |   |   |           test_centrality.cpython-313.pyc
+    |       |   |   |   |           test_divisive.cpython-313.pyc
+    |       |   |   |   |           test_kclique.cpython-313.pyc
+    |       |   |   |   |           test_label_propagation.cpython-313.pyc
+    |       |   |   |   |           test_leiden.cpython-313.pyc
+    |       |   |   |   |           test_local.cpython-313.pyc
+    |       |   |   |   |           test_louvain.cpython-313.pyc
+    |       |   |   |   |           test_lukes.cpython-313.pyc
+    |       |   |   |   |           test_modularity_max.cpython-313.pyc
+    |       |   |   |   |           test_quality.cpython-313.pyc
+    |       |   |   |   |           test_utils.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           asyn_fluid.cpython-313.pyc
+    |       |   |   |           bipartitions.cpython-313.pyc
+    |       |   |   |           centrality.cpython-313.pyc
+    |       |   |   |           community_utils.cpython-313.pyc
+    |       |   |   |           divisive.cpython-313.pyc
+    |       |   |   |           kclique.cpython-313.pyc
+    |       |   |   |           label_propagation.cpython-313.pyc
+    |       |   |   |           leiden.cpython-313.pyc
+    |       |   |   |           local.cpython-313.pyc
+    |       |   |   |           louvain.cpython-313.pyc
+    |       |   |   |           lukes.cpython-313.pyc
+    |       |   |   |           modularity_max.cpython-313.pyc
+    |       |   |   |           quality.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---components
+    |       |   |   |   |   attracting.py
+    |       |   |   |   |   biconnected.py
+    |       |   |   |   |   connected.py
+    |       |   |   |   |   semiconnected.py
+    |       |   |   |   |   strongly_connected.py
+    |       |   |   |   |   weakly_connected.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_attracting.py
+    |       |   |   |   |   |   test_biconnected.py
+    |       |   |   |   |   |   test_connected.py
+    |       |   |   |   |   |   test_semiconnected.py
+    |       |   |   |   |   |   test_strongly_connected.py
+    |       |   |   |   |   |   test_weakly_connected.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_attracting.cpython-313.pyc
+    |       |   |   |   |           test_biconnected.cpython-313.pyc
+    |       |   |   |   |           test_connected.cpython-313.pyc
+    |       |   |   |   |           test_semiconnected.cpython-313.pyc
+    |       |   |   |   |           test_strongly_connected.cpython-313.pyc
+    |       |   |   |   |           test_weakly_connected.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           attracting.cpython-313.pyc
+    |       |   |   |           biconnected.cpython-313.pyc
+    |       |   |   |           connected.cpython-313.pyc
+    |       |   |   |           semiconnected.cpython-313.pyc
+    |       |   |   |           strongly_connected.cpython-313.pyc
+    |       |   |   |           weakly_connected.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---connectivity
+    |       |   |   |   |   connectivity.py
+    |       |   |   |   |   cuts.py
+    |       |   |   |   |   disjoint_paths.py
+    |       |   |   |   |   edge_augmentation.py
+    |       |   |   |   |   edge_kcomponents.py
+    |       |   |   |   |   kcomponents.py
+    |       |   |   |   |   kcutsets.py
+    |       |   |   |   |   stoerwagner.py
+    |       |   |   |   |   utils.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_connectivity.py
+    |       |   |   |   |   |   test_cuts.py
+    |       |   |   |   |   |   test_disjoint_paths.py
+    |       |   |   |   |   |   test_edge_augmentation.py
+    |       |   |   |   |   |   test_edge_kcomponents.py
+    |       |   |   |   |   |   test_kcomponents.py
+    |       |   |   |   |   |   test_kcutsets.py
+    |       |   |   |   |   |   test_stoer_wagner.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_connectivity.cpython-313.pyc
+    |       |   |   |   |           test_cuts.cpython-313.pyc
+    |       |   |   |   |           test_disjoint_paths.cpython-313.pyc
+    |       |   |   |   |           test_edge_augmentation.cpython-313.pyc
+    |       |   |   |   |           test_edge_kcomponents.cpython-313.pyc
+    |       |   |   |   |           test_kcomponents.cpython-313.pyc
+    |       |   |   |   |           test_kcutsets.cpython-313.pyc
+    |       |   |   |   |           test_stoer_wagner.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           connectivity.cpython-313.pyc
+    |       |   |   |           cuts.cpython-313.pyc
+    |       |   |   |           disjoint_paths.cpython-313.pyc
+    |       |   |   |           edge_augmentation.cpython-313.pyc
+    |       |   |   |           edge_kcomponents.cpython-313.pyc
+    |       |   |   |           kcomponents.cpython-313.pyc
+    |       |   |   |           kcutsets.cpython-313.pyc
+    |       |   |   |           stoerwagner.cpython-313.pyc
+    |       |   |   |           utils.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---flow
+    |       |   |   |   |   boykovkolmogorov.py
+    |       |   |   |   |   capacityscaling.py
+    |       |   |   |   |   dinitz_alg.py
+    |       |   |   |   |   edmondskarp.py
+    |       |   |   |   |   gomory_hu.py
+    |       |   |   |   |   maxflow.py
+    |       |   |   |   |   mincost.py
+    |       |   |   |   |   networksimplex.py
+    |       |   |   |   |   preflowpush.py
+    |       |   |   |   |   shortestaugmentingpath.py
+    |       |   |   |   |   utils.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   gl1.gpickle.bz2
+    |       |   |   |   |   |   gw1.gpickle.bz2
+    |       |   |   |   |   |   netgen-2.gpickle.bz2
+    |       |   |   |   |   |   test_gomory_hu.py
+    |       |   |   |   |   |   test_maxflow.py
+    |       |   |   |   |   |   test_maxflow_large_graph.py
+    |       |   |   |   |   |   test_mincost.py
+    |       |   |   |   |   |   test_networksimplex.py
+    |       |   |   |   |   |   wlm3.gpickle.bz2
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_gomory_hu.cpython-313.pyc
+    |       |   |   |   |           test_maxflow.cpython-313.pyc
+    |       |   |   |   |           test_maxflow_large_graph.cpython-313.pyc
+    |       |   |   |   |           test_mincost.cpython-313.pyc
+    |       |   |   |   |           test_networksimplex.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           boykovkolmogorov.cpython-313.pyc
+    |       |   |   |           capacityscaling.cpython-313.pyc
+    |       |   |   |           dinitz_alg.cpython-313.pyc
+    |       |   |   |           edmondskarp.cpython-313.pyc

@@ -1,0 +1,150 @@
+    |       |   |   |   |   treewidth.py
+    |       |   |   |   |   vertex_cover.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_approx_clust_coeff.py
+    |       |   |   |   |   |   test_clique.py
+    |       |   |   |   |   |   test_connectivity.py
+    |       |   |   |   |   |   test_density.py
+    |       |   |   |   |   |   test_distance_measures.py
+    |       |   |   |   |   |   test_dominating_set.py
+    |       |   |   |   |   |   test_kcomponents.py
+    |       |   |   |   |   |   test_matching.py
+    |       |   |   |   |   |   test_maxcut.py
+    |       |   |   |   |   |   test_ramsey.py
+    |       |   |   |   |   |   test_steinertree.py
+    |       |   |   |   |   |   test_traveling_salesman.py
+    |       |   |   |   |   |   test_treewidth.py
+    |       |   |   |   |   |   test_vertex_cover.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_approx_clust_coeff.cpython-313.pyc
+    |       |   |   |   |           test_clique.cpython-313.pyc
+    |       |   |   |   |           test_connectivity.cpython-313.pyc
+    |       |   |   |   |           test_density.cpython-313.pyc
+    |       |   |   |   |           test_distance_measures.cpython-313.pyc
+    |       |   |   |   |           test_dominating_set.cpython-313.pyc
+    |       |   |   |   |           test_kcomponents.cpython-313.pyc
+    |       |   |   |   |           test_matching.cpython-313.pyc
+    |       |   |   |   |           test_maxcut.cpython-313.pyc
+    |       |   |   |   |           test_ramsey.cpython-313.pyc
+    |       |   |   |   |           test_steinertree.cpython-313.pyc
+    |       |   |   |   |           test_traveling_salesman.cpython-313.pyc
+    |       |   |   |   |           test_treewidth.cpython-313.pyc
+    |       |   |   |   |           test_vertex_cover.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           clique.cpython-313.pyc
+    |       |   |   |           clustering_coefficient.cpython-313.pyc
+    |       |   |   |           connectivity.cpython-313.pyc
+    |       |   |   |           density.cpython-313.pyc
+    |       |   |   |           distance_measures.cpython-313.pyc
+    |       |   |   |           dominating_set.cpython-313.pyc
+    |       |   |   |           kcomponents.cpython-313.pyc
+    |       |   |   |           matching.cpython-313.pyc
+    |       |   |   |           maxcut.cpython-313.pyc
+    |       |   |   |           ramsey.cpython-313.pyc
+    |       |   |   |           steinertree.cpython-313.pyc
+    |       |   |   |           traveling_salesman.cpython-313.pyc
+    |       |   |   |           treewidth.cpython-313.pyc
+    |       |   |   |           vertex_cover.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---assortativity
+    |       |   |   |   |   connectivity.py
+    |       |   |   |   |   correlation.py
+    |       |   |   |   |   mixing.py
+    |       |   |   |   |   neighbor_degree.py
+    |       |   |   |   |   pairs.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   base_test.py
+    |       |   |   |   |   |   test_connectivity.py
+    |       |   |   |   |   |   test_correlation.py
+    |       |   |   |   |   |   test_mixing.py
+    |       |   |   |   |   |   test_neighbor_degree.py
+    |       |   |   |   |   |   test_pairs.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           base_test.cpython-313.pyc
+    |       |   |   |   |           test_connectivity.cpython-313.pyc
+    |       |   |   |   |           test_correlation.cpython-313.pyc
+    |       |   |   |   |           test_mixing.cpython-313.pyc
+    |       |   |   |   |           test_neighbor_degree.cpython-313.pyc
+    |       |   |   |   |           test_pairs.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           connectivity.cpython-313.pyc
+    |       |   |   |           correlation.cpython-313.pyc
+    |       |   |   |           mixing.cpython-313.pyc
+    |       |   |   |           neighbor_degree.cpython-313.pyc
+    |       |   |   |           pairs.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---bipartite
+    |       |   |   |   |   basic.py
+    |       |   |   |   |   centrality.py
+    |       |   |   |   |   cluster.py
+    |       |   |   |   |   covering.py
+    |       |   |   |   |   edgelist.py
+    |       |   |   |   |   extendability.py
+    |       |   |   |   |   generators.py
+    |       |   |   |   |   link_analysis.py
+    |       |   |   |   |   matching.py
+    |       |   |   |   |   matrix.py
+    |       |   |   |   |   projection.py
+    |       |   |   |   |   redundancy.py
+    |       |   |   |   |   spectral.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_basic.py
+    |       |   |   |   |   |   test_centrality.py
+    |       |   |   |   |   |   test_cluster.py
+    |       |   |   |   |   |   test_covering.py
+    |       |   |   |   |   |   test_edgelist.py
+    |       |   |   |   |   |   test_extendability.py
+    |       |   |   |   |   |   test_generators.py
+    |       |   |   |   |   |   test_link_analysis.py
+    |       |   |   |   |   |   test_matching.py
+    |       |   |   |   |   |   test_matrix.py
+    |       |   |   |   |   |   test_project.py
+    |       |   |   |   |   |   test_redundancy.py
+    |       |   |   |   |   |   test_spectral_bipartivity.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_basic.cpython-313.pyc
+    |       |   |   |   |           test_centrality.cpython-313.pyc
+    |       |   |   |   |           test_cluster.cpython-313.pyc
+    |       |   |   |   |           test_covering.cpython-313.pyc
+    |       |   |   |   |           test_edgelist.cpython-313.pyc
+    |       |   |   |   |           test_extendability.cpython-313.pyc
+    |       |   |   |   |           test_generators.cpython-313.pyc
+    |       |   |   |   |           test_link_analysis.cpython-313.pyc
+    |       |   |   |   |           test_matching.cpython-313.pyc
+    |       |   |   |   |           test_matrix.cpython-313.pyc
+    |       |   |   |   |           test_project.cpython-313.pyc
+    |       |   |   |   |           test_redundancy.cpython-313.pyc
+    |       |   |   |   |           test_spectral_bipartivity.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           basic.cpython-313.pyc
+    |       |   |   |           centrality.cpython-313.pyc
+    |       |   |   |           cluster.cpython-313.pyc
+    |       |   |   |           covering.cpython-313.pyc
+    |       |   |   |           edgelist.cpython-313.pyc
+    |       |   |   |           extendability.cpython-313.pyc
+    |       |   |   |           generators.cpython-313.pyc
+    |       |   |   |           link_analysis.cpython-313.pyc
+    |       |   |   |           matching.cpython-313.pyc
+    |       |   |   |           matrix.cpython-313.pyc
+    |       |   |   |           projection.cpython-313.pyc
+    |       |   |   |           redundancy.cpython-313.pyc

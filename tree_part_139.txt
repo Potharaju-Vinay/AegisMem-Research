@@ -1,0 +1,150 @@
+    |       |   |   |           beamsearch.cpython-313.pyc
+    |       |   |   |           breadth_first_search.cpython-313.pyc
+    |       |   |   |           depth_first_search.cpython-313.pyc
+    |       |   |   |           edgebfs.cpython-313.pyc
+    |       |   |   |           edgedfs.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---tree
+    |       |   |   |   |   branchings.py
+    |       |   |   |   |   coding.py
+    |       |   |   |   |   decomposition.py
+    |       |   |   |   |   distance_measures.py
+    |       |   |   |   |   mst.py
+    |       |   |   |   |   operations.py
+    |       |   |   |   |   recognition.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_branchings.py
+    |       |   |   |   |   |   test_coding.py
+    |       |   |   |   |   |   test_decomposition.py
+    |       |   |   |   |   |   test_distance_measures.py
+    |       |   |   |   |   |   test_mst.py
+    |       |   |   |   |   |   test_operations.py
+    |       |   |   |   |   |   test_recognition.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_branchings.cpython-313.pyc
+    |       |   |   |   |           test_coding.cpython-313.pyc
+    |       |   |   |   |           test_decomposition.cpython-313.pyc
+    |       |   |   |   |           test_distance_measures.cpython-313.pyc
+    |       |   |   |   |           test_mst.cpython-313.pyc
+    |       |   |   |   |           test_operations.cpython-313.pyc
+    |       |   |   |   |           test_recognition.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           branchings.cpython-313.pyc
+    |       |   |   |           coding.cpython-313.pyc
+    |       |   |   |           decomposition.cpython-313.pyc
+    |       |   |   |           distance_measures.cpython-313.pyc
+    |       |   |   |           mst.cpython-313.pyc
+    |       |   |   |           operations.cpython-313.pyc
+    |       |   |   |           recognition.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           asteroidal.cpython-313.pyc
+    |       |   |           boundary.cpython-313.pyc
+    |       |   |           bridges.cpython-313.pyc
+    |       |   |           broadcasting.cpython-313.pyc
+    |       |   |           chains.cpython-313.pyc
+    |       |   |           chordal.cpython-313.pyc
+    |       |   |           clique.cpython-313.pyc
+    |       |   |           cluster.cpython-313.pyc
+    |       |   |           communicability_alg.cpython-313.pyc
+    |       |   |           core.cpython-313.pyc
+    |       |   |           covering.cpython-313.pyc
+    |       |   |           cuts.cpython-313.pyc
+    |       |   |           cycles.cpython-313.pyc
+    |       |   |           dag.cpython-313.pyc
+    |       |   |           distance_measures.cpython-313.pyc
+    |       |   |           distance_regular.cpython-313.pyc
+    |       |   |           dominance.cpython-313.pyc
+    |       |   |           dominating.cpython-313.pyc
+    |       |   |           d_separation.cpython-313.pyc
+    |       |   |           efficiency_measures.cpython-313.pyc
+    |       |   |           euler.cpython-313.pyc
+    |       |   |           graphical.cpython-313.pyc
+    |       |   |           graph_hashing.cpython-313.pyc
+    |       |   |           hierarchy.cpython-313.pyc
+    |       |   |           hybrid.cpython-313.pyc
+    |       |   |           isolate.cpython-313.pyc
+    |       |   |           link_prediction.cpython-313.pyc
+    |       |   |           lowest_common_ancestors.cpython-313.pyc
+    |       |   |           matching.cpython-313.pyc
+    |       |   |           mis.cpython-313.pyc
+    |       |   |           moral.cpython-313.pyc
+    |       |   |           node_classification.cpython-313.pyc
+    |       |   |           non_randomness.cpython-313.pyc
+    |       |   |           perfect_graph.cpython-313.pyc
+    |       |   |           planarity.cpython-313.pyc
+    |       |   |           planar_drawing.cpython-313.pyc
+    |       |   |           polynomials.cpython-313.pyc
+    |       |   |           reciprocity.cpython-313.pyc
+    |       |   |           regular.cpython-313.pyc
+    |       |   |           richclub.cpython-313.pyc
+    |       |   |           similarity.cpython-313.pyc
+    |       |   |           simple_paths.cpython-313.pyc
+    |       |   |           smallworld.cpython-313.pyc
+    |       |   |           smetric.cpython-313.pyc
+    |       |   |           sparsifiers.cpython-313.pyc
+    |       |   |           structuralholes.cpython-313.pyc
+    |       |   |           summarization.cpython-313.pyc
+    |       |   |           swap.cpython-313.pyc
+    |       |   |           threshold.cpython-313.pyc
+    |       |   |           time_dependent.cpython-313.pyc
+    |       |   |           tournament.cpython-313.pyc
+    |       |   |           triads.cpython-313.pyc
+    |       |   |           vitality.cpython-313.pyc
+    |       |   |           voronoi.cpython-313.pyc
+    |       |   |           walks.cpython-313.pyc
+    |       |   |           wiener.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---classes
+    |       |   |   |   coreviews.py
+    |       |   |   |   digraph.py
+    |       |   |   |   filters.py
+    |       |   |   |   function.py
+    |       |   |   |   graph.py
+    |       |   |   |   graphviews.py
+    |       |   |   |   multidigraph.py
+    |       |   |   |   multigraph.py
+    |       |   |   |   reportviews.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   dispatch_interface.py
+    |       |   |   |   |   historical_tests.py
+    |       |   |   |   |   test_coreviews.py
+    |       |   |   |   |   test_digraph.py
+    |       |   |   |   |   test_digraph_historical.py
+    |       |   |   |   |   test_filters.py
+    |       |   |   |   |   test_function.py
+    |       |   |   |   |   test_graph.py
+    |       |   |   |   |   test_graphviews.py
+    |       |   |   |   |   test_graph_historical.py
+    |       |   |   |   |   test_multidigraph.py
+    |       |   |   |   |   test_multigraph.py
+    |       |   |   |   |   test_reportviews.py
+    |       |   |   |   |   test_special.py
+    |       |   |   |   |   test_subgraphviews.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           dispatch_interface.cpython-313.pyc
+    |       |   |   |           historical_tests.cpython-313.pyc
+    |       |   |   |           test_coreviews.cpython-313.pyc
+    |       |   |   |           test_digraph.cpython-313.pyc
+    |       |   |   |           test_digraph_historical.cpython-313.pyc
+    |       |   |   |           test_filters.cpython-313.pyc
+    |       |   |   |           test_function.cpython-313.pyc
+    |       |   |   |           test_graph.cpython-313.pyc
+    |       |   |   |           test_graphviews.cpython-313.pyc
+    |       |   |   |           test_graph_historical.cpython-313.pyc
+    |       |   |   |           test_multidigraph.cpython-313.pyc
+    |       |   |   |           test_multigraph.cpython-313.pyc
+    |       |   |   |           test_reportviews.cpython-313.pyc

@@ -1,0 +1,150 @@
+    |       |   |   |   |   Gibraltar
+    |       |   |   |   |   Guernsey
+    |       |   |   |   |   Helsinki
+    |       |   |   |   |   Isle_of_Man
+    |       |   |   |   |   Istanbul
+    |       |   |   |   |   Jersey
+    |       |   |   |   |   Kaliningrad
+    |       |   |   |   |   Kiev
+    |       |   |   |   |   Kirov
+    |       |   |   |   |   Kyiv
+    |       |   |   |   |   Lisbon
+    |       |   |   |   |   Ljubljana
+    |       |   |   |   |   London
+    |       |   |   |   |   Luxembourg
+    |       |   |   |   |   Madrid
+    |       |   |   |   |   Malta
+    |       |   |   |   |   Mariehamn
+    |       |   |   |   |   Minsk
+    |       |   |   |   |   Monaco
+    |       |   |   |   |   Moscow
+    |       |   |   |   |   Nicosia
+    |       |   |   |   |   Oslo
+    |       |   |   |   |   Paris
+    |       |   |   |   |   Podgorica
+    |       |   |   |   |   Prague
+    |       |   |   |   |   Riga
+    |       |   |   |   |   Rome
+    |       |   |   |   |   Samara
+    |       |   |   |   |   San_Marino
+    |       |   |   |   |   Sarajevo
+    |       |   |   |   |   Saratov
+    |       |   |   |   |   Simferopol
+    |       |   |   |   |   Skopje
+    |       |   |   |   |   Sofia
+    |       |   |   |   |   Stockholm
+    |       |   |   |   |   Tallinn
+    |       |   |   |   |   Tirane
+    |       |   |   |   |   Tiraspol
+    |       |   |   |   |   Ulyanovsk
+    |       |   |   |   |   Uzhgorod
+    |       |   |   |   |   Vaduz
+    |       |   |   |   |   Vatican
+    |       |   |   |   |   Vienna
+    |       |   |   |   |   Vilnius
+    |       |   |   |   |   Volgograd
+    |       |   |   |   |   Warsaw
+    |       |   |   |   |   Zagreb
+    |       |   |   |   |   Zaporozhye
+    |       |   |   |   |   Zurich
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---Indian
+    |       |   |   |   |   Antananarivo
+    |       |   |   |   |   Chagos
+    |       |   |   |   |   Christmas
+    |       |   |   |   |   Cocos
+    |       |   |   |   |   Comoro
+    |       |   |   |   |   Kerguelen
+    |       |   |   |   |   Mahe
+    |       |   |   |   |   Maldives
+    |       |   |   |   |   Mauritius
+    |       |   |   |   |   Mayotte
+    |       |   |   |   |   Reunion
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---Mexico
+    |       |   |   |   |   BajaNorte
+    |       |   |   |   |   BajaSur
+    |       |   |   |   |   General
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---Pacific
+    |       |   |   |   |   Apia
+    |       |   |   |   |   Auckland
+    |       |   |   |   |   Bougainville
+    |       |   |   |   |   Chatham
+    |       |   |   |   |   Chuuk
+    |       |   |   |   |   Easter
+    |       |   |   |   |   Efate
+    |       |   |   |   |   Enderbury
+    |       |   |   |   |   Fakaofo
+    |       |   |   |   |   Fiji
+    |       |   |   |   |   Funafuti
+    |       |   |   |   |   Galapagos
+    |       |   |   |   |   Gambier
+    |       |   |   |   |   Guadalcanal
+    |       |   |   |   |   Guam
+    |       |   |   |   |   Honolulu
+    |       |   |   |   |   Johnston
+    |       |   |   |   |   Kanton
+    |       |   |   |   |   Kiritimati
+    |       |   |   |   |   Kosrae
+    |       |   |   |   |   Kwajalein
+    |       |   |   |   |   Majuro
+    |       |   |   |   |   Marquesas
+    |       |   |   |   |   Midway
+    |       |   |   |   |   Nauru
+    |       |   |   |   |   Niue
+    |       |   |   |   |   Norfolk
+    |       |   |   |   |   Noumea
+    |       |   |   |   |   Pago_Pago
+    |       |   |   |   |   Palau
+    |       |   |   |   |   Pitcairn
+    |       |   |   |   |   Pohnpei
+    |       |   |   |   |   Ponape
+    |       |   |   |   |   Port_Moresby
+    |       |   |   |   |   Rarotonga
+    |       |   |   |   |   Saipan
+    |       |   |   |   |   Samoa
+    |       |   |   |   |   Tahiti
+    |       |   |   |   |   Tarawa
+    |       |   |   |   |   Tongatapu
+    |       |   |   |   |   Truk
+    |       |   |   |   |   Wake
+    |       |   |   |   |   Wallis
+    |       |   |   |   |   Yap
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---US
+    |       |   |   |   |   Alaska
+    |       |   |   |   |   Aleutian
+    |       |   |   |   |   Arizona
+    |       |   |   |   |   Central
+    |       |   |   |   |   East-Indiana
+    |       |   |   |   |   Eastern
+    |       |   |   |   |   Hawaii
+    |       |   |   |   |   Indiana-Starke
+    |       |   |   |   |   Michigan
+    |       |   |   |   |   Mountain
+    |       |   |   |   |   Pacific
+    |       |   |   |   |   Samoa
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           __init__.cpython-313.pyc

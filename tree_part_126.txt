@@ -1,0 +1,150 @@
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---greenlet-3.5.5.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           LICENSE.PSF
+    |       |           
+    |       +---h11
+    |       |   |   py.typed
+    |       |   |   _abnf.py
+    |       |   |   _connection.py
+    |       |   |   _events.py
+    |       |   |   _headers.py
+    |       |   |   _readers.py
+    |       |   |   _receivebuffer.py
+    |       |   |   _state.py
+    |       |   |   _util.py
+    |       |   |   _version.py
+    |       |   |   _writers.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           _abnf.cpython-313.pyc
+    |       |           _connection.cpython-313.pyc
+    |       |           _events.cpython-313.pyc
+    |       |           _headers.cpython-313.pyc
+    |       |           _readers.cpython-313.pyc
+    |       |           _receivebuffer.cpython-313.pyc
+    |       |           _state.cpython-313.pyc
+    |       |           _util.cpython-313.pyc
+    |       |           _version.cpython-313.pyc
+    |       |           _writers.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---h11-0.16.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.txt
+    |       |           
+    |       +---idna
+    |       |   |   cli.py
+    |       |   |   codec.py
+    |       |   |   compat.py
+    |       |   |   core.py
+    |       |   |   idnadata.py
+    |       |   |   intranges.py
+    |       |   |   package_data.py
+    |       |   |   py.typed
+    |       |   |   uts46data.py
+    |       |   |   __init__.py
+    |       |   |   __main__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           cli.cpython-313.pyc
+    |       |           codec.cpython-313.pyc
+    |       |           compat.cpython-313.pyc
+    |       |           core.cpython-313.pyc
+    |       |           idnadata.cpython-313.pyc
+    |       |           intranges.cpython-313.pyc
+    |       |           package_data.cpython-313.pyc
+    |       |           uts46data.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           __main__.cpython-313.pyc
+    |       |           
+    |       +---idna-3.20.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.md
+    |       |           
+    |       +---iniconfig
+    |       |   |   exceptions.py
+    |       |   |   py.typed
+    |       |   |   _parse.py
+    |       |   |   _version.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           exceptions.cpython-313.pyc
+    |       |           _parse.cpython-313.pyc
+    |       |           _version.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---iniconfig-2.3.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---kiwisolver
+    |       |   |   exceptions.py
+    |       |   |   py.typed
+    |       |   |   _cext.cp313-win_amd64.pyd
+    |       |   |   _cext.pyi
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           exceptions.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---kiwisolver-1.5.1.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---matplotlib
+    |       |   |   animation.py
+    |       |   |   animation.pyi
+    |       |   |   artist.py
+    |       |   |   artist.pyi
+    |       |   |   axis.py
+    |       |   |   axis.pyi
+    |       |   |   backend_bases.py
+    |       |   |   backend_bases.pyi
+    |       |   |   backend_managers.py
+    |       |   |   backend_managers.pyi
+    |       |   |   backend_tools.py
+    |       |   |   backend_tools.pyi
+    |       |   |   bezier.py
+    |       |   |   bezier.pyi
+    |       |   |   category.py
+    |       |   |   cbook.py
+    |       |   |   cbook.pyi
+    |       |   |   cm.py
+    |       |   |   cm.pyi
+    |       |   |   collections.py

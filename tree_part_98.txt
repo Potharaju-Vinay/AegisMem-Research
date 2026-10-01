@@ -1,0 +1,150 @@
+|   |   |   |   |   |   |   selectChartOffset.js
+|   |   |   |   |   |   |   selectChartOffsetInternal.js
+|   |   |   |   |   |   |   selectLegendArea.js
+|   |   |   |   |   |   |   selectors.js
+|   |   |   |   |   |   |   selectPlotArea.js
+|   |   |   |   |   |   |   selectTooltipAxisId.js
+|   |   |   |   |   |   |   selectTooltipAxisType.js
+|   |   |   |   |   |   |   selectTooltipEventType.js
+|   |   |   |   |   |   |   selectTooltipPayloadSearcher.js
+|   |   |   |   |   |   |   selectTooltipSettings.js
+|   |   |   |   |   |   |   selectTooltipState.js
+|   |   |   |   |   |   |   tooltipSelectors.js
+|   |   |   |   |   |   |   touchSelectors.js
+|   |   |   |   |   |   |   
+|   |   |   |   |   |   \---combiners
+|   |   |   |   |   |           combineActiveLabel.js
+|   |   |   |   |   |           combineActiveTooltipIndex.js
+|   |   |   |   |   |           combineAllBarPositions.js
+|   |   |   |   |   |           combineAxisRangeWithReverse.js
+|   |   |   |   |   |           combineBarPosition.js
+|   |   |   |   |   |           combineBarSizeList.js
+|   |   |   |   |   |           combineCheckedDomain.js
+|   |   |   |   |   |           combineConfiguredScale.js
+|   |   |   |   |   |           combineCoordinateForDefaultIndex.js
+|   |   |   |   |   |           combineDisplayedStackedData.js
+|   |   |   |   |   |           combineInverseScaleFunction.js
+|   |   |   |   |   |           combineRealScaleType.js
+|   |   |   |   |   |           combineStackedData.js
+|   |   |   |   |   |           combineTooltipInteractionState.js
+|   |   |   |   |   |           combineTooltipPayload.js
+|   |   |   |   |   |           combineTooltipPayloadConfigurations.js
+|   |   |   |   |   |           
+|   |   |   |   |   \---types
+|   |   |   |   |           AreaSettings.js
+|   |   |   |   |           BarSettings.js
+|   |   |   |   |           LineSettings.js
+|   |   |   |   |           PieSettings.js
+|   |   |   |   |           RadarSettings.js
+|   |   |   |   |           RadialBarSettings.js
+|   |   |   |   |           ScatterSettings.js
+|   |   |   |   |           StackedGraphicalItem.js
+|   |   |   |   |           
+|   |   |   |   +---synchronisation
+|   |   |   |   |       syncSelectors.js
+|   |   |   |   |       types.js
+|   |   |   |   |       useChartSynchronisation.js
+|   |   |   |   |       
+|   |   |   |   +---theme
+|   |   |   |   |       darkTheme.js
+|   |   |   |   |       graphicalItemIdentity.js
+|   |   |   |   |       legacyTheme.js
+|   |   |   |   |       lightTheme.js
+|   |   |   |   |       RechartsTheme.js
+|   |   |   |   |       RechartsThemeContext.js
+|   |   |   |   |       
+|   |   |   |   +---util
+|   |   |   |   |   |   ActiveShapeUtils.js
+|   |   |   |   |   |   axisPropsAreEqual.js
+|   |   |   |   |   |   BarUtils.js
+|   |   |   |   |   |   CartesianUtils.js
+|   |   |   |   |   |   ChartUtils.js
+|   |   |   |   |   |   Constants.js
+|   |   |   |   |   |   createCartesianCharts.js
+|   |   |   |   |   |   createEventProxy.js
+|   |   |   |   |   |   createPolarCharts.js
+|   |   |   |   |   |   CssPrefixUtils.js
+|   |   |   |   |   |   DataUtils.js
+|   |   |   |   |   |   DOMUtils.js
+|   |   |   |   |   |   Events.js
+|   |   |   |   |   |   excludeEventProps.js
+|   |   |   |   |   |   FunnelUtils.js
+|   |   |   |   |   |   getActiveCoordinate.js
+|   |   |   |   |   |   getAxisTypeBasedOnLayout.js
+|   |   |   |   |   |   getClassNameFromUnknown.js
+|   |   |   |   |   |   getEveryNth.js
+|   |   |   |   |   |   getRadiusAndStrokeWidthFromDot.js
+|   |   |   |   |   |   getRelativeCoordinate.js
+|   |   |   |   |   |   getSliced.js
+|   |   |   |   |   |   Global.js
+|   |   |   |   |   |   IfOverflow.js
+|   |   |   |   |   |   isDomainSpecifiedByUser.js
+|   |   |   |   |   |   isWellBehavedNumber.js
+|   |   |   |   |   |   LogUtils.js
+|   |   |   |   |   |   LRUCache.js
+|   |   |   |   |   |   PolarUtils.js
+|   |   |   |   |   |   propsAreEqual.js
+|   |   |   |   |   |   RadialBarUtils.js
+|   |   |   |   |   |   ReactUtils.js
+|   |   |   |   |   |   ReduceCSSCalc.js
+|   |   |   |   |   |   resolveDefaultProps.js
+|   |   |   |   |   |   round.js
+|   |   |   |   |   |   ScatterUtils.js
+|   |   |   |   |   |   svgPropertiesAndEvents.js
+|   |   |   |   |   |   svgPropertiesNoEvents.js
+|   |   |   |   |   |   TickUtils.js
+|   |   |   |   |   |   typedDataKey.js
+|   |   |   |   |   |   types.js
+|   |   |   |   |   |   useAnimationId.js
+|   |   |   |   |   |   useElementOffset.js
+|   |   |   |   |   |   useId.js
+|   |   |   |   |   |   usePrefersReducedMotion.js
+|   |   |   |   |   |   useReportScale.js
+|   |   |   |   |   |   useUniqueId.js
+|   |   |   |   |   |   XAxisUtils.js
+|   |   |   |   |   |   YAxisUtils.js
+|   |   |   |   |   |   
+|   |   |   |   |   +---cursor
+|   |   |   |   |   |       getCursorPoints.js
+|   |   |   |   |   |       getCursorRectangle.js
+|   |   |   |   |   |       getRadialCursorPoints.js
+|   |   |   |   |   |       
+|   |   |   |   |   +---payload
+|   |   |   |   |   |       getUniqPayload.js
+|   |   |   |   |   |       
+|   |   |   |   |   +---scale
+|   |   |   |   |   |   |   CartesianScaleHelper.js
+|   |   |   |   |   |   |   createCategoricalInverse.js
+|   |   |   |   |   |   |   CustomScaleDefinition.js
+|   |   |   |   |   |   |   getNiceTickValues.js
+|   |   |   |   |   |   |   index.js
+|   |   |   |   |   |   |   RechartsScale.js
+|   |   |   |   |   |   |   
+|   |   |   |   |   |   \---util
+|   |   |   |   |   |           arithmetic.js
+|   |   |   |   |   |           
+|   |   |   |   |   +---stacks
+|   |   |   |   |   |       getStackSeriesIdentifier.js
+|   |   |   |   |   |       stackTypes.js
+|   |   |   |   |   |       
+|   |   |   |   |   \---tooltip
+|   |   |   |   |           translate.js
+|   |   |   |   |           
+|   |   |   |   \---zIndex
+|   |   |   |           DefaultZIndexes.js
+|   |   |   |           getZIndexFromUnknown.js
+|   |   |   |           ZIndexLayer.js
+|   |   |   |           ZIndexPortal.js
+|   |   |   |           zIndexSelectors.js
+|   |   |   |           
+|   |   |   +---types
+|   |   |   |   |   hooks.d.ts
+|   |   |   |   |   index.d.ts
+|   |   |   |   |   types.d.ts
+|   |   |   |   |   
+|   |   |   |   +---animation
+|   |   |   |   |       AnimatedItems.d.ts
+|   |   |   |   |       AnimationController.d.ts
+|   |   |   |   |       AnimationControllerImpl.d.ts
+|   |   |   |   |       AnimationHandle.d.ts
+|   |   |   |   |       CSSTransitionAnimate.d.ts

@@ -1,0 +1,150 @@
+    |       |   |   |   deprecations.py
+    |       |   |   |   langhelpers.py
+    |       |   |   |   preloaded.py
+    |       |   |   |   queue.py
+    |       |   |   |   tool_support.py
+    |       |   |   |   topological.py
+    |       |   |   |   typing.py
+    |       |   |   |   _collections.py
+    |       |   |   |   _concurrency_py3k.py
+    |       |   |   |   _has_cy.py
+    |       |   |   |   _py_collections.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           compat.cpython-313.pyc
+    |       |   |           concurrency.cpython-313.pyc
+    |       |   |           deprecations.cpython-313.pyc
+    |       |   |           langhelpers.cpython-313.pyc
+    |       |   |           preloaded.cpython-313.pyc
+    |       |   |           queue.cpython-313.pyc
+    |       |   |           tool_support.cpython-313.pyc
+    |       |   |           topological.cpython-313.pyc
+    |       |   |           typing.cpython-313.pyc
+    |       |   |           _collections.cpython-313.pyc
+    |       |   |           _concurrency_py3k.cpython-313.pyc
+    |       |   |           _has_cy.cpython-313.pyc
+    |       |   |           _py_collections.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           events.cpython-313.pyc
+    |       |           exc.cpython-313.pyc
+    |       |           inspection.cpython-313.pyc
+    |       |           log.cpython-313.pyc
+    |       |           schema.cpython-313.pyc
+    |       |           types.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---sqlalchemy-2.0.52.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---starlette
+    |       |   |   applications.py
+    |       |   |   authentication.py
+    |       |   |   background.py
+    |       |   |   concurrency.py
+    |       |   |   config.py
+    |       |   |   convertors.py
+    |       |   |   datastructures.py
+    |       |   |   endpoints.py
+    |       |   |   exceptions.py
+    |       |   |   formparsers.py
+    |       |   |   py.typed
+    |       |   |   requests.py
+    |       |   |   responses.py
+    |       |   |   routing.py
+    |       |   |   schemas.py
+    |       |   |   staticfiles.py
+    |       |   |   status.py
+    |       |   |   templating.py
+    |       |   |   testclient.py
+    |       |   |   types.py
+    |       |   |   websockets.py
+    |       |   |   _exception_handler.py
+    |       |   |   _utils.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---middleware
+    |       |   |   |   authentication.py
+    |       |   |   |   base.py
+    |       |   |   |   body_limit.py
+    |       |   |   |   cors.py
+    |       |   |   |   errors.py
+    |       |   |   |   exceptions.py
+    |       |   |   |   gzip.py
+    |       |   |   |   httpsredirect.py
+    |       |   |   |   sessions.py
+    |       |   |   |   trustedhost.py
+    |       |   |   |   wsgi.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           authentication.cpython-313.pyc
+    |       |   |           base.cpython-313.pyc
+    |       |   |           body_limit.cpython-313.pyc
+    |       |   |           cors.cpython-313.pyc
+    |       |   |           errors.cpython-313.pyc
+    |       |   |           exceptions.cpython-313.pyc
+    |       |   |           gzip.cpython-313.pyc
+    |       |   |           httpsredirect.cpython-313.pyc
+    |       |   |           sessions.cpython-313.pyc
+    |       |   |           trustedhost.cpython-313.pyc
+    |       |   |           wsgi.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           applications.cpython-313.pyc
+    |       |           authentication.cpython-313.pyc
+    |       |           background.cpython-313.pyc
+    |       |           concurrency.cpython-313.pyc
+    |       |           config.cpython-313.pyc
+    |       |           convertors.cpython-313.pyc
+    |       |           datastructures.cpython-313.pyc
+    |       |           endpoints.cpython-313.pyc
+    |       |           exceptions.cpython-313.pyc
+    |       |           formparsers.cpython-313.pyc
+    |       |           requests.cpython-313.pyc
+    |       |           responses.cpython-313.pyc
+    |       |           routing.cpython-313.pyc
+    |       |           schemas.cpython-313.pyc
+    |       |           staticfiles.cpython-313.pyc
+    |       |           status.cpython-313.pyc
+    |       |           templating.cpython-313.pyc
+    |       |           testclient.cpython-313.pyc
+    |       |           types.cpython-313.pyc
+    |       |           websockets.cpython-313.pyc
+    |       |           _exception_handler.cpython-313.pyc
+    |       |           _utils.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---starlette-1.6.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.md
+    |       |           
+    |       +---typing_extensions-4.16.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---typing_inspection
+    |       |   |   introspection.py
+    |       |   |   py.typed
+    |       |   |   typing_objects.py

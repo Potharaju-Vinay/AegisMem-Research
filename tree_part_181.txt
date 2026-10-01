@@ -1,0 +1,150 @@
+    |       |   |   |   |   scheme.py
+    |       |   |   |   |   search_scope.py
+    |       |   |   |   |   selection_prefs.py
+    |       |   |   |   |   target_python.py
+    |       |   |   |   |   wheel.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           candidate.cpython-313.pyc
+    |       |   |   |           direct_url.cpython-313.pyc
+    |       |   |   |           format_control.cpython-313.pyc
+    |       |   |   |           index.cpython-313.pyc
+    |       |   |   |           installation_report.cpython-313.pyc
+    |       |   |   |           link.cpython-313.pyc
+    |       |   |   |           release_control.cpython-313.pyc
+    |       |   |   |           scheme.cpython-313.pyc
+    |       |   |   |           search_scope.cpython-313.pyc
+    |       |   |   |           selection_prefs.cpython-313.pyc
+    |       |   |   |           target_python.cpython-313.pyc
+    |       |   |   |           wheel.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---network
+    |       |   |   |   |   auth.py
+    |       |   |   |   |   cache.py
+    |       |   |   |   |   download.py
+    |       |   |   |   |   lazy_wheel.py
+    |       |   |   |   |   session.py
+    |       |   |   |   |   utils.py
+    |       |   |   |   |   xmlrpc.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           auth.cpython-313.pyc
+    |       |   |   |           cache.cpython-313.pyc
+    |       |   |   |           download.cpython-313.pyc
+    |       |   |   |           lazy_wheel.cpython-313.pyc
+    |       |   |   |           session.cpython-313.pyc
+    |       |   |   |           utils.cpython-313.pyc
+    |       |   |   |           xmlrpc.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---operations
+    |       |   |   |   |   check.py
+    |       |   |   |   |   freeze.py
+    |       |   |   |   |   prepare.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---build
+    |       |   |   |   |   |   build_tracker.py
+    |       |   |   |   |   |   metadata.py
+    |       |   |   |   |   |   metadata_editable.py
+    |       |   |   |   |   |   wheel.py
+    |       |   |   |   |   |   wheel_editable.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           build_tracker.cpython-313.pyc
+    |       |   |   |   |           metadata.cpython-313.pyc
+    |       |   |   |   |           metadata_editable.cpython-313.pyc
+    |       |   |   |   |           wheel.cpython-313.pyc
+    |       |   |   |   |           wheel_editable.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---install
+    |       |   |   |   |   |   wheel.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           wheel.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           check.cpython-313.pyc
+    |       |   |   |           freeze.cpython-313.pyc
+    |       |   |   |           prepare.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---req
+    |       |   |   |   |   constructors.py
+    |       |   |   |   |   pep723.py
+    |       |   |   |   |   req_dependency_group.py
+    |       |   |   |   |   req_file.py
+    |       |   |   |   |   req_install.py
+    |       |   |   |   |   req_set.py
+    |       |   |   |   |   req_uninstall.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           constructors.cpython-313.pyc
+    |       |   |   |           pep723.cpython-313.pyc
+    |       |   |   |           req_dependency_group.cpython-313.pyc
+    |       |   |   |           req_file.cpython-313.pyc
+    |       |   |   |           req_install.cpython-313.pyc
+    |       |   |   |           req_set.cpython-313.pyc
+    |       |   |   |           req_uninstall.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---resolution
+    |       |   |   |   |   base.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---legacy
+    |       |   |   |   |   |   resolver.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           resolver.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---resolvelib
+    |       |   |   |   |   |   base.py
+    |       |   |   |   |   |   candidates.py
+    |       |   |   |   |   |   factory.py
+    |       |   |   |   |   |   found_candidates.py
+    |       |   |   |   |   |   provider.py
+    |       |   |   |   |   |   reporter.py
+    |       |   |   |   |   |   requirements.py
+    |       |   |   |   |   |   resolver.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           base.cpython-313.pyc
+    |       |   |   |   |           candidates.cpython-313.pyc
+    |       |   |   |   |           factory.cpython-313.pyc
+    |       |   |   |   |           found_candidates.cpython-313.pyc
+    |       |   |   |   |           provider.cpython-313.pyc
+    |       |   |   |   |           reporter.cpython-313.pyc
+    |       |   |   |   |           requirements.cpython-313.pyc
+    |       |   |   |   |           resolver.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---utils
+    |       |   |   |   |   appdirs.py
+    |       |   |   |   |   compat.py
+    |       |   |   |   |   compatibility_tags.py
+    |       |   |   |   |   datetime.py
+    |       |   |   |   |   deprecation.py
+    |       |   |   |   |   direct_url_helpers.py
+    |       |   |   |   |   egg_link.py
+    |       |   |   |   |   entrypoints.py
+    |       |   |   |   |   filesystem.py
+    |       |   |   |   |   filetypes.py
+    |       |   |   |   |   glibc.py
+    |       |   |   |   |   hashes.py
+    |       |   |   |   |   logging.py

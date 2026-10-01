@@ -1,0 +1,150 @@
+    |       |   |   |   |   |           scalars.cpython-313.pyc
+    |       |   |   |   |   |           shape.cpython-313.pyc
+    |       |   |   |   |   |           simple.cpython-313.pyc
+    |       |   |   |   |   |           ufunclike.cpython-313.pyc
+    |       |   |   |   |   |           ufuncs.cpython-313.pyc
+    |       |   |   |   |   |           ufunc_config.cpython-313.pyc
+    |       |   |   |   |   |           warnings_and_errors.cpython-313.pyc
+    |       |   |   |   |   |           
+    |       |   |   |   |   \---reveal
+    |       |   |   |   |           arithmetic.pyi
+    |       |   |   |   |           arraypad.pyi
+    |       |   |   |   |           arrayprint.pyi
+    |       |   |   |   |           arraysetops.pyi
+    |       |   |   |   |           arrayterator.pyi
+    |       |   |   |   |           array_api_info.pyi
+    |       |   |   |   |           array_constructors.pyi
+    |       |   |   |   |           bitwise_ops.pyi
+    |       |   |   |   |           char.pyi
+    |       |   |   |   |           chararray.pyi
+    |       |   |   |   |           comparisons.pyi
+    |       |   |   |   |           constants.pyi
+    |       |   |   |   |           ctypeslib.pyi
+    |       |   |   |   |           datasource.pyi
+    |       |   |   |   |           dtype.pyi
+    |       |   |   |   |           einsumfunc.pyi
+    |       |   |   |   |           emath.pyi
+    |       |   |   |   |           fft.pyi
+    |       |   |   |   |           flatiter.pyi
+    |       |   |   |   |           fromnumeric.pyi
+    |       |   |   |   |           getlimits.pyi
+    |       |   |   |   |           histograms.pyi
+    |       |   |   |   |           index_tricks.pyi
+    |       |   |   |   |           lib_function_base.pyi
+    |       |   |   |   |           lib_polynomial.pyi
+    |       |   |   |   |           lib_utils.pyi
+    |       |   |   |   |           lib_version.pyi
+    |       |   |   |   |           linalg.pyi
+    |       |   |   |   |           ma.pyi
+    |       |   |   |   |           matrix.pyi
+    |       |   |   |   |           memmap.pyi
+    |       |   |   |   |           mod.pyi
+    |       |   |   |   |           modules.pyi
+    |       |   |   |   |           multiarray.pyi
+    |       |   |   |   |           nbit_base_example.pyi
+    |       |   |   |   |           ndarray_assignability.pyi
+    |       |   |   |   |           ndarray_conversion.pyi
+    |       |   |   |   |           ndarray_misc.pyi
+    |       |   |   |   |           ndarray_shape_manipulation.pyi
+    |       |   |   |   |           nditer.pyi
+    |       |   |   |   |           nested_sequence.pyi
+    |       |   |   |   |           npyio.pyi
+    |       |   |   |   |           numeric.pyi
+    |       |   |   |   |           numerictypes.pyi
+    |       |   |   |   |           polynomial_polybase.pyi
+    |       |   |   |   |           polynomial_polyutils.pyi
+    |       |   |   |   |           polynomial_series.pyi
+    |       |   |   |   |           random.pyi
+    |       |   |   |   |           rec.pyi
+    |       |   |   |   |           scalars.pyi
+    |       |   |   |   |           shape.pyi
+    |       |   |   |   |           shape_base.pyi
+    |       |   |   |   |           stride_tricks.pyi
+    |       |   |   |   |           strings.pyi
+    |       |   |   |   |           testing.pyi
+    |       |   |   |   |           twodim_base.pyi
+    |       |   |   |   |           type_check.pyi
+    |       |   |   |   |           ufunclike.pyi
+    |       |   |   |   |           ufuncs.pyi
+    |       |   |   |   |           ufunc_config.pyi
+    |       |   |   |   |           warnings_and_errors.pyi
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_isfile.cpython-313.pyc
+    |       |   |   |           test_runtime.cpython-313.pyc
+    |       |   |   |           test_typing.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           mypy_plugin.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---_core
+    |       |   |   |   arrayprint.py
+    |       |   |   |   arrayprint.pyi
+    |       |   |   |   cversions.py
+    |       |   |   |   defchararray.py
+    |       |   |   |   defchararray.pyi
+    |       |   |   |   einsumfunc.py
+    |       |   |   |   einsumfunc.pyi
+    |       |   |   |   fromnumeric.py
+    |       |   |   |   fromnumeric.pyi
+    |       |   |   |   function_base.py
+    |       |   |   |   function_base.pyi
+    |       |   |   |   getlimits.py
+    |       |   |   |   getlimits.pyi
+    |       |   |   |   memmap.py
+    |       |   |   |   memmap.pyi
+    |       |   |   |   multiarray.py
+    |       |   |   |   multiarray.pyi
+    |       |   |   |   numeric.py
+    |       |   |   |   numeric.pyi
+    |       |   |   |   numerictypes.py
+    |       |   |   |   numerictypes.pyi
+    |       |   |   |   overrides.py
+    |       |   |   |   overrides.pyi
+    |       |   |   |   printoptions.py
+    |       |   |   |   printoptions.pyi
+    |       |   |   |   records.py
+    |       |   |   |   records.pyi
+    |       |   |   |   shape_base.py
+    |       |   |   |   shape_base.pyi
+    |       |   |   |   strings.py
+    |       |   |   |   strings.pyi
+    |       |   |   |   umath.py
+    |       |   |   |   umath.pyi
+    |       |   |   |   _add_newdocs.py
+    |       |   |   |   _add_newdocs.pyi
+    |       |   |   |   _add_newdocs_scalars.py
+    |       |   |   |   _add_newdocs_scalars.pyi
+    |       |   |   |   _asarray.py
+    |       |   |   |   _asarray.pyi
+    |       |   |   |   _dtype.py
+    |       |   |   |   _dtype.pyi
+    |       |   |   |   _dtype_ctypes.py
+    |       |   |   |   _dtype_ctypes.pyi
+    |       |   |   |   _exceptions.py
+    |       |   |   |   _exceptions.pyi
+    |       |   |   |   _internal.py
+    |       |   |   |   _internal.pyi
+    |       |   |   |   _methods.py
+    |       |   |   |   _methods.pyi
+    |       |   |   |   _multiarray_tests.cp313-win_amd64.lib
+    |       |   |   |   _multiarray_tests.cp313-win_amd64.pyd
+    |       |   |   |   _multiarray_umath.cp313-win_amd64.lib
+    |       |   |   |   _multiarray_umath.cp313-win_amd64.pyd
+    |       |   |   |   _operand_flag_tests.cp313-win_amd64.lib
+    |       |   |   |   _operand_flag_tests.cp313-win_amd64.pyd
+    |       |   |   |   _rational_tests.cp313-win_amd64.lib
+    |       |   |   |   _rational_tests.cp313-win_amd64.pyd
+    |       |   |   |   _simd.cp313-win_amd64.lib
+    |       |   |   |   _simd.cp313-win_amd64.pyd
+    |       |   |   |   _simd.pyi
+    |       |   |   |   _string_helpers.py
+    |       |   |   |   _string_helpers.pyi
+    |       |   |   |   _struct_ufunc_tests.cp313-win_amd64.lib
+    |       |   |   |   _struct_ufunc_tests.cp313-win_amd64.pyd
+    |       |   |   |   _type_aliases.py
+    |       |   |   |   _type_aliases.pyi
+    |       |   |   |   _ufunc_config.py
+    |       |   |   |   _ufunc_config.pyi

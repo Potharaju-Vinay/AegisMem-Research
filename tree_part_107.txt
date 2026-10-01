@@ -1,0 +1,150 @@
+|   |   |   |   |   |       
+|   |   |   |   |   \---tests
+|   |   |   |   |           all-errors.test.ts
+|   |   |   |   |           anyunknown.test.ts
+|   |   |   |   |           array.test.ts
+|   |   |   |   |           async-parsing.test.ts
+|   |   |   |   |           async-refinements.test.ts
+|   |   |   |   |           base.test.ts
+|   |   |   |   |           bigint.test.ts
+|   |   |   |   |           branded.test.ts
+|   |   |   |   |           catch.test.ts
+|   |   |   |   |           coerce.test.ts
+|   |   |   |   |           complex.test.ts
+|   |   |   |   |           custom.test.ts
+|   |   |   |   |           date.test.ts
+|   |   |   |   |           deepmasking.test.ts
+|   |   |   |   |           default.test.ts
+|   |   |   |   |           description.test.ts
+|   |   |   |   |           discriminated-unions.test.ts
+|   |   |   |   |           enum.test.ts
+|   |   |   |   |           error.test.ts
+|   |   |   |   |           firstparty.test.ts
+|   |   |   |   |           firstpartyschematypes.test.ts
+|   |   |   |   |           function.test.ts
+|   |   |   |   |           generics.test.ts
+|   |   |   |   |           instanceof.test.ts
+|   |   |   |   |           intersection.test.ts
+|   |   |   |   |           language-server.source.ts
+|   |   |   |   |           language-server.test.ts
+|   |   |   |   |           literal.test.ts
+|   |   |   |   |           map.test.ts
+|   |   |   |   |           masking.test.ts
+|   |   |   |   |           mocker.test.ts
+|   |   |   |   |           Mocker.ts
+|   |   |   |   |           nan.test.ts
+|   |   |   |   |           nativeEnum.test.ts
+|   |   |   |   |           nullable.test.ts
+|   |   |   |   |           number.test.ts
+|   |   |   |   |           object-augmentation.test.ts
+|   |   |   |   |           object-in-es5-env.test.ts
+|   |   |   |   |           object.test.ts
+|   |   |   |   |           optional.test.ts
+|   |   |   |   |           parser.test.ts
+|   |   |   |   |           parseUtil.test.ts
+|   |   |   |   |           partials.test.ts
+|   |   |   |   |           pickomit.test.ts
+|   |   |   |   |           pipeline.test.ts
+|   |   |   |   |           preprocess.test.ts
+|   |   |   |   |           primitive.test.ts
+|   |   |   |   |           promise.test.ts
+|   |   |   |   |           readonly.test.ts
+|   |   |   |   |           record.test.ts
+|   |   |   |   |           recursive.test.ts
+|   |   |   |   |           refine.test.ts
+|   |   |   |   |           safeparse.test.ts
+|   |   |   |   |           set.test.ts
+|   |   |   |   |           standard-schema.test.ts
+|   |   |   |   |           string.test.ts
+|   |   |   |   |           transformer.test.ts
+|   |   |   |   |           tuple.test.ts
+|   |   |   |   |           unions.test.ts
+|   |   |   |   |           validations.test.ts
+|   |   |   |   |           void.test.ts
+|   |   |   |   |           
+|   |   |   |   +---v4
+|   |   |   |   |   |   index.ts
+|   |   |   |   |   |   
+|   |   |   |   |   +---classic
+|   |   |   |   |   |   |   checks.ts
+|   |   |   |   |   |   |   coerce.ts
+|   |   |   |   |   |   |   compat.ts
+|   |   |   |   |   |   |   deep-partial.ts
+|   |   |   |   |   |   |   errors.ts
+|   |   |   |   |   |   |   external.ts
+|   |   |   |   |   |   |   from-json-schema.ts
+|   |   |   |   |   |   |   in-out.ts
+|   |   |   |   |   |   |   index.ts
+|   |   |   |   |   |   |   iso.ts
+|   |   |   |   |   |   |   parse.ts
+|   |   |   |   |   |   |   schemas.ts
+|   |   |   |   |   |   |   
+|   |   |   |   |   |   \---tests
+|   |   |   |   |   |           anyunknown.test.ts
+|   |   |   |   |   |           apply.test.ts
+|   |   |   |   |   |           array.test.ts
+|   |   |   |   |   |           assignability.test.ts
+|   |   |   |   |   |           async-parsing.test.ts
+|   |   |   |   |   |           async-refinements.test.ts
+|   |   |   |   |   |           base.test.ts
+|   |   |   |   |   |           bigint.test.ts
+|   |   |   |   |   |           brand.test.ts
+|   |   |   |   |   |           catch.test.ts
+|   |   |   |   |   |           coalesce.test.ts
+|   |   |   |   |   |           codec-examples.test.ts
+|   |   |   |   |   |           codec.test.ts
+|   |   |   |   |   |           coerce.test.ts
+|   |   |   |   |   |           continuability.test.ts
+|   |   |   |   |   |           credit-card.test.ts
+|   |   |   |   |   |           custom.test.ts
+|   |   |   |   |   |           cyclic-data.test.ts
+|   |   |   |   |   |           date.test.ts
+|   |   |   |   |   |           datetime.test.ts
+|   |   |   |   |   |           deep-partial.test.ts
+|   |   |   |   |   |           default-locale.test.ts
+|   |   |   |   |   |           default.test.ts
+|   |   |   |   |   |           describe-meta-checks.test.ts
+|   |   |   |   |   |           description.test.ts
+|   |   |   |   |   |           detached-methods.test.ts
+|   |   |   |   |   |           discriminated-unions.test.ts
+|   |   |   |   |   |           enum.test.ts
+|   |   |   |   |   |           error-utils.test.ts
+|   |   |   |   |   |           error.test.ts
+|   |   |   |   |   |           file.test.ts
+|   |   |   |   |   |           firstparty.test.ts
+|   |   |   |   |   |           fix-json-issue.test.ts
+|   |   |   |   |   |           from-json-schema.test.ts
+|   |   |   |   |   |           function.test.ts
+|   |   |   |   |   |           generics.test.ts
+|   |   |   |   |   |           global-config.test.ts
+|   |   |   |   |   |           hash.test.ts
+|   |   |   |   |   |           iban.test.ts
+|   |   |   |   |   |           in-out.test.ts
+|   |   |   |   |   |           index.test.ts
+|   |   |   |   |   |           instance-footprint.test.ts
+|   |   |   |   |   |           instanceof.test.ts
+|   |   |   |   |   |           intersection.test.ts
+|   |   |   |   |   |           issue-schema.test.ts
+|   |   |   |   |   |           jitless-allows-eval.test.ts
+|   |   |   |   |   |           json.test.ts
+|   |   |   |   |   |           lazy.test.ts
+|   |   |   |   |   |           literal.test.ts
+|   |   |   |   |   |           locales_ka.test.ts
+|   |   |   |   |   |           locales_ro.test.ts
+|   |   |   |   |   |           map.test.ts
+|   |   |   |   |   |           nan.test.ts
+|   |   |   |   |   |           nested-refine.test.ts
+|   |   |   |   |   |           nonoptional.test.ts
+|   |   |   |   |   |           nullable.test.ts
+|   |   |   |   |   |           number.test.ts
+|   |   |   |   |   |           object.test.ts
+|   |   |   |   |   |           optin-ladder.test.ts
+|   |   |   |   |   |           optional.test.ts
+|   |   |   |   |   |           partial.test.ts
+|   |   |   |   |   |           pickomit.test.ts
+|   |   |   |   |   |           pipe.test.ts
+|   |   |   |   |   |           prefault.test.ts
+|   |   |   |   |   |           preprocess-types.test.ts
+|   |   |   |   |   |           preprocess.test.ts
+|   |   |   |   |   |           primitive.test.ts
+|   |   |   |   |   |           promise.test.ts

@@ -1,0 +1,150 @@
+    |       |   |   |   |   |   |   test_round.py
+    |       |   |   |   |   |   |   test_timestamp_method.py
+    |       |   |   |   |   |   |   test_to_julian_date.py
+    |       |   |   |   |   |   |   test_to_pydatetime.py
+    |       |   |   |   |   |   |   test_tz_convert.py
+    |       |   |   |   |   |   |   test_tz_localize.py
+    |       |   |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   |   
+    |       |   |   |   |   |   \---__pycache__
+    |       |   |   |   |   |           test_as_unit.cpython-313.pyc
+    |       |   |   |   |   |           test_normalize.cpython-313.pyc
+    |       |   |   |   |   |           test_replace.cpython-313.pyc
+    |       |   |   |   |   |           test_round.cpython-313.pyc
+    |       |   |   |   |   |           test_timestamp_method.cpython-313.pyc
+    |       |   |   |   |   |           test_to_julian_date.cpython-313.pyc
+    |       |   |   |   |   |           test_to_pydatetime.cpython-313.pyc
+    |       |   |   |   |   |           test_tz_convert.cpython-313.pyc
+    |       |   |   |   |   |           test_tz_localize.cpython-313.pyc
+    |       |   |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |   |           
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_arithmetic.cpython-313.pyc
+    |       |   |   |   |           test_comparisons.cpython-313.pyc
+    |       |   |   |   |           test_constructors.cpython-313.pyc
+    |       |   |   |   |           test_formats.cpython-313.pyc
+    |       |   |   |   |           test_timestamp.cpython-313.pyc
+    |       |   |   |   |           test_timezones.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_nat.cpython-313.pyc
+    |       |   |   |           test_na_scalar.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---series
+    |       |   |   |   |   test_api.py
+    |       |   |   |   |   test_arithmetic.py
+    |       |   |   |   |   test_arrow_interface.py
+    |       |   |   |   |   test_constructors.py
+    |       |   |   |   |   test_cumulative.py
+    |       |   |   |   |   test_formats.py
+    |       |   |   |   |   test_iteration.py
+    |       |   |   |   |   test_logical_ops.py
+    |       |   |   |   |   test_missing.py
+    |       |   |   |   |   test_npfuncs.py
+    |       |   |   |   |   test_reductions.py
+    |       |   |   |   |   test_subclass.py
+    |       |   |   |   |   test_ufunc.py
+    |       |   |   |   |   test_unary.py
+    |       |   |   |   |   test_validate.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---accessors
+    |       |   |   |   |   |   test_cat_accessor.py
+    |       |   |   |   |   |   test_dt_accessor.py
+    |       |   |   |   |   |   test_list_accessor.py
+    |       |   |   |   |   |   test_sparse_accessor.py
+    |       |   |   |   |   |   test_struct_accessor.py
+    |       |   |   |   |   |   test_str_accessor.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_cat_accessor.cpython-313.pyc
+    |       |   |   |   |           test_dt_accessor.cpython-313.pyc
+    |       |   |   |   |           test_list_accessor.cpython-313.pyc
+    |       |   |   |   |           test_sparse_accessor.cpython-313.pyc
+    |       |   |   |   |           test_struct_accessor.cpython-313.pyc
+    |       |   |   |   |           test_str_accessor.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---indexing
+    |       |   |   |   |   |   test_datetime.py
+    |       |   |   |   |   |   test_delitem.py
+    |       |   |   |   |   |   test_get.py
+    |       |   |   |   |   |   test_getitem.py
+    |       |   |   |   |   |   test_indexing.py
+    |       |   |   |   |   |   test_mask.py
+    |       |   |   |   |   |   test_setitem.py
+    |       |   |   |   |   |   test_set_value.py
+    |       |   |   |   |   |   test_take.py
+    |       |   |   |   |   |   test_where.py
+    |       |   |   |   |   |   test_xs.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_datetime.cpython-313.pyc
+    |       |   |   |   |           test_delitem.cpython-313.pyc
+    |       |   |   |   |           test_get.cpython-313.pyc
+    |       |   |   |   |           test_getitem.cpython-313.pyc
+    |       |   |   |   |           test_indexing.cpython-313.pyc
+    |       |   |   |   |           test_mask.cpython-313.pyc
+    |       |   |   |   |           test_setitem.cpython-313.pyc
+    |       |   |   |   |           test_set_value.cpython-313.pyc
+    |       |   |   |   |           test_take.cpython-313.pyc
+    |       |   |   |   |           test_where.cpython-313.pyc
+    |       |   |   |   |           test_xs.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---methods
+    |       |   |   |   |   |   test_add_prefix_suffix.py
+    |       |   |   |   |   |   test_align.py
+    |       |   |   |   |   |   test_argsort.py
+    |       |   |   |   |   |   test_asof.py
+    |       |   |   |   |   |   test_astype.py
+    |       |   |   |   |   |   test_autocorr.py
+    |       |   |   |   |   |   test_between.py
+    |       |   |   |   |   |   test_case_when.py
+    |       |   |   |   |   |   test_clip.py
+    |       |   |   |   |   |   test_combine.py
+    |       |   |   |   |   |   test_combine_first.py
+    |       |   |   |   |   |   test_compare.py
+    |       |   |   |   |   |   test_convert_dtypes.py
+    |       |   |   |   |   |   test_copy.py
+    |       |   |   |   |   |   test_count.py
+    |       |   |   |   |   |   test_cov_corr.py
+    |       |   |   |   |   |   test_describe.py
+    |       |   |   |   |   |   test_diff.py
+    |       |   |   |   |   |   test_drop.py
+    |       |   |   |   |   |   test_dropna.py
+    |       |   |   |   |   |   test_drop_duplicates.py
+    |       |   |   |   |   |   test_dtypes.py
+    |       |   |   |   |   |   test_duplicated.py
+    |       |   |   |   |   |   test_equals.py
+    |       |   |   |   |   |   test_explode.py
+    |       |   |   |   |   |   test_fillna.py
+    |       |   |   |   |   |   test_get_numeric_data.py
+    |       |   |   |   |   |   test_head_tail.py
+    |       |   |   |   |   |   test_infer_objects.py
+    |       |   |   |   |   |   test_info.py
+    |       |   |   |   |   |   test_interpolate.py
+    |       |   |   |   |   |   test_isin.py
+    |       |   |   |   |   |   test_isna.py
+    |       |   |   |   |   |   test_is_monotonic.py
+    |       |   |   |   |   |   test_is_unique.py
+    |       |   |   |   |   |   test_item.py
+    |       |   |   |   |   |   test_map.py
+    |       |   |   |   |   |   test_matmul.py
+    |       |   |   |   |   |   test_nlargest.py
+    |       |   |   |   |   |   test_nunique.py
+    |       |   |   |   |   |   test_pct_change.py
+    |       |   |   |   |   |   test_pop.py
+    |       |   |   |   |   |   test_quantile.py
+    |       |   |   |   |   |   test_rank.py
+    |       |   |   |   |   |   test_reindex.py
+    |       |   |   |   |   |   test_reindex_like.py
+    |       |   |   |   |   |   test_rename.py
+    |       |   |   |   |   |   test_rename_axis.py
+    |       |   |   |   |   |   test_repeat.py
+    |       |   |   |   |   |   test_replace.py
+    |       |   |   |   |   |   test_reset_index.py

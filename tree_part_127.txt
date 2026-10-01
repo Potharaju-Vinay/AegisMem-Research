@@ -1,0 +1,150 @@
+    |       |   |   collections.pyi
+    |       |   |   colorbar.py
+    |       |   |   colorbar.pyi
+    |       |   |   colorizer.py
+    |       |   |   colorizer.pyi
+    |       |   |   colors.py
+    |       |   |   colors.pyi
+    |       |   |   container.py
+    |       |   |   container.pyi
+    |       |   |   contour.py
+    |       |   |   contour.pyi
+    |       |   |   dates.py
+    |       |   |   dviread.py
+    |       |   |   dviread.pyi
+    |       |   |   figure.py
+    |       |   |   figure.pyi
+    |       |   |   font_manager.py
+    |       |   |   font_manager.pyi
+    |       |   |   ft2font.cp313-win_amd64.pyd
+    |       |   |   ft2font.pyi
+    |       |   |   gridspec.py
+    |       |   |   gridspec.pyi
+    |       |   |   hatch.py
+    |       |   |   hatch.pyi
+    |       |   |   image.py
+    |       |   |   image.pyi
+    |       |   |   inset.py
+    |       |   |   inset.pyi
+    |       |   |   layout_engine.py
+    |       |   |   layout_engine.pyi
+    |       |   |   legend.py
+    |       |   |   legend.pyi
+    |       |   |   legend_handler.py
+    |       |   |   legend_handler.pyi
+    |       |   |   lines.py
+    |       |   |   lines.pyi
+    |       |   |   markers.py
+    |       |   |   markers.pyi
+    |       |   |   mathtext.py
+    |       |   |   mathtext.pyi
+    |       |   |   mlab.py
+    |       |   |   mlab.pyi
+    |       |   |   offsetbox.py
+    |       |   |   offsetbox.pyi
+    |       |   |   patches.py
+    |       |   |   patches.pyi
+    |       |   |   path.py
+    |       |   |   path.pyi
+    |       |   |   patheffects.py
+    |       |   |   patheffects.pyi
+    |       |   |   py.typed
+    |       |   |   pylab.py
+    |       |   |   pyplot.py
+    |       |   |   quiver.py
+    |       |   |   quiver.pyi
+    |       |   |   rcsetup.py
+    |       |   |   rcsetup.pyi
+    |       |   |   sankey.py
+    |       |   |   sankey.pyi
+    |       |   |   scale.py
+    |       |   |   scale.pyi
+    |       |   |   spines.py
+    |       |   |   spines.pyi
+    |       |   |   stackplot.py
+    |       |   |   stackplot.pyi
+    |       |   |   streamplot.py
+    |       |   |   streamplot.pyi
+    |       |   |   table.py
+    |       |   |   table.pyi
+    |       |   |   texmanager.py
+    |       |   |   texmanager.pyi
+    |       |   |   text.py
+    |       |   |   text.pyi
+    |       |   |   textpath.py
+    |       |   |   textpath.pyi
+    |       |   |   ticker.py
+    |       |   |   ticker.pyi
+    |       |   |   transforms.py
+    |       |   |   transforms.pyi
+    |       |   |   typing.py
+    |       |   |   units.py
+    |       |   |   widgets.py
+    |       |   |   widgets.pyi
+    |       |   |   _afm.py
+    |       |   |   _animation_data.py
+    |       |   |   _blocking_input.py
+    |       |   |   _cm.py
+    |       |   |   _cm_bivar.py
+    |       |   |   _cm_listed.py
+    |       |   |   _cm_multivar.py
+    |       |   |   _color_data.py
+    |       |   |   _color_data.pyi
+    |       |   |   _constrained_layout.py
+    |       |   |   _c_internal_utils.cp313-win_amd64.pyd
+    |       |   |   _c_internal_utils.pyi
+    |       |   |   _docstring.py
+    |       |   |   _docstring.pyi
+    |       |   |   _enums.py
+    |       |   |   _enums.pyi
+    |       |   |   _fontconfig_pattern.py
+    |       |   |   _image.cp313-win_amd64.pyd
+    |       |   |   _image.pyi
+    |       |   |   _internal_utils.py
+    |       |   |   _layoutgrid.py
+    |       |   |   _mathtext.py
+    |       |   |   _mathtext_data.py
+    |       |   |   _path.cp313-win_amd64.pyd
+    |       |   |   _path.pyi
+    |       |   |   _pylab_helpers.py
+    |       |   |   _pylab_helpers.pyi
+    |       |   |   _qhull.cp313-win_amd64.pyd
+    |       |   |   _qhull.pyi
+    |       |   |   _style_helpers.py
+    |       |   |   _text_helpers.py
+    |       |   |   _tight_bbox.py
+    |       |   |   _tight_layout.py
+    |       |   |   _tri.cp313-win_amd64.pyd
+    |       |   |   _tri.pyi
+    |       |   |   _type1font.py
+    |       |   |   _version.py
+    |       |   |   __init__.py
+    |       |   |   __init__.pyi
+    |       |   |   
+    |       |   +---axes
+    |       |   |   |   _axes.py
+    |       |   |   |   _axes.pyi
+    |       |   |   |   _base.py
+    |       |   |   |   _base.pyi
+    |       |   |   |   _secondary_axes.py
+    |       |   |   |   _secondary_axes.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           _axes.cpython-313.pyc
+    |       |   |           _base.cpython-313.pyc
+    |       |   |           _secondary_axes.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---backends
+    |       |   |   |   backend_agg.py
+    |       |   |   |   backend_cairo.py
+    |       |   |   |   backend_gtk3.py
+    |       |   |   |   backend_gtk3agg.py
+    |       |   |   |   backend_gtk3cairo.py
+    |       |   |   |   backend_gtk4.py
+    |       |   |   |   backend_gtk4agg.py
+    |       |   |   |   backend_gtk4cairo.py
+    |       |   |   |   backend_macosx.py
+    |       |   |   |   backend_mixed.py

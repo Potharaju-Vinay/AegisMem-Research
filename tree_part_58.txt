@@ -1,0 +1,150 @@
+|   |   |   |   |   |   prefer-destructuring.js
+|   |   |   |   |   |   prefer-exponentiation-operator.js
+|   |   |   |   |   |   prefer-named-capture-group.js
+|   |   |   |   |   |   prefer-numeric-literals.js
+|   |   |   |   |   |   prefer-object-has-own.js
+|   |   |   |   |   |   prefer-object-spread.js
+|   |   |   |   |   |   prefer-promise-reject-errors.js
+|   |   |   |   |   |   prefer-reflect.js
+|   |   |   |   |   |   prefer-regex-literals.js
+|   |   |   |   |   |   prefer-rest-params.js
+|   |   |   |   |   |   prefer-spread.js
+|   |   |   |   |   |   prefer-template.js
+|   |   |   |   |   |   preserve-caught-error.js
+|   |   |   |   |   |   quote-props.js
+|   |   |   |   |   |   quotes.js
+|   |   |   |   |   |   radix.js
+|   |   |   |   |   |   require-atomic-updates.js
+|   |   |   |   |   |   require-await.js
+|   |   |   |   |   |   require-unicode-regexp.js
+|   |   |   |   |   |   require-yield.js
+|   |   |   |   |   |   rest-spread-spacing.js
+|   |   |   |   |   |   semi-spacing.js
+|   |   |   |   |   |   semi-style.js
+|   |   |   |   |   |   semi.js
+|   |   |   |   |   |   sort-imports.js
+|   |   |   |   |   |   sort-keys.js
+|   |   |   |   |   |   sort-vars.js
+|   |   |   |   |   |   space-before-blocks.js
+|   |   |   |   |   |   space-before-function-paren.js
+|   |   |   |   |   |   space-in-parens.js
+|   |   |   |   |   |   space-infix-ops.js
+|   |   |   |   |   |   space-unary-ops.js
+|   |   |   |   |   |   spaced-comment.js
+|   |   |   |   |   |   strict.js
+|   |   |   |   |   |   switch-colon-spacing.js
+|   |   |   |   |   |   symbol-description.js
+|   |   |   |   |   |   template-curly-spacing.js
+|   |   |   |   |   |   template-tag-spacing.js
+|   |   |   |   |   |   unicode-bom.js
+|   |   |   |   |   |   use-isnan.js
+|   |   |   |   |   |   valid-typeof.js
+|   |   |   |   |   |   vars-on-top.js
+|   |   |   |   |   |   wrap-iife.js
+|   |   |   |   |   |   wrap-regex.js
+|   |   |   |   |   |   yield-star-spacing.js
+|   |   |   |   |   |   yoda.js
+|   |   |   |   |   |   
+|   |   |   |   |   \---utils
+|   |   |   |   |       |   ast-utils.js
+|   |   |   |   |       |   char-source.js
+|   |   |   |   |       |   code-path-utils.js
+|   |   |   |   |       |   fix-tracker.js
+|   |   |   |   |       |   keywords.js
+|   |   |   |   |       |   lazy-loading-rule-map.js
+|   |   |   |   |       |   regular-expressions.js
+|   |   |   |   |       |   string-utils.js
+|   |   |   |   |       |   
+|   |   |   |   |       \---unicode
+|   |   |   |   |               index.js
+|   |   |   |   |               is-combining-character.js
+|   |   |   |   |               is-emoji-modifier.js
+|   |   |   |   |               is-regional-indicator-symbol.js
+|   |   |   |   |               is-surrogate-pair.js
+|   |   |   |   |               
+|   |   |   |   +---services
+|   |   |   |   |       parser-service.js
+|   |   |   |   |       processor-service.js
+|   |   |   |   |       suppressions-service.js
+|   |   |   |   |       warning-service.js
+|   |   |   |   |       
+|   |   |   |   +---shared
+|   |   |   |   |       ajv.js
+|   |   |   |   |       assert.js
+|   |   |   |   |       ast-utils.js
+|   |   |   |   |       deep-merge-arrays.js
+|   |   |   |   |       directives.js
+|   |   |   |   |       flags.js
+|   |   |   |   |       logging.js
+|   |   |   |   |       message-counts.js
+|   |   |   |   |       naming.js
+|   |   |   |   |       option-utils.js
+|   |   |   |   |       relative-module-resolver.js
+|   |   |   |   |       runtime-info.js
+|   |   |   |   |       serialization.js
+|   |   |   |   |       severity.js
+|   |   |   |   |       stats.js
+|   |   |   |   |       string-utils.js
+|   |   |   |   |       text-table.js
+|   |   |   |   |       translate-cli-options.js
+|   |   |   |   |       traverser.js
+|   |   |   |   |       
+|   |   |   |   \---types
+|   |   |   |           config-api.d.ts
+|   |   |   |           index.d.ts
+|   |   |   |           rules.d.ts
+|   |   |   |           universal.d.ts
+|   |   |   |           use-at-your-own-risk.d.ts
+|   |   |   |           
+|   |   |   \---messages
+|   |   |           all-matched-files-ignored.js
+|   |   |           config-file-missing.js
+|   |   |           config-plugin-missing.js
+|   |   |           config-serialize-function.js
+|   |   |           eslintrc-incompat.js
+|   |   |           eslintrc-plugins.js
+|   |   |           extend-config-missing.js
+|   |   |           failed-to-read-json.js
+|   |   |           file-not-found.js
+|   |   |           invalid-rule-options.js
+|   |   |           invalid-rule-severity.js
+|   |   |           no-config-found.js
+|   |   |           plugin-conflict.js
+|   |   |           plugin-invalid.js
+|   |   |           plugin-missing.js
+|   |   |           rule-unsupported-language.js
+|   |   |           shared.js
+|   |   |           whitespace-found.js
+|   |   |           
+|   |   +---eslint-plugin-react-hooks
+|   |   |   |   index.d.ts
+|   |   |   |   index.js
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---cjs
+|   |   |           eslint-plugin-react-hooks.d.ts
+|   |   |           eslint-plugin-react-hooks.development.js
+|   |   |           eslint-plugin-react-hooks.production.js
+|   |   |           
+|   |   +---eslint-plugin-react-refresh
+|   |   |       index.d.ts
+|   |   |       index.js
+|   |   |       LICENSE
+|   |   |       package.json
+|   |   |       README.md
+|   |   |       
+|   |   +---eslint-scope
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---dist
+|   |   |   |       eslint-scope.cjs
+|   |   |   |       
+|   |   |   \---lib
+|   |   |           assert.js
+|   |   |           definition.js
+|   |   |           index.d.cts
+|   |   |           index.d.ts

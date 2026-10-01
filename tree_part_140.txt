@@ -1,0 +1,150 @@
+    |       |   |   |           test_special.cpython-313.pyc
+    |       |   |   |           test_subgraphviews.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           coreviews.cpython-313.pyc
+    |       |   |           digraph.cpython-313.pyc
+    |       |   |           filters.cpython-313.pyc
+    |       |   |           function.cpython-313.pyc
+    |       |   |           graph.cpython-313.pyc
+    |       |   |           graphviews.cpython-313.pyc
+    |       |   |           multidigraph.cpython-313.pyc
+    |       |   |           multigraph.cpython-313.pyc
+    |       |   |           reportviews.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---drawing
+    |       |   |   |   layout.py
+    |       |   |   |   nx_agraph.py
+    |       |   |   |   nx_latex.py
+    |       |   |   |   nx_pydot.py
+    |       |   |   |   nx_pylab.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_agraph.py
+    |       |   |   |   |   test_image_comparison_pylab_mpl.py
+    |       |   |   |   |   test_latex.py
+    |       |   |   |   |   test_layout.py
+    |       |   |   |   |   test_pydot.py
+    |       |   |   |   |   test_pylab.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---baseline
+    |       |   |   |   |       test_display_complex.png
+    |       |   |   |   |       test_display_empty_graph.png
+    |       |   |   |   |       test_display_house_with_colors.png
+    |       |   |   |   |       test_display_labels_and_colors.png
+    |       |   |   |   |       test_display_shortest_path.png
+    |       |   |   |   |       test_house_with_colors.png
+    |       |   |   |   |       
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_agraph.cpython-313.pyc
+    |       |   |   |           test_image_comparison_pylab_mpl.cpython-313.pyc
+    |       |   |   |           test_latex.cpython-313.pyc
+    |       |   |   |           test_layout.cpython-313.pyc
+    |       |   |   |           test_pydot.cpython-313.pyc
+    |       |   |   |           test_pylab.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           layout.cpython-313.pyc
+    |       |   |           nx_agraph.cpython-313.pyc
+    |       |   |           nx_latex.cpython-313.pyc
+    |       |   |           nx_pydot.cpython-313.pyc
+    |       |   |           nx_pylab.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---generators
+    |       |   |   |   atlas.dat.gz
+    |       |   |   |   atlas.py
+    |       |   |   |   classic.py
+    |       |   |   |   cographs.py
+    |       |   |   |   community.py
+    |       |   |   |   degree_seq.py
+    |       |   |   |   directed.py
+    |       |   |   |   duplication.py
+    |       |   |   |   ego.py
+    |       |   |   |   expanders.py
+    |       |   |   |   geometric.py
+    |       |   |   |   harary_graph.py
+    |       |   |   |   internet_as_graphs.py
+    |       |   |   |   intersection.py
+    |       |   |   |   interval_graph.py
+    |       |   |   |   joint_degree_seq.py
+    |       |   |   |   lattice.py
+    |       |   |   |   line.py
+    |       |   |   |   mycielski.py
+    |       |   |   |   nonisomorphic_trees.py
+    |       |   |   |   random_clustered.py
+    |       |   |   |   random_graphs.py
+    |       |   |   |   small.py
+    |       |   |   |   social.py
+    |       |   |   |   spectral_graph_forge.py
+    |       |   |   |   stochastic.py
+    |       |   |   |   sudoku.py
+    |       |   |   |   time_series.py
+    |       |   |   |   trees.py
+    |       |   |   |   triads.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_atlas.py
+    |       |   |   |   |   test_classic.py
+    |       |   |   |   |   test_cographs.py
+    |       |   |   |   |   test_community.py
+    |       |   |   |   |   test_degree_seq.py
+    |       |   |   |   |   test_directed.py
+    |       |   |   |   |   test_duplication.py
+    |       |   |   |   |   test_ego.py
+    |       |   |   |   |   test_expanders.py
+    |       |   |   |   |   test_geometric.py
+    |       |   |   |   |   test_harary_graph.py
+    |       |   |   |   |   test_internet_as_graphs.py
+    |       |   |   |   |   test_intersection.py
+    |       |   |   |   |   test_interval_graph.py
+    |       |   |   |   |   test_joint_degree_seq.py
+    |       |   |   |   |   test_lattice.py
+    |       |   |   |   |   test_line.py
+    |       |   |   |   |   test_mycielski.py
+    |       |   |   |   |   test_nonisomorphic_trees.py
+    |       |   |   |   |   test_random_clustered.py
+    |       |   |   |   |   test_random_graphs.py
+    |       |   |   |   |   test_small.py
+    |       |   |   |   |   test_spectral_graph_forge.py
+    |       |   |   |   |   test_stochastic.py
+    |       |   |   |   |   test_sudoku.py
+    |       |   |   |   |   test_time_series.py
+    |       |   |   |   |   test_trees.py
+    |       |   |   |   |   test_triads.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_atlas.cpython-313.pyc
+    |       |   |   |           test_classic.cpython-313.pyc
+    |       |   |   |           test_cographs.cpython-313.pyc
+    |       |   |   |           test_community.cpython-313.pyc
+    |       |   |   |           test_degree_seq.cpython-313.pyc
+    |       |   |   |           test_directed.cpython-313.pyc
+    |       |   |   |           test_duplication.cpython-313.pyc
+    |       |   |   |           test_ego.cpython-313.pyc
+    |       |   |   |           test_expanders.cpython-313.pyc
+    |       |   |   |           test_geometric.cpython-313.pyc
+    |       |   |   |           test_harary_graph.cpython-313.pyc
+    |       |   |   |           test_internet_as_graphs.cpython-313.pyc
+    |       |   |   |           test_intersection.cpython-313.pyc
+    |       |   |   |           test_interval_graph.cpython-313.pyc
+    |       |   |   |           test_joint_degree_seq.cpython-313.pyc
+    |       |   |   |           test_lattice.cpython-313.pyc
+    |       |   |   |           test_line.cpython-313.pyc
+    |       |   |   |           test_mycielski.cpython-313.pyc
+    |       |   |   |           test_nonisomorphic_trees.cpython-313.pyc
+    |       |   |   |           test_random_clustered.cpython-313.pyc
+    |       |   |   |           test_random_graphs.cpython-313.pyc
+    |       |   |   |           test_small.cpython-313.pyc
+    |       |   |   |           test_spectral_graph_forge.cpython-313.pyc
+    |       |   |   |           test_stochastic.cpython-313.pyc
+    |       |   |   |           test_sudoku.cpython-313.pyc
+    |       |   |   |           test_time_series.cpython-313.pyc
+    |       |   |   |           test_trees.cpython-313.pyc

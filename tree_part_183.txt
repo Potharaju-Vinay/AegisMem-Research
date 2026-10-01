@@ -1,0 +1,150 @@
+    |       |   |   |           distro.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           __main__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---idna
+    |       |   |   |   |   cli.py
+    |       |   |   |   |   codec.py
+    |       |   |   |   |   compat.py
+    |       |   |   |   |   core.py
+    |       |   |   |   |   idnadata.py
+    |       |   |   |   |   intranges.py
+    |       |   |   |   |   LICENSE.md
+    |       |   |   |   |   package_data.py
+    |       |   |   |   |   py.typed
+    |       |   |   |   |   uts46data.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   __main__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           cli.cpython-313.pyc
+    |       |   |   |           codec.cpython-313.pyc
+    |       |   |   |           compat.cpython-313.pyc
+    |       |   |   |           core.cpython-313.pyc
+    |       |   |   |           idnadata.cpython-313.pyc
+    |       |   |   |           intranges.cpython-313.pyc
+    |       |   |   |           package_data.cpython-313.pyc
+    |       |   |   |           uts46data.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           __main__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---msgpack
+    |       |   |   |   |   COPYING
+    |       |   |   |   |   exceptions.py
+    |       |   |   |   |   ext.py
+    |       |   |   |   |   fallback.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           exceptions.cpython-313.pyc
+    |       |   |   |           ext.cpython-313.pyc
+    |       |   |   |           fallback.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---packaging
+    |       |   |   |   |   dependency_groups.py
+    |       |   |   |   |   direct_url.py
+    |       |   |   |   |   errors.py
+    |       |   |   |   |   LICENSE
+    |       |   |   |   |   LICENSE.APACHE
+    |       |   |   |   |   LICENSE.BSD
+    |       |   |   |   |   markers.py
+    |       |   |   |   |   metadata.py
+    |       |   |   |   |   py.typed
+    |       |   |   |   |   pylock.py
+    |       |   |   |   |   requirements.py
+    |       |   |   |   |   specifiers.py
+    |       |   |   |   |   tags.py
+    |       |   |   |   |   utils.py
+    |       |   |   |   |   version.py
+    |       |   |   |   |   _elffile.py
+    |       |   |   |   |   _manylinux.py
+    |       |   |   |   |   _musllinux.py
+    |       |   |   |   |   _parser.py
+    |       |   |   |   |   _structures.py
+    |       |   |   |   |   _tokenizer.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---licenses
+    |       |   |   |   |   |   _spdx.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           _spdx.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           dependency_groups.cpython-313.pyc
+    |       |   |   |           direct_url.cpython-313.pyc
+    |       |   |   |           errors.cpython-313.pyc
+    |       |   |   |           markers.cpython-313.pyc
+    |       |   |   |           metadata.cpython-313.pyc
+    |       |   |   |           pylock.cpython-313.pyc
+    |       |   |   |           requirements.cpython-313.pyc
+    |       |   |   |           specifiers.cpython-313.pyc
+    |       |   |   |           tags.cpython-313.pyc
+    |       |   |   |           utils.cpython-313.pyc
+    |       |   |   |           version.cpython-313.pyc
+    |       |   |   |           _elffile.cpython-313.pyc
+    |       |   |   |           _manylinux.cpython-313.pyc
+    |       |   |   |           _musllinux.cpython-313.pyc
+    |       |   |   |           _parser.cpython-313.pyc
+    |       |   |   |           _structures.cpython-313.pyc
+    |       |   |   |           _tokenizer.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---pkg_resources
+    |       |   |   |   |   LICENSE
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---platformdirs
+    |       |   |   |   |   android.py
+    |       |   |   |   |   api.py
+    |       |   |   |   |   LICENSE
+    |       |   |   |   |   macos.py
+    |       |   |   |   |   py.typed
+    |       |   |   |   |   unix.py
+    |       |   |   |   |   version.py
+    |       |   |   |   |   windows.py
+    |       |   |   |   |   _xdg.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   __main__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           android.cpython-313.pyc
+    |       |   |   |           api.cpython-313.pyc
+    |       |   |   |           macos.cpython-313.pyc
+    |       |   |   |           unix.cpython-313.pyc
+    |       |   |   |           version.cpython-313.pyc
+    |       |   |   |           windows.cpython-313.pyc
+    |       |   |   |           _xdg.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           __main__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---pygments
+    |       |   |   |   |   console.py
+    |       |   |   |   |   filter.py
+    |       |   |   |   |   formatter.py
+    |       |   |   |   |   lexer.py
+    |       |   |   |   |   LICENSE
+    |       |   |   |   |   modeline.py
+    |       |   |   |   |   plugin.py
+    |       |   |   |   |   regexopt.py
+    |       |   |   |   |   scanner.py
+    |       |   |   |   |   sphinxext.py
+    |       |   |   |   |   style.py
+    |       |   |   |   |   token.py
+    |       |   |   |   |   unistring.py
+    |       |   |   |   |   util.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   __main__.py
+    |       |   |   |   |   
+    |       |   |   |   +---filters
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           

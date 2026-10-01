@@ -1,0 +1,150 @@
+    |       |   |   |   axislines.py
+    |       |   |   |   axisline_style.py
+    |       |   |   |   axis_artist.py
+    |       |   |   |   floating_axes.py
+    |       |   |   |   grid_finder.py
+    |       |   |   |   grid_helper_curvelinear.py
+    |       |   |   |   parasite_axes.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   conftest.py
+    |       |   |   |   |   test_angle_helper.py
+    |       |   |   |   |   test_axislines.py
+    |       |   |   |   |   test_axis_artist.py
+    |       |   |   |   |   test_floating_axes.py
+    |       |   |   |   |   test_grid_finder.py
+    |       |   |   |   |   test_grid_helper_curvelinear.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           conftest.cpython-313.pyc
+    |       |   |   |           test_angle_helper.cpython-313.pyc
+    |       |   |   |           test_axislines.cpython-313.pyc
+    |       |   |   |           test_axis_artist.cpython-313.pyc
+    |       |   |   |           test_floating_axes.cpython-313.pyc
+    |       |   |   |           test_grid_finder.cpython-313.pyc
+    |       |   |   |           test_grid_helper_curvelinear.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           angle_helper.cpython-313.pyc
+    |       |   |           axes_divider.cpython-313.pyc
+    |       |   |           axislines.cpython-313.pyc
+    |       |   |           axisline_style.cpython-313.pyc
+    |       |   |           axis_artist.cpython-313.pyc
+    |       |   |           floating_axes.cpython-313.pyc
+    |       |   |           grid_finder.cpython-313.pyc
+    |       |   |           grid_helper_curvelinear.cpython-313.pyc
+    |       |   |           parasite_axes.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---mplot3d
+    |       |       |   art3d.py
+    |       |       |   axes3d.py
+    |       |       |   axis3d.py
+    |       |       |   proj3d.py
+    |       |       |   __init__.py
+    |       |       |   
+    |       |       +---tests
+    |       |       |   |   conftest.py
+    |       |       |   |   test_art3d.py
+    |       |       |   |   test_axes3d.py
+    |       |       |   |   test_legend3d.py
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---__pycache__
+    |       |       |           conftest.cpython-313.pyc
+    |       |       |           test_art3d.cpython-313.pyc
+    |       |       |           test_axes3d.cpython-313.pyc
+    |       |       |           test_legend3d.cpython-313.pyc
+    |       |       |           __init__.cpython-313.pyc
+    |       |       |           
+    |       |       \---__pycache__
+    |       |               art3d.cpython-313.pyc
+    |       |               axes3d.cpython-313.pyc
+    |       |               axis3d.cpython-313.pyc
+    |       |               proj3d.cpython-313.pyc
+    |       |               __init__.cpython-313.pyc
+    |       |               
+    |       +---networkx
+    |       |   |   conftest.py
+    |       |   |   convert.py
+    |       |   |   convert_matrix.py
+    |       |   |   exception.py
+    |       |   |   lazy_imports.py
+    |       |   |   relabel.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---algorithms
+    |       |   |   |   asteroidal.py
+    |       |   |   |   boundary.py
+    |       |   |   |   bridges.py
+    |       |   |   |   broadcasting.py
+    |       |   |   |   chains.py
+    |       |   |   |   chordal.py
+    |       |   |   |   clique.py
+    |       |   |   |   cluster.py
+    |       |   |   |   communicability_alg.py
+    |       |   |   |   core.py
+    |       |   |   |   covering.py
+    |       |   |   |   cuts.py
+    |       |   |   |   cycles.py
+    |       |   |   |   dag.py
+    |       |   |   |   distance_measures.py
+    |       |   |   |   distance_regular.py
+    |       |   |   |   dominance.py
+    |       |   |   |   dominating.py
+    |       |   |   |   d_separation.py
+    |       |   |   |   efficiency_measures.py
+    |       |   |   |   euler.py
+    |       |   |   |   graphical.py
+    |       |   |   |   graph_hashing.py
+    |       |   |   |   hierarchy.py
+    |       |   |   |   hybrid.py
+    |       |   |   |   isolate.py
+    |       |   |   |   link_prediction.py
+    |       |   |   |   lowest_common_ancestors.py
+    |       |   |   |   matching.py
+    |       |   |   |   mis.py
+    |       |   |   |   moral.py
+    |       |   |   |   node_classification.py
+    |       |   |   |   non_randomness.py
+    |       |   |   |   perfect_graph.py
+    |       |   |   |   planarity.py
+    |       |   |   |   planar_drawing.py
+    |       |   |   |   polynomials.py
+    |       |   |   |   reciprocity.py
+    |       |   |   |   regular.py
+    |       |   |   |   richclub.py
+    |       |   |   |   similarity.py
+    |       |   |   |   simple_paths.py
+    |       |   |   |   smallworld.py
+    |       |   |   |   smetric.py
+    |       |   |   |   sparsifiers.py
+    |       |   |   |   structuralholes.py
+    |       |   |   |   summarization.py
+    |       |   |   |   swap.py
+    |       |   |   |   threshold.py
+    |       |   |   |   time_dependent.py
+    |       |   |   |   tournament.py
+    |       |   |   |   triads.py
+    |       |   |   |   vitality.py
+    |       |   |   |   voronoi.py
+    |       |   |   |   walks.py
+    |       |   |   |   wiener.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---approximation
+    |       |   |   |   |   clique.py
+    |       |   |   |   |   clustering_coefficient.py
+    |       |   |   |   |   connectivity.py
+    |       |   |   |   |   density.py
+    |       |   |   |   |   distance_measures.py
+    |       |   |   |   |   dominating_set.py
+    |       |   |   |   |   kcomponents.py
+    |       |   |   |   |   matching.py
+    |       |   |   |   |   maxcut.py
+    |       |   |   |   |   ramsey.py
+    |       |   |   |   |   steinertree.py
+    |       |   |   |   |   traveling_salesman.py

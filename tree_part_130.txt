@@ -1,0 +1,150 @@
+    |       |   |           seaborn-v0_8-deep.mplstyle
+    |       |   |           seaborn-v0_8-muted.mplstyle
+    |       |   |           seaborn-v0_8-notebook.mplstyle
+    |       |   |           seaborn-v0_8-paper.mplstyle
+    |       |   |           seaborn-v0_8-pastel.mplstyle
+    |       |   |           seaborn-v0_8-poster.mplstyle
+    |       |   |           seaborn-v0_8-talk.mplstyle
+    |       |   |           seaborn-v0_8-ticks.mplstyle
+    |       |   |           seaborn-v0_8-white.mplstyle
+    |       |   |           seaborn-v0_8-whitegrid.mplstyle
+    |       |   |           seaborn-v0_8.mplstyle
+    |       |   |           Solarize_Light2.mplstyle
+    |       |   |           tableau-colorblind10.mplstyle
+    |       |   |           _classic_test_patch.mplstyle
+    |       |   |           _mpl-gallery-nogrid.mplstyle
+    |       |   |           _mpl-gallery.mplstyle
+    |       |   |           
+    |       |   +---projections
+    |       |   |   |   geo.py
+    |       |   |   |   geo.pyi
+    |       |   |   |   polar.py
+    |       |   |   |   polar.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           geo.cpython-313.pyc
+    |       |   |           polar.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---sphinxext
+    |       |   |   |   figmpl_directive.py
+    |       |   |   |   mathmpl.py
+    |       |   |   |   plot_directive.py
+    |       |   |   |   roles.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           figmpl_directive.cpython-313.pyc
+    |       |   |           mathmpl.cpython-313.pyc
+    |       |   |           plot_directive.cpython-313.pyc
+    |       |   |           roles.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---style
+    |       |   |   |   core.py
+    |       |   |   |   core.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           core.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---testing
+    |       |   |   |   compare.py
+    |       |   |   |   compare.pyi
+    |       |   |   |   conftest.py
+    |       |   |   |   conftest.pyi
+    |       |   |   |   decorators.py
+    |       |   |   |   decorators.pyi
+    |       |   |   |   exceptions.py
+    |       |   |   |   widgets.py
+    |       |   |   |   widgets.pyi
+    |       |   |   |   _markers.py
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   +---jpl_units
+    |       |   |   |   |   Duration.py
+    |       |   |   |   |   Epoch.py
+    |       |   |   |   |   EpochConverter.py
+    |       |   |   |   |   StrConverter.py
+    |       |   |   |   |   UnitDbl.py
+    |       |   |   |   |   UnitDblConverter.py
+    |       |   |   |   |   UnitDblFormatter.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           Duration.cpython-313.pyc
+    |       |   |   |           Epoch.cpython-313.pyc
+    |       |   |   |           EpochConverter.cpython-313.pyc
+    |       |   |   |           StrConverter.cpython-313.pyc
+    |       |   |   |           UnitDbl.cpython-313.pyc
+    |       |   |   |           UnitDblConverter.cpython-313.pyc
+    |       |   |   |           UnitDblFormatter.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           compare.cpython-313.pyc
+    |       |   |           conftest.cpython-313.pyc
+    |       |   |           decorators.cpython-313.pyc
+    |       |   |           exceptions.cpython-313.pyc
+    |       |   |           widgets.cpython-313.pyc
+    |       |   |           _markers.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---tests
+    |       |   |   |   conftest.py
+    |       |   |   |   test_afm.py
+    |       |   |   |   test_agg.py
+    |       |   |   |   test_agg_filter.py
+    |       |   |   |   test_animation.py
+    |       |   |   |   test_api.py
+    |       |   |   |   test_arrow_patches.py
+    |       |   |   |   test_artist.py
+    |       |   |   |   test_axes.py
+    |       |   |   |   test_axis.py
+    |       |   |   |   test_backends_interactive.py
+    |       |   |   |   test_backend_bases.py
+    |       |   |   |   test_backend_cairo.py
+    |       |   |   |   test_backend_gtk3.py
+    |       |   |   |   test_backend_inline.py
+    |       |   |   |   test_backend_macosx.py
+    |       |   |   |   test_backend_nbagg.py
+    |       |   |   |   test_backend_pdf.py
+    |       |   |   |   test_backend_pgf.py
+    |       |   |   |   test_backend_ps.py
+    |       |   |   |   test_backend_qt.py
+    |       |   |   |   test_backend_registry.py
+    |       |   |   |   test_backend_svg.py
+    |       |   |   |   test_backend_template.py
+    |       |   |   |   test_backend_tk.py
+    |       |   |   |   test_backend_tools.py
+    |       |   |   |   test_backend_webagg.py
+    |       |   |   |   test_basic.py
+    |       |   |   |   test_bbox_tight.py
+    |       |   |   |   test_bezier.py
+    |       |   |   |   test_category.py
+    |       |   |   |   test_cbook.py
+    |       |   |   |   test_collections.py
+    |       |   |   |   test_colorbar.py
+    |       |   |   |   test_colors.py
+    |       |   |   |   test_compare_images.py
+    |       |   |   |   test_constrainedlayout.py
+    |       |   |   |   test_container.py
+    |       |   |   |   test_contour.py
+    |       |   |   |   test_cycles.py
+    |       |   |   |   test_dates.py
+    |       |   |   |   test_datetime.py
+    |       |   |   |   test_determinism.py
+    |       |   |   |   test_doc.py
+    |       |   |   |   test_dviread.py
+    |       |   |   |   test_figure.py
+    |       |   |   |   test_fontconfig_pattern.py
+    |       |   |   |   test_font_manager.py
+    |       |   |   |   test_ft2font.py
+    |       |   |   |   test_getattr.py
+    |       |   |   |   test_gridspec.py
+    |       |   |   |   test_image.py

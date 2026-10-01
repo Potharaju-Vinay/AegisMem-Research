@@ -1,0 +1,150 @@
+    |       |   |           svgPathPen.cpython-313.pyc
+    |       |   |           t2CharStringPen.cpython-313.pyc
+    |       |   |           teePen.cpython-313.pyc
+    |       |   |           transformPen.cpython-313.pyc
+    |       |   |           ttGlyphPen.cpython-313.pyc
+    |       |   |           wxPen.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---qu2cu
+    |       |   |   |   benchmark.py
+    |       |   |   |   cli.py
+    |       |   |   |   qu2cu.c
+    |       |   |   |   qu2cu.cp313-win_amd64.pyd
+    |       |   |   |   qu2cu.py
+    |       |   |   |   __init__.py
+    |       |   |   |   __main__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           benchmark.cpython-313.pyc
+    |       |   |           cli.cpython-313.pyc
+    |       |   |           qu2cu.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           __main__.cpython-313.pyc
+    |       |   |           
+    |       |   +---subset
+    |       |   |   |   cff.py
+    |       |   |   |   svg.py
+    |       |   |   |   util.py
+    |       |   |   |   __init__.py
+    |       |   |   |   __main__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           cff.cpython-313.pyc
+    |       |   |           svg.cpython-313.pyc
+    |       |   |           util.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           __main__.cpython-313.pyc
+    |       |   |           
+    |       |   +---svgLib
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---path
+    |       |   |   |   |   arc.py
+    |       |   |   |   |   parser.py
+    |       |   |   |   |   shapes.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           arc.cpython-313.pyc
+    |       |   |   |           parser.cpython-313.pyc
+    |       |   |   |           shapes.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---t1Lib
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---ttLib
+    |       |   |   |   macUtils.py
+    |       |   |   |   removeOverlaps.py
+    |       |   |   |   reorderGlyphs.py
+    |       |   |   |   scaleUpem.py
+    |       |   |   |   sfnt.py
+    |       |   |   |   standardGlyphOrder.py
+    |       |   |   |   ttCollection.py
+    |       |   |   |   ttFont.py
+    |       |   |   |   ttGlyphSet.py
+    |       |   |   |   ttVisitor.py
+    |       |   |   |   woff2.py
+    |       |   |   |   __init__.py
+    |       |   |   |   __main__.py
+    |       |   |   |   
+    |       |   |   +---tables
+    |       |   |   |   |   asciiTable.py
+    |       |   |   |   |   BitmapGlyphMetrics.py
+    |       |   |   |   |   B_A_S_E_.py
+    |       |   |   |   |   C_B_D_T_.py
+    |       |   |   |   |   C_B_L_C_.py
+    |       |   |   |   |   C_F_F_.py
+    |       |   |   |   |   C_F_F__2.py
+    |       |   |   |   |   C_O_L_R_.py
+    |       |   |   |   |   C_P_A_L_.py
+    |       |   |   |   |   DefaultTable.py
+    |       |   |   |   |   D_S_I_G_.py
+    |       |   |   |   |   D__e_b_g.py
+    |       |   |   |   |   E_B_D_T_.py
+    |       |   |   |   |   E_B_L_C_.py
+    |       |   |   |   |   E_B_S_C_.py
+    |       |   |   |   |   F_F_T_M_.py
+    |       |   |   |   |   F__e_a_t.py
+    |       |   |   |   |   grUtils.py
+    |       |   |   |   |   G_D_E_F_.py
+    |       |   |   |   |   G_P_O_S_.py
+    |       |   |   |   |   G_S_U_B_.py
+    |       |   |   |   |   G_V_A_R_.py
+    |       |   |   |   |   G__l_a_t.py
+    |       |   |   |   |   G__l_o_c.py
+    |       |   |   |   |   H_V_A_R_.py
+    |       |   |   |   |   I_F_T_.py
+    |       |   |   |   |   I_F_T_X_.py
+    |       |   |   |   |   J_S_T_F_.py
+    |       |   |   |   |   L_T_S_H_.py
+    |       |   |   |   |   M_A_T_H_.py
+    |       |   |   |   |   M_V_A_R_.py
+    |       |   |   |   |   otBase.py
+    |       |   |   |   |   otConverters.py
+    |       |   |   |   |   otData.py
+    |       |   |   |   |   otDataSchema.py
+    |       |   |   |   |   otTables.py
+    |       |   |   |   |   otTraverse.py
+    |       |   |   |   |   O_S_2f_2.py
+    |       |   |   |   |   sbixGlyph.py
+    |       |   |   |   |   sbixStrike.py
+    |       |   |   |   |   S_T_A_T_.py
+    |       |   |   |   |   S_V_G_.py
+    |       |   |   |   |   S__i_l_f.py
+    |       |   |   |   |   S__i_l_l.py
+    |       |   |   |   |   table_API_readme.txt
+    |       |   |   |   |   ttProgram.py
+    |       |   |   |   |   TupleVariation.py
+    |       |   |   |   |   T_S_I_B_.py
+    |       |   |   |   |   T_S_I_C_.py
+    |       |   |   |   |   T_S_I_D_.py
+    |       |   |   |   |   T_S_I_J_.py
+    |       |   |   |   |   T_S_I_P_.py
+    |       |   |   |   |   T_S_I_S_.py
+    |       |   |   |   |   T_S_I_V_.py
+    |       |   |   |   |   T_S_I__0.py
+    |       |   |   |   |   T_S_I__1.py
+    |       |   |   |   |   T_S_I__2.py
+    |       |   |   |   |   T_S_I__3.py
+    |       |   |   |   |   T_S_I__5.py
+    |       |   |   |   |   T_T_F_A_.py
+    |       |   |   |   |   V_A_R_C_.py
+    |       |   |   |   |   V_D_M_X_.py
+    |       |   |   |   |   V_O_R_G_.py
+    |       |   |   |   |   V_V_A_R_.py
+    |       |   |   |   |   _a_n_k_r.py
+    |       |   |   |   |   _a_v_a_r.py
+    |       |   |   |   |   _b_d_a_t.py
+    |       |   |   |   |   _b_g_c_l.py
+    |       |   |   |   |   _b_h_e_d.py
+    |       |   |   |   |   _b_l_o_c.py
+    |       |   |   |   |   _b_s_l_n.py
+    |       |   |   |   |   _c_i_d_g.py

@@ -1,0 +1,150 @@
+    |       |   |   |           test_timedelta.cpython-313.pyc
+    |       |   |   |           test_time_grouper.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---reshape
+    |       |   |   |   |   test_crosstab.py
+    |       |   |   |   |   test_cut.py
+    |       |   |   |   |   test_from_dummies.py
+    |       |   |   |   |   test_get_dummies.py
+    |       |   |   |   |   test_melt.py
+    |       |   |   |   |   test_pivot.py
+    |       |   |   |   |   test_pivot_multilevel.py
+    |       |   |   |   |   test_qcut.py
+    |       |   |   |   |   test_union_categoricals.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---concat
+    |       |   |   |   |   |   test_append.py
+    |       |   |   |   |   |   test_append_common.py
+    |       |   |   |   |   |   test_categorical.py
+    |       |   |   |   |   |   test_concat.py
+    |       |   |   |   |   |   test_dataframe.py
+    |       |   |   |   |   |   test_datetimes.py
+    |       |   |   |   |   |   test_empty.py
+    |       |   |   |   |   |   test_index.py
+    |       |   |   |   |   |   test_invalid.py
+    |       |   |   |   |   |   test_series.py
+    |       |   |   |   |   |   test_sort.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_append.cpython-313.pyc
+    |       |   |   |   |           test_append_common.cpython-313.pyc
+    |       |   |   |   |           test_categorical.cpython-313.pyc
+    |       |   |   |   |           test_concat.cpython-313.pyc
+    |       |   |   |   |           test_dataframe.cpython-313.pyc
+    |       |   |   |   |           test_datetimes.cpython-313.pyc
+    |       |   |   |   |           test_empty.cpython-313.pyc
+    |       |   |   |   |           test_index.cpython-313.pyc
+    |       |   |   |   |           test_invalid.cpython-313.pyc
+    |       |   |   |   |           test_series.cpython-313.pyc
+    |       |   |   |   |           test_sort.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---merge
+    |       |   |   |   |   |   test_join.py
+    |       |   |   |   |   |   test_merge.py
+    |       |   |   |   |   |   test_merge_antijoin.py
+    |       |   |   |   |   |   test_merge_asof.py
+    |       |   |   |   |   |   test_merge_cross.py
+    |       |   |   |   |   |   test_merge_index_as_string.py
+    |       |   |   |   |   |   test_merge_ordered.py
+    |       |   |   |   |   |   test_multi.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_join.cpython-313.pyc
+    |       |   |   |   |           test_merge.cpython-313.pyc
+    |       |   |   |   |           test_merge_antijoin.cpython-313.pyc
+    |       |   |   |   |           test_merge_asof.cpython-313.pyc
+    |       |   |   |   |           test_merge_cross.cpython-313.pyc
+    |       |   |   |   |           test_merge_index_as_string.cpython-313.pyc
+    |       |   |   |   |           test_merge_ordered.cpython-313.pyc
+    |       |   |   |   |           test_multi.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_crosstab.cpython-313.pyc
+    |       |   |   |           test_cut.cpython-313.pyc
+    |       |   |   |           test_from_dummies.cpython-313.pyc
+    |       |   |   |           test_get_dummies.cpython-313.pyc
+    |       |   |   |           test_melt.cpython-313.pyc
+    |       |   |   |           test_pivot.cpython-313.pyc
+    |       |   |   |           test_pivot_multilevel.cpython-313.pyc
+    |       |   |   |           test_qcut.cpython-313.pyc
+    |       |   |   |           test_union_categoricals.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---scalar
+    |       |   |   |   |   test_nat.py
+    |       |   |   |   |   test_na_scalar.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---interval
+    |       |   |   |   |   |   test_arithmetic.py
+    |       |   |   |   |   |   test_constructors.py
+    |       |   |   |   |   |   test_contains.py
+    |       |   |   |   |   |   test_formats.py
+    |       |   |   |   |   |   test_interval.py
+    |       |   |   |   |   |   test_overlaps.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_arithmetic.cpython-313.pyc
+    |       |   |   |   |           test_constructors.cpython-313.pyc
+    |       |   |   |   |           test_contains.cpython-313.pyc
+    |       |   |   |   |           test_formats.cpython-313.pyc
+    |       |   |   |   |           test_interval.cpython-313.pyc
+    |       |   |   |   |           test_overlaps.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---period
+    |       |   |   |   |   |   test_arithmetic.py
+    |       |   |   |   |   |   test_asfreq.py
+    |       |   |   |   |   |   test_period.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_arithmetic.cpython-313.pyc
+    |       |   |   |   |           test_asfreq.cpython-313.pyc
+    |       |   |   |   |           test_period.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---timedelta
+    |       |   |   |   |   |   test_arithmetic.py
+    |       |   |   |   |   |   test_constructors.py
+    |       |   |   |   |   |   test_formats.py
+    |       |   |   |   |   |   test_timedelta.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   +---methods
+    |       |   |   |   |   |   |   test_as_unit.py
+    |       |   |   |   |   |   |   test_round.py
+    |       |   |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   |   
+    |       |   |   |   |   |   \---__pycache__
+    |       |   |   |   |   |           test_as_unit.cpython-313.pyc
+    |       |   |   |   |   |           test_round.cpython-313.pyc
+    |       |   |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |   |           
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_arithmetic.cpython-313.pyc
+    |       |   |   |   |           test_constructors.cpython-313.pyc
+    |       |   |   |   |           test_formats.cpython-313.pyc
+    |       |   |   |   |           test_timedelta.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   +---timestamp
+    |       |   |   |   |   |   test_arithmetic.py
+    |       |   |   |   |   |   test_comparisons.py
+    |       |   |   |   |   |   test_constructors.py
+    |       |   |   |   |   |   test_formats.py
+    |       |   |   |   |   |   test_timestamp.py
+    |       |   |   |   |   |   test_timezones.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   +---methods
+    |       |   |   |   |   |   |   test_as_unit.py
+    |       |   |   |   |   |   |   test_normalize.py
+    |       |   |   |   |   |   |   test_replace.py

@@ -1,0 +1,150 @@
+    |       |   |   |   core.pyi
+    |       |   |   |   extras.py
+    |       |   |   |   extras.pyi
+    |       |   |   |   LICENSE
+    |       |   |   |   mrecords.py
+    |       |   |   |   mrecords.pyi
+    |       |   |   |   README.rst
+    |       |   |   |   testutils.py
+    |       |   |   |   testutils.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_arrayobject.py
+    |       |   |   |   |   test_core.py
+    |       |   |   |   |   test_deprecations.py
+    |       |   |   |   |   test_extras.py
+    |       |   |   |   |   test_mrecords.py
+    |       |   |   |   |   test_old_ma.py
+    |       |   |   |   |   test_regression.py
+    |       |   |   |   |   test_subclassing.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_arrayobject.cpython-313.pyc
+    |       |   |   |           test_core.cpython-313.pyc
+    |       |   |   |           test_deprecations.cpython-313.pyc
+    |       |   |   |           test_extras.cpython-313.pyc
+    |       |   |   |           test_mrecords.cpython-313.pyc
+    |       |   |   |           test_old_ma.cpython-313.pyc
+    |       |   |   |           test_regression.cpython-313.pyc
+    |       |   |   |           test_subclassing.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           core.cpython-313.pyc
+    |       |   |           extras.cpython-313.pyc
+    |       |   |           mrecords.cpython-313.pyc
+    |       |   |           testutils.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---matrixlib
+    |       |   |   |   defmatrix.py
+    |       |   |   |   defmatrix.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_defmatrix.py
+    |       |   |   |   |   test_interaction.py
+    |       |   |   |   |   test_masked_matrix.py
+    |       |   |   |   |   test_matrix_linalg.py
+    |       |   |   |   |   test_multiarray.py
+    |       |   |   |   |   test_numeric.py
+    |       |   |   |   |   test_regression.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_defmatrix.cpython-313.pyc
+    |       |   |   |           test_interaction.cpython-313.pyc
+    |       |   |   |           test_masked_matrix.cpython-313.pyc
+    |       |   |   |           test_matrix_linalg.cpython-313.pyc
+    |       |   |   |           test_multiarray.cpython-313.pyc
+    |       |   |   |           test_numeric.cpython-313.pyc
+    |       |   |   |           test_regression.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           defmatrix.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---polynomial
+    |       |   |   |   chebyshev.py
+    |       |   |   |   chebyshev.pyi
+    |       |   |   |   hermite.py
+    |       |   |   |   hermite.pyi
+    |       |   |   |   hermite_e.py
+    |       |   |   |   hermite_e.pyi
+    |       |   |   |   laguerre.py
+    |       |   |   |   laguerre.pyi
+    |       |   |   |   legendre.py
+    |       |   |   |   legendre.pyi
+    |       |   |   |   polynomial.py
+    |       |   |   |   polynomial.pyi
+    |       |   |   |   polyutils.py
+    |       |   |   |   polyutils.pyi
+    |       |   |   |   _polybase.py
+    |       |   |   |   _polybase.pyi
+    |       |   |   |   _polytypes.pyi
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_chebyshev.py
+    |       |   |   |   |   test_classes.py
+    |       |   |   |   |   test_hermite.py
+    |       |   |   |   |   test_hermite_e.py
+    |       |   |   |   |   test_laguerre.py
+    |       |   |   |   |   test_legendre.py
+    |       |   |   |   |   test_polynomial.py
+    |       |   |   |   |   test_polyutils.py
+    |       |   |   |   |   test_printing.py
+    |       |   |   |   |   test_symbol.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_chebyshev.cpython-313.pyc
+    |       |   |   |           test_classes.cpython-313.pyc
+    |       |   |   |           test_hermite.cpython-313.pyc
+    |       |   |   |           test_hermite_e.cpython-313.pyc
+    |       |   |   |           test_laguerre.cpython-313.pyc
+    |       |   |   |           test_legendre.cpython-313.pyc
+    |       |   |   |           test_polynomial.cpython-313.pyc
+    |       |   |   |           test_polyutils.cpython-313.pyc
+    |       |   |   |           test_printing.cpython-313.pyc
+    |       |   |   |           test_symbol.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           chebyshev.cpython-313.pyc
+    |       |   |           hermite.cpython-313.pyc
+    |       |   |           hermite_e.cpython-313.pyc
+    |       |   |           laguerre.cpython-313.pyc
+    |       |   |           legendre.cpython-313.pyc
+    |       |   |           polynomial.cpython-313.pyc
+    |       |   |           polyutils.cpython-313.pyc
+    |       |   |           _polybase.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---random
+    |       |   |   |   bit_generator.cp313-win_amd64.lib
+    |       |   |   |   bit_generator.cp313-win_amd64.pyd
+    |       |   |   |   bit_generator.pxd
+    |       |   |   |   bit_generator.pyi
+    |       |   |   |   c_distributions.pxd
+    |       |   |   |   LICENSE.md
+    |       |   |   |   mtrand.cp313-win_amd64.lib
+    |       |   |   |   mtrand.cp313-win_amd64.pyd
+    |       |   |   |   mtrand.pyi
+    |       |   |   |   _bounded_integers.cp313-win_amd64.lib
+    |       |   |   |   _bounded_integers.cp313-win_amd64.pyd
+    |       |   |   |   _bounded_integers.pxd
+    |       |   |   |   _bounded_integers.pyi
+    |       |   |   |   _common.cp313-win_amd64.lib
+    |       |   |   |   _common.cp313-win_amd64.pyd
+    |       |   |   |   _common.pxd
+    |       |   |   |   _common.pyi
+    |       |   |   |   _generator.cp313-win_amd64.lib
+    |       |   |   |   _generator.cp313-win_amd64.pyd
+    |       |   |   |   _generator.pyi

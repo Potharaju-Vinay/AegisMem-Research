@@ -1,0 +1,150 @@
+    |       +---python_dateutil-2.9.0.post0.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       zip-safe
+    |       |       
+    |       +---six-1.17.0.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---sqlalchemy
+    |       |   |   events.py
+    |       |   |   exc.py
+    |       |   |   inspection.py
+    |       |   |   log.py
+    |       |   |   py.typed
+    |       |   |   schema.py
+    |       |   |   types.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---connectors
+    |       |   |   |   aioodbc.py
+    |       |   |   |   asyncio.py
+    |       |   |   |   pyodbc.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           aioodbc.cpython-313.pyc
+    |       |   |           asyncio.cpython-313.pyc
+    |       |   |           pyodbc.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---cyextension
+    |       |   |   |   collections.cp313-win_amd64.pyd
+    |       |   |   |   collections.pyx
+    |       |   |   |   immutabledict.cp313-win_amd64.pyd
+    |       |   |   |   immutabledict.pxd
+    |       |   |   |   immutabledict.pyx
+    |       |   |   |   processors.cp313-win_amd64.pyd
+    |       |   |   |   processors.pyx
+    |       |   |   |   resultproxy.cp313-win_amd64.pyd
+    |       |   |   |   resultproxy.pyx
+    |       |   |   |   util.cp313-win_amd64.pyd
+    |       |   |   |   util.pyx
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---dialects
+    |       |   |   |   type_migration_guidelines.txt
+    |       |   |   |   _typing.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---mssql
+    |       |   |   |   |   aioodbc.py
+    |       |   |   |   |   base.py
+    |       |   |   |   |   information_schema.py
+    |       |   |   |   |   json.py
+    |       |   |   |   |   provision.py
+    |       |   |   |   |   pymssql.py
+    |       |   |   |   |   pyodbc.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           aioodbc.cpython-313.pyc
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           information_schema.cpython-313.pyc
+    |       |   |   |           json.cpython-313.pyc
+    |       |   |   |           provision.cpython-313.pyc
+    |       |   |   |           pymssql.cpython-313.pyc
+    |       |   |   |           pyodbc.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---mysql
+    |       |   |   |   |   aiomysql.py
+    |       |   |   |   |   asyncmy.py
+    |       |   |   |   |   base.py
+    |       |   |   |   |   cymysql.py
+    |       |   |   |   |   dml.py
+    |       |   |   |   |   enumerated.py
+    |       |   |   |   |   expression.py
+    |       |   |   |   |   json.py
+    |       |   |   |   |   mariadb.py
+    |       |   |   |   |   mariadbconnector.py
+    |       |   |   |   |   mysqlconnector.py
+    |       |   |   |   |   mysqldb.py
+    |       |   |   |   |   provision.py
+    |       |   |   |   |   pymysql.py
+    |       |   |   |   |   pyodbc.py
+    |       |   |   |   |   reflection.py
+    |       |   |   |   |   reserved_words.py
+    |       |   |   |   |   types.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           aiomysql.cpython-313.pyc
+    |       |   |   |           asyncmy.cpython-313.pyc
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           cymysql.cpython-313.pyc
+    |       |   |   |           dml.cpython-313.pyc
+    |       |   |   |           enumerated.cpython-313.pyc
+    |       |   |   |           expression.cpython-313.pyc
+    |       |   |   |           json.cpython-313.pyc
+    |       |   |   |           mariadb.cpython-313.pyc
+    |       |   |   |           mariadbconnector.cpython-313.pyc
+    |       |   |   |           mysqlconnector.cpython-313.pyc
+    |       |   |   |           mysqldb.cpython-313.pyc
+    |       |   |   |           provision.cpython-313.pyc
+    |       |   |   |           pymysql.cpython-313.pyc
+    |       |   |   |           pyodbc.cpython-313.pyc
+    |       |   |   |           reflection.cpython-313.pyc
+    |       |   |   |           reserved_words.cpython-313.pyc
+    |       |   |   |           types.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---oracle
+    |       |   |   |   |   base.py
+    |       |   |   |   |   cx_oracle.py
+    |       |   |   |   |   dictionary.py
+    |       |   |   |   |   oracledb.py
+    |       |   |   |   |   provision.py
+    |       |   |   |   |   types.py
+    |       |   |   |   |   vector.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           base.cpython-313.pyc
+    |       |   |   |           cx_oracle.cpython-313.pyc
+    |       |   |   |           dictionary.cpython-313.pyc
+    |       |   |   |           oracledb.cpython-313.pyc
+    |       |   |   |           provision.cpython-313.pyc
+    |       |   |   |           types.cpython-313.pyc
+    |       |   |   |           vector.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---postgresql
+    |       |   |   |   |   array.py
+    |       |   |   |   |   asyncpg.py
+    |       |   |   |   |   base.py
+    |       |   |   |   |   dml.py
+    |       |   |   |   |   ext.py
+    |       |   |   |   |   hstore.py

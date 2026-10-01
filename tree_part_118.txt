@@ -1,0 +1,150 @@
+    |       |   |           oid.cpython-313.pyc
+    |       |   |           verification.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           cobblestone.cpython-313.pyc
+    |       |           exceptions.cpython-313.pyc
+    |       |           fernet.cpython-313.pyc
+    |       |           utils.cpython-313.pyc
+    |       |           __about__.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---cryptography-50.0.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   +---licenses
+    |       |   |       LICENSE
+    |       |   |       LICENSE.APACHE
+    |       |   |       LICENSE.BSD
+    |       |   |       
+    |       |   \---sboms
+    |       |           cryptography-rust.cyclonedx.json
+    |       |           sbom.json
+    |       |           
+    |       +---cycler
+    |       |   |   py.typed
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---cycler-0.12.1.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---dateutil
+    |       |   |   easter.py
+    |       |   |   relativedelta.py
+    |       |   |   rrule.py
+    |       |   |   tzwin.py
+    |       |   |   utils.py
+    |       |   |   _common.py
+    |       |   |   _version.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---parser
+    |       |   |   |   isoparser.py
+    |       |   |   |   _parser.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           isoparser.cpython-313.pyc
+    |       |   |           _parser.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---tz
+    |       |   |   |   tz.py
+    |       |   |   |   win.py
+    |       |   |   |   _common.py
+    |       |   |   |   _factories.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           tz.cpython-313.pyc
+    |       |   |           win.cpython-313.pyc
+    |       |   |           _common.cpython-313.pyc
+    |       |   |           _factories.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---zoneinfo
+    |       |   |   |   dateutil-zoneinfo.tar.gz
+    |       |   |   |   rebuild.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           rebuild.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           easter.cpython-313.pyc
+    |       |           relativedelta.cpython-313.pyc
+    |       |           rrule.cpython-313.pyc
+    |       |           tzwin.cpython-313.pyc
+    |       |           utils.cpython-313.pyc
+    |       |           _common.cpython-313.pyc
+    |       |           _version.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---fastapi
+    |       |   |   applications.py
+    |       |   |   background.py
+    |       |   |   cli.py
+    |       |   |   concurrency.py
+    |       |   |   datastructures.py
+    |       |   |   encoders.py
+    |       |   |   exceptions.py
+    |       |   |   exception_handlers.py
+    |       |   |   logger.py
+    |       |   |   params.py
+    |       |   |   param_functions.py
+    |       |   |   py.typed
+    |       |   |   requests.py
+    |       |   |   responses.py
+    |       |   |   routing.py
+    |       |   |   sse.py
+    |       |   |   staticfiles.py
+    |       |   |   templating.py
+    |       |   |   testclient.py
+    |       |   |   types.py
+    |       |   |   utils.py
+    |       |   |   websockets.py
+    |       |   |   __init__.py
+    |       |   |   __main__.py
+    |       |   |   
+    |       |   +---.agents
+    |       |   |   \---skills
+    |       |   |       \---fastapi
+    |       |   |           |   SKILL.md
+    |       |   |           |   
+    |       |   |           \---references
+    |       |   |                   dependencies.md
+    |       |   |                   other-tools.md
+    |       |   |                   path-operations.md
+    |       |   |                   pydantic.md
+    |       |   |                   responses.md
+    |       |   |                   streaming.md
+    |       |   |                   
+    |       |   +---dependencies
+    |       |   |   |   models.py
+    |       |   |   |   utils.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           models.cpython-313.pyc
+    |       |   |           utils.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---middleware
+    |       |   |   |   asyncexitstack.py
+    |       |   |   |   cors.py
+    |       |   |   |   gzip.py
+    |       |   |   |   httpsredirect.py

@@ -1,0 +1,150 @@
+    |       |   |           gml.cpython-313.pyc
+    |       |   |           graph6.cpython-313.pyc
+    |       |   |           graphml.cpython-313.pyc
+    |       |   |           leda.cpython-313.pyc
+    |       |   |           multiline_adjlist.cpython-313.pyc
+    |       |   |           p2g.cpython-313.pyc
+    |       |   |           pajek.cpython-313.pyc
+    |       |   |           sparse6.cpython-313.pyc
+    |       |   |           text.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---tests
+    |       |   |   |   test_all_random_functions.py
+    |       |   |   |   test_convert.py
+    |       |   |   |   test_convert_numpy.py
+    |       |   |   |   test_convert_pandas.py
+    |       |   |   |   test_convert_scipy.py
+    |       |   |   |   test_exceptions.py
+    |       |   |   |   test_import.py
+    |       |   |   |   test_lazy_imports.py
+    |       |   |   |   test_relabel.py
+    |       |   |   |   test_removed_functions_exception_messages.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           test_all_random_functions.cpython-313.pyc
+    |       |   |           test_convert.cpython-313.pyc
+    |       |   |           test_convert_numpy.cpython-313.pyc
+    |       |   |           test_convert_pandas.cpython-313.pyc
+    |       |   |           test_convert_scipy.cpython-313.pyc
+    |       |   |           test_exceptions.cpython-313.pyc
+    |       |   |           test_import.cpython-313.pyc
+    |       |   |           test_lazy_imports.cpython-313.pyc
+    |       |   |           test_relabel.cpython-313.pyc
+    |       |   |           test_removed_functions_exception_messages.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---utils
+    |       |   |   |   backends.py
+    |       |   |   |   configs.py
+    |       |   |   |   decorators.py
+    |       |   |   |   heaps.py
+    |       |   |   |   mapped_queue.py
+    |       |   |   |   misc.py
+    |       |   |   |   random_sequence.py
+    |       |   |   |   rcm.py
+    |       |   |   |   union_find.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---tests
+    |       |   |   |   |   test_backends.py
+    |       |   |   |   |   test_config.py
+    |       |   |   |   |   test_decorators.py
+    |       |   |   |   |   test_heaps.py
+    |       |   |   |   |   test_mapped_queue.py
+    |       |   |   |   |   test_misc.py
+    |       |   |   |   |   test_random_sequence.py
+    |       |   |   |   |   test_rcm.py
+    |       |   |   |   |   test_unionfind.py
+    |       |   |   |   |   test__init.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_backends.cpython-313.pyc
+    |       |   |   |           test_config.cpython-313.pyc
+    |       |   |   |           test_decorators.cpython-313.pyc
+    |       |   |   |           test_heaps.cpython-313.pyc
+    |       |   |   |           test_mapped_queue.cpython-313.pyc
+    |       |   |   |           test_misc.cpython-313.pyc
+    |       |   |   |           test_random_sequence.cpython-313.pyc
+    |       |   |   |           test_rcm.cpython-313.pyc
+    |       |   |   |           test_unionfind.cpython-313.pyc
+    |       |   |   |           test__init.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           backends.cpython-313.pyc
+    |       |   |           configs.cpython-313.pyc
+    |       |   |           decorators.cpython-313.pyc
+    |       |   |           heaps.cpython-313.pyc
+    |       |   |           mapped_queue.cpython-313.pyc
+    |       |   |           misc.cpython-313.pyc
+    |       |   |           random_sequence.cpython-313.pyc
+    |       |   |           rcm.cpython-313.pyc
+    |       |   |           union_find.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           conftest.cpython-313.pyc
+    |       |           convert.cpython-313.pyc
+    |       |           convert_matrix.cpython-313.pyc
+    |       |           exception.cpython-313.pyc
+    |       |           lazy_imports.cpython-313.pyc
+    |       |           relabel.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---networkx-3.6.1.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.txt
+    |       |           
+    |       +---numpy
+    |       |   |   conftest.py
+    |       |   |   dtypes.py
+    |       |   |   dtypes.pyi
+    |       |   |   exceptions.py
+    |       |   |   exceptions.pyi
+    |       |   |   matlib.py
+    |       |   |   matlib.pyi
+    |       |   |   py.typed
+    |       |   |   version.py
+    |       |   |   version.pyi
+    |       |   |   _array_api_info.py
+    |       |   |   _array_api_info.pyi
+    |       |   |   _configtool.py
+    |       |   |   _configtool.pyi
+    |       |   |   _distributor_init.py
+    |       |   |   _distributor_init.pyi
+    |       |   |   _expired_attrs_2_0.py
+    |       |   |   _expired_attrs_2_0.pyi
+    |       |   |   _globals.py
+    |       |   |   _globals.pyi
+    |       |   |   _pytesttester.py
+    |       |   |   _pytesttester.pyi
+    |       |   |   __config__.py
+    |       |   |   __config__.pyi
+    |       |   |   __init__.cython-30.pxd
+    |       |   |   __init__.pxd
+    |       |   |   __init__.py
+    |       |   |   __init__.pyi
+    |       |   |   
+    |       |   +---char
+    |       |   |   |   __init__.py
+    |       |   |   |   __init__.pyi
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---core
+    |       |   |   |   arrayprint.py
+    |       |   |   |   arrayprint.pyi
+    |       |   |   |   defchararray.py
+    |       |   |   |   defchararray.pyi

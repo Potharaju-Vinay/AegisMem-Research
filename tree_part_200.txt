@@ -1,0 +1,150 @@
+    |       |   |   typing_objects.pyi
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           introspection.cpython-313.pyc
+    |       |           typing_objects.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---typing_inspection-0.4.4.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---tzdata
+    |       |   |   zones
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---zoneinfo
+    |       |   |   |   CET
+    |       |   |   |   CST6CDT
+    |       |   |   |   Cuba
+    |       |   |   |   EET
+    |       |   |   |   Egypt
+    |       |   |   |   Eire
+    |       |   |   |   EST
+    |       |   |   |   EST5EDT
+    |       |   |   |   Factory
+    |       |   |   |   GB
+    |       |   |   |   GB-Eire
+    |       |   |   |   GMT
+    |       |   |   |   GMT+0
+    |       |   |   |   GMT-0
+    |       |   |   |   GMT0
+    |       |   |   |   Greenwich
+    |       |   |   |   Hongkong
+    |       |   |   |   HST
+    |       |   |   |   Iceland
+    |       |   |   |   Iran
+    |       |   |   |   iso3166.tab
+    |       |   |   |   Israel
+    |       |   |   |   Jamaica
+    |       |   |   |   Japan
+    |       |   |   |   Kwajalein
+    |       |   |   |   leapseconds
+    |       |   |   |   Libya
+    |       |   |   |   MET
+    |       |   |   |   MST
+    |       |   |   |   MST7MDT
+    |       |   |   |   Navajo
+    |       |   |   |   NZ
+    |       |   |   |   NZ-CHAT
+    |       |   |   |   Poland
+    |       |   |   |   Portugal
+    |       |   |   |   PRC
+    |       |   |   |   PST8PDT
+    |       |   |   |   ROC
+    |       |   |   |   ROK
+    |       |   |   |   Singapore
+    |       |   |   |   Turkey
+    |       |   |   |   tzdata.zi
+    |       |   |   |   UCT
+    |       |   |   |   Universal
+    |       |   |   |   UTC
+    |       |   |   |   W-SU
+    |       |   |   |   WET
+    |       |   |   |   zone.tab
+    |       |   |   |   zone1970.tab
+    |       |   |   |   zonenow.tab
+    |       |   |   |   Zulu
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---Africa
+    |       |   |   |   |   Abidjan
+    |       |   |   |   |   Accra
+    |       |   |   |   |   Addis_Ababa
+    |       |   |   |   |   Algiers
+    |       |   |   |   |   Asmara
+    |       |   |   |   |   Asmera
+    |       |   |   |   |   Bamako
+    |       |   |   |   |   Bangui
+    |       |   |   |   |   Banjul
+    |       |   |   |   |   Bissau
+    |       |   |   |   |   Blantyre
+    |       |   |   |   |   Brazzaville
+    |       |   |   |   |   Bujumbura
+    |       |   |   |   |   Cairo
+    |       |   |   |   |   Casablanca
+    |       |   |   |   |   Ceuta
+    |       |   |   |   |   Conakry
+    |       |   |   |   |   Dakar
+    |       |   |   |   |   Dar_es_Salaam
+    |       |   |   |   |   Djibouti
+    |       |   |   |   |   Douala
+    |       |   |   |   |   El_Aaiun
+    |       |   |   |   |   Freetown
+    |       |   |   |   |   Gaborone
+    |       |   |   |   |   Harare
+    |       |   |   |   |   Johannesburg
+    |       |   |   |   |   Juba
+    |       |   |   |   |   Kampala
+    |       |   |   |   |   Khartoum
+    |       |   |   |   |   Kigali
+    |       |   |   |   |   Kinshasa
+    |       |   |   |   |   Lagos
+    |       |   |   |   |   Libreville
+    |       |   |   |   |   Lome
+    |       |   |   |   |   Luanda
+    |       |   |   |   |   Lubumbashi
+    |       |   |   |   |   Lusaka
+    |       |   |   |   |   Malabo
+    |       |   |   |   |   Maputo
+    |       |   |   |   |   Maseru
+    |       |   |   |   |   Mbabane
+    |       |   |   |   |   Mogadishu
+    |       |   |   |   |   Monrovia
+    |       |   |   |   |   Nairobi
+    |       |   |   |   |   Ndjamena
+    |       |   |   |   |   Niamey
+    |       |   |   |   |   Nouakchott
+    |       |   |   |   |   Ouagadougou
+    |       |   |   |   |   Porto-Novo
+    |       |   |   |   |   Sao_Tome
+    |       |   |   |   |   Timbuktu
+    |       |   |   |   |   Tripoli
+    |       |   |   |   |   Tunis
+    |       |   |   |   |   Windhoek
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---America
+    |       |   |   |   |   Adak
+    |       |   |   |   |   Anchorage
+    |       |   |   |   |   Anguilla
+    |       |   |   |   |   Antigua
+    |       |   |   |   |   Araguaina
+    |       |   |   |   |   Aruba
+    |       |   |   |   |   Asuncion
+    |       |   |   |   |   Atikokan
+    |       |   |   |   |   Atka
+    |       |   |   |   |   Bahia
+    |       |   |   |   |   Bahia_Banderas
+    |       |   |   |   |   Barbados
+    |       |   |   |   |   Belem
+    |       |   |   |   |   Belize

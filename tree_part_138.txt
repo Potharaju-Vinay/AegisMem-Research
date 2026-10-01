@@ -1,0 +1,150 @@
+    |       |   |   |           generic.cpython-313.pyc
+    |       |   |   |           unweighted.cpython-313.pyc
+    |       |   |   |           weighted.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---tests
+    |       |   |   |   |   test_asteroidal.py
+    |       |   |   |   |   test_boundary.py
+    |       |   |   |   |   test_bridges.py
+    |       |   |   |   |   test_broadcasting.py
+    |       |   |   |   |   test_chains.py
+    |       |   |   |   |   test_chordal.py
+    |       |   |   |   |   test_clique.py
+    |       |   |   |   |   test_cluster.py
+    |       |   |   |   |   test_communicability.py
+    |       |   |   |   |   test_core.py
+    |       |   |   |   |   test_covering.py
+    |       |   |   |   |   test_cuts.py
+    |       |   |   |   |   test_cycles.py
+    |       |   |   |   |   test_dag.py
+    |       |   |   |   |   test_distance_measures.py
+    |       |   |   |   |   test_distance_regular.py
+    |       |   |   |   |   test_dominance.py
+    |       |   |   |   |   test_dominating.py
+    |       |   |   |   |   test_d_separation.py
+    |       |   |   |   |   test_efficiency.py
+    |       |   |   |   |   test_euler.py
+    |       |   |   |   |   test_graphical.py
+    |       |   |   |   |   test_graph_hashing.py
+    |       |   |   |   |   test_hierarchy.py
+    |       |   |   |   |   test_hybrid.py
+    |       |   |   |   |   test_isolate.py
+    |       |   |   |   |   test_link_prediction.py
+    |       |   |   |   |   test_lowest_common_ancestors.py
+    |       |   |   |   |   test_matching.py
+    |       |   |   |   |   test_max_weight_clique.py
+    |       |   |   |   |   test_mis.py
+    |       |   |   |   |   test_moral.py
+    |       |   |   |   |   test_node_classification.py
+    |       |   |   |   |   test_non_randomness.py
+    |       |   |   |   |   test_perfect_graph.py
+    |       |   |   |   |   test_planarity.py
+    |       |   |   |   |   test_planar_drawing.py
+    |       |   |   |   |   test_polynomials.py
+    |       |   |   |   |   test_reciprocity.py
+    |       |   |   |   |   test_regular.py
+    |       |   |   |   |   test_richclub.py
+    |       |   |   |   |   test_similarity.py
+    |       |   |   |   |   test_simple_paths.py
+    |       |   |   |   |   test_smallworld.py
+    |       |   |   |   |   test_smetric.py
+    |       |   |   |   |   test_sparsifiers.py
+    |       |   |   |   |   test_structuralholes.py
+    |       |   |   |   |   test_summarization.py
+    |       |   |   |   |   test_swap.py
+    |       |   |   |   |   test_threshold.py
+    |       |   |   |   |   test_time_dependent.py
+    |       |   |   |   |   test_tournament.py
+    |       |   |   |   |   test_triads.py
+    |       |   |   |   |   test_vitality.py
+    |       |   |   |   |   test_voronoi.py
+    |       |   |   |   |   test_walks.py
+    |       |   |   |   |   test_wiener.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           test_asteroidal.cpython-313.pyc
+    |       |   |   |           test_boundary.cpython-313.pyc
+    |       |   |   |           test_bridges.cpython-313.pyc
+    |       |   |   |           test_broadcasting.cpython-313.pyc
+    |       |   |   |           test_chains.cpython-313.pyc
+    |       |   |   |           test_chordal.cpython-313.pyc
+    |       |   |   |           test_clique.cpython-313.pyc
+    |       |   |   |           test_cluster.cpython-313.pyc
+    |       |   |   |           test_communicability.cpython-313.pyc
+    |       |   |   |           test_core.cpython-313.pyc
+    |       |   |   |           test_covering.cpython-313.pyc
+    |       |   |   |           test_cuts.cpython-313.pyc
+    |       |   |   |           test_cycles.cpython-313.pyc
+    |       |   |   |           test_dag.cpython-313.pyc
+    |       |   |   |           test_distance_measures.cpython-313.pyc
+    |       |   |   |           test_distance_regular.cpython-313.pyc
+    |       |   |   |           test_dominance.cpython-313.pyc
+    |       |   |   |           test_dominating.cpython-313.pyc
+    |       |   |   |           test_d_separation.cpython-313.pyc
+    |       |   |   |           test_efficiency.cpython-313.pyc
+    |       |   |   |           test_euler.cpython-313.pyc
+    |       |   |   |           test_graphical.cpython-313.pyc
+    |       |   |   |           test_graph_hashing.cpython-313.pyc
+    |       |   |   |           test_hierarchy.cpython-313.pyc
+    |       |   |   |           test_hybrid.cpython-313.pyc
+    |       |   |   |           test_isolate.cpython-313.pyc
+    |       |   |   |           test_link_prediction.cpython-313.pyc
+    |       |   |   |           test_lowest_common_ancestors.cpython-313.pyc
+    |       |   |   |           test_matching.cpython-313.pyc
+    |       |   |   |           test_max_weight_clique.cpython-313.pyc
+    |       |   |   |           test_mis.cpython-313.pyc
+    |       |   |   |           test_moral.cpython-313.pyc
+    |       |   |   |           test_node_classification.cpython-313.pyc
+    |       |   |   |           test_non_randomness.cpython-313.pyc
+    |       |   |   |           test_perfect_graph.cpython-313.pyc
+    |       |   |   |           test_planarity.cpython-313.pyc
+    |       |   |   |           test_planar_drawing.cpython-313.pyc
+    |       |   |   |           test_polynomials.cpython-313.pyc
+    |       |   |   |           test_reciprocity.cpython-313.pyc
+    |       |   |   |           test_regular.cpython-313.pyc
+    |       |   |   |           test_richclub.cpython-313.pyc
+    |       |   |   |           test_similarity.cpython-313.pyc
+    |       |   |   |           test_simple_paths.cpython-313.pyc
+    |       |   |   |           test_smallworld.cpython-313.pyc
+    |       |   |   |           test_smetric.cpython-313.pyc
+    |       |   |   |           test_sparsifiers.cpython-313.pyc
+    |       |   |   |           test_structuralholes.cpython-313.pyc
+    |       |   |   |           test_summarization.cpython-313.pyc
+    |       |   |   |           test_swap.cpython-313.pyc
+    |       |   |   |           test_threshold.cpython-313.pyc
+    |       |   |   |           test_time_dependent.cpython-313.pyc
+    |       |   |   |           test_tournament.cpython-313.pyc
+    |       |   |   |           test_triads.cpython-313.pyc
+    |       |   |   |           test_vitality.cpython-313.pyc
+    |       |   |   |           test_voronoi.cpython-313.pyc
+    |       |   |   |           test_walks.cpython-313.pyc
+    |       |   |   |           test_wiener.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---traversal
+    |       |   |   |   |   beamsearch.py
+    |       |   |   |   |   breadth_first_search.py
+    |       |   |   |   |   depth_first_search.py
+    |       |   |   |   |   edgebfs.py
+    |       |   |   |   |   edgedfs.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---tests
+    |       |   |   |   |   |   test_beamsearch.py
+    |       |   |   |   |   |   test_bfs.py
+    |       |   |   |   |   |   test_dfs.py
+    |       |   |   |   |   |   test_edgebfs.py
+    |       |   |   |   |   |   test_edgedfs.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           test_beamsearch.cpython-313.pyc
+    |       |   |   |   |           test_bfs.cpython-313.pyc
+    |       |   |   |   |           test_dfs.cpython-313.pyc
+    |       |   |   |   |           test_edgebfs.cpython-313.pyc
+    |       |   |   |   |           test_edgedfs.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__

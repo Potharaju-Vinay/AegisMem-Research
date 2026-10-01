@@ -1,0 +1,150 @@
+|   |   +---fdir
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |           index.cjs
+|   |   |           index.d.cts
+|   |   |           index.d.mts
+|   |   |           index.mjs
+|   |   |           
+|   |   +---file-entry-cache
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |           index.cjs
+|   |   |           index.d.cts
+|   |   |           index.d.mts
+|   |   |           index.mjs
+|   |   |           
+|   |   +---find-up
+|   |   |       index.d.ts
+|   |   |       index.js
+|   |   |       license
+|   |   |       package.json
+|   |   |       readme.md
+|   |   |       
+|   |   +---flat-cache
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |           index.cjs
+|   |   |           index.d.cts
+|   |   |           index.d.mts
+|   |   |           index.mjs
+|   |   |           
+|   |   +---flatted
+|   |   |   |   es.js
+|   |   |   |   esm.js
+|   |   |   |   index.js
+|   |   |   |   LICENSE
+|   |   |   |   min.js
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---cjs
+|   |   |   |       index.js
+|   |   |   |       package.json
+|   |   |   |       
+|   |   |   +---esm
+|   |   |   |       index.js
+|   |   |   |       
+|   |   |   +---golang
+|   |   |   |   |   README.md
+|   |   |   |   |   
+|   |   |   |   \---pkg
+|   |   |   |       \---flatted
+|   |   |   |               flatted.go
+|   |   |   |               
+|   |   |   +---php
+|   |   |   |       flatted.php
+|   |   |   |       
+|   |   |   +---python
+|   |   |   |       flatted.py
+|   |   |   |       
+|   |   |   \---types
+|   |   |           index.d.ts
+|   |   |           
+|   |   +---gensync
+|   |   |   |   index.js
+|   |   |   |   index.js.flow
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---test
+|   |   |           .babelrc
+|   |   |           index.test.js
+|   |   |           
+|   |   +---glob-parent
+|   |   |       index.js
+|   |   |       LICENSE
+|   |   |       package.json
+|   |   |       README.md
+|   |   |       
+|   |   +---globals
+|   |   |       globals.json
+|   |   |       index.d.ts
+|   |   |       index.js
+|   |   |       license
+|   |   |       package.json
+|   |   |       readme.md
+|   |   |       
+|   |   +---hashery
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |       +---browser
+|   |   |       |       index.global.js
+|   |   |       |       index.global.js.map
+|   |   |       |       index.js
+|   |   |       |       index.js.map
+|   |   |       |       
+|   |   |       \---node
+|   |   |               index.cjs
+|   |   |               index.d.cts
+|   |   |               index.d.ts
+|   |   |               index.js
+|   |   |               
+|   |   +---hermes-estree
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |       |   index.js
+|   |   |       |   index.js.flow
+|   |   |       |   predicates.js
+|   |   |       |   predicates.js.flow
+|   |   |       |   selectors.js
+|   |   |       |   selectors.js.flow
+|   |   |       |   types.js
+|   |   |       |   types.js.flow
+|   |   |       |   
+|   |   |       \---generated
+|   |   |               HermesESTreeSelectorTypes.js.flow
+|   |   |               predicates.js
+|   |   |               predicates.js.flow
+|   |   |               
+|   |   +---hermes-parser
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |       |   getModuleDocblock.js
+|   |   |       |   getModuleDocblock.js.flow
+|   |   |       |   HermesAST.js.flow
+|   |   |       |   HermesASTAdapter.js
+|   |   |       |   HermesASTAdapter.js.flow
+|   |   |       |   HermesParser.js
+|   |   |       |   HermesParser.js.flow
+|   |   |       |   HermesParserDecodeUTF8String.js
+|   |   |       |   HermesParserDecodeUTF8String.js.flow

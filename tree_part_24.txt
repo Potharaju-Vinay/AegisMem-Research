@@ -1,0 +1,150 @@
+|   |   |   |       ar-IL.json
+|   |   |   |       ar-IQ.json
+|   |   |   |       ar-JO.json
+|   |   |   |       ar-KM.json
+|   |   |   |       ar-KW.json
+|   |   |   |       ar-LB.json
+|   |   |   |       ar-LY.json
+|   |   |   |       ar-MA.json
+|   |   |   |       ar-MR.json
+|   |   |   |       ar-OM.json
+|   |   |   |       ar-PS.json
+|   |   |   |       ar-QA.json
+|   |   |   |       ar-SA.json
+|   |   |   |       ar-SD.json
+|   |   |   |       ar-SO.json
+|   |   |   |       ar-SS.json
+|   |   |   |       ar-SY.json
+|   |   |   |       ar-TD.json
+|   |   |   |       ar-TN.json
+|   |   |   |       ar-YE.json
+|   |   |   |       ca-ES.json
+|   |   |   |       cs-CZ.json
+|   |   |   |       da-DK.json
+|   |   |   |       de-CH.json
+|   |   |   |       de-DE.json
+|   |   |   |       en-CA.json
+|   |   |   |       en-GB.json
+|   |   |   |       en-IE.json
+|   |   |   |       en-IN.json
+|   |   |   |       en-US.json
+|   |   |   |       es-BO.json
+|   |   |   |       es-ES.json
+|   |   |   |       es-MX.json
+|   |   |   |       fi-FI.json
+|   |   |   |       fr-CA.json
+|   |   |   |       fr-FR.json
+|   |   |   |       he-IL.json
+|   |   |   |       hu-HU.json
+|   |   |   |       it-IT.json
+|   |   |   |       ja-JP.json
+|   |   |   |       ko-KR.json
+|   |   |   |       mk-MK.json
+|   |   |   |       nl-NL.json
+|   |   |   |       pl-PL.json
+|   |   |   |       pt-BR.json
+|   |   |   |       pt-PT.json
+|   |   |   |       ru-RU.json
+|   |   |   |       sl-SI.json
+|   |   |   |       sv-SE.json
+|   |   |   |       uk-UA.json
+|   |   |   |       zh-CN.json
+|   |   |   |       
+|   |   |   \---src
+|   |   |           defaultLocale.js
+|   |   |           exponent.js
+|   |   |           formatDecimal.js
+|   |   |           formatGroup.js
+|   |   |           formatNumerals.js
+|   |   |           formatPrefixAuto.js
+|   |   |           formatRounded.js
+|   |   |           formatSpecifier.js
+|   |   |           formatTrim.js
+|   |   |           formatTypes.js
+|   |   |           identity.js
+|   |   |           index.js
+|   |   |           locale.js
+|   |   |           precisionFixed.js
+|   |   |           precisionPrefix.js
+|   |   |           precisionRound.js
+|   |   |           
+|   |   +---d3-interpolate
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---dist
+|   |   |   |       d3-interpolate.js
+|   |   |   |       d3-interpolate.min.js
+|   |   |   |       
+|   |   |   \---src
+|   |   |       |   array.js
+|   |   |       |   basis.js
+|   |   |       |   basisClosed.js
+|   |   |       |   color.js
+|   |   |       |   constant.js
+|   |   |       |   cubehelix.js
+|   |   |       |   date.js
+|   |   |       |   discrete.js
+|   |   |       |   hcl.js
+|   |   |       |   hsl.js
+|   |   |       |   hue.js
+|   |   |       |   index.js
+|   |   |       |   lab.js
+|   |   |       |   number.js
+|   |   |       |   numberArray.js
+|   |   |       |   object.js
+|   |   |       |   piecewise.js
+|   |   |       |   quantize.js
+|   |   |       |   rgb.js
+|   |   |       |   round.js
+|   |   |       |   string.js
+|   |   |       |   value.js
+|   |   |       |   zoom.js
+|   |   |       |   
+|   |   |       \---transform
+|   |   |               decompose.js
+|   |   |               index.js
+|   |   |               parse.js
+|   |   |               
+|   |   +---d3-path
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---dist
+|   |   |   |       d3-path.js
+|   |   |   |       d3-path.min.js
+|   |   |   |       
+|   |   |   \---src
+|   |   |           index.js
+|   |   |           path.js
+|   |   |           
+|   |   +---d3-scale
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---dist
+|   |   |   |       d3-scale.js
+|   |   |   |       d3-scale.min.js
+|   |   |   |       
+|   |   |   \---src
+|   |   |           band.js
+|   |   |           colors.js
+|   |   |           constant.js
+|   |   |           continuous.js
+|   |   |           diverging.js
+|   |   |           identity.js
+|   |   |           index.js
+|   |   |           init.js
+|   |   |           linear.js
+|   |   |           log.js
+|   |   |           nice.js
+|   |   |           number.js
+|   |   |           ordinal.js
+|   |   |           pow.js
+|   |   |           quantile.js
+|   |   |           quantize.js
+|   |   |           radial.js
+|   |   |           sequential.js
