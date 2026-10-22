@@ -1,7 +1,9 @@
 venv/
 .venv/
 __pycache__/
-*.pyc
+*.py[cod]
+.pytest_cache/
+
 .env
 .env.*
 !.env.example
@@ -22,3 +24,9 @@ logs/
 .idea/
 
 evaluation/figures/
+
+# Local cryptographic private keys
+security/keys/*private*.pem
+security/keys/integrity_anchor_private.pem
+# Local database backups
+*.db.backup
