@@ -30,3 +30,11 @@ security/keys/*private*.pem
 security/keys/integrity_anchor_private.pem
 # Local database backups
 *.db.backup
+
+# Local secrets and cryptographic material
+.env
+.env.*
+!.env.example
+security/keys/
+*.pem
+*.key
