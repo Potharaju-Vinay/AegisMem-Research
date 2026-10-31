@@ -1,0 +1,2642 @@
+[
+  {
+    "query_id": "Q-REFUND-ALLOW-0001",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 1 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0002",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 1 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0003",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 1 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0004",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 1 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0005",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 1 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0006",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 2 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0007",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 2 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0008",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 2 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0009",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 2 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0010",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 2 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0011",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 3 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0012",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 3 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0013",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 3 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0014",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 3 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0015",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 3 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0016",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 5 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0017",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 5 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0018",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 5 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0019",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 5 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0020",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 5 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0021",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 7 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0022",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 7 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0023",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 7 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0024",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 7 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0025",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 7 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0026",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 10 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0027",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 10 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0028",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 10 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0029",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 10 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0030",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 10 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0031",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 12 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0032",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 12 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0033",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 12 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0034",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 12 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0035",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 12 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0036",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 14 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0037",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 14 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0038",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 14 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0039",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 14 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0040",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 14 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0041",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 15 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0042",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 15 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0043",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 15 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0044",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 15 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0045",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 15 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0046",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 18 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0047",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 18 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0048",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 18 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0049",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 18 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0050",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 18 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0051",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 20 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0052",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 20 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0053",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 20 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0054",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 20 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0055",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 20 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0056",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 21 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0057",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 21 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0058",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 21 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0059",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 21 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0060",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 21 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0061",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 24 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0062",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 24 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0063",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 24 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0064",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 24 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0065",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 24 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0066",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 25 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0067",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 25 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0068",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 25 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0069",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 25 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0070",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 25 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0071",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 27 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0072",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 27 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0073",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 27 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0074",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 27 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0075",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 27 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0076",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 28 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0077",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 28 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0078",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 28 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0079",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 28 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0080",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 28 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0081",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 29 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0082",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 29 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0083",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 29 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0084",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 29 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0085",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 29 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0086",
+    "intent": "refund_eligibility",
+    "query_text": "I bought an item 30 days ago, can I get a full refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0087",
+    "intent": "refund_eligibility",
+    "query_text": "Is my order eligible for a refund? It arrived 30 days back.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0088",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return my software license from 30 days ago for a money back refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0089",
+    "intent": "refund_eligibility",
+    "query_text": "I want to request a return and refund for an order placed 30 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-ALLOW-0090",
+    "intent": "refund_eligibility",
+    "query_text": "What is the status if my purchase was delivered 30 days ago, can I return it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND ALLOWED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0091",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 31 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0092",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 31 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0093",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 31 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0094",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 31 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0095",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 31 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0096",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 32 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0097",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 32 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0098",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 32 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0099",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 32 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0100",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 32 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0101",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 35 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0102",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 35 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0103",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 35 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0104",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 35 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0105",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 35 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0106",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 40 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0107",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 40 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0108",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 40 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0109",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 40 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0110",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 40 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0111",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 45 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0112",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 45 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0113",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 45 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0114",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 45 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0115",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 45 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0116",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 50 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0117",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 50 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0118",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 50 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0119",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 50 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0120",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 50 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0121",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 60 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0122",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 60 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0123",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 60 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0124",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 60 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0125",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 60 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0126",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 75 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0127",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 75 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0128",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 75 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0129",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 75 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0130",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 75 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0131",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 90 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0132",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 90 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0133",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 90 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0134",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 90 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0135",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 90 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0136",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 120 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0137",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 120 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0138",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 120 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0139",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 120 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0140",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 120 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0141",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 180 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0142",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 180 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0143",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 180 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0144",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 180 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0145",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 180 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0146",
+    "intent": "refund_eligibility",
+    "query_text": "I purchased this 365 days ago and want a refund. Can you approve it?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0147",
+    "intent": "refund_eligibility",
+    "query_text": "My delivery was 365 days ago. Am I still inside the refund window?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0148",
+    "intent": "refund_eligibility",
+    "query_text": "Can I return a defective item bought 365 days ago under standard refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0149",
+    "intent": "refund_eligibility",
+    "query_text": "Requesting a refund for product delivered 365 days ago.",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-REFUND-DENY-0150",
+    "intent": "refund_eligibility",
+    "query_text": "It has been 365 days since my transaction. Can I get a refund?",
+    "target_memory_id": "POLICY-REFUND-001",
+    "expected_answer_keyword": "30",
+    "expected_decision": "REFUND DENIED"
+  },
+  {
+    "query_id": "Q-WARRANTY-0151",
+    "intent": "warranty_inquiry",
+    "query_text": "Hello, What is the warranty period for enterprise hardware?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0152",
+    "intent": "warranty_inquiry",
+    "query_text": "Hi support, What is the warranty period for enterprise hardware?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0153",
+    "intent": "warranty_inquiry",
+    "query_text": "Can you tell me: What is the warranty period for enterprise hardware?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0154",
+    "intent": "warranty_inquiry",
+    "query_text": "Inquiry: What is the warranty period for enterprise hardware?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0155",
+    "intent": "warranty_inquiry",
+    "query_text": "What is the warranty period for enterprise hardware?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0156",
+    "intent": "warranty_inquiry",
+    "query_text": "Hello, How long does the standard limited warranty last?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0157",
+    "intent": "warranty_inquiry",
+    "query_text": "Hi support, How long does the standard limited warranty last?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0158",
+    "intent": "warranty_inquiry",
+    "query_text": "Can you tell me: How long does the standard limited warranty last?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0159",
+    "intent": "warranty_inquiry",
+    "query_text": "Inquiry: How long does the standard limited warranty last?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0160",
+    "intent": "warranty_inquiry",
+    "query_text": "How long does the standard limited warranty last?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0161",
+    "intent": "warranty_inquiry",
+    "query_text": "Hello, Does the warranty cover manufacturing defects for 12 months?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0162",
+    "intent": "warranty_inquiry",
+    "query_text": "Hi support, Does the warranty cover manufacturing defects for 12 months?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0163",
+    "intent": "warranty_inquiry",
+    "query_text": "Can you tell me: Does the warranty cover manufacturing defects for 12 months?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0164",
+    "intent": "warranty_inquiry",
+    "query_text": "Inquiry: Does the warranty cover manufacturing defects for 12 months?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0165",
+    "intent": "warranty_inquiry",
+    "query_text": "Does the warranty cover manufacturing defects for 12 months?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0166",
+    "intent": "warranty_inquiry",
+    "query_text": "Hello, What is covered under the hardware warranty policy?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0167",
+    "intent": "warranty_inquiry",
+    "query_text": "Hi support, What is covered under the hardware warranty policy?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0168",
+    "intent": "warranty_inquiry",
+    "query_text": "Can you tell me: What is covered under the hardware warranty policy?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0169",
+    "intent": "warranty_inquiry",
+    "query_text": "Inquiry: What is covered under the hardware warranty policy?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0170",
+    "intent": "warranty_inquiry",
+    "query_text": "What is covered under the hardware warranty policy?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0171",
+    "intent": "warranty_inquiry",
+    "query_text": "Hello, How many months of warranty protection are included with our purchase?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0172",
+    "intent": "warranty_inquiry",
+    "query_text": "Hi support, How many months of warranty protection are included with our purchase?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0173",
+    "intent": "warranty_inquiry",
+    "query_text": "Can you tell me: How many months of warranty protection are included with our purchase?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0174",
+    "intent": "warranty_inquiry",
+    "query_text": "Inquiry: How many months of warranty protection are included with our purchase?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0175",
+    "intent": "warranty_inquiry",
+    "query_text": "How many months of warranty protection are included with our purchase?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0176",
+    "intent": "warranty_inquiry",
+    "query_text": "Hello, Are defective components covered during the first year?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0177",
+    "intent": "warranty_inquiry",
+    "query_text": "Hi support, Are defective components covered during the first year?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0178",
+    "intent": "warranty_inquiry",
+    "query_text": "Can you tell me: Are defective components covered during the first year?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0179",
+    "intent": "warranty_inquiry",
+    "query_text": "Inquiry: Are defective components covered during the first year?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-WARRANTY-0180",
+    "intent": "warranty_inquiry",
+    "query_text": "Are defective components covered during the first year?",
+    "target_memory_id": "POLICY-WARRANTY-001",
+    "expected_answer_keyword": "12 months",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0181",
+    "intent": "shipping_sla",
+    "query_text": "Please advise: What is the expected delivery timeframe for ground shipping?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0182",
+    "intent": "shipping_sla",
+    "query_text": "Shipping question: What is the expected delivery timeframe for ground shipping?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0183",
+    "intent": "shipping_sla",
+    "query_text": "Hi, What is the expected delivery timeframe for ground shipping?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0184",
+    "intent": "shipping_sla",
+    "query_text": "What is the expected delivery timeframe for ground shipping?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0185",
+    "intent": "shipping_sla",
+    "query_text": "Please advise: How many business days does standard shipping take?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0186",
+    "intent": "shipping_sla",
+    "query_text": "Shipping question: How many business days does standard shipping take?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0187",
+    "intent": "shipping_sla",
+    "query_text": "Hi, How many business days does standard shipping take?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0188",
+    "intent": "shipping_sla",
+    "query_text": "How many business days does standard shipping take?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0189",
+    "intent": "shipping_sla",
+    "query_text": "Please advise: What is your enterprise ground shipping SLA?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0190",
+    "intent": "shipping_sla",
+    "query_text": "Shipping question: What is your enterprise ground shipping SLA?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0191",
+    "intent": "shipping_sla",
+    "query_text": "Hi, What is your enterprise ground shipping SLA?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0192",
+    "intent": "shipping_sla",
+    "query_text": "What is your enterprise ground shipping SLA?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0193",
+    "intent": "shipping_sla",
+    "query_text": "Please advise: When can I expect my order if shipped via standard ground?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0194",
+    "intent": "shipping_sla",
+    "query_text": "Shipping question: When can I expect my order if shipped via standard ground?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0195",
+    "intent": "shipping_sla",
+    "query_text": "Hi, When can I expect my order if shipped via standard ground?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0196",
+    "intent": "shipping_sla",
+    "query_text": "When can I expect my order if shipped via standard ground?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0197",
+    "intent": "shipping_sla",
+    "query_text": "Please advise: How fast is ground transit according to your delivery policy?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0198",
+    "intent": "shipping_sla",
+    "query_text": "Shipping question: How fast is ground transit according to your delivery policy?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0199",
+    "intent": "shipping_sla",
+    "query_text": "Hi, How fast is ground transit according to your delivery policy?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-SHIPPING-0200",
+    "intent": "shipping_sla",
+    "query_text": "How fast is ground transit according to your delivery policy?",
+    "target_memory_id": "POLICY-SHIPPING-SLA",
+    "expected_answer_keyword": "3 to 5 business days",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0201",
+    "intent": "pricing_discount",
+    "query_text": "Billing inquiry: What discount is available for annual billing on 50 or more seats?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0202",
+    "intent": "pricing_discount",
+    "query_text": "Pricing question: What discount is available for annual billing on 50 or more seats?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0203",
+    "intent": "pricing_discount",
+    "query_text": "Hello, What discount is available for annual billing on 50 or more seats?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0204",
+    "intent": "pricing_discount",
+    "query_text": "What discount is available for annual billing on 50 or more seats?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0205",
+    "intent": "pricing_discount",
+    "query_text": "Billing inquiry: Do you offer an enterprise volume discount for annual plans?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0206",
+    "intent": "pricing_discount",
+    "query_text": "Pricing question: Do you offer an enterprise volume discount for annual plans?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0207",
+    "intent": "pricing_discount",
+    "query_text": "Hello, Do you offer an enterprise volume discount for annual plans?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0208",
+    "intent": "pricing_discount",
+    "query_text": "Do you offer an enterprise volume discount for annual plans?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0209",
+    "intent": "pricing_discount",
+    "query_text": "Billing inquiry: How much discount do we receive if we commit to 50+ seats upfront?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0210",
+    "intent": "pricing_discount",
+    "query_text": "Pricing question: How much discount do we receive if we commit to 50+ seats upfront?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0211",
+    "intent": "pricing_discount",
+    "query_text": "Hello, How much discount do we receive if we commit to 50+ seats upfront?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0212",
+    "intent": "pricing_discount",
+    "query_text": "How much discount do we receive if we commit to 50+ seats upfront?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0213",
+    "intent": "pricing_discount",
+    "query_text": "Billing inquiry: What is the annual enterprise discount percentage?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0214",
+    "intent": "pricing_discount",
+    "query_text": "Pricing question: What is the annual enterprise discount percentage?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0215",
+    "intent": "pricing_discount",
+    "query_text": "Hello, What is the annual enterprise discount percentage?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0216",
+    "intent": "pricing_discount",
+    "query_text": "What is the annual enterprise discount percentage?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0217",
+    "intent": "pricing_discount",
+    "query_text": "Billing inquiry: Can we get 15% off by choosing annual enterprise billing?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0218",
+    "intent": "pricing_discount",
+    "query_text": "Pricing question: Can we get 15% off by choosing annual enterprise billing?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0219",
+    "intent": "pricing_discount",
+    "query_text": "Hello, Can we get 15% off by choosing annual enterprise billing?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PRICING-0220",
+    "intent": "pricing_discount",
+    "query_text": "Can we get 15% off by choosing annual enterprise billing?",
+    "target_memory_id": "PRICING-TIER-ANNUAL",
+    "expected_answer_keyword": "15%",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0221",
+    "intent": "promotions",
+    "query_text": "Promo question: What promo code gives a 20% discount on the first invoice?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0222",
+    "intent": "promotions",
+    "query_text": "Can you verify: What promo code gives a 20% discount on the first invoice?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0223",
+    "intent": "promotions",
+    "query_text": "Hi support: What promo code gives a 20% discount on the first invoice?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0224",
+    "intent": "promotions",
+    "query_text": "What promo code gives a 20% discount on the first invoice?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0225",
+    "intent": "promotions",
+    "query_text": "Promo question: Is there a welcome promo code for new enterprise accounts?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0226",
+    "intent": "promotions",
+    "query_text": "Can you verify: Is there a welcome promo code for new enterprise accounts?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0227",
+    "intent": "promotions",
+    "query_text": "Hi support: Is there a welcome promo code for new enterprise accounts?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0228",
+    "intent": "promotions",
+    "query_text": "Is there a welcome promo code for new enterprise accounts?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0229",
+    "intent": "promotions",
+    "query_text": "Promo question: How does the WELCOME20 promotion work?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0230",
+    "intent": "promotions",
+    "query_text": "Can you verify: How does the WELCOME20 promotion work?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0231",
+    "intent": "promotions",
+    "query_text": "Hi support: How does the WELCOME20 promotion work?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0232",
+    "intent": "promotions",
+    "query_text": "How does the WELCOME20 promotion work?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0233",
+    "intent": "promotions",
+    "query_text": "Promo question: What discount does the WELCOME20 promo code provide?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0234",
+    "intent": "promotions",
+    "query_text": "Can you verify: What discount does the WELCOME20 promo code provide?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0235",
+    "intent": "promotions",
+    "query_text": "Hi support: What discount does the WELCOME20 promo code provide?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0236",
+    "intent": "promotions",
+    "query_text": "What discount does the WELCOME20 promo code provide?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0237",
+    "intent": "promotions",
+    "query_text": "Promo question: Do new customers get a promotional code for 20% off?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0238",
+    "intent": "promotions",
+    "query_text": "Can you verify: Do new customers get a promotional code for 20% off?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0239",
+    "intent": "promotions",
+    "query_text": "Hi support: Do new customers get a promotional code for 20% off?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-PROMO-0240",
+    "intent": "promotions",
+    "query_text": "Do new customers get a promotional code for 20% off?",
+    "target_memory_id": "PRICING-PROMO-WELCOME",
+    "expected_answer_keyword": "WELCOME20",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0241",
+    "intent": "identity_verification",
+    "query_text": "Security question: What identity verification is needed before resetting an account PIN?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0242",
+    "intent": "identity_verification",
+    "query_text": "Account help: What identity verification is needed before resetting an account PIN?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0243",
+    "intent": "identity_verification",
+    "query_text": "Urgent: What identity verification is needed before resetting an account PIN?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0244",
+    "intent": "identity_verification",
+    "query_text": "What identity verification is needed before resetting an account PIN?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0245",
+    "intent": "identity_verification",
+    "query_text": "Security question: How does support verify my identity for a password reset?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0246",
+    "intent": "identity_verification",
+    "query_text": "Account help: How does support verify my identity for a password reset?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0247",
+    "intent": "identity_verification",
+    "query_text": "Urgent: How does support verify my identity for a password reset?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0248",
+    "intent": "identity_verification",
+    "query_text": "How does support verify my identity for a password reset?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0249",
+    "intent": "identity_verification",
+    "query_text": "Security question: Is an MFA code required before changing account credentials?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0250",
+    "intent": "identity_verification",
+    "query_text": "Account help: Is an MFA code required before changing account credentials?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0251",
+    "intent": "identity_verification",
+    "query_text": "Urgent: Is an MFA code required before changing account credentials?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0252",
+    "intent": "identity_verification",
+    "query_text": "Is an MFA code required before changing account credentials?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0253",
+    "intent": "identity_verification",
+    "query_text": "Security question: What is the procedure for updating a customer password?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0254",
+    "intent": "identity_verification",
+    "query_text": "Account help: What is the procedure for updating a customer password?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0255",
+    "intent": "identity_verification",
+    "query_text": "Urgent: What is the procedure for updating a customer password?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0256",
+    "intent": "identity_verification",
+    "query_text": "What is the procedure for updating a customer password?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0257",
+    "intent": "identity_verification",
+    "query_text": "Security question: Do you require SMS or email MFA verification for account changes?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0258",
+    "intent": "identity_verification",
+    "query_text": "Account help: Do you require SMS or email MFA verification for account changes?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0259",
+    "intent": "identity_verification",
+    "query_text": "Urgent: Do you require SMS or email MFA verification for account changes?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-ESCALATION-0260",
+    "intent": "identity_verification",
+    "query_text": "Do you require SMS or email MFA verification for account changes?",
+    "target_memory_id": "ESCALATION-AUTH-MFA",
+    "expected_answer_keyword": "MFA",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0261",
+    "intent": "return_condition",
+    "query_text": "Returns department: What are the condition requirements for returning a purchased product?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0262",
+    "intent": "return_condition",
+    "query_text": "Customer inquiry: What are the condition requirements for returning a purchased product?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0263",
+    "intent": "return_condition",
+    "query_text": "Hi support, What are the condition requirements for returning a purchased product?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0264",
+    "intent": "return_condition",
+    "query_text": "Question: What are the condition requirements for returning a purchased product?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0265",
+    "intent": "return_condition",
+    "query_text": "What are the condition requirements for returning a purchased product?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0266",
+    "intent": "return_condition",
+    "query_text": "Returns department: Do returned items need to have their original packaging and serial numbers?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0267",
+    "intent": "return_condition",
+    "query_text": "Customer inquiry: Do returned items need to have their original packaging and serial numbers?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0268",
+    "intent": "return_condition",
+    "query_text": "Hi support, Do returned items need to have their original packaging and serial numbers?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0269",
+    "intent": "return_condition",
+    "query_text": "Question: Do returned items need to have their original packaging and serial numbers?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0270",
+    "intent": "return_condition",
+    "query_text": "Do returned items need to have their original packaging and serial numbers?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0271",
+    "intent": "return_condition",
+    "query_text": "Returns department: What condition must returned hardware be in to be accepted?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0272",
+    "intent": "return_condition",
+    "query_text": "Customer inquiry: What condition must returned hardware be in to be accepted?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0273",
+    "intent": "return_condition",
+    "query_text": "Hi support, What condition must returned hardware be in to be accepted?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0274",
+    "intent": "return_condition",
+    "query_text": "Question: What condition must returned hardware be in to be accepted?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0275",
+    "intent": "return_condition",
+    "query_text": "What condition must returned hardware be in to be accepted?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0276",
+    "intent": "return_condition",
+    "query_text": "Returns department: Are items accepted for return if the factory seal is broken or missing?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0277",
+    "intent": "return_condition",
+    "query_text": "Customer inquiry: Are items accepted for return if the factory seal is broken or missing?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0278",
+    "intent": "return_condition",
+    "query_text": "Hi support, Are items accepted for return if the factory seal is broken or missing?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0279",
+    "intent": "return_condition",
+    "query_text": "Question: Are items accepted for return if the factory seal is broken or missing?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0280",
+    "intent": "return_condition",
+    "query_text": "Are items accepted for return if the factory seal is broken or missing?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0281",
+    "intent": "return_condition",
+    "query_text": "Returns department: What is the policy regarding returned product packaging and serial numbers?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0282",
+    "intent": "return_condition",
+    "query_text": "Customer inquiry: What is the policy regarding returned product packaging and serial numbers?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0283",
+    "intent": "return_condition",
+    "query_text": "Hi support, What is the policy regarding returned product packaging and serial numbers?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0284",
+    "intent": "return_condition",
+    "query_text": "Question: What is the policy regarding returned product packaging and serial numbers?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-RETURN-COND-0285",
+    "intent": "return_condition",
+    "query_text": "What is the policy regarding returned product packaging and serial numbers?",
+    "target_memory_id": "POLICY-RETURN-COND",
+    "expected_answer_keyword": "original packaging",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0286",
+    "intent": "fraud_escalation",
+    "query_text": "Security team: What dollar amount triggers automatic Tier 3 fraud investigation?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0287",
+    "intent": "fraud_escalation",
+    "query_text": "Fraud check: What dollar amount triggers automatic Tier 3 fraud investigation?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0288",
+    "intent": "fraud_escalation",
+    "query_text": "Urgent inquiry: What dollar amount triggers automatic Tier 3 fraud investigation?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0289",
+    "intent": "fraud_escalation",
+    "query_text": "Policy check: What dollar amount triggers automatic Tier 3 fraud investigation?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0290",
+    "intent": "fraud_escalation",
+    "query_text": "What dollar amount triggers automatic Tier 3 fraud investigation?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0291",
+    "intent": "fraud_escalation",
+    "query_text": "Security team: At what transaction threshold does a refund require fraud escalation?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0292",
+    "intent": "fraud_escalation",
+    "query_text": "Fraud check: At what transaction threshold does a refund require fraud escalation?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0293",
+    "intent": "fraud_escalation",
+    "query_text": "Urgent inquiry: At what transaction threshold does a refund require fraud escalation?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0294",
+    "intent": "fraud_escalation",
+    "query_text": "Policy check: At what transaction threshold does a refund require fraud escalation?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0295",
+    "intent": "fraud_escalation",
+    "query_text": "At what transaction threshold does a refund require fraud escalation?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0296",
+    "intent": "fraud_escalation",
+    "query_text": "Security team: Are transactions over $10,000 subject to fraud review?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0297",
+    "intent": "fraud_escalation",
+    "query_text": "Fraud check: Are transactions over $10,000 subject to fraud review?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0298",
+    "intent": "fraud_escalation",
+    "query_text": "Urgent inquiry: Are transactions over $10,000 subject to fraud review?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0299",
+    "intent": "fraud_escalation",
+    "query_text": "Policy check: Are transactions over $10,000 subject to fraud review?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0300",
+    "intent": "fraud_escalation",
+    "query_text": "Are transactions over $10,000 subject to fraud review?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0301",
+    "intent": "fraud_escalation",
+    "query_text": "Security team: What is the escalation policy for high value transactions exceeding $10,000?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0302",
+    "intent": "fraud_escalation",
+    "query_text": "Fraud check: What is the escalation policy for high value transactions exceeding $10,000?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0303",
+    "intent": "fraud_escalation",
+    "query_text": "Urgent inquiry: What is the escalation policy for high value transactions exceeding $10,000?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0304",
+    "intent": "fraud_escalation",
+    "query_text": "Policy check: What is the escalation policy for high value transactions exceeding $10,000?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0305",
+    "intent": "fraud_escalation",
+    "query_text": "What is the escalation policy for high value transactions exceeding $10,000?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0306",
+    "intent": "fraud_escalation",
+    "query_text": "Security team: When is a customer refund escalated to the fraud team?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0307",
+    "intent": "fraud_escalation",
+    "query_text": "Fraud check: When is a customer refund escalated to the fraud team?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0308",
+    "intent": "fraud_escalation",
+    "query_text": "Urgent inquiry: When is a customer refund escalated to the fraud team?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0309",
+    "intent": "fraud_escalation",
+    "query_text": "Policy check: When is a customer refund escalated to the fraud team?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-FRAUD-0310",
+    "intent": "fraud_escalation",
+    "query_text": "When is a customer refund escalated to the fraud team?",
+    "target_memory_id": "ESCALATION-FRAUD-TIER3",
+    "expected_answer_keyword": "10,000",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0311",
+    "intent": "technical_support",
+    "query_text": "Technical inquiry: What protocol is required to configure Single Sign-On (SSO)?",
+    "target_memory_id": "FAQ-SSO-SETUP",
+    "expected_answer_keyword": "SAML 2.0",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0312",
+    "intent": "technical_support",
+    "query_text": "Setup question: What protocol is required to configure Single Sign-On (SSO)?",
+    "target_memory_id": "FAQ-SSO-SETUP",
+    "expected_answer_keyword": "SAML 2.0",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0313",
+    "intent": "technical_support",
+    "query_text": "Hi, What protocol is required to configure Single Sign-On (SSO)?",
+    "target_memory_id": "FAQ-SSO-SETUP",
+    "expected_answer_keyword": "SAML 2.0",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0314",
+    "intent": "technical_support",
+    "query_text": "What protocol is required to configure Single Sign-On (SSO)?",
+    "target_memory_id": "FAQ-SSO-SETUP",
+    "expected_answer_keyword": "SAML 2.0",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0315",
+    "intent": "technical_support",
+    "query_text": "Technical inquiry: Which SSO standard does enterprise integration support?",
+    "target_memory_id": "FAQ-SSO-SETUP",
+    "expected_answer_keyword": "SAML 2.0",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0316",
+    "intent": "technical_support",
+    "query_text": "Setup question: Which SSO standard does enterprise integration support?",
+    "target_memory_id": "FAQ-SSO-SETUP",
+    "expected_answer_keyword": "SAML 2.0",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0317",
+    "intent": "technical_support",
+    "query_text": "Hi, Which SSO standard does enterprise integration support?",
+    "target_memory_id": "FAQ-SSO-SETUP",
+    "expected_answer_keyword": "SAML 2.0",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0318",
+    "intent": "technical_support",
+    "query_text": "Which SSO standard does enterprise integration support?",
+    "target_memory_id": "FAQ-SSO-SETUP",
+    "expected_answer_keyword": "SAML 2.0",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0319",
+    "intent": "technical_support",
+    "query_text": "Technical inquiry: What operating systems are supported by the client application?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "Windows 11",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0320",
+    "intent": "technical_support",
+    "query_text": "Setup question: What operating systems are supported by the client application?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "Windows 11",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0321",
+    "intent": "technical_support",
+    "query_text": "Hi, What operating systems are supported by the client application?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "Windows 11",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0322",
+    "intent": "technical_support",
+    "query_text": "What operating systems are supported by the client application?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "Windows 11",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0323",
+    "intent": "technical_support",
+    "query_text": "Technical inquiry: Is Ubuntu 22.04 LTS supported by the enterprise agent?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "Ubuntu 22.04",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0324",
+    "intent": "technical_support",
+    "query_text": "Setup question: Is Ubuntu 22.04 LTS supported by the enterprise agent?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "Ubuntu 22.04",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0325",
+    "intent": "technical_support",
+    "query_text": "Hi, Is Ubuntu 22.04 LTS supported by the enterprise agent?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "Ubuntu 22.04",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0326",
+    "intent": "technical_support",
+    "query_text": "Is Ubuntu 22.04 LTS supported by the enterprise agent?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "Ubuntu 22.04",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0327",
+    "intent": "technical_support",
+    "query_text": "Technical inquiry: Does macOS 14 Sonoma run the client software?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "macOS 14",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0328",
+    "intent": "technical_support",
+    "query_text": "Setup question: Does macOS 14 Sonoma run the client software?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "macOS 14",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0329",
+    "intent": "technical_support",
+    "query_text": "Hi, Does macOS 14 Sonoma run the client software?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "macOS 14",
+    "expected_decision": "FACTUAL"
+  },
+  {
+    "query_id": "Q-TECH-0330",
+    "intent": "technical_support",
+    "query_text": "Does macOS 14 Sonoma run the client software?",
+    "target_memory_id": "FAQ-COMPATIBILITY-001",
+    "expected_answer_keyword": "macOS 14",
+    "expected_decision": "FACTUAL"
+  }
+]
