@@ -1,4 +1,4 @@
-﻿import hashlib
+import hashlib
 import json
 import time
 from pathlib import Path
@@ -35,6 +35,8 @@ def sign_owner_approval(
     authorization_id: str,
     nonce: str,
     expected_parent_revision_id: str | None = None,
+    timestamp: int | None = None,
+    expected_version: int | None = None,
 ) -> str:
     _require_ed25519_key(private_key)
     if not all(isinstance(value, str) and value.strip() for value in (
@@ -51,6 +53,8 @@ def sign_owner_approval(
         expected_parent_revision_id=expected_parent_revision_id,
         authorization_id=authorization_id,
         nonce=nonce,
+        timestamp=timestamp,
+        expected_version=expected_version,
     )
     return private_key.sign(payload).hex()
 

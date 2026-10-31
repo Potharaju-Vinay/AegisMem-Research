@@ -18,6 +18,8 @@ def canonical_owner_approval(
     expected_parent_revision_id: str | None,
     authorization_id: str,
     nonce: str,
+    timestamp: int | None = None,
+    expected_version: int | None = None,
 ) -> bytes:
     payload = {
         "protocol": PROTOCOL_VERSION,
@@ -30,6 +32,10 @@ def canonical_owner_approval(
         "authorization_id": authorization_id,
         "nonce": nonce,
     }
+    if timestamp is not None:
+        payload["timestamp"] = timestamp
+    if expected_version is not None:
+        payload["expected_version"] = expected_version
     return json.dumps(
         payload,
         sort_keys=True,
@@ -45,6 +51,9 @@ def verify_owner_approval(
     authorization_id: str,
     nonce: str,
     signature_hex: str | None,
+    timestamp: int | None = None,
+    expected_version: int | None = None,
+    max_age_seconds: int = 300,
 ) -> bool:
     if not all((memory_id, authorization_id, nonce, signature_hex)):
         return False
@@ -57,12 +66,18 @@ def verify_owner_approval(
             OWNER_APPROVAL_PUBLIC_KEY_PATH.read_bytes()
         )
         signature = bytes.fromhex(signature_hex)
+        if timestamp is not None:
+            import time
+            if abs(int(time.time()) - int(timestamp)) > max_age_seconds:
+                return False
         payload = canonical_owner_approval(
             memory_id,
             content,
             expected_parent_revision_id,
             authorization_id,
             nonce,
+            timestamp=timestamp,
+            expected_version=expected_version,
         )
         public_key.verify(signature, payload)
         return True

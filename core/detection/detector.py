@@ -115,10 +115,19 @@ class MemoryCompromiseDetector:
             }
         )
 
+        # Milestone M2: Cryptographic Signature Verification for Owner Provenance
+        # If the provenance event claims to be an authorized owner write, but the
+        # Ed25519 signature fails verification, flag as suspicious signature forgery.
+        signature_spoofed = (
+            str(event.actor).lower() in {"enterprise_owner", "owner", "admin"}
+            and not verify_record_owner_approval(memory)
+        )
+
         return (
             operation_suspicious
             or source_suspicious
             or actor_suspicious
+            or signature_spoofed
         )
 
     def _content_change_evidence(
