@@ -1,0 +1,13 @@
+{
+  "store_domain": "isolated_cryptographic_vault",
+  "memory_id": "ENT-EMPLOYEE-005",
+  "version": 1,
+  "revision_id": "986cbc86-3122-4bf1-b821-3df1b06d26e8",
+  "parent_revision_id": null,
+  "content": "Employees must protect their credentials, use approved enterprise systems, report suspicious emails and activities, and complete required security awareness training. Confidential company information must not be shared with unauthorized parties.",
+  "content_hash": "06680d720c1b2610183e41752ff9f0cc846f05add738de42e038c5d78beb7763",
+  "previous_hash": null,
+  "signature": "0awLvnNK4g6nau7QSCTtgbkQWkOUe+B9o+LAT1Xy8sznzUfdZei//SDtsplP7yRDi+Iglqs8zZTl4U4ed03tDw==",
+  "authorization_signature": "86040416f84ae785b9b72e4a3f89ea5264df05b989dacc9effb5d72695afb129a1794a4c61768b9a2e2031b57d4e89340804a54afdeae27d2c9a17d8bda5540d",
+  "authorization_id": "PhmCgxwYJOKU7m5osqS6DlTYP6VOslAq1BKH1Js9Flo"
+}

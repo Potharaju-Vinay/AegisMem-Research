@@ -1,0 +1,13 @@
+{
+  "store_domain": "isolated_cryptographic_vault",
+  "memory_id": "ENT-INCIDENT-002",
+  "version": 1,
+  "revision_id": "9a1e63b8-7305-4a02-94b0-25f42f23f764",
+  "parent_revision_id": null,
+  "content": "All suspected security incidents must be reported immediately to the security operations team. The team must investigate, document evidence, assess impact, contain affected systems, and record remediation actions.",
+  "content_hash": "63fbed59168dc94119e667945065940c11cb48c76a47f6181f45bdc82f1342cf",
+  "previous_hash": null,
+  "signature": "IY6/S04yN/b+5WqGZmOWCxztAQ0RvffuuJr0EMnJRHAmuaxFpQZFH0U8zXsYzjz53gkwcaY/cjxzmBQMC3glCg==",
+  "authorization_signature": "5e44d2fc1fe81a68dfda3d474d5ed6426005c7e097f977e47353e2194c0b32aaf6fdeefe8a275f87c1d1ea04324715c685adf0f2334e98c6185b8e791d7e9c0f",
+  "authorization_id": "U9KnZgxybiTH6IBd3oM8ll8yZ43dSGLycP_JVHjVa24"
+}

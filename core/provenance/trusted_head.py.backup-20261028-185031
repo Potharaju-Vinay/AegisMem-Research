@@ -1,0 +1,226 @@
+﻿import base64
+import hashlib
+import json
+import os
+import tempfile
+from pathlib import Path
+
+
+from cryptography.exceptions import InvalidSignature
+from cryptography.hazmat.primitives import serialization
+from core.integrity.verifier import IntegrityVerifier
+
+from core.provenance.checkpoint import ProvenanceCheckpointStore
+
+def _canonical_head(head: dict) -> bytes:
+    fields = {
+        "memory_id": head["memory_id"],
+        "version": head["version"],
+        "event_hash": head["event_hash"],
+        "event_count": head["event_count"],
+    }
+    return json.dumps(
+        fields, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+
+
+class TrustedCheckpointHeadStore:
+    def __init__(
+        self,
+    head_dir="security/trusted_checkpoint_heads",
+    private_key_path="security/keys/integrity_anchor_private.pem",
+    public_key_path="security/keys/integrity_anchor_public.pem",
+    checkpoint_store=None,
+):
+        self.head_dir = Path(head_dir)
+        self.private_key_path = Path(private_key_path)
+        self.public_key_path = Path(public_key_path)
+        self.checkpoint_store = checkpoint_store or ProvenanceCheckpointStore(
+        private_key_path=self.private_key_path,
+        public_key_path=self.public_key_path,
+    )
+
+    def _path(self, memory_id: str) -> Path:
+        safe_id = hashlib.sha256(
+            memory_id.encode("utf-8")
+        ).hexdigest()
+        return self.head_dir / f"{safe_id}.json"
+
+    def _read_verified_head(self, memory_id: str):
+        path = self._path(memory_id)
+        if not path.is_file():
+            return None
+
+        try:
+            head = json.loads(path.read_text(encoding="utf-8"))
+            if head.get("memory_id") != memory_id:
+                return "INVALID"
+
+            signature = base64.b64decode(
+                head["signature"], validate=True
+            )
+            public_key = serialization.load_pem_public_key(
+                self.public_key_path.read_bytes()
+            )
+            public_key.verify(signature, _canonical_head(head))
+            return head
+        except (
+            InvalidSignature,
+            OSError,
+            json.JSONDecodeError,
+            KeyError,
+            TypeError,
+            ValueError,
+        ):
+            return "INVALID"
+
+    
+    def advance(self, events: list) -> dict:
+        if not events:
+            raise ValueError("Cannot advance from empty provenance history")
+
+        events = sorted(events, key=lambda event: event.version)
+
+        if not IntegrityVerifier().verify_provenance_chain(events):
+            raise ValueError("Cannot advance from an invalid provenance chain")
+
+        memory_id = events[0].memory_id
+
+        if any(event.memory_id != memory_id for event in events):
+            raise ValueError("Provenance events contain multiple memory IDs")
+
+        if len({event.version for event in events}) != len(events):
+            raise ValueError("Provenance events contain duplicate versions")
+
+        checkpoint_status = self.checkpoint_store.verify_checkpoint(events)
+        
+        if checkpoint_status != "VALID":
+            raise ValueError(
+        f"Cannot establish or advance trusted head without a valid checkpoint: {checkpoint_status}"
+    )
+
+        
+
+        latest = events[-1]
+
+        checkpoint = {
+            "memory_id": memory_id,
+            "version": latest.version,
+            "event_hash": latest.event_hash,
+            "event_count": len(events),
+        }
+
+        version = checkpoint["version"]
+        event_hash = checkpoint["event_hash"]
+        event_count = checkpoint["event_count"]
+
+        if not isinstance(version, int) or isinstance(version, bool) or version < 1:
+            raise ValueError("Invalid checkpoint version")
+
+        if not isinstance(event_count, int) or event_count < 1:
+            raise ValueError("Invalid checkpoint event count")
+
+        if not isinstance(event_hash, str) or not event_hash:
+            raise ValueError("Invalid checkpoint event hash")
+
+        current = self._read_verified_head(memory_id)
+
+        if current == "INVALID":
+            raise ValueError("Existing trusted head is invalid")
+
+        if current is not None:
+            if version < current["version"]:
+                raise ValueError("Cannot roll back trusted checkpoint head")
+
+            if version == current["version"]:
+                if (
+                    event_hash == current["event_hash"]
+                    and event_count == current["event_count"]
+                    and checkpoint_status == "VALID"
+                ):
+                    return current
+
+                raise ValueError("Conflicting checkpoint at trusted version")
+
+        if checkpoint_status != "VALID":
+            raise ValueError(
+                f"Cannot establish or advance trusted head without a valid checkpoint: {checkpoint_status}"
+            )
+        head = {
+            **checkpoint,
+        }
+
+        private_key = serialization.load_pem_private_key(
+            self.private_key_path.read_bytes(),
+            password=None,
+        )
+
+        head["signature"] = base64.b64encode(
+            private_key.sign(_canonical_head(head))
+        ).decode("ascii")
+
+        self.head_dir.mkdir(parents=True, exist_ok=True)
+
+        destination = self._path(memory_id)
+
+        fd, temporary_name = tempfile.mkstemp(
+            prefix=".trusted-head-",
+            suffix=".tmp",
+            dir=self.head_dir,
+        )
+
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as handle:
+                json.dump(head, handle, sort_keys=True, indent=2)
+                handle.flush()
+                os.fsync(handle.fileno())
+
+            os.replace(temporary_name, destination)
+
+        except Exception:
+            try:
+                os.unlink(temporary_name)
+            except FileNotFoundError:
+                pass
+            raise
+
+        return head
+
+
+    def verify_events(self, events: list) -> str:
+        if not events:
+            return "CHECKPOINT_MISSING"
+
+        events = sorted(events, key=lambda event: event.version)
+
+        if not IntegrityVerifier().verify_provenance_chain(events):
+            return "CHAIN_TAMPERED"
+
+        memory_id = events[0].memory_id
+
+        if any(event.memory_id != memory_id for event in events):
+            return "CHAIN_TAMPERED"
+
+        head = self._read_verified_head(memory_id)
+
+        if head is None:
+            return "TRUSTED_HEAD_MISSING"
+
+        if head == "INVALID":
+            return "TRUSTED_HEAD_INVALID"
+
+        latest = events[-1]
+
+        if latest.version < head["version"]:
+            return "ROLLBACK_DETECTED"
+
+        if latest.version > head["version"]:
+            return "TRUSTED_HEAD_BEHIND"
+
+        if (
+            latest.event_hash != head["event_hash"]
+            or len(events) != head["event_count"]
+        ):
+            return "CHECKPOINT_MISMATCH"
+
+        return "VALID"

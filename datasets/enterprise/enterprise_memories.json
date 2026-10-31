@@ -1,0 +1,42 @@
+﻿[
+  {
+    "memory_id": "POLICY-001",
+    "content": "Customer refunds are permitted within 30 calendar days of the transaction, subject to eligibility verification.",
+    "source": "customer_refund_policy",
+    "source_type": "enterprise_policy",
+    "valid_from": "2026-01-01T00:00:00+00:00",
+    "valid_until": null
+  },
+  {
+    "memory_id": "POLICY-002",
+    "content": "Privileged access requires multi-factor authentication and approval from an authorized administrator.",
+    "source": "privileged_access_policy",
+    "source_type": "security_policy",
+    "valid_from": "2026-01-01T00:00:00+00:00",
+    "valid_until": null
+  },
+  {
+    "memory_id": "SOP-003",
+    "content": "Security-related customer incidents must be escalated to the security operations team.",
+    "source": "customer_security_incident_sop",
+    "source_type": "security_procedure",
+    "valid_from": "2026-01-01T00:00:00+00:00",
+    "valid_until": null
+  },
+  {
+    "memory_id": "POLICY-004",
+    "content": "Refund requests exceeding the standard eligibility period require additional approval.",
+    "source": "refund_exception_policy",
+    "source_type": "enterprise_policy",
+    "valid_from": "2026-01-01T00:00:00+00:00",
+    "valid_until": null
+  },
+  {
+    "memory_id": "SOP-005",
+    "content": "Requests involving privileged accounts must be logged for security auditing.",
+    "source": "privileged_account_audit_sop",
+    "source_type": "security_procedure",
+    "valid_from": "2026-01-01T00:00:00+00:00",
+    "valid_until": null
+  }
+]

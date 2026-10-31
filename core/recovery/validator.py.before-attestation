@@ -1,0 +1,81 @@
+﻿
+from core.integrity.hash import calculate_version_hash
+from core.integrity.manifest_store import IntegrityManifestStore
+from core.memory.repository import MemoryRepository
+from core.security.owner_approval import verify_record_owner_approval
+
+
+class RecoveryValidator:
+
+    def __init__(
+        self,
+        repository: MemoryRepository,
+        manifest_store=None
+    ):
+        self.repository = repository
+        self.manifest_store = (
+            manifest_store or IntegrityManifestStore()
+        )
+
+    def _has_valid_authorization(self, record) -> bool:
+        return verify_record_owner_approval(record)
+
+    def validate(self, memory_id: str) -> dict:
+        memory = self.repository.get_latest(memory_id)
+
+        if memory is None:
+            return {
+                "valid": False,
+                "reason": "Recovered memory not found."
+            }
+
+        expected_hash = calculate_version_hash(
+            memory.content,
+            memory.previous_hash
+        )
+
+        integrity_valid = expected_hash == memory.content_hash
+
+        try:
+            manifest_present = self.manifest_store.has_manifest(memory)
+            manifest_valid = (
+                manifest_present
+                and self.manifest_store.verify_record(memory)
+            )
+        except Exception:
+            manifest_present = False
+            manifest_valid = False
+
+        trust_valid = (
+            memory.trust_score >= 0.8
+            and memory.suspicion_score <= 0.2
+        )
+        status_valid = memory.status == "active"
+        authorization_valid = self._has_valid_authorization(memory)
+
+        content_valid = (
+            integrity_valid
+            and manifest_valid
+            and trust_valid
+            and status_valid
+        )
+
+        fully_verified = (
+            content_valid
+            and authorization_valid
+        )
+
+        return {
+            "valid": content_valid,
+            "content_valid": content_valid,
+            "fully_verified": fully_verified,
+            "integrity": integrity_valid,
+            "integrity_manifest_present": manifest_present,
+            "integrity_manifest": manifest_valid,
+            "trust": trust_valid,
+            "status": status_valid,
+            "authorization": authorization_valid,
+            "authorization_state": memory.authorization_state,
+            "version": memory.version,
+            "content": memory.content
+        }

@@ -1,0 +1,98 @@
+﻿import hashlib
+import secrets
+from datetime import datetime, timedelta, timezone
+
+from sqlalchemy import select
+
+from core.memory.database import SessionLocal
+from core.security.dashboard_session import DashboardSession
+
+ALLOWED_OPERATIONS = {
+    "attack.poison",
+    "attack.tamper",
+    "attack.delete",
+    "memory.detect",
+    "memory.recover",
+}
+
+APPROVAL_DURATION_SECONDS = 120
+
+
+class DashboardOperationAuthorizationError(Exception):
+    pass
+
+
+def _session_reference(raw_session_id: str) -> str:
+    return hashlib.sha256(
+        raw_session_id.encode("utf-8")
+    ).hexdigest()
+
+
+def authorize_dashboard_operation(
+    operation: str,
+    memory_id: str,
+    confirmed: bool,
+    raw_session_id: str,
+) -> dict:
+
+    if not isinstance(operation, str) or operation not in ALLOWED_OPERATIONS:
+        raise DashboardOperationAuthorizationError(
+            "Operation is not permitted."
+        )
+
+    if (
+        not isinstance(memory_id, str)
+        or not memory_id.strip()
+        or memory_id != memory_id.strip()
+        or len(memory_id) > 255
+    ):
+        raise DashboardOperationAuthorizationError(
+            "A valid memory ID is required."
+        )
+
+    if confirmed is not True:
+        raise DashboardOperationAuthorizationError(
+            "Explicit operation confirmation is required."
+        )
+
+    if not isinstance(raw_session_id, str) or not raw_session_id:
+        raise DashboardOperationAuthorizationError(
+            "A valid dashboard session is required."
+        )
+
+    session_ref = _session_reference(raw_session_id)
+    now = datetime.now(timezone.utc)
+
+    with SessionLocal() as db:
+        session = db.get(DashboardSession, session_ref)
+
+        if session is None:
+            raise DashboardOperationAuthorizationError(
+                "Dashboard session is invalid."
+            )
+
+        expires_at = session.expires_at
+
+        if expires_at.tzinfo is None:
+            expires_at = expires_at.replace(tzinfo=timezone.utc)
+
+        if expires_at <= now:
+            raise DashboardOperationAuthorizationError(
+                "Dashboard session has expired."
+            )
+
+        authorization_id = secrets.token_urlsafe(32)
+        approval_expires_at = now + timedelta(
+            seconds=APPROVAL_DURATION_SECONDS
+        )
+
+        return {
+            "authorized": True,
+            "operation": operation,
+            "memory_id": memory_id,
+            "authorization_id": authorization_id,
+            "session_ref": session_ref,
+            "approved_at": now.isoformat(),
+            "expires_at": approval_expires_at.isoformat(),
+            "single_use": True,
+        }

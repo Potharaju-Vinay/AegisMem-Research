@@ -1,0 +1,9 @@
+{
+  "content_hash": "4296184b42d82b37268841f8f9e0fffb4ae79cabe7b62f9d682e3b5a08fff808",
+  "memory_id": "TEST-CHAIN-TAMPER",
+  "parent_revision_id": "0dd7893a-2d81-4c3e-8259-a277a43219a7",
+  "previous_hash": "1806ae650ae7a68733101330fbaf739fb5c28c4a2ec35b9ad41ab810ef040078",
+  "revision_id": "b540e173-f645-4915-a219-8d3f60f1755a",
+  "signature": "3AWZT4FnJvNe6Ewzy4Ifpk6FbTvuLFlfu94dmWkbvX84PCxjYYISjj0izCYgicbnnQ1Iie5/nLVY+17a/Kd5DA==",
+  "version": 2
+}

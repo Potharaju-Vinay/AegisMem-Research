@@ -1,0 +1,67 @@
+﻿File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 7 | Code: from core.provenance.models import ProvenanceEvent
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 57 | Code: # PROVENANCE EVIDENCE
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 60 | Code: def _has_provenance_evidence(
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 66 | Code: select(ProvenanceEvent)
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 68 | Code: ProvenanceEvent.memory_id == memory.memory_id,
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 69 | Code: ProvenanceEvent.version == memory.version
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 72 | Code: ProvenanceEvent.id.desc()
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 209 | Code: or self._has_provenance_evidence(memory)
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 237 | Code: or self._has_provenance_evidence(memory)
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 460 | Code: # 5. Provenance evidence
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 463 | Code: provenance_suspicious = (
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 464 | Code: self._has_provenance_evidence(
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 491 | Code: provenance_suspicious=provenance_suspicious,
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 510 | Code: provenance_suspicious,
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 519 | Code: or provenance_suspicious
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 548 | Code: and provenance_suspicious
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 558 | Code: or provenance_suspicious
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 582 | Code: if provenance_suspicious:
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 585 | Code: "Unauthorized memory-write provenance "
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 641 | Code: and not provenance_suspicious
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 650 | Code: elif attack_detected and provenance_suspicious:
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\detector.py | Line: 654 | Code: "Suspicious provenance also matches the detected memory revision.",
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\detection\models.py | Line: 9 | Code: provenance_suspicious: bool
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\integrity\verifier.py | Line: 75 | Code: def verify_provenance_chain(self, events):
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\memory\init_db.py | Line: 4 | Code: from core.provenance.models import ProvenanceEvent
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\memory\service.py | Line: 4 | Code: from core.provenance.manager import ProvenanceManager
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\memory\service.py | Line: 11 | Code: self.provenance = ProvenanceManager(session)
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\memory\service.py | Line: 29 | Code: self.provenance.record(
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\checkpoint.py | Line: 25 | Code: class ProvenanceCheckpointStore:
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\checkpoint.py | Line: 28 | Code: checkpoint_dir="security/provenance_checkpoints",
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\checkpoint.py | Line: 44 | Code: raise ValueError("Cannot checkpoint an empty provenance chain")
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\checkpoint.py | Line: 48 | Code: if not IntegrityVerifier().verify_provenance_chain(events):
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\checkpoint.py | Line: 49 | Code: raise ValueError("Cannot checkpoint an invalid provenance chain")
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\checkpoint.py | Line: 58 | Code: raise ValueError("Duplicate provenance versions")
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\checkpoint.py | Line: 108 | Code: if not IntegrityVerifier().verify_provenance_chain(events):
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 8 | Code: from core.provenance.models import ProvenanceEvent
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 11 | Code: class ProvenanceManager:
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 22 | Code: select(ProvenanceEvent)
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 24 | Code: ProvenanceEvent.memory_id == memory_id
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 27 | Code: ProvenanceEvent.id.desc()
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 51 | Code: ) -> ProvenanceEvent:
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 79 | Code: event = ProvenanceEvent(
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 104 | Code: ) -> list[ProvenanceEvent]:
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 107 | Code: select(ProvenanceEvent)
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 109 | Code: ProvenanceEvent.memory_id == memory_id
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\manager.py | Line: 112 | Code: ProvenanceEvent.version.asc()
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\models.py | Line: 10 | Code: class ProvenanceEvent(Base):
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\models.py | Line: 12 | Code: __tablename__ = "provenance_events"
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\provenance\trusted_head.py | Line: 186 | Code: if not IntegrityVerifier().verify_provenance_chain(events):
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\recovery\engine.py | Line: 92 | Code: print("        AEGISMEM SELF-HEALING ENGINE")
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\recovery\engine.py | Line: 178 | Code: print("SELF-HEALING AND AUTHORIZATION VERIFIED")
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\recovery\engine.py | Line: 187 | Code: print("SELF-HEALING VALIDATION FAILED")
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\recovery\executor.py | Line: 249 | Code: f"provenance; it is not owner-signed."
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\recovery\orchestrator.py | Line: 529 | Code: "          ✓ AEGISMEM SELF-HEALING COMPLETE"
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\recovery\validator.py | Line: 164 | Code: recovery_provenance_verified = (
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\recovery\validator.py | Line: 180 | Code: "recovery_provenance_verified": recovery_provenance_verified,
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\revision\models.py | Line: 10 | Code: provenance_weight: float
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\revision\planner.py | Line: 17 | Code: provenance_weights=None,
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\revision\planner.py | Line: 21 | Code: provenance_weights = provenance_weights or {}
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\revision\planner.py | Line: 31 | Code: provenance_weight = provenance_weights.get(
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\revision\planner.py | Line: 44 | Code: * provenance_weight
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\revision\planner.py | Line: 60 | Code: provenance_weight=provenance_weight,
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\soc\engine.py | Line: 20 | Code: provenance_suspicious=evidence.get("provenance_suspicious", False),
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\soc\engine.py | Line: 74 | Code: provenance_suspicious=(
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\soc\severity.py | Line: 3 | Code: provenance_suspicious=False,
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\soc\severity.py | Line: 16 | Code: if provenance_suspicious:
+File: C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\soc\severity.py | Line: 18 | Code: reasons.append("Suspicious provenance evidence")

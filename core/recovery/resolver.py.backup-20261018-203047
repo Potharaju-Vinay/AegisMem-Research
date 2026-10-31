@@ -1,0 +1,75 @@
+﻿
+from core.integrity.hash import calculate_version_hash
+from core.memory.models import MemoryRecord
+from core.memory.repository import MemoryRepository
+from core.security.owner_approval import verify_record_owner_approval
+
+
+class TrustedVersionResolver:
+
+    def __init__(self, repository: MemoryRepository):
+        self.repository = repository
+
+    def _has_valid_authorization(self, record) -> bool:
+        return verify_record_owner_approval(record)
+    def _has_valid_history_chain(
+        self,
+        memory_id: str,
+        target_version: int
+    ) -> bool:
+        for version in range(1, target_version + 1):
+            record = self.repository.get_version(memory_id, version)
+
+            if record is None:
+                return False
+
+            expected_previous_hash = None
+
+            if version > 1:
+                previous_record = self.repository.get_version(
+                    memory_id,
+                    version - 1
+                )
+
+                if previous_record is None:
+                    return False
+
+                expected_previous_hash = previous_record.content_hash
+
+            if record.previous_hash != expected_previous_hash:
+                return False
+
+            if record.content_hash != calculate_version_hash(
+                record.content,
+                record.previous_hash
+            ):
+                return False
+
+        return True
+
+    def find_trusted_version(
+        self,
+        memory_id: str
+    ) -> MemoryRecord | None:
+        history = self.repository.get_history(memory_id)
+
+        if len(history) < 2:
+            return None
+
+        for record in reversed(history[:-1]):
+            if not self._has_valid_history_chain(
+                memory_id,
+                record.version
+            ):
+                continue
+
+            if (
+                record.status == "active"
+                and record.trust_score >= 0.8
+                and record.suspicion_score <= 0.2
+                and self._has_valid_authorization(record)
+            ):
+                return record
+
+        return None
+

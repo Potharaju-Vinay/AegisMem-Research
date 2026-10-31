@@ -1,0 +1,76 @@
+﻿import base64
+import json
+from pathlib import Path
+
+from cryptography.exceptions import InvalidSignature
+from cryptography.hazmat.primitives import serialization
+
+
+def _canonical_payload(manifest: dict) -> bytes:
+    fields = {
+        "memory_id": manifest["memory_id"],
+        "revision_id": manifest["revision_id"],
+        "parent_revision_id": manifest.get("parent_revision_id"),
+        "version": manifest["version"],
+        "content_hash": manifest["content_hash"],
+        "previous_hash": manifest.get("previous_hash"),
+    }
+    return json.dumps(
+        fields, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+
+
+def sign_revision(
+    memory_id: str,
+    version: int,
+    content_hash: str,
+    previous_hash: str | None,
+    private_key_path: str | Path,
+    revision_id: str | None = None,
+    parent_revision_id: str | None = None,
+) -> dict:
+    if not revision_id:
+        raise ValueError("revision_id is required")
+
+    payload = {
+        "memory_id": memory_id,
+        "revision_id": revision_id,
+        "parent_revision_id": parent_revision_id,
+        "version": version,
+        "content_hash": content_hash,
+        "previous_hash": previous_hash,
+    }
+
+    private_key = serialization.load_pem_private_key(
+        Path(private_key_path).read_bytes(),
+        password=None,
+    )
+    signature = private_key.sign(_canonical_payload(payload))
+    payload["signature"] = base64.b64encode(signature).decode("ascii")
+    return payload
+
+
+def verify_revision(
+    manifest: dict,
+    public_key_path: str | Path,
+) -> bool:
+    try:
+        if not manifest.get("revision_id"):
+            return False
+
+        public_key = serialization.load_pem_public_key(
+            Path(public_key_path).read_bytes()
+        )
+        signature = base64.b64decode(
+            manifest["signature"], validate=True
+        )
+        public_key.verify(signature, _canonical_payload(manifest))
+        return True
+    except (
+        InvalidSignature,
+        KeyError,
+        TypeError,
+        ValueError,
+        OSError,
+    ):
+        return False

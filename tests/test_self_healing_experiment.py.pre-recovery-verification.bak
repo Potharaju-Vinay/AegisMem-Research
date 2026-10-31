@@ -1,0 +1,288 @@
+﻿import statistics
+import time
+
+import pytest
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+from sqlalchemy import create_engine, text
+from sqlalchemy.orm import Session
+from core.provenance.recovery_verifier import ProvenanceRecoveryVerifier
+
+from core.integrity.manifest_store import IntegrityManifestStore
+from core.integrity.verifier import IntegrityVerifier
+from core.memory.database import Base
+from core.memory.repository import MemoryRepository
+from core.recovery.executor import RecoveryExecutor
+from core.recovery.validator import RecoveryValidator
+from tests.owner_approval_test_utils import sign_test_approval
+from core.provenance.manager import ProvenanceManager
+from core.provenance.checkpoint import ProvenanceCheckpointStore
+from core.provenance.trusted_head import TrustedCheckpointHeadStore
+
+
+
+def create_test_manifest_store(tmp_path):
+    tmp_path.mkdir(parents=True, exist_ok=True)
+
+    private_key = Ed25519PrivateKey.generate()
+    private_path = tmp_path / "anchor_private.pem"
+    public_path = tmp_path / "anchor_public.pem"
+
+    private_path.write_bytes(
+        private_key.private_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PrivateFormat.PKCS8,
+            encryption_algorithm=serialization.NoEncryption(),
+        )
+    )
+
+    public_path.write_bytes(
+        private_key.public_key().public_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PublicFormat.SubjectPublicKeyInfo,
+        )
+    )
+
+    return IntegrityManifestStore(
+        manifest_dir=tmp_path / "manifests",
+        private_key_path=private_path,
+        public_key_path=public_path,
+    )
+
+
+
+
+def run_trial(trial_index, tmp_path):
+    engine = create_engine("sqlite:///:memory:")
+    Base.metadata.create_all(engine)
+
+    with engine.begin() as connection:
+        connection.execute(
+            text(
+                "CREATE TABLE authorization_nonces ("
+                "nonce VARCHAR(128) PRIMARY KEY, "
+                "authorization_id VARCHAR(128) NOT NULL, "
+                "created_at DATETIME NOT NULL)"
+            )
+        )
+
+    memory_id = f"EXPERIMENT-SELF-HEAL-{trial_index:03d}"
+    authorization_id = f"EXPERIMENT-AUTH-{trial_index:03d}"
+    nonce = f"EXPERIMENT-NONCE-{trial_index:03d}"
+
+    original_content = (
+        f"Controlled trusted policy for trial {trial_index}: "
+        "refunds are permitted within 30 days."
+    )
+    modified_content = (
+        f"Controlled tampered policy for trial {trial_index}: "
+        "refunds are permitted within 365 days."
+    )
+
+    try:
+        with Session(engine) as session:
+            manifest_store = IntegrityManifestStore(
+    manifest_dir=tmp_path / "integrity_manifests"
+)
+            repository = MemoryRepository(
+    session,
+    manifest_store=manifest_store,
+)
+            manifest_store = create_test_manifest_store(tmp_path)
+            verifier = IntegrityVerifier(manifest_store=manifest_store)
+
+            trusted = repository.create_owner_authorized(
+                memory_id=memory_id,
+                content=original_content,
+                source="controlled_experiment",
+                authorization_id=authorization_id,
+                nonce=nonce,
+                authorization_signature=sign_test_approval(
+                    memory_id=memory_id,
+                    content=original_content,
+                    authorization_id=authorization_id,
+                    nonce=nonce,
+                    expected_parent_revision_id=None,
+                ),
+                expected_revision_id=None,
+            )
+
+            session.refresh(trusted)
+            trusted_version = trusted.version
+
+            manifest_store.create_for_record(trusted)
+            assert verifier.verify_memory(trusted)
+
+            provenance_manager = ProvenanceManager(session)
+            provenance_dir = tmp_path / "provenance"
+
+            checkpoint_store = ProvenanceCheckpointStore(
+                checkpoint_dir=provenance_dir / "checkpoints"
+            )
+
+            trusted_head_store = TrustedCheckpointHeadStore(
+                head_dir=provenance_dir / "trusted_heads",
+                checkpoint_store=checkpoint_store,
+            )
+
+            provenance_manager.record(
+                memory_record_id=trusted.id,
+                memory_id=memory_id,
+                version=trusted.version,
+                actor="controlled_experiment",
+                operation="CREATE",
+                source=trusted.source,
+                source_type=trusted.source_type,
+            )
+
+            events = provenance_manager.get_events(memory_id)
+            checkpoint_store.create_checkpoint(events)
+            trusted_head_store.advance(events)
+
+            compromised = repository.create(
+                memory_id=memory_id,
+                content="Temporary follow-up revision",
+                source="controlled_experiment",
+                source_type="controlled_test",
+            )
+
+            manifest_store.create_for_record(compromised)
+            assert verifier.verify_memory(compromised)
+
+            compromised.content = modified_content
+            session.commit()
+            session.refresh(compromised)
+
+            detection_succeeded = not verifier.verify_memory(compromised)
+
+            start = time.perf_counter()
+
+            result = RecoveryExecutor(
+                repository,
+                manifest_store=manifest_store,
+                provenance_manager=provenance_manager,
+                checkpoint_store=checkpoint_store,
+                trusted_head_store=trusted_head_store,
+            ).rollback(
+                compromised_memory_id=memory_id,
+                trusted_version=trusted_version,
+            )
+
+            recovery_latency_ms = (time.perf_counter() - start) * 1000
+
+            recovered = repository.get_latest(memory_id)
+
+            validation = RecoveryValidator(
+    repository,
+    manifest_store=manifest_store,
+    provenance_manager=provenance_manager,
+    provenance_verifier=ProvenanceRecoveryVerifier(
+        checkpoint_store=checkpoint_store,
+        trusted_head_store=trusted_head_store,
+    ),
+).validate(memory_id)
+            
+            print({
+    "recovery_attestation_valid": validation.get("recovery_attestation_valid"),
+    "recovery_provenance_verified": validation.get("recovery_provenance_verified"),
+    "provenance_verified": validation.get("provenance_verified"),
+    "provenance_checkpoint_status": validation.get("provenance_checkpoint_status"),
+    "provenance_trusted_head_status": validation.get("provenance_trusted_head_status"),
+    "provenance_reason": validation.get("provenance_reason"),
+})
+
+            return {
+                "detection_succeeded": detection_succeeded,
+                "recovery_succeeded": result.success,
+                "restoration_exact": (
+                    recovered is not None
+                    and recovered.content == original_content
+                ),
+                "integrity_valid": bool(validation["integrity"]),
+                "content_valid": bool(validation["content_valid"]),
+                "authorization_valid": bool(validation["authorization"]),
+                "fully_verified": bool(validation["fully_verified"]),
+                "recovery_latency_ms": recovery_latency_ms,
+            }
+    finally:
+        engine.dispose()
+
+
+
+
+@pytest.mark.parametrize("trial_index", range(1, 31))
+def test_self_healing_trial(trial_index, tmp_path):
+    metrics = run_trial(trial_index, tmp_path)
+
+    assert metrics["detection_succeeded"]
+    assert metrics["recovery_succeeded"]
+    assert metrics["restoration_exact"]
+    assert metrics["integrity_valid"]
+    assert metrics["content_valid"]
+    assert not metrics["fully_verified"]
+    assert not metrics["authorization_valid"]
+
+
+def test_self_healing_experiment_summary(tmp_path):
+    trial_results = [
+        run_trial(index, tmp_path / str(index))
+        for index in range(101, 131)
+    ]
+    total = len(trial_results)
+
+    summary = {
+        "trials": total,
+        "detection_rate_percent": (
+            sum(item["detection_succeeded"] for item in trial_results)
+            / total
+            * 100
+        ),
+        "recovery_success_rate_percent": (
+            sum(item["recovery_succeeded"] for item in trial_results)
+            / total
+            * 100
+        ),
+        "exact_restoration_rate_percent": (
+            sum(item["restoration_exact"] for item in trial_results)
+            / total
+            * 100
+        ),
+        "integrity_validation_rate_percent": (
+            sum(item["integrity_valid"] for item in trial_results)
+            / total
+            * 100
+        ),
+        "content_validation_rate_percent": (
+            sum(item["content_valid"] for item in trial_results)
+            / total
+            * 100
+        ),
+        "authorization_valid_rate_percent": (
+            sum(item["authorization_valid"] for item in trial_results)
+            / total
+            * 100
+        ),
+        "fully_verified_rate_percent": (
+            sum(item["fully_verified"] for item in trial_results)
+            / total
+            * 100
+        ),
+        "mean_recovery_latency_ms": statistics.mean(
+            item["recovery_latency_ms"] for item in trial_results
+        ),
+        "median_recovery_latency_ms": statistics.median(
+            item["recovery_latency_ms"] for item in trial_results
+        ),
+    }
+
+    print("\nSELF-HEALING EXPERIMENT SUMMARY")
+    print(summary)
+
+    assert summary["detection_rate_percent"] == 100.0
+    assert summary["recovery_success_rate_percent"] == 100.0
+    assert summary["exact_restoration_rate_percent"] == 100.0
+    assert summary["integrity_validation_rate_percent"] == 100.0
+    assert summary["content_validation_rate_percent"] == 100.0
+    assert summary["authorization_valid_rate_percent"] == 0.0
+    assert summary["fully_verified_rate_percent"] == 0.0
+

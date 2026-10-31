@@ -1,0 +1,9 @@
+{
+  "content_hash": "0b7cc61f44a183beaad9f7e2d93afae985c5a984506d951d7c1fc182fada6909",
+  "memory_id": "TEST-MISSING-CHECKPOINT",
+  "parent_revision_id": "fe7cfcd0-9f0d-4d18-8e2f-730151e2b3c3",
+  "previous_hash": "78bb53e2a74be0cd9d33119b010cf7c7410dc4ea7b62d6e95f233f663cff17f2",
+  "revision_id": "07297ddc-add5-4311-b554-61c1470a3eae",
+  "signature": "Rq5e4OttKcbMlDXnEy9wc4653ODuVHliSOsCjvYT2314sI1fOWmdwC8tmnCc0i5aPseJ/P2Wvf3xFdpKHhPXCA==",
+  "version": 3
+}

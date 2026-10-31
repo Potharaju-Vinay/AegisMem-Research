@@ -1,0 +1,9 @@
+scenario,compromised,retain_only,rule_based,tcrp
+trusted_memory,False,RETAIN,RETAIN,RETAIN
+mild_suspicion,False,RETAIN,RETAIN,RETAIN
+high_suspicion,False,RETAIN,RETAIN,QUARANTINE
+direct_compromise,True,RETAIN,ROLLBACK,ROLLBACK
+high_dependency_exposure,True,RETAIN,ROLLBACK,ROLLBACK
+corrupted_memory,True,RETAIN,ROLLBACK,ROLLBACK
+low_trust_with_history,True,RETAIN,ROLLBACK,ROLLBACK
+no_trusted_history,True,RETAIN,ROLLBACK,QUARANTINE

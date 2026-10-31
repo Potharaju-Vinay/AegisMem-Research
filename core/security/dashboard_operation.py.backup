@@ -1,0 +1,101 @@
+﻿import secrets
+from pathlib import Path
+
+from core.security.owner_signing_client import (
+    encode_json_body,
+    load_signing_key,
+    sign_http_request,
+)
+from core.security.request_signatures import verify_owner_request_signature
+
+BASE_DIR = Path(__file__).resolve().parents[2]
+
+REQUEST_PRIVATE_KEY_PATH = (
+    BASE_DIR / "security" / "keys" / "owner_request_private_key.pem"
+)
+
+ALLOWED_OPERATIONS = {
+    "attack.poison",
+    "attack.tamper",
+    "attack.delete",
+    "memory.detect",
+    "memory.recover",
+}
+
+
+class DashboardOperationAuthorizationError(Exception):
+    pass
+
+
+def authorize_dashboard_operation(
+    operation: str,
+    memory_id: str,
+    confirmed: bool,
+) -> dict:
+    if not isinstance(operation, str) or operation not in ALLOWED_OPERATIONS:
+        raise DashboardOperationAuthorizationError(
+            "Operation is not permitted."
+        )
+
+    if (
+        not isinstance(memory_id, str)
+        or not memory_id.strip()
+        or memory_id != memory_id.strip()
+        or len(memory_id) > 255
+    ):
+        raise DashboardOperationAuthorizationError(
+            "A valid memory ID is required."
+        )
+
+    if confirmed is not True:
+        raise DashboardOperationAuthorizationError(
+            "Explicit operation confirmation is required."
+        )
+
+    payload = encode_json_body({
+        "operation": operation,
+        "memory_id": memory_id,
+        "confirmed": True,
+    })
+
+    path = f"/dashboard/approved-operations/{operation}"
+    nonce = secrets.token_urlsafe(32)
+
+    try:
+        private_key = load_signing_key(REQUEST_PRIVATE_KEY_PATH)
+
+        headers = sign_http_request(
+            private_key=private_key,
+            method="POST",
+            path=path,
+            body=payload,
+            nonce=nonce,
+        )
+
+        verified = verify_owner_request_signature(
+            method="POST",
+            path=path,
+            timestamp=headers["X-Owner-Timestamp"],
+            nonce=headers["X-Owner-Nonce"],
+            signature_hex=headers["X-Owner-Signature"],
+            body=payload,
+        )
+
+    except Exception as exc:
+        raise DashboardOperationAuthorizationError(
+            "Dashboard operation authorization failed."
+        ) from exc
+
+    if not verified:
+        raise DashboardOperationAuthorizationError(
+            "Operation signature verification failed."
+        )
+
+    return {
+        "authorized": True,
+        "operation": operation,
+        "memory_id": memory_id,
+        "authorization_id": nonce,
+        "signature_verified": True,
+        "replay_protected": True,
+    }

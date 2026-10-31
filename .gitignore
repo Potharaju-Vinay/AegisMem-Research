@@ -1,0 +1,49 @@
+# Python Virtual Environments & Packages
+venv/
+.venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Secrets and Environment Variables
+.env
+.env.*
+!.env.example
+
+# Cryptographic Private Keys (Never commit private keys)
+security/keys/*private*.pem
+security/keys/*secret*.pem
+
+# Frontend & Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/node_modules/
+
+# SQLite Temporary and Test Databases
+*.db-journal
+*.db-wal
+*.db-shm
+test_*.db
+*.tmp
+
+# Logs and Scratch Artifacts
+logs/
+*.log
+scratch/
+backups/
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Specific
+.DS_Store
+Thumbs.db

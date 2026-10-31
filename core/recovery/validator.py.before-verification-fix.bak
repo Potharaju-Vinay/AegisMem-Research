@@ -1,0 +1,232 @@
+﻿
+from core.integrity.hash import calculate_version_hash
+from core.integrity.manifest_store import IntegrityManifestStore
+from core.memory.repository import MemoryRepository
+from core.security.owner_approval import verify_record_owner_approval
+from core.recovery.attestation import RecoveryAttestationStore
+from core.provenance.manager import ProvenanceManager
+from core.provenance.recovery_verifier import ProvenanceRecoveryVerifier
+
+class RecoveryValidator:
+    def __init__(
+        self,
+    repository: MemoryRepository,
+    manifest_store=None,
+    attestation_store=None,
+    provenance_manager=None,
+    provenance_verifier=None,
+):
+        self.repository = repository
+        self.manifest_store = manifest_store or IntegrityManifestStore()
+
+        attestation_dir = (
+        self.manifest_store.manifest_dir.parent
+        / "recovery_attestations"
+    )
+
+        self.attestation_store = (
+        attestation_store
+        or RecoveryAttestationStore(
+            attestation_dir=attestation_dir
+        )
+    )
+
+        self.provenance_manager = (
+        provenance_manager
+        or ProvenanceManager(repository.session)
+    )
+
+        self.provenance_verifier = (
+        provenance_verifier
+        or ProvenanceRecoveryVerifier()
+    )
+    def _has_valid_authorization(self, record) -> bool:
+        return verify_record_owner_approval(record)
+
+    def _has_valid_owner_authorization(self, record) -> bool:
+        return self._has_valid_authorization(record)
+
+    def _has_valid_recovery_attestation(self, record) -> bool:
+        attestation = self.attestation_store.load_verified_attestation(
+            record
+        )
+
+        if attestation is None:
+            return False
+
+        source = self.repository.get_version(
+            record.memory_id,
+            attestation["source_version"],
+        )
+
+        compromised = self.repository.get_version(
+            record.memory_id,
+            attestation["compromised_version"],
+        )
+
+        if source is None or compromised is None:
+            return False
+
+        if source.revision_id != attestation["source_revision_id"]:
+            return False
+
+        if source.content_hash != attestation["source_content_hash"]:
+            return False
+
+        if compromised.revision_id != attestation["compromised_revision_id"]:
+            return False
+
+        if compromised.content_hash != attestation["compromised_content_hash"]:
+            return False
+
+        if record.parent_revision_id != compromised.revision_id:
+            return False
+
+        if record.content != source.content:
+            return False
+
+        if not self._has_valid_owner_authorization(source):
+            return False
+
+        try:
+            source_manifest_valid = (
+                self.manifest_store.has_manifest(source)
+                and self.manifest_store.verify_record(source)
+            )
+        except Exception:
+            source_manifest_valid = False
+
+        if not source_manifest_valid:
+            return False
+
+        source_hash_valid = (
+            source.content_hash
+            == calculate_version_hash(
+                source.content,
+                source.previous_hash,
+            )
+        )
+
+        if not source_hash_valid:
+            return False
+
+        if source.status != "active":
+            return False
+
+        if source.trust_score < 0.8 or source.suspicion_score > 0.2:
+            return False
+
+        return True
+    
+    def _verify_provenance(self, memory_id: str) -> dict:
+        try:
+            events = self.provenance_manager.get_events(memory_id)
+            return self.provenance_verifier.verify(events)
+        except Exception:
+            return {
+            "verified": False,
+            "checkpoint_status": "VERIFICATION_ERROR",
+            "trusted_head_status": "VERIFICATION_ERROR",
+            "reason": "Provenance verification could not be completed.",
+        }
+
+    def validate(self, memory_id: str) -> dict:
+        memory = self.repository.get_latest(memory_id)
+
+        if memory is None:
+            return {
+                "valid": False,
+                "reason": "Recovered memory not found.",
+            }
+        provenance_result = self._verify_provenance(memory_id)
+
+        expected_hash = calculate_version_hash(
+            memory.content,
+            memory.previous_hash,
+        )
+
+        integrity_valid = expected_hash == memory.content_hash
+
+        try:
+            manifest_present = self.manifest_store.has_manifest(memory)
+            manifest_valid = (
+                manifest_present
+                and self.manifest_store.verify_record(memory)
+            )
+        except Exception:
+            manifest_present = False
+            manifest_valid = False
+
+        trust_valid = (
+            memory.trust_score >= 0.8
+            and memory.suspicion_score <= 0.2
+        )
+        status_valid = memory.status == "active"
+
+        owner_authorization_valid = (
+            self._has_valid_authorization(memory)
+        )
+
+        recovery_attestation_valid = (
+            self._has_valid_recovery_attestation(memory)
+        )
+
+        authorization_valid = owner_authorization_valid
+
+        content_valid = (
+    integrity_valid
+    and manifest_valid
+    and trust_valid
+    and status_valid
+)
+
+        provenance_verified = bool(
+            provenance_result.get("verified", False)
+)
+
+        recovery_provenance_verified = (
+        content_valid
+        and recovery_attestation_valid
+    and provenance_verified
+)
+
+        owner_verified = (
+    content_valid
+    and owner_authorization_valid
+    and provenance_verified
+)
+
+        fully_verified = owner_verified
+
+        authorization_valid = owner_authorization_valid
+
+        authorization_type = (
+    "OWNER"
+    if owner_verified
+    else "RECOVERY"
+    if recovery_provenance_verified
+    else "NONE"
+)
+
+        return {
+            "valid": content_valid,
+            "content_valid": content_valid,
+            "fully_verified": fully_verified,
+            "integrity": integrity_valid,
+            "integrity_manifest_present": manifest_present,
+            "integrity_manifest": manifest_valid,
+            "trust": trust_valid,
+            "status": status_valid,
+            "authorization": authorization_valid,
+            "owner_authorization_valid": owner_authorization_valid,
+            "recovery_attestation_valid": recovery_attestation_valid,
+            "recovery_provenance_verified": recovery_provenance_verified,
+            "authorization_type": authorization_type,
+            "authorization_state": memory.authorization_state,
+            "version": memory.version,
+            "content": memory.content,
+            "provenance_verified": provenance_result["verified"],
+"provenance_checkpoint_status": provenance_result["checkpoint_status"],
+"provenance_trusted_head_status": provenance_result["trusted_head_status"],
+"provenance_reason": provenance_result["reason"],
+        }

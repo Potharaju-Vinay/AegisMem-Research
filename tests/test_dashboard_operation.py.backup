@@ -1,0 +1,43 @@
+import pytest
+
+from core.security.dashboard_operation import (
+    ALLOWED_OPERATIONS,
+    DashboardOperationAuthorizationError,
+    authorize_dashboard_operation,
+)
+
+
+@pytest.mark.parametrize("operation", list(ALLOWED_OPERATIONS))
+def test_allowed_operations_require_confirmation(operation):
+    with pytest.raises(DashboardOperationAuthorizationError):
+        authorize_dashboard_operation(
+            operation=operation,
+            memory_id="POLICY-001",
+            confirmed=False,
+        )
+
+
+@pytest.mark.parametrize(
+    "operation",
+    ["invalid.operation", "", None, [], {}],
+)
+def test_rejects_invalid_operations(operation):
+    with pytest.raises(DashboardOperationAuthorizationError):
+        authorize_dashboard_operation(
+            operation=operation,
+            memory_id="POLICY-001",
+            confirmed=True,
+        )
+
+
+@pytest.mark.parametrize(
+    "memory_id",
+    ["", "   ", " POLICY-001", "POLICY-001 ", None, 123],
+)
+def test_rejects_invalid_memory_ids(memory_id):
+    with pytest.raises(DashboardOperationAuthorizationError):
+        authorize_dashboard_operation(
+            operation="memory.detect",
+            memory_id=memory_id,
+            confirmed=True,
+        )

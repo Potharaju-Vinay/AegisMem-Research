@@ -1,0 +1,13 @@
+{
+  "store_domain": "isolated_cryptographic_vault",
+  "memory_id": "PHASE3-REPLAY",
+  "version": 2,
+  "revision_id": "0fb3b40f-43d8-4fd1-917f-47a417fa7102",
+  "parent_revision_id": "c0e1a740-11bc-4e01-8c1b-329e4c5dd243",
+  "content": "CONTROLLED TEST BASELINE ? AegisMem recovery validation. Authorized test content established as a new baseline; this does not assert that prior historical content was verified.",
+  "content_hash": "d23a3a3db4a4792c38c288e860773d447eb130f43f9fccdb067c97667fb3cc4d",
+  "previous_hash": "acde492274a0e0da72a0a7aa0c343205c0e20694c19d863c9399d5d21dbf6dee",
+  "signature": "fkMmDcSuSq87nAOzGk4Z2OuWwzZt4xgukbQ/lkeH+ChBfKF33pUjbO5azC4paE4qgi00+dWqlexztkurDftoCA==",
+  "authorization_signature": "5f9ca088d7d6345742eb136028e69ccf3456f96eec92edcb266a0222aa3841bdc71c34084af203b8ac49b136144addcf5cb32dc43e25c3b4ecbff90227872502",
+  "authorization_id": "AEGISMEM-TEST-BASELINE-506584722725467c84df559cacf5a412"
+}

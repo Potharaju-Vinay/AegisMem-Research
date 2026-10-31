@@ -1,0 +1,8 @@
+﻿C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\memory\init_db.py:10: from core.soc.session_audit import SessionAuditEvent
+C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\memory\repository.py:64: def create_owner_authorized(
+C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\memory\service.py:10: self.repository = MemoryRepository(session)
+C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\security\dashboard_sessions.py:93: def record_session_audit(
+C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\security\dashboard_sessions.py:101: from core.soc.session_audit import SessionAuditEvent
+C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\security\dashboard_sessions.py:111: SessionAuditEvent(
+C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\security\monitor.py:16: self.repository = MemoryRepository(session)
+C:\Users\Sai Abhijith\Downloads\AegisMem-Research-main\AegisMem-Research-main\core\soc\session_audit.py:9: class SessionAuditEvent(Base):

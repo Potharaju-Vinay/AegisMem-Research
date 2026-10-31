@@ -1,0 +1,13 @@
+{
+  "store_domain": "isolated_cryptographic_vault",
+  "memory_id": "ENT-ACCESS-001",
+  "version": 1,
+  "revision_id": "56492332-576d-43d7-b0b2-911bd5bc9e0e",
+  "parent_revision_id": null,
+  "content": "All employees must use multi-factor authentication to access enterprise systems. Privileged access requires explicit authorization from an approved administrator. Access permissions must follow the principle of least privilege.",
+  "content_hash": "54ba9a55e498a4bb3bbafd9ffe8509edf39c891ebee4a46efb4cb5239f949350",
+  "previous_hash": null,
+  "signature": "FKH0LOuJYSW4EljOKy30xR9lhM6l3TMcBGpLUWucGQRzzaGCxKizQxR82GA3GWD6Kamx1PQG7xpXws1A6NsVCw==",
+  "authorization_signature": "5c6d7815fcd384df99f5270a4f4b9283f86e61dc7dda683b7f0c3f26f90f5b044b70865363badef22a39f8d2917fc0cdd4416546984618922cbd0e67e7f96a04",
+  "authorization_id": "fnnLyWb2HOuSAOHQcrssAZkVg6z1PH1sA0Ni6jsnCNA"
+}

@@ -1,0 +1,16 @@
+{
+  "compromised_content_hash": "913fa93d0b4fb0dd784e143bcfe4ed1355333e28d9bab92ca42e6658c444ca7a",
+  "compromised_revision_id": "cdd935d4-cb7f-4e24-86c0-b72d6043528a",
+  "compromised_version": 2,
+  "created_at": "2026-10-25T12:52:37.079815+00:00",
+  "memory_id": "POLICY-001",
+  "operation": "memory.recovery",
+  "protocol": "aegismem-recovery-attestation-v1",
+  "recovered_content_hash": "5c159a3f425d1079dd9dc531ebcc5f43e22ef32eeb0a8c14def6deef8dfb9e9b",
+  "recovered_revision_id": "59020855-3ba8-432f-b9dc-685ba114efd0",
+  "recovered_version": 3,
+  "signature": "xU2/b8dcKmCejzcROpvKglyZAXKlWTbaliPabaNF66xxjkrMAoSeyDLk4HZZQwbT9crK85fy5LWS6Y/Cwz+/Ag==",
+  "source_content_hash": "167631efcd1ccb998db25cbe1adb2747e1e443e5422de4e5d410c399d8daa669",
+  "source_revision_id": "b2b7f92b-d922-48d8-a498-eb1fa3950ca0",
+  "source_version": 1
+}
