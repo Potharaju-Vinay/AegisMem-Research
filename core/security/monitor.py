@@ -63,7 +63,11 @@ class AegisMemSecurityMonitor:
         graph.load()
         return graph
 
-    def process(self, memory_id: str):
+    def process(self, memory_id: str, t_write: float | None = None):
+        import time
+        from core.detection.telemetry import get_detection_telemetry
+
+        t0_write = t_write if t_write is not None else time.perf_counter()
         graph = self.build_graph()
 
         detector = MemoryCompromiseDetector(
@@ -73,14 +77,30 @@ class AegisMemSecurityMonitor:
         )
 
         detection = detector.detect(memory_id)
+        t_detect = time.perf_counter()
 
         if not detection.compromised:
+            t_finish = time.perf_counter()
+            telemetry_rec = get_detection_telemetry().record_incident(
+                memory_id=memory_id,
+                version=self.repository.get_latest(memory_id).version if self.repository.get_latest(memory_id) else 1,
+                t_write=t0_write,
+                t_detect=t_detect,
+                t_decide=t_detect,
+                t_recover=t_finish,
+                t_validate=t_finish,
+                detected=False,
+                recovered=False,
+                action_taken="NO_OP",
+            )
             return {
                 "detected": False,
                 "recovered": False,
                 "message": "No compromise detected.",
+                "telemetry": telemetry_rec,
             }
 
+        t_decide_start = time.perf_counter()
         impact_analyzer = AttackImpactAnalyzer(graph)
 
         orchestrator = AegisMemRecoveryOrchestrator(
@@ -91,13 +111,16 @@ class AegisMemSecurityMonitor:
             checkpoint_store=self.checkpoint_store,
             trusted_head_store=self.trusted_head_store,
         )
+        t_decide = time.perf_counter()
 
         recovery = orchestrator.recover_from_attack(
             compromised_memory_id=memory_id,
             attack_time=datetime.now(timezone.utc),
         )
+        t_recover = time.perf_counter()
 
         current = self.repository.get_latest(memory_id)
+        t_validate = time.perf_counter()
 
         recovery_results = recovery.get("results", [])
         content_recovered = any(
@@ -105,6 +128,20 @@ class AegisMemSecurityMonitor:
             and result.get("content_recovered", False)
             and result.get("recovery_provenance_verified", False)
             for result in recovery_results
+        )
+
+        action_taken = "ROLLBACK" if content_recovered else "QUARANTINE"
+        telemetry_rec = get_detection_telemetry().record_incident(
+            memory_id=memory_id,
+            version=current.version if current else 1,
+            t_write=t0_write,
+            t_detect=t_detect,
+            t_decide=t_decide,
+            t_recover=t_recover,
+            t_validate=t_validate,
+            detected=True,
+            recovered=content_recovered,
+            action_taken=action_taken,
         )
 
         return {
@@ -128,4 +165,5 @@ class AegisMemSecurityMonitor:
             "current_trust_score": (
                 current.trust_score if current else None
             ),
+            "telemetry": telemetry_rec,
         }

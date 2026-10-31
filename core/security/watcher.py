@@ -1,4 +1,6 @@
 import asyncio
+import time
+from typing import Any, Optional
 
 from sqlalchemy import select
 
@@ -8,14 +10,66 @@ from core.security.monitor import AegisMemSecurityMonitor
 
 
 class AegisMemWatcher:
-    def __init__(self, interval_seconds: float = 2.0):
+    """
+    Continuous compromise monitoring and real-time detection watcher.
+    Supports both:
+    1. Event-driven detection (zero 2.0s floor): immediate dispatch via store change hooks or PostgreSQL LISTEN/NOTIFY.
+    2. Periodic reconciliation scan: periodic polling fallback for un-hooked direct external writes.
+    """
+
+    def __init__(
+        self,
+        interval_seconds: float = 2.0,
+        event_driven: bool = False,
+        store: Optional[Any] = None,
+        session_factory: Optional[Any] = None,
+    ):
         self.interval_seconds = interval_seconds
+        self.event_driven = event_driven
         self._stop_event = asyncio.Event()
+        self._event_queue: Optional[asyncio.Queue] = None
         self._last_seen_versions = {}
         self._last_seen_fingerprints = {}
+        self.store = store
+        self.session_factory = (
+            session_factory
+            or getattr(store, "session_factory", None)
+            or getattr(store, "_session_factory", None)
+        )
+        if self.store is not None:
+            self.store.register_change_hook(self.on_store_change)
+
+    def on_store_change(self, memory_id: str, version: int) -> None:
+        """Immediate event-driven change notification hook from storage layer."""
+        t_write = time.perf_counter()
+        if self._event_queue is not None:
+            try:
+                self._event_queue.put_nowait((memory_id, version, t_write))
+            except Exception:
+                pass
+        else:
+            try:
+                self.process_memory(memory_id, t_write=t_write)
+            except Exception as exc:
+                print(f"[AegisMem Watcher Hook Exception] {type(exc).__name__}: {exc}")
+
+    def trigger_event(
+        self,
+        memory_id: str,
+        version: int = 1,
+        t_write: Optional[float] = None,
+    ) -> dict:
+        """
+        Synchronously trigger real-time detection and recovery for an incident with dynamic latency measurement.
+        """
+        t0 = t_write if t_write is not None else time.perf_counter()
+        return self.process_memory(memory_id, t_write=t0)
+
+    def _get_session(self):
+        return self.session_factory() if self.session_factory else get_session()
 
     def get_memory_ids(self):
-        session = get_session()
+        session = self._get_session()
         try:
             return session.execute(
                 select(MemoryRecord.memory_id).distinct()
@@ -24,7 +78,7 @@ class AegisMemWatcher:
             session.close()
 
     def get_latest_record_state(self, memory_id):
-        session = get_session()
+        session = self._get_session()
         try:
             memory = (
                 session.query(MemoryRecord)
@@ -59,11 +113,11 @@ class AegisMemWatcher:
             state["content"],
         )
 
-    def process_memory(self, memory_id):
-        session = get_session()
+    def process_memory(self, memory_id: str, t_write: Optional[float] = None):
+        session = self._get_session()
         try:
             monitor = AegisMemSecurityMonitor(session)
-            return monitor.process(memory_id)
+            return monitor.process(memory_id, t_write=t_write)
         except Exception:
             session.rollback()
             raise
@@ -140,21 +194,39 @@ class AegisMemWatcher:
         return results
 
     async def run(self):
-        print("[AegisMem Watcher] Background continuous watcher started (interval: 2.0s).")
-        while not self._stop_event.is_set():
-            try:
-                await asyncio.to_thread(self.scan_once)
-            except Exception as exc:
-                print(f"[AegisMem Watcher Exception] {type(exc).__name__}: {exc}")
+        if self.event_driven:
+            self._event_queue = asyncio.Queue()
+            print("[AegisMem Watcher] Event-driven real-time detection active (no polling delay floor).")
+            while not self._stop_event.is_set():
+                try:
+                    item = await asyncio.wait_for(
+                        self._event_queue.get(),
+                        timeout=self.interval_seconds,
+                    )
+                    memory_id, version, t_write = item
+                    await asyncio.to_thread(self.process_memory, memory_id, t_write)
+                    self._event_queue.task_done()
+                except asyncio.TimeoutError:
+                    # Reconciliation scan on timeout
+                    await asyncio.to_thread(self.scan_once)
+                except Exception as exc:
+                    print(f"[AegisMem Watcher Event Exception] {type(exc).__name__}: {exc}")
+        else:
+            print(f"[AegisMem Watcher] Background continuous watcher started (interval: {self.interval_seconds}s).")
+            while not self._stop_event.is_set():
+                try:
+                    await asyncio.to_thread(self.scan_once)
+                except Exception as exc:
+                    print(f"[AegisMem Watcher Exception] {type(exc).__name__}: {exc}")
 
-            try:
-                await asyncio.wait_for(
-                    self._stop_event.wait(),
-                    timeout=self.interval_seconds,
-                )
-            except asyncio.TimeoutError:
-                pass
+                try:
+                    await asyncio.wait_for(
+                        self._stop_event.wait(),
+                        timeout=self.interval_seconds,
+                    )
+                except asyncio.TimeoutError:
+                    pass
 
     def stop(self):
-        print("[AegisMem Watcher] Background continuous watcher stopped.")
+        print("[AegisMem Watcher] Background watcher stopped.")
         self._stop_event.set()
