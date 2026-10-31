@@ -1,0 +1,161 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 9 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2119 >>
+stream
+BT
+/F1 9 Tf
+40 750 Td
+14 TL
+( AegisMem Forensic Incident Dossier: INC-DEMO-20261101-024004) '
+(Title: Adversarial Database Tampering on Enterprise Refund Policy) '
+(Status: RESOLVED_SECURE | Severity: CRITICAL \(Score: 0.95\)) '
+(Recorded UTC: 2026-10-31T21:10:04.957962+00:00) '
+() '
+(--------------------------------------------------------------------------------) '
+( 1. Executive Summary & Exposure Window) '
+(- Exposure Window Guarantee: ZERO WRONG ANSWERS SERVED \(0\)) '
+(- Adversary Dwell Time: 0.0404 s) '
+(- Time to Detect: 3.32 ms) '
+(- Time to Recover: 15.18 ms) '
+(- Recovery Ladder Level Reached: Level 2 \(LOCAL_APPEND_ONLY_VAULT\)) '
+(- Cryptographic Chain of Custody: VERIFIED ?) '
+() '
+( 2. Threat Actor & Session Metadata) '
+(- Actor Identifier: kali-attacker) '
+(- Source IP / Port: 172.28.0.5:49152) '
+(- Attack Scenario: DIRECT_POLICY_TAMPERING) '
+(- MITRE TTP Mapping: T1565.001 - Stored Memory Manipulation) '
+(- Correlated Session ID: SES-DEMO-49291484) '
+() '
+( 3. Cryptographic & Behavioral Detection Evidence) '
+(- Signature Valid: ? Invalid / Missing Signature) '
+(- Hash Chain Continuity: ? Broken Hash Pointer) '
+(- Independent Trust Anchor: ? Unanchored / Mismatch) '
+(- Clock Skew Detected: 0.0200 s) '
+(- Anomaly Suspicion Score: 0.98) '
+(- Triggered Anomaly Signals:) '
+(  - MANIFEST_HASH_MISMATCH) '
+(  - UNVERIFIED_READ_BLOCKED) '
+(  - UNSIGNED_WRITE) '
+() '
+( 4. Tampered Memory Items & Content Diff) '
+( Target Memory: POLICY-REFUND-001 \(Class: POLICY\)) '
+(- Pre-Attack Hash: 5e729425dc1d20288e7ae49773ae265cd494eaecb02b69407af4c47124bc242c) '
+(- Tampered Hash: 5b0dffa3b6fe561b6b3ce01e285eb1093f9075dc2c0913a2f06738fd491f7d23) '
+(- Post-Recovery Hash: 5e729425dc1d20288e7ae49773ae265cd494eaecb02b69407af4c47124bc242c) '
+() '
+(diff) '
+(-------------------------------------------------------------------------------- v1 \(Legiti...) '
+(+++ v1 \(Tampered\)) '
+(@@ -1 +1 @@) '
+(-Standard 30-day return policy. Items must be returned in original condition within 30 calen...) '
+(+MALICIOUS OVERRIDE: Standard return policy extended to 180 days! All customer returns withi...) '
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 9 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 2632 >>
+stream
+BT
+/F1 9 Tf
+40 750 Td
+14 TL
+() '
+() '
+( 5. Dependency Cascade & Blast Radius) '
+(- Primary Compromised Node: POLICY-REFUND-001) '
+(- Blast Radius Score: 0.45) '
+(- Direct Downstream Dependents: FAQ-REFUND-001, TEMPLATE-REFUND-APPROVAL) '
+(- Transitive Dependents: CUST-MEMBERSHIP-STATUS) '
+(- Quarantined Cascading Items: None) '
+() '
+( 6. TCRP Candidate Costs & Recovery Planning) '
+(- Planner Selected Action: ROLLBACK) '
+(- Decision Rationale: Cost-optimal feasible action restoring trusted state from Level 2 vault) '
+(| Candidate Action | Evaluated Cost | Feasibility State |) '
+(|--------------------------------------------------------------------------------|----------...) '
+(| RETAIN | 1.0000 | Infeasible \(Unsafe\) |) '
+(| ROLLBACK | 0.1500 | Feasible |) '
+(| QUARANTINE | 0.4500 | Feasible |) '
+() '
+( 7. Recovery Ladder Execution & Derived State Repair) '
+(- Ladder Source Level: Level 2: LOCAL_APPEND_ONLY_VAULT) '
+(- Restored Version: v1) '
+(- Attestation Receipt: REC-ATT-44E94358) '
+(- Total Recovery Latency: 15.18 ms) '
+(- Purged Memory Gate Caches: cache:POLICY-REFUND-001) '
+(- Invalidated Response Templates: TEMPLATE-REFUND-APPROVAL) '
+(- Re-indexed Vector Embeddings: embed:POLICY-REFUND-001) '
+() '
+( 8. Chronological Event Timeline) '
+(| Time Offset | Event Type | Actor | Memory ID | Verified | Wrong Answer | Key Details |) '
+(|--------------------------------------------------------------------------------|----------...) '
+(| +0.0000s | READ_ATTEMPT | agent_clean | POLICY-REFUND-001 | ? | ?? 0 | {} |) '
+(| +0.0030s | READ_ATTEMPT | agent_clean | POLICY-REFUND-001 | ? | ?? 0 | {} |) '
+(| +0.0328s | PROBE | kali-attacker | POLICY-REFUND-001 | ? | ?? 0 | {"probe_type": "UNAUTHOR...) '
+(| +0.0513s | EXPLOIT | kali-attacker | POLICY-REFUND-001 | ? | ?? 0 | {"attack_type": "DIREC...) '
+(| +0.0545s | READ_ATTEMPT | customer_during_attack | POLICY-REFUND-001 | ? | ?? 0 | {"decisi...) '
+(| +0.0546s | DETECTION | read_path_gate | POLICY-REFUND-001 | ? | ?? 0 | {"reason": "Manifes...) '
+(| +0.0698s | RECOVERY | aegismem_tcrp_ladder | POLICY-REFUND-001 | ? | ?? 0 | {"ladder_level...) '
+(| +0.0732s | POST_RECOVERY_READ | customer_post_recovery | POLICY-REFUND-001 | ? | ?? 0 | {"...) '
+() '
+( 9. Read-Path Interception & Verification Log) '
+(| Actor | Memory ID | Gate Decision | Verified | Safe Fallback | Wrong Answer Served |) '
+(|--------------------------------------------------------------------------------|----------...) '
+(| customer_during_attack | POLICY-REFUND-001 | BLOCK_UNVERIFIED | ? | ?? Yes | ?? 0 |) '
+(| customer_post_recovery | POLICY-REFUND-001 | ALLOW | ? | No | ?? 0 |) '
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 9 0 R >> >> >>
+endobj
+8 0 obj
+<< /Length 271 >>
+stream
+BT
+/F1 9 Tf
+40 750 Td
+14 TL
+() '
+( 10. Post-Recovery Security Sign-Off) '
+(- Hash Chain Integrity: PASS ?) '
+(- Anchor Countersignature: PASS ?) '
+(- Read-Path Gate Unblocked: PASS ?) '
+(- Agent Answer Verification: PASS ?) '
+(- Final Certification: RESOLVED_SECURE) '
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000253 00000 n 
+0000002424 00000 n 
+0000002550 00000 n 
+0000005234 00000 n 
+0000005360 00000 n 
+0000005682 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+5750
+%%EOF

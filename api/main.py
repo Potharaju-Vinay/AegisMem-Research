@@ -2757,3 +2757,62 @@ def latest_recovery(http_request: Request):
 
     finally:
         session.close()
+
+
+# ==========================================
+# SOC Dashboard & Forensic Incidents (M10)
+# ==========================================
+
+from core.soc.dashboard_feed import get_soc_dashboard_feed
+from core.soc.incident_reporter import get_incident_manager
+from fastapi.responses import Response, PlainTextResponse
+
+
+@app.get("/api/soc/dashboard-feed")
+def get_soc_dashboard_feed_endpoint():
+    session = SessionLocal()
+    try:
+        feed = get_soc_dashboard_feed(db_session=session)
+        return feed
+    finally:
+        session.close()
+
+
+@app.get("/api/soc/incidents")
+def list_soc_incidents_endpoint():
+    mgr = get_incident_manager()
+    return mgr.list_incidents()
+
+
+@app.get("/api/soc/incidents/{incident_id}")
+def get_soc_incident_endpoint(incident_id: str):
+    mgr = get_incident_manager()
+    inc = mgr.get_incident(incident_id)
+    if not inc:
+        raise HTTPException(status_code=404, detail=f"Incident {incident_id} not found")
+    return inc.to_dict()
+
+
+@app.get("/api/soc/incidents/{incident_id}/markdown")
+def get_soc_incident_markdown_endpoint(incident_id: str):
+    mgr = get_incident_manager()
+    inc = mgr.get_incident(incident_id)
+    if not inc:
+        raise HTTPException(status_code=404, detail=f"Incident {incident_id} not found")
+    return PlainTextResponse(inc.to_markdown())
+
+
+@app.get("/api/soc/incidents/{incident_id}/pdf")
+def get_soc_incident_pdf_endpoint(incident_id: str):
+    mgr = get_incident_manager()
+    inc = mgr.get_incident(incident_id)
+    if not inc:
+        raise HTTPException(status_code=404, detail=f"Incident {incident_id} not found")
+    pdf_path = Path("data/incidents") / f"{incident_id}.pdf"
+    if not pdf_path.exists():
+        pdf_path = inc.export_pdf(pdf_path)
+    return Response(
+        content=pdf_path.read_bytes(),
+        media_type="application/pdf",
+        headers={"Content-Disposition": f"attachment; filename={incident_id}.pdf"}
+    )

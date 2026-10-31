@@ -1,0 +1,20 @@
+{
+  "incident_id": "INC-ENDPOINT-TEST",
+  "title": "Endpoint Integration Test Incident",
+  "timestamp": "2026-10-31T21:08:54.585855+00:00",
+  "status": "RESOLVED_SECURE",
+  "severity": "HIGH",
+  "severity_score": 0.85,
+  "attacker": {},
+  "session": {},
+  "timeline": [],
+  "read_items": [],
+  "modified_items": [],
+  "detection_evidence": {},
+  "dependency_impact": {},
+  "tcrp_decision": {},
+  "recovery_ladder_level": {},
+  "derived_state_repair": {},
+  "validation": {},
+  "exposure_count": 0
+}

@@ -2,7 +2,7 @@
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.142.2-green.svg)](https://fastapi.tiangolo.com/)
-[![Tests Passing](https://img.shields.io/badge/tests-239%20passed-brightgreen.svg)](tests/)
+[![Tests Passing](https://img.shields.io/badge/tests-296%20passed-brightgreen.svg)](tests/)
 [![License: Research](https://img.shields.io/badge/license-Research-orange.svg)](LICENSE)
 
 AegisMem is a self-healing security framework designed to protect the persistent, versioned long-term memory of enterprise AI agents. Instantiated for **Enterprise AI Customer Support**, AegisMem guards mission-critical enterprise knowledge (refund policies, warranty terms, escalation protocols, and pricing rules) against unauthorized tampering, adversarial memory poisoning, and historical state rewrites.
@@ -102,17 +102,35 @@ pip install -r requirements.txt
 ### 2. Run Test Suite
 AegisMem includes an extensive suite covering authorization, coordinated tampering, dependency propagation, multi-store vault resilience, and TCRP self-healing:
 ```powershell
-pytest tests -v
+pytest tests -q
 ```
-*Current test status: 239 passed, 0 failures.*
+*Current test status: 296 passed, 0 failures.*
 
-### 3. Start the Backend Gateway
+### 3. One-Command End-to-End Enterprise Demo (Milestone M10)
+Demonstrates the full 7-step enterprise lifecycle: signed staff update $\rightarrow$ mid-run database tampering $\rightarrow$ fail-closed read gate interception (0 wrong answers) $\rightarrow$ self-healing recovery from Trust Vault $\rightarrow$ restored correct answer $\rightarrow$ multi-format forensic incident export (JSON, Markdown, PDF):
 ```powershell
-uvicorn api.main:app --host 127.0.0.1 --port 8000
+python scripts/demo_end_to_end.py
+# Or via Makefile:
+make demo
 ```
-Interactive OpenAPI documentation will be accessible at `http://127.0.0.1:8000/docs`.
 
-### 4. Launch the Enterprise SOC Dashboard
+### 4. Reproducibility & Research Commands (`Makefile`)
+```bash
+make demo                        # End-to-end self-healing enterprise lifecycle walkthrough
+make seed                        # Initialize synthetic policies, FAQs, graph, and Ed25519 keys
+make attack SCENARIO=policy      # Run adaptive adversarial tampering from attacker harness
+make load                        # Concurrent load & latency test (10, 50, 100 sessions)
+make reproduce                   # Regenerate all comparative baseline tables and metrics
+make test                        # Execute full regression test suite (296 tests)
+```
+
+### 5. Multi-Container Segmented Network Deployment (`docker-compose.yml`)
+To run the full segmented multi-container environment (Gateway, DB, Append-Only Vault, Anchor Witness, Watcher, Agent, Attacker):
+```bash
+docker compose up --build -d
+```
+
+### 6. Launch the Enterprise SOC Dashboard
 ```powershell
 cd frontend
 npm install
@@ -123,26 +141,36 @@ Open `http://localhost:5173` in your browser. The dashboard provides:
 * **AI Assistant**: Secure customer support RAG assistant verified against the read-path gate.
 * **Memory Management**: Monitored enterprise memory repository and dependency graph.
 * **Live Recovery**: Visual 3-stage diffing (Trusted v1 $\rightarrow$ Attacked v2 $\rightarrow$ Recovered v3).
-* **SOC Audit**: Telemetry tracking IP origin, session tokens, and threat severity.
+* **SOC Audit & Dossiers**: Live telemetry tracking IP origin, dwell times, and downloadable incident reports (JSON, Markdown, PDF).
 
 ---
 
 ## Security Model & Claims
 
-| Attack Scenario | Vulnerability Without AegisMem | AegisMem Mitigation |
-|---|---|---|
-| **Direct Policy Tampering** (e.g. refund window 30 $\rightarrow$ 180 days) | Bot serves modified policy; direct financial loss | Watcher detects hash mismatch; read-path gate blocks access; TCRP rolls back to verified version. |
-| **Historical Store Tampering** ($k=1$ attack on SQLite) | Single-store resolvers fail or quarantine permanently | TCRP falls back to `ReplicatedTrustVault`, verifies Ed25519 signature, and auto-repairs SQLite. |
-| **Conversational Injection** (Customer talks agent into storing "policy") | Agent adopts customer claim as company rule | Memory class authority tiers prevent conversation notes from writing to policy classes. |
-| **Total Multi-Store Compromise** ($k=n$) | Undetected corruption served to customers | All unverified candidates fail Ed25519 validation; system safely quarantines memory (0% forged data served). |
+| Attack Scenario | Vulnerability Without AegisMem | AegisMem Mitigation | Defended Evidence |
+|---|---|---|---|
+| **Direct Policy Tampering** (e.g. refund window 30 $\rightarrow$ 180 days) | Bot serves modified policy; direct financial loss | Watcher detects hash mismatch; read-path gate blocks access; TCRP rolls back to verified version. | 0 wrong answers served across 10/50/100 concurrency tiers |
+| **Historical Store Tampering** ($k=1$ attack on SQLite) | Single-store resolvers fail or quarantine permanently | TCRP falls back to `ReplicatedTrustVault`, verifies Ed25519 signature, and auto-repairs SQLite. | 100% recovery accuracy vs 90.9% for unanchored TCRP |
+| **Conversational Injection** (Customer talks agent into storing "policy") | Agent adopts customer claim as company rule | Memory class authority tiers prevent conversation notes from writing to policy classes. | MINJA injection blocked fail-closed (Exp 2) |
+| **Total Multi-Store Compromise** ($k=n$) | Undetected corruption served to customers | All unverified candidates fail Ed25519 validation; system safely quarantines memory (0% forged data served). | Level 5 Fail-safe quarantine activated (0 exposure) |
+| **Legitimate Staff Policy Modification** (Shipping SLA update) | Heuristic rule-based systems falsely flag numerical changes | Cryptographic owner authorization with Ed25519 and nonce registry verifies legitimate updates. | 0.0% False Rollback Rate (FRR) vs 10.0% for rule heuristics |
 
 ---
 
-## Containerized Deployment (Docker)
+## Milestone Progress Matrix
 
-To run the standalone backend container:
-```bash
-docker build -t aegismem-backend .
-docker run -p 8000:8000 -v $(pwd)/data:/app/data aegismem-backend
-```
+| Milestone | Capability | Status | Acceptance Verification |
+|---|---|---|---|
+| **M0** | Packaging, requirements pinning, hygiene, and vulnerability baseline | ✅ Complete | Clean virtualenv, 27 tests pass, `test_trusted_version_gap.py` |
+| **M1** | Portable storage adapter (SQLite & PostgreSQL) | ✅ Complete | Unified MemoryStore interface, identical test suites pass |
+| **M2** | Ed25519 cryptographic owner authorization & nonce registry | ✅ Complete | Cryptographic signing, replay/skew rejection, admin client |
+| **M3** | Trust anchor, append-only vault & 5-level recovery ladder | ✅ Complete | Independent countersignatures, key revocation registry |
+| **M4** | Event-driven real-time detection telemetry | ✅ Complete | Write $\rightarrow$ Detect $\rightarrow$ Recover telemetry, sub-5ms detection |
+| **M5** | Verify-on-read ReadPathGate & memory authority tiers | ✅ Complete | Fail-closed read gate, MINJA injection prevention, cache invalidation |
+| **M6** | Customer support domain taxonomy & RAG evaluator | ✅ Complete | 330 benchmark queries, 6 memory classes, pluggable LLM |
+| **M7** | Adaptive attacker suite & forensic session timeline | ✅ Complete | Read logger, dwell-time analysis, adaptive attackers A/B/C |
+| **M8** | 5 Comparative baselines & statistical benchmark reproduction | ✅ Complete | AegisMem: 0% ASR, 100% Rec, 0% FRR vs Retain/Rule/CAMS/NoAnchor |
+| **M9** | Concurrent load generator & latency profile (10/50/100 sessions) | ✅ Complete | Sub-50ms self-healing under load, zero exposure window |
+| **M10** | Forensic incident dossiers (JSON/MD/PDF), SOC feed & container demo | ✅ Complete | 7-step enterprise demo, `make demo`, RAG metrics per class |
+| **M11** | Research paper documentation, threat model, limitations & claims matrix | ⏳ Next | Formal threat model, real-world bounds, reproducibility guide |
 

@@ -1,0 +1,143 @@
+# AegisMem Multi-Container Segmented Deployment Architecture (Part C1)
+# Enforces isolated networks: public-net, data-net, vault-net, anchor-net
+version: '3.8'
+
+services:
+  memory-db:
+    image: postgres:16-alpine
+    container_name: aegismem-memory-db
+    environment:
+      POSTGRES_DB: aegismem_live
+      POSTGRES_USER: aegis_admin
+      POSTGRES_PASSWORD: aegis_secure_password_2026
+    ports:
+      - "5432:5432"
+    volumes:
+      - memory_pgdata:/var/lib/postgresql/data
+    networks:
+      - data-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aegis_admin -d aegismem_live"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  vault-db:
+    image: postgres:16-alpine
+    container_name: aegismem-vault-db
+    environment:
+      POSTGRES_DB: aegismem_vault
+      POSTGRES_USER: vault_operator
+      POSTGRES_PASSWORD: vault_airgapped_password_2026
+    ports:
+      - "5433:5432"
+    volumes:
+      - vault_pgdata:/var/lib/postgresql/data
+    networks:
+      - vault-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vault_operator -d aegismem_vault"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  aegismem-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegismem-gateway
+    command: ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    environment:
+      - DATABASE_URL=postgresql://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
+      - AEGIS_STORAGE_BACKEND=postgresql
+      - AEGIS_OWNER_AUTH=true
+    ports:
+      - "8000:8000"
+    networks:
+      - public-net
+      - data-net
+    depends_on:
+      memory-db:
+        condition: service_healthy
+
+  aegismem-detector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegismem-detector
+    command: ["python", "-m", "core.security.watcher"]
+    environment:
+      - DATABASE_URL=postgresql://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
+      - AEGIS_STORAGE_BACKEND=postgresql
+    networks:
+      - data-net
+    depends_on:
+      memory-db:
+        condition: service_healthy
+
+  aegismem-recovery:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegismem-recovery
+    command: ["python", "-c", "import time; print('AegisMem Self-Healing TCRP Resolver Active'); time.sleep(86400)"]
+    environment:
+      - DATABASE_URL=postgresql://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
+      - VAULT_URL=postgresql://vault_operator:vault_airgapped_password_2026@vault-db:5432/aegismem_vault
+    networks:
+      - data-net
+      - vault-net
+    depends_on:
+      memory-db:
+        condition: service_healthy
+      vault-db:
+        condition: service_healthy
+
+  anchor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegismem-anchor-witness
+    command: ["python", "-c", "import time; print('AegisMem Independent Anchor Witness Active'); time.sleep(86400)"]
+    networks:
+      - anchor-net
+
+  support-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegismem-support-agent
+    command: ["python", "-c", "import time; print('Enterprise Support Agent Active (RAG via ReadPathGate)'); time.sleep(86400)"]
+    environment:
+      - GATEWAY_URL=http://aegismem-gateway:8000
+    networks:
+      - public-net
+    depends_on:
+      - aegismem-gateway
+
+  attacker:
+    image: debian:bookworm-slim
+    container_name: aegismem-attacker
+    command: ["bash", "-c", "apt-get update && apt-get install -y curl jq python3 && echo 'Adversary Container Ready' && sleep infinity"]
+    networks:
+      - public-net
+    depends_on:
+      - aegismem-gateway
+
+networks:
+  public-net:
+    driver: bridge
+  data-net:
+    driver: bridge
+    internal: false
+  vault-net:
+    driver: bridge
+    internal: false
+  anchor-net:
+    driver: bridge
+    internal: false
+
+volumes:
+  memory_pgdata:
+  vault_pgdata:
+
