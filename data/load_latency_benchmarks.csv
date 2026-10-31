@@ -1,0 +1,4 @@
+concurrency,total_requests,duration_seconds,throughput_rps,error_rate_percent,exposure_window_wrong_answers,base_p50_ms,base_p95_ms,base_p99_ms,attack_p50_ms,attack_p95_ms,attack_p99_ms,recovery_p50_ms,recovery_p95_ms,recovery_p99_ms,recovery_duration_ms,gate_added_overhead_ms
+10,200,0.452,442.0,37.5,0,18.469,30.32,32.084,14.032,17.94,20.843,15.165,16.795,18.261,26.08,17.468
+50,1000,2.409,415.1,6.0,0,125.226,138.536,141.308,113.575,120.212,121.528,110.378,120.778,123.126,28.02,124.389
+100,2000,5.121,390.5,2.7,0,253.194,288.189,295.324,218.262,244.632,247.836,231.731,309.412,322.459,35.22,252.153
