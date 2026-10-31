@@ -1,21 +1,21 @@
 from enum import Enum
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, Dict, Optional
 
 
-class AuthorityTier(int, Enum):
-    TIER_1_CRITICAL = 1       # Policy, Pricing/Promotions, Escalation Procedures (Signed staff only)
-    TIER_2_HIGH = 2           # Product Knowledge, FAQs, Safety Guides (Signed editors only)
-    TIER_3_MEDIUM = 3         # Customer Profiles, Account History (System with verified provenance)
-    TIER_4_LOW = 4            # Conversation-derived notes, customer claims (Lowest authority)
+class AuthorityTier(str, Enum):
+    TIER_1_CRITICAL = "tier_1_critical"       # Policy, Pricing, Promotions, Escalation (Signed staff only)
+    TIER_2_HIGH = "tier_2_high"               # Product FAQs, Setup Guides (Signed editors)
+    TIER_3_MEDIUM = "tier_3_medium"           # Customer Profile, Ticket History (System with provenance)
+    TIER_4_LOW = "tier_4_low"                 # Conversation-derived notes (Lowest authority)
 
 
 class MemoryClass(str, Enum):
-    POLICY = "policy"                                     # refund window, warranty, returns, SLA
-    PRICING_PROMOTIONS = "pricing_promotions"             # discount rules, promo codes, rate cards
-    ESCALATION_PROCEDURES = "escalation_procedures"       # identity verification, security escalation
-    PRODUCT_FAQ = "product_faq"                           # product specs, setup guides, FAQs
-    CUSTOMER_PROFILE = "customer_profile"                 # contact data, past orders, verified PII
-    CONVERSATION_NOTE = "conversation_note"               # conversation-derived claims, chat notes
+    POLICY = "policy"
+    PRICING_PROMOTIONS = "pricing_promotions"
+    ESCALATION_PROCEDURES = "escalation_procedures"
+    PRODUCT_FAQ = "product_faq"
+    CUSTOMER_PROFILE = "customer_profile"
+    CONVERSATION_NOTE = "conversation_note"
 
 
 # Mapping from MemoryClass to AuthorityTier and verification requirements
@@ -78,6 +78,8 @@ def classify_memory(memory_id: str, metadata: Optional[Dict[str, Any]] = None) -
                 return mc
 
     mid = memory_id.upper()
+    if "NOTE" in mid or "CHAT" in mid or "CONV" in mid or "CLAIM" in mid:
+        return MemoryClass.CONVERSATION_NOTE
     if "POLICY" in mid or "RETURN" in mid or "REFUND" in mid or "WARRANTY" in mid or "SLA" in mid:
         return MemoryClass.POLICY
     if "PRICING" in mid or "PROMO" in mid or "DISCOUNT" in mid:
@@ -88,8 +90,6 @@ def classify_memory(memory_id: str, metadata: Optional[Dict[str, Any]] = None) -
         return MemoryClass.PRODUCT_FAQ
     if "CUSTOMER" in mid or "USER" in mid or "PROFILE" in mid or "ACCOUNT" in mid:
         return MemoryClass.CUSTOMER_PROFILE
-    if "NOTE" in mid or "CHAT" in mid or "CONV" in mid or "CLAIM" in mid:
-        return MemoryClass.CONVERSATION_NOTE
 
     # Default to policy for enterprise memories
     return MemoryClass.POLICY

@@ -2,6 +2,7 @@ import threading
 import time
 from typing import Any, Dict, List, Optional, Tuple
 
+from core.gateway.read_logger import ReadAccessLogger, get_read_access_logger
 from core.integrity.hash import calculate_version_hash
 from core.integrity.manifest_store import IntegrityManifestStore
 from core.memory.authority import (
@@ -32,6 +33,7 @@ class ReadPathGate:
     - Zero exposure window (0 wrong answers served).
     - Verification cache keyed on (memory_id, version, content_hash), invalidated on head change.
     - Authority tier boundaries: prevents conversation notes from overriding policies (MINJA defense).
+    - Read access logging for forensic dwell-time and incident reconstruction.
     """
 
     def __init__(
@@ -39,12 +41,14 @@ class ReadPathGate:
         repository: MemoryRepository,
         manifest_store: Optional[IntegrityManifestStore] = None,
         revocation_registry: Optional[KeyRevocationRegistry] = None,
+        read_logger: Optional[ReadAccessLogger] = None,
         enable_cache: bool = True,
         cache_ttl_seconds: float = 300.0,
     ):
         self.repository = repository
-        self.manifest_store = manifest_store
+        self.manifest_store = manifest_store if manifest_store is not None else getattr(repository, "manifest_store", None)
         self.revocation_registry = revocation_registry or get_revocation_registry()
+        self.read_logger = read_logger if read_logger is not None else get_read_access_logger()
         self.enable_cache = enable_cache
         self.cache_ttl_seconds = cache_ttl_seconds
         self._verification_cache: Dict[Tuple[str, int, str], Dict[str, Any]] = {}
@@ -113,6 +117,9 @@ class ReadPathGate:
         memory_id: str,
         required_class: Optional[MemoryClass | str] = None,
         fail_closed: bool = True,
+        session_id: Optional[str] = None,
+        source_ip: Optional[str] = None,
+        accessor: str = "support_agent",
     ) -> Optional[MemoryRecord]:
         """
         Retrieves and strictly verifies the latest memory revision before serving to the agent.
@@ -122,6 +129,15 @@ class ReadPathGate:
         """
         record = self.repository.get_latest(memory_id)
         if record is None:
+            if self.read_logger:
+                self.read_logger.log_read(
+                    memory_id=memory_id,
+                    version=0,
+                    accessor=accessor,
+                    session_id=session_id,
+                    source_ip=source_ip,
+                    verified=False,
+                )
             return None
 
         # Determine Memory Class
@@ -132,15 +148,24 @@ class ReadPathGate:
             if isinstance(required_class, str):
                 required_class = MemoryClass(required_class.lower())
             
-            # If agent requests a Policy or FAQ, but the memory is a conversation note, reject!
+            # If agent requests a Policy or FAQ, but the memory is a conversation note or customer profile, reject!
             if required_class in {MemoryClass.POLICY, MemoryClass.PRICING_PROMOTIONS, MemoryClass.ESCALATION_PROCEDURES, MemoryClass.PRODUCT_FAQ}:
-                if mem_class == MemoryClass.CONVERSATION_NOTE:
+                if mem_class in {MemoryClass.CONVERSATION_NOTE, MemoryClass.CUSTOMER_PROFILE}:
                     with self._lock:
                         self.stats["blocked_reads"] += 1
+                    if self.read_logger:
+                        self.read_logger.log_read(
+                            memory_id=record.memory_id,
+                            version=record.version,
+                            accessor=accessor,
+                            session_id=session_id,
+                            source_ip=source_ip,
+                            verified=False,
+                        )
                     if fail_closed:
                         return None
                     raise UnverifiedMemoryAccessError(
-                        f"Authority Tier Violation: Conversation-derived note '{memory_id}' cannot be served as '{required_class.value}'."
+                        f"Authority Tier Violation: Lower authority record '{memory_id}' ({mem_class.value}) cannot be served as '{required_class.value}'."
                     )
 
         # Check if verify-on-read is required
@@ -148,6 +173,15 @@ class ReadPathGate:
         if not class_policy.get("verify_on_read", False):
             with self._lock:
                 self.stats["verified_reads"] += 1
+            if self.read_logger:
+                self.read_logger.log_read(
+                    memory_id=record.memory_id,
+                    version=record.version,
+                    accessor=accessor,
+                    session_id=session_id,
+                    source_ip=source_ip,
+                    verified=True,
+                )
             return record
 
         # Verification Cache Lookup
@@ -161,9 +195,27 @@ class ReadPathGate:
                     if cached_entry["verified"]:
                         self.stats["cache_hits"] += 1
                         self.stats["verified_reads"] += 1
+                        if self.read_logger:
+                            self.read_logger.log_read(
+                                memory_id=record.memory_id,
+                                version=record.version,
+                                accessor=accessor,
+                                session_id=session_id,
+                                source_ip=source_ip,
+                                verified=True,
+                            )
                         return record
                     else:
                         self.stats["blocked_reads"] += 1
+                        if self.read_logger:
+                            self.read_logger.log_read(
+                                memory_id=record.memory_id,
+                                version=record.version,
+                                accessor=accessor,
+                                session_id=session_id,
+                                source_ip=source_ip,
+                                verified=False,
+                            )
                         if fail_closed:
                             return None
                         raise UnverifiedMemoryAccessError(f"Cached verification failed for memory '{memory_id}'.")
@@ -182,6 +234,15 @@ class ReadPathGate:
 
             if not is_verified:
                 self.stats["blocked_reads"] += 1
+                if self.read_logger:
+                    self.read_logger.log_read(
+                        memory_id=record.memory_id,
+                        version=record.version,
+                        accessor=accessor,
+                        session_id=session_id,
+                        source_ip=source_ip,
+                        verified=False,
+                    )
                 if fail_closed:
                     return None
                 raise UnverifiedMemoryAccessError(
@@ -189,6 +250,15 @@ class ReadPathGate:
                 )
 
             self.stats["verified_reads"] += 1
+            if self.read_logger:
+                self.read_logger.log_read(
+                    memory_id=record.memory_id,
+                    version=record.version,
+                    accessor=accessor,
+                    session_id=session_id,
+                    source_ip=source_ip,
+                    verified=True,
+                )
 
         return record
 
@@ -196,6 +266,9 @@ class ReadPathGate:
         self,
         required_class: MemoryClass,
         memory_ids: Optional[List[str]] = None,
+        session_id: Optional[str] = None,
+        source_ip: Optional[str] = None,
+        accessor: str = "support_agent",
     ) -> List[MemoryRecord]:
         """
         Queries all verified memories belonging to a specific authority class.
@@ -211,7 +284,14 @@ class ReadPathGate:
         for mid in all_ids:
             m_class = classify_memory(mid)
             if m_class == required_class:
-                rec = self.get_verified_memory(mid, required_class=required_class, fail_closed=True)
+                rec = self.get_verified_memory(
+                    mid,
+                    required_class=required_class,
+                    fail_closed=True,
+                    session_id=session_id,
+                    source_ip=source_ip,
+                    accessor=accessor,
+                )
                 if rec is not None:
                     verified_records.append(rec)
 

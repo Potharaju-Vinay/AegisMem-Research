@@ -37,6 +37,8 @@ logs/
 *.log
 scratch/
 backups/
+data/*.jsonl
+data/detection_telemetry.json
 
 # IDE and Editor Files
 .vscode/

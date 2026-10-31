@@ -86,12 +86,25 @@ class EnterpriseSupportAgent:
             m = re.search(r"(\d+)\s+days?", content.lower())
         return int(m.group(1)) if m else 30
 
-    def answer_query(self, query_text: str, target_memory_id: str) -> Dict[str, Any]:
+    def answer_query(
+        self,
+        query_text: str,
+        target_memory_id: str,
+        session_id: Optional[str] = None,
+        source_ip: Optional[str] = None,
+        accessor: str = "support_agent",
+    ) -> Dict[str, Any]:
         """
         Executes Retrieval-Augmented Generation (RAG) strictly through the ReadPathGate.
         """
         # Step 1: Secure Retrieval through ReadPathGate
-        verified_memory = self.read_gate.get_verified_memory(target_memory_id, fail_closed=True)
+        verified_memory = self.read_gate.get_verified_memory(
+            target_memory_id,
+            fail_closed=True,
+            session_id=session_id,
+            source_ip=source_ip,
+            accessor=accessor,
+        )
 
         if verified_memory is None:
             # Gate refused to serve unverified / tampered content
