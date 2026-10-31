@@ -76,3 +76,4 @@ def test_aegismem_cryptographic_resolver_rejects_tampered_history():
     assert len(evaluation["candidates"]) == 1
     assert evaluation["candidates"][0]["status"] == "REJECTED_CANDIDATE"
     assert any("Owner approval signature" in r for r in evaluation["candidates"][0]["reasons"])
+

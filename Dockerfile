@@ -41,3 +41,4 @@ HEALTHCHECK --interval=15s --timeout=5s --start-period=5s --retries=3 \
 
 # Start FastAPI application via Uvicorn
 CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+

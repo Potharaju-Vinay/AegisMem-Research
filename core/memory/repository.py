@@ -16,10 +16,12 @@ class MemoryRepository:
         session: Session,
         manifest_store: IntegrityManifestStore | None = None,
         vault_store=None,
+        store=None,
     ):
         self.session = session
         self.manifest_store = manifest_store or IntegrityManifestStore()
         self.vault_store = vault_store
+        self.store = store
 
     def create(
         self,
@@ -66,7 +68,8 @@ class MemoryRepository:
         self.session.add(record)
         self.session.commit()
         self.session.refresh(record)
-
+        if getattr(self, 'store', None):
+            self.store.notify_change(record.memory_id, record.version)
         return record
 
     
@@ -181,6 +184,8 @@ class MemoryRepository:
 
             self.session.commit()
             self.session.refresh(record)
+            if getattr(self, 'store', None):
+                self.store.notify_change(record.memory_id, record.version)
             return record
 
         except Exception:

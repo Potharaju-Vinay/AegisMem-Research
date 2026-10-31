@@ -145,3 +145,4 @@ To run the standalone backend container:
 docker build -t aegismem-backend .
 docker run -p 8000:8000 -v $(pwd)/data:/app/data aegismem-backend
 ```
+
