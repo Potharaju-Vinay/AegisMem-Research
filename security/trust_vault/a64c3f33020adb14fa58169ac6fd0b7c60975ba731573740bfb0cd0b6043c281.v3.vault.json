@@ -1,0 +1,14 @@
+{
+  "store_domain": "isolated_cryptographic_vault",
+  "memory_id": "SOP-003",
+  "version": 3,
+  "revision_id": "1862eabf-fe54-4f1d-870b-2009c81588ce",
+  "parent_revision_id": "2fca53a5-a24c-47c6-94b6-fbfc24c1d6ea",
+  "content": "Customer support must verify the purchase date before processing a refund.",
+  "content_hash": "182015c99dd19c244c16d5d97e38d125140d8b65d6ab527c6ed72cadcd82cd8c",
+  "previous_hash": "d7d74346d8cd7957cb45254c1a52143939428d399ab867adaac9a453afe3d20b",
+  "signature": "u6mjSUuNo5TGaaBwWpDRGAm4fAEgWZvx4+EsxBcYaoooY94a9AlLZFsKZkL8/XTITD2cbbKsvcTDQXVBQt5nAw==",
+  "authorization_signature": null,
+  "authorization_id": null,
+  "authorization_nonce": null
+}

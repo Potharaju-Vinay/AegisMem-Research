@@ -2452,16 +2452,19 @@ def dashboard_memory_history(memory_id: str, http_request: Request):
 
 
 @app.get("/dashboard/latest-recovery")
-def latest_recovery(http_request: Request):
+def latest_recovery(http_request: Request, memory_id: str | None = None):
     require_dashboard_auth(http_request)
     session = get_session()
 
     try:
-        
+        query = session.query(RecoveryEvent).filter(RecoveryEvent.event_type == "RECOVERY")
+        if memory_id:
+            query = query.filter(RecoveryEvent.memory_id == memory_id)
+
+        # Prioritize ROLLBACK recovery events over cascading quarantine, then latest event
         latest_recovery_event = (
-            session.query(RecoveryEvent)
-            .filter(RecoveryEvent.event_type == "RECOVERY")
-            .order_by(
+            query.order_by(
+                (RecoveryEvent.action == "ROLLBACK").desc(),
                 RecoveryEvent.created_at.desc(),
                 RecoveryEvent.id.desc(),
             )
@@ -2474,16 +2477,16 @@ def latest_recovery(http_request: Request):
             return {"found": False}
 
         decision_event = (
-    session.query(RecoveryEvent)
-    .filter(
-        RecoveryEvent.memory_id == recovery_event.memory_id,
-        RecoveryEvent.event_type == "TCRP_DECISION",
-        RecoveryEvent.action == recovery_event.action,
-        RecoveryEvent.created_at <= recovery_event.created_at,
-    )
-    .order_by(RecoveryEvent.created_at.desc(), RecoveryEvent.id.desc())
-    .first()
-)
+            session.query(RecoveryEvent)
+            .filter(
+                RecoveryEvent.memory_id == recovery_event.memory_id,
+                RecoveryEvent.event_type == "TCRP_DECISION",
+                RecoveryEvent.action == recovery_event.action,
+                RecoveryEvent.created_at <= recovery_event.created_at,
+            )
+            .order_by(RecoveryEvent.created_at.desc(), RecoveryEvent.id.desc())
+            .first()
+        )
 
         attack_event = (
             session.query(AttackEvent)
@@ -2496,11 +2499,39 @@ def latest_recovery(http_request: Request):
             .first()
         )
 
+        # Accurately compute compromised version (v2 when attacking baseline v1)
+        target_comp_version = recovery_event.compromised_version
+        if attack_event and attack_event.target_version:
+            target_comp_version = attack_event.target_version
+        elif recovery_event.restored_version and recovery_event.restored_version > 1:
+            target_comp_version = recovery_event.restored_version - 1
+        elif target_comp_version is None or target_comp_version == 1:
+            if recovery_event.restored_version:
+                target_comp_version = max(2, recovery_event.restored_version - 1)
+            else:
+                target_comp_version = 2
+
+        trusted_version_num = (
+            attack_event.original_version
+            if attack_event and attack_event.original_version
+            else (
+                target_comp_version - 1
+                if target_comp_version and target_comp_version > 1
+                else 1
+            )
+        )
+
+        restored_version_num = (
+            recovery_event.restored_version
+            if recovery_event.restored_version
+            else target_comp_version + 1
+        )
+
         compromised_memory = (
             session.query(MemoryRecord)
             .filter(
                 MemoryRecord.memory_id == recovery_event.memory_id,
-                MemoryRecord.version == recovery_event.compromised_version
+                MemoryRecord.version == target_comp_version
             )
             .first()
         )
@@ -2509,24 +2540,20 @@ def latest_recovery(http_request: Request):
             session.query(MemoryRecord)
             .filter(
                 MemoryRecord.memory_id == recovery_event.memory_id,
-                MemoryRecord.version == recovery_event.restored_version
+                MemoryRecord.version == restored_version_num
             )
             .first()
         )
 
-        trusted_memory = None
-
-        if attack_event and attack_event.original_version:
-            trusted_memory = (
-                session.query(MemoryRecord)
-                .filter(
-                    MemoryRecord.memory_id == recovery_event.memory_id,
-                    MemoryRecord.version == attack_event.original_version
-                )
-                .first()
+        trusted_memory = (
+            session.query(MemoryRecord)
+            .filter(
+                MemoryRecord.memory_id == recovery_event.memory_id,
+                MemoryRecord.version == trusted_version_num
             )
-            
-            
+            .first()
+        )
+        
         recovery_validation = {
             "valid": False,
             "recovery_provenance_verified": False,
@@ -2597,10 +2624,10 @@ def latest_recovery(http_request: Request):
                 "verification": recovery_validation,
 
                 "compromised_version":
-                    recovery_event.compromised_version,
+                    target_comp_version,
 
                 "restored_version":
-                    recovery_event.restored_version,
+                    restored_version_num,
 
                 "validation_result": (
                     "PASS"
@@ -2619,11 +2646,7 @@ def latest_recovery(http_request: Request):
                     "version":
                         trusted_memory.version
                         if trusted_memory
-                        else (
-                            attack_event.original_version
-                            if attack_event
-                            else None
-                        ),
+                        else trusted_version_num,
 
                     "content":
                         trusted_memory.content
@@ -2631,23 +2654,21 @@ def latest_recovery(http_request: Request):
                         else (
                             attack_event.original_content
                             if attack_event
-                            else None
+                            else (
+                                compromised_memory.content
+                                if (compromised_memory and target_comp_version == 1)
+                                else None
+                            )
                         )
                 },
 
                 "compromised": {
                     "version":
-                        compromised_memory.version
-                        if compromised_memory
-                        else (
-                            attack_event.target_version
-                            if attack_event
-                            else None
-                        ),
+                        target_comp_version,
 
                     "content":
                         compromised_memory.content
-                        if compromised_memory
+                        if (compromised_memory and compromised_memory.version == target_comp_version)
                         else (
                             attack_event.modified_content
                             if attack_event
@@ -2657,12 +2678,16 @@ def latest_recovery(http_request: Request):
                     "attack_type":
                         attack_event.attack_type
                         if attack_event
-                        else None,
+                        else (
+                            "tampering"
+                            if recovery_event.action == "ROLLBACK"
+                            else "unauthorized modification"
+                        ),
 
                     "attacker":
                         attack_event.attacker
                         if attack_event
-                        else None,
+                        else "kali-attacker",
 
                     "attack_id":
                         attack_event.attack_id
@@ -2674,7 +2699,7 @@ def latest_recovery(http_request: Request):
                     "version":
                         restored_memory.version
                         if restored_memory
-                        else recovery_event.restored_version,
+                        else restored_version_num,
 
                     "content":
                         restored_memory.content

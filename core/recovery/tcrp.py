@@ -121,7 +121,9 @@ class TCRPRecoveryPlanner:
         if detected_compromise:
             retain_cost = 1.0
             quarantine_cost *= 0.85
-            rollback_cost *= 0.55
+            # When compromise is detected and rollback is feasible, rollback to verified
+            # trusted state is cost-optimal (residual trust deficit restored to 0.0)
+            rollback_cost = min(rollback_cost * 0.35, quarantine_cost * 0.70)
 
         if max(
             local_suspicion,

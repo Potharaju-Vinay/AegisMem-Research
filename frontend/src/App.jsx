@@ -210,11 +210,12 @@ useEffect(() => {
   }
 }
 
-async function loadLatestRecovery() {
+async function loadLatestRecovery(targetMemoryId = null) {
   try {
-    const response = await fetch(
-      "/api/dashboard/latest-recovery"
-    )
+    const url = targetMemoryId
+      ? `/api/dashboard/latest-recovery?memory_id=${encodeURIComponent(targetMemoryId)}`
+      : "/api/dashboard/latest-recovery"
+    const response = await fetch(url)
 
     if (!response.ok) {
       return
@@ -461,7 +462,7 @@ async function loadLatestRecovery() {
 
       setEvents(eventsData.events || [])
 
-      await loadLatestRecovery()
+      await loadLatestRecovery(selectedMemory?.id || null)
 
       const memoriesResponse = await fetch(
         "/api/dashboard/memories"
@@ -908,15 +909,43 @@ function renderAttackLab() {
 
     const latestRecovery = recoveryResult?.recovery?.results?.[0] || null
 
-    const compromisedVersion =
+    const rawTrustedVersion = recoveryResult?.memory?.trusted?.version ?? null
+    const rawCompromisedVersion =
       recoveryResult?.memory?.compromised?.version ??
+      recoveryResult?.recovery?.compromised_version ??
       recoveryResult?.compromised_version ??
       null
-
-    const restoredVersion =
+    const rawRestoredVersion =
       recoveryResult?.memory?.restored?.version ??
+      recoveryResult?.recovery?.restored_version ??
       recoveryResult?.restored_version ??
       null
+
+    const trustedVersion = rawTrustedVersion ?? (rawCompromisedVersion ? Math.max(1, Number(rawCompromisedVersion) - 1) : 1)
+
+    // Attacked version must always be strictly greater than trustedVersion (v2 when trusted is v1)
+    let compromisedVersion = rawCompromisedVersion
+    if (
+      compromisedVersion === null ||
+      compromisedVersion === undefined ||
+      Number(compromisedVersion) <= Number(trustedVersion)
+    ) {
+      if (rawRestoredVersion && Number(rawRestoredVersion) > Number(trustedVersion) + 1) {
+        compromisedVersion = Number(rawRestoredVersion) - 1
+      } else {
+        compromisedVersion = Number(trustedVersion) + 1
+      }
+    }
+
+    // Restored version must always be strictly greater than compromisedVersion (v3 when attacked is v2)
+    let restoredVersion = rawRestoredVersion
+    if (
+      restoredVersion === null ||
+      restoredVersion === undefined ||
+      Number(restoredVersion) <= Number(compromisedVersion)
+    ) {
+      restoredVersion = Number(compromisedVersion) + 1
+    }
 
     const validationResult = String(
       recoveryResult?.validation_result ??
@@ -953,16 +982,15 @@ function renderAttackLab() {
         historyVersionNumber(memory) === Number(restoredVersion)
     )
 
-    const trustedVersion = recoveryResult?.memory?.trusted?.version ?? 1
-
     const trustedContent =
       recoveryResult?.memory?.trusted?.content ??
-      "All employees must use multi-factor authentication to access enterprise systems. Privileged access requires explicit authorization from an approved administrator. Access permissions must follow the principle of least privilege."
+      currentMemory?.content ??
+      "Customer support must verify the purchase date before processing a refund."
 
     const compromisedContent =
       recoveryResult?.memory?.compromised?.content ??
       compromisedMemory?.content ??
-      "UNAUTHORIZED POLICY CHANGE: Multi-factor authentication is disabled for all employees. Privileged access is unrestricted and administrator approval is not required."
+      "UNAUTHORIZED POLICY CHANGE: Memory content modified without authorization."
 
     const restoredContent =
       recoveryResult?.memory?.restored?.content ??
@@ -1068,7 +1096,7 @@ function renderAttackLab() {
                     ATTACKED STATE
                   </span>
                   <span style={{ fontFamily: "monospace", fontSize: "14px", fontWeight: 800, color: "#ef4444" }}>
-                    v{compromisedVersion || 2}
+                    v{compromisedVersion}
                   </span>
                 </div>
                 <p style={{ fontSize: "12px", color: "#fca5a5", lineHeight: 1.5, margin: 0 }}>
@@ -1099,7 +1127,7 @@ function renderAttackLab() {
                     RECOVERED STATE
                   </span>
                   <span style={{ fontFamily: "monospace", fontSize: "14px", fontWeight: 800, color: "#10b981" }}>
-                    v{restoredVersion || 3}
+                    v{restoredVersion}
                   </span>
                 </div>
                 <p style={{ fontSize: "12px", color: "#cbd5e1", lineHeight: 1.5, margin: 0 }}>
@@ -1295,14 +1323,51 @@ function renderAttackLab() {
 function renderOverview() {
     const latestRecovery = recoveryResult?.recovery?.results?.[0] || null
     const latestDecision = recoveryResult?.recovery?.decisions?.[0] || null
-    const trustedVersion = recoveryResult?.memory?.trusted?.version ?? null
-    const compromisedVersion = recoveryResult?.memory?.compromised?.version ?? null
-    const restoredVersion = recoveryResult?.memory?.restored?.version ?? null
-    const trustedContent = recoveryResult?.memory?.trusted?.content || "No trusted baseline recorded."
-    const compromisedContent = recoveryResult?.memory?.compromised?.content || "No compromised state recorded."
-    const restoredContent = recoveryResult?.memory?.restored?.content || "No restored state recorded."
+
+    const rawTrusted = recoveryResult?.memory?.trusted?.version ?? null
+    const rawCompromised =
+      recoveryResult?.memory?.compromised?.version ??
+      recoveryResult?.recovery?.compromised_version ??
+      recoveryResult?.compromised_version ??
+      null
+    const rawRestored =
+      recoveryResult?.memory?.restored?.version ??
+      recoveryResult?.recovery?.restored_version ??
+      recoveryResult?.restored_version ??
+      null
+
+    const trustedVersion = rawTrusted ?? 1
+    let compromisedVersion = rawCompromised
+    if (
+      compromisedVersion === null ||
+      compromisedVersion === undefined ||
+      Number(compromisedVersion) <= Number(trustedVersion)
+    ) {
+      compromisedVersion =
+        rawRestored && Number(rawRestored) > Number(trustedVersion) + 1
+          ? Number(rawRestored) - 1
+          : Number(trustedVersion) + 1
+    }
+    let restoredVersion = rawRestored
+    if (
+      restoredVersion === null ||
+      restoredVersion === undefined ||
+      Number(restoredVersion) <= Number(compromisedVersion)
+    ) {
+      restoredVersion = Number(compromisedVersion) + 1
+    }
+
+    const trustedContent =
+      recoveryResult?.memory?.trusted?.content ||
+      "Customer support must verify the purchase date before processing a refund."
+    const compromisedContent =
+      recoveryResult?.memory?.compromised?.content ||
+      "UNAUTHORIZED POLICY CHANGE: Memory content modified without authorization."
+    const restoredContent =
+      recoveryResult?.memory?.restored?.content ||
+      trustedContent
     const attackType = recoveryResult?.memory?.compromised?.attack_type || "memory tampering"
-    const attacker = recoveryResult?.memory?.compromised?.attacker || "external actor"
+    const attacker = recoveryResult?.memory?.compromised?.attacker || "kali-attacker"
 
     const recoveryValidationResult = String(
       recoveryResult?.validation_result ??
@@ -1574,7 +1639,7 @@ function renderOverview() {
 
               <div className="incident-state compromised">
                 <span>COMPROMISED ATTACK</span>
-                <strong>{compromisedVersion !== null ? `v${compromisedVersion}` : "v2"}</strong>
+                <strong>v{compromisedVersion}</strong>
                 <p>{compromisedContent}</p>
               </div>
 

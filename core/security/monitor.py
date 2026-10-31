@@ -7,6 +7,7 @@ from core.recovery.orchestrator import AegisMemRecoveryOrchestrator
 from core.graph.dependency.engine import DependencyGraph
 from core.graph.dependency.repository import DependencyRepository
 from core.integrity.manifest_store import IntegrityManifestStore
+from core.recovery.vault import ReplicatedTrustVault
 from core.provenance.manager import ProvenanceManager
 from core.provenance.checkpoint import ProvenanceCheckpointStore
 from core.provenance.trusted_head import TrustedCheckpointHeadStore
@@ -21,6 +22,7 @@ class AegisMemSecurityMonitor:
         provenance_manager=None,
         checkpoint_store=None,
         trusted_head_store=None,
+        vault_store=None,
     ):
         self.session = session
 
@@ -28,6 +30,12 @@ class AegisMemSecurityMonitor:
             manifest_store
             if manifest_store is not None
             else IntegrityManifestStore()
+        )
+
+        self.vault_store = (
+            vault_store
+            if vault_store is not None
+            else ReplicatedTrustVault()
         )
 
         self.repository = MemoryRepository(session)
@@ -110,6 +118,7 @@ class AegisMemSecurityMonitor:
             provenance_manager=self.provenance_manager,
             checkpoint_store=self.checkpoint_store,
             trusted_head_store=self.trusted_head_store,
+            vault_store=self.vault_store,
         )
         t_decide = time.perf_counter()
 
