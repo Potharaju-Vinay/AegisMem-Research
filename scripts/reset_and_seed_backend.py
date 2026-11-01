@@ -18,13 +18,23 @@ from sqlalchemy.orm import sessionmaker
 from core.memory.database import DATABASE_URL, create_configured_engine, get_session, Base
 
 
-def get_target_session(db_name: str = "aegismem_demo"):
+PROTECTED_LIVE_DATABASE = "aegismem_live"
+ALLOWED_DEMO_DATABASE = "aegismem_demo"
+
+
+def get_target_session(db_name: str = ALLOWED_DEMO_DATABASE, read_only: bool = False):
     """
     Connect to a specific target database in PostgreSQL, enabling strict
     isolation between the live original database (aegismem_live) and the
     demonstration database (aegismem_demo).
     """
-    if not db_name or not DATABASE_URL.startswith("postgres"):
+    if not read_only and db_name != ALLOWED_DEMO_DATABASE:
+        raise PermissionError(
+            f"CRITICAL SAFETY VIOLATION: Reset and seed is strictly prohibited from modifying '{db_name}'. "
+            f"Modification target must be exactly '{ALLOWED_DEMO_DATABASE}'."
+        )
+
+    if not DATABASE_URL.startswith("postgres"):
         return get_session(), DATABASE_URL
 
     parsed = urllib.parse.urlsplit(DATABASE_URL)
@@ -39,8 +49,8 @@ def get_target_session(db_name: str = "aegismem_demo"):
 
 
 def check_live_database_preservation() -> int:
-    """Read the row count of memories from aegismem_live to prove it was not modified."""
-    session, _ = get_target_session("aegismem_live")
+    """Read the row count of memories from aegismem_live (read-only) to prove it was not modified."""
+    session, _ = get_target_session(PROTECTED_LIVE_DATABASE, read_only=True)
     try:
         count = session.execute(text("SELECT count(*) FROM memories")).scalar()
         return count
@@ -185,7 +195,12 @@ def clean_security_directories():
             d.mkdir(parents=True, exist_ok=True)
 
 
-def reset_and_seed(seed_value: int = 42, target_db: str = "aegismem_demo") -> dict:
+def reset_and_seed(seed_value: int = 42, target_db: str = ALLOWED_DEMO_DATABASE) -> dict:
+    if target_db != ALLOWED_DEMO_DATABASE:
+        raise PermissionError(
+            f"CRITICAL SAFETY VIOLATION: Reset and seed is strictly locked to '{ALLOWED_DEMO_DATABASE}'. Target '{target_db}' is forbidden."
+        )
+
     # 1. Fixed deterministic seed
     random.seed(seed_value)
     clean_security_directories()
@@ -373,7 +388,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AegisMem Reset and Seed")
     parser.add_argument("--json", action="store_true", help="Output JSON only")
     parser.add_argument("--seed", type=int, default=42, help="Deterministic random seed")
-    parser.add_argument("--database", type=str, default="aegismem_demo", help="Target isolated database")
+    parser.add_argument(
+        "--database",
+        type=str,
+        default=ALLOWED_DEMO_DATABASE,
+        choices=[ALLOWED_DEMO_DATABASE],
+        help="Target isolated database (strictly locked to aegismem_demo)"
+    )
     args = parser.parse_args()
 
     if not args.json:

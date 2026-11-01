@@ -15,6 +15,12 @@ param(
 
 $ErrorActionPreference = "Continue"
 
+# Strict Target Guard: Prohibit any parameter attempting to target non-demo databases
+if ($Database -ne "aegismem_demo") {
+    Write-Host "CRITICAL SAFETY VIOLATION: Reset script is locked to 'aegismem_demo'. Attempted target '$Database' is rejected." -ForegroundColor Red
+    exit 1
+}
+
 Write-Host "================================================================================" -ForegroundColor Cyan
 Write-Host "             AegisMem Reviewer Demo: D3 Reset and Seed Verification             " -ForegroundColor Cyan
 Write-Host "================================================================================" -ForegroundColor Cyan
