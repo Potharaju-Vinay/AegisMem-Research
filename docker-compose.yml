@@ -45,7 +45,7 @@ services:
     container_name: aegismem-gateway
     command: ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/aegismem_live
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_demo}
       - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
       - AEGIS_OWNER_AUTH=true
@@ -67,7 +67,7 @@ services:
     healthcheck:
       disable: true
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/aegismem_live
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_demo}
       - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
     networks:
@@ -85,7 +85,7 @@ services:
     healthcheck:
       disable: true
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/aegismem_live
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_demo}
       - VAULT_URL=postgresql+psycopg2://vault_operator:${AEGISMEM_VAULT_PASSWORD:-vault_airgapped_password_2026}@vault-db:5432/aegismem_vault
     networks:
       - data-net

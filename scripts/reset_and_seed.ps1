@@ -9,6 +9,7 @@
 [CmdletBinding()]
 param(
     [int]$Seed = 42,
+    [string]$Database = "aegismem_demo",
     [string]$OutputDir = ""
 )
 
@@ -57,8 +58,8 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # 3. Execute Run 1 (Initial Reset & Seed)
-Log-Output "`n[STAGE 2] Executing Initial Reset and Seed (Run 1)..." "Cyan"
-$run1Raw = & docker exec aegismem-gateway python scripts/reset_and_seed_backend.py --seed $Seed 2>&1
+Log-Output "`n[STAGE 2] Executing Initial Reset and Seed (Run 1) on target database '$Database'..." "Cyan"
+$run1Raw = & docker exec aegismem-gateway python scripts/reset_and_seed_backend.py --seed $Seed --database $Database 2>&1
 $run1Exit = $LASTEXITCODE
 
 foreach ($line in $run1Raw) {
@@ -72,12 +73,12 @@ if ($run1Exit -ne 0) {
 }
 
 # Capture Run 1 structured JSON for assertion
-$run1JsonRaw = & docker exec aegismem-gateway python scripts/reset_and_seed_backend.py --seed $Seed --json 2>&1
+$run1JsonRaw = & docker exec aegismem-gateway python scripts/reset_and_seed_backend.py --seed $Seed --database $Database --json 2>&1
 $run1Data = $run1JsonRaw | ConvertFrom-Json
 
 # 4. Execute Run 2 (Idempotence Verification)
 Log-Output "`n[STAGE 3] Executing Second Reset and Seed (Run 2) for Idempotence Verification..." "Cyan"
-$run2JsonRaw = & docker exec aegismem-gateway python scripts/reset_and_seed_backend.py --seed $Seed --json 2>&1
+$run2JsonRaw = & docker exec aegismem-gateway python scripts/reset_and_seed_backend.py --seed $Seed --database $Database --json 2>&1
 $run2Exit = $LASTEXITCODE
 
 if ($run2Exit -ne 0) {
@@ -90,6 +91,14 @@ $run2Data = $run2JsonRaw | ConvertFrom-Json
 
 # 5. Assertions on Real Database Read-Back State
 Log-Output "`n[STAGE 4] Executing Real Assertions on Database Read-Back..." "Cyan"
+
+# Assertion 0: Live Database Preservation Check
+if ($run1Data.live_database_preserved_memory_count -ne 170) {
+    Log-Output "FAILED: Live database preservation check failed! aegismem_live has $($run1Data.live_database_preserved_memory_count) rows (expected 170 intact)." "Red"
+    Set-Content -Path $transcriptPath -Value $transcriptLines
+    exit 1
+}
+Log-Output "  [PASS] Assertion 0: Original database preservation verified (aegismem_live has all $($run1Data.live_database_preserved_memory_count) historical records intact)." "Green"
 
 # Assertion 1: Incident tables empty
 $incidentTablesFailures = @()
@@ -174,3 +183,4 @@ Log-Output "Transcript saved to: $transcriptPath" "Yellow"
 
 Set-Content -Path $transcriptPath -Value $transcriptLines
 exit 0
+

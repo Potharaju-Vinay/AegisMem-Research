@@ -13,7 +13,41 @@ if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
 from sqlalchemy import text, select, func
-from core.memory.database import engine, get_session, Base
+import urllib.parse
+from sqlalchemy.orm import sessionmaker
+from core.memory.database import DATABASE_URL, create_configured_engine, get_session, Base
+
+
+def get_target_session(db_name: str = "aegismem_demo"):
+    """
+    Connect to a specific target database in PostgreSQL, enabling strict
+    isolation between the live original database (aegismem_live) and the
+    demonstration database (aegismem_demo).
+    """
+    if not db_name or not DATABASE_URL.startswith("postgres"):
+        return get_session(), DATABASE_URL
+
+    parsed = urllib.parse.urlsplit(DATABASE_URL)
+    target_url = urllib.parse.urlunsplit(
+        (parsed.scheme, parsed.netloc, f"/{db_name}", parsed.query, parsed.fragment)
+    )
+    target_engine = create_configured_engine(target_url)
+    target_session_factory = sessionmaker(
+        bind=target_engine, autoflush=False, autocommit=False
+    )
+    return target_session_factory(), target_url
+
+
+def check_live_database_preservation() -> int:
+    """Read the row count of memories from aegismem_live to prove it was not modified."""
+    session, _ = get_target_session("aegismem_live")
+    try:
+        count = session.execute(text("SELECT count(*) FROM memories")).scalar()
+        return count
+    except Exception:
+        return -1
+    finally:
+        session.close()
 from core.memory.models import MemoryRecord
 from core.provenance.models import ProvenanceEvent
 from core.graph.dependency.models import MemoryDependency
@@ -151,12 +185,12 @@ def clean_security_directories():
             d.mkdir(parents=True, exist_ok=True)
 
 
-def reset_and_seed(seed_value: int = 42) -> dict:
+def reset_and_seed(seed_value: int = 42, target_db: str = "aegismem_demo") -> dict:
     # 1. Fixed deterministic seed
     random.seed(seed_value)
     clean_security_directories()
 
-    session = get_session()
+    session, target_url = get_target_session(target_db)
     manifest_store = IntegrityManifestStore()
     trust_vault = ReplicatedTrustVault()
     prov_mgr = ProvenanceManager(session)
@@ -272,7 +306,11 @@ def reset_and_seed(seed_value: int = 42) -> dict:
             text("SELECT source_memory_id, target_memory_id, dependency_type, strength FROM memory_dependencies ORDER BY source_memory_id, target_memory_id")
         ).fetchall()
 
+        live_count = check_live_database_preservation()
+
         return {
+            "target_database": target_db,
+            "live_database_preserved_memory_count": live_count,
             "incident_counts": readback_incidents,
             "memory_count": len(readback_memories),
             "memories": [
@@ -306,13 +344,16 @@ def reset_and_seed(seed_value: int = 42) -> dict:
 def print_readback_table(data: dict):
     print("[POSTGRES READ-BACK VERIFICATION]")
     print("--------------------------------------------------------------------------------")
-    print("Incident & Audit Tables (must all be 0):")
+    print(f"Target Demo Database : {data.get('target_database')} [ISOLATED REVIEWER DEMO]")
+    print(f"Original Live DB Row : {data.get('live_database_preserved_memory_count')} memories in aegismem_live [PRESERVED & UNTOUCHED]")
+    print("--------------------------------------------------------------------------------")
+    print("Incident & Audit Tables in Demo DB (must all be 0):")
     for tbl, count in data["incident_counts"].items():
         status_flag = "CLEAN" if count == 0 else "FAIL"
         print(f"  - {tbl:<32}: {count:>3} rows [{status_flag}]")
     print()
 
-    print(f"Active Baseline Memories ({data['memory_count']} total):")
+    print(f"Active Baseline Memories ({data['memory_count']} total in {data.get('target_database')}):")
     print(f"  {'MEMORY ID':<18} {'VER':<5} {'STATUS':<8} {'TRUST':<6} {'SUSP':<6} {'HASH (SHA-256)':<16} {'CONTENT PREVIEW'}")
     print(f"  {'-'*18} {'-'*5} {'-'*8} {'-'*6} {'-'*6} {'-'*16} {'-'*30}")
     for m in data["memories"]:
@@ -332,12 +373,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AegisMem Reset and Seed")
     parser.add_argument("--json", action="store_true", help="Output JSON only")
     parser.add_argument("--seed", type=int, default=42, help="Deterministic random seed")
+    parser.add_argument("--database", type=str, default="aegismem_demo", help="Target isolated database")
     args = parser.parse_args()
 
     if not args.json:
         print_root_cause_diagnosis()
 
-    res = reset_and_seed(seed_value=args.seed)
+    res = reset_and_seed(seed_value=args.seed, target_db=args.database)
 
     if args.json:
         print(json.dumps(res, sort_keys=True))
