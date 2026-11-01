@@ -82,3 +82,26 @@ This audit assesses the physical runtime truth of the AegisMem Docker Compose de
    - Verify health and network status.
    - Assert exit code 0 on success, non-zero on any missing/stopped service.
 
+---
+
+## 5. Network-Segmented Isolation Verification Results (D2)
+
+The 8-test verification suite ([`scripts/prove_isolation.ps1`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/prove_isolation.ps1)) was executed against the live Docker deployment. Output logged to `demo_runs/20261101_133611/isolation.txt`.
+
+### Test Summary
+
+| Test ID | Source | Destination | Method | Real Exit Code | Outcome | Scientific Evaluation |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Test A** | `aegismem-attacker` (`public-net`) | `vault-db:5432` | Hostname lookup | Exit 1 | **PASSED** | Name resolution blocked by Docker embedded DNS across networks. |
+| **Test B** | `aegismem-attacker` (`public-net`) | `anchor:8000` | Hostname lookup | Exit 1 | **PASSED** | Name resolution blocked across network zones. |
+| **Test C** | Host Workstation (`127.0.0.1`) | `127.0.0.1:5433` (Vault) | Direct TCP socket | False | **PASSED** | Connection refused; port is unmapped on the host. |
+| **Test D** | `aegismem-recovery` (`vault-net`) | `vault-db:5432` | Hostname connect | Exit 0 | **PASSED** | `CONNECTED_OK` established across shared `vault-net`. |
+| **Test E** | `aegismem-attacker` (`public-net`) | `http://aegismem-gateway:8000/health` | HTTP probe | Exit 0 | **PASSED** | HTTP 200 `healthy` returned via shared `public-net`. |
+| **Test F** | `aegismem-attacker` (`172.21.0.4`) | `172.19.0.2:5432` (Vault IP) | Direct TCP socket | Exit 1 | **PASSED** | `TimeoutError: timed out`; proves inter-bridge TCP routing is blocked at the IP layer. |
+| **Test G** | `aegismem-attacker` (`172.21.0.4`) | `172.20.0.2` (Anchor IP) | Direct TCP socket | N/A | **NOT IMPLEMENTED** | Anchor runs `time.sleep` placeholder with no listening port. Honestly reported as a limitation. |
+| **Test H** | `aegismem-recovery` (`172.19.0.3`) | `172.19.0.2:5432` (Vault IP) | Direct TCP socket | Exit 0 | **PASSED** | `CONNECTED_DIRECT_IP_OK` established via direct IP over `vault-net`. |
+
+### Architectural Limitations Disclosed
+* **Anchor Service Limitation (Test G):** `anchor` is currently an idle witness container rather than an active socket server daemon. Its cryptographic anchoring is executed in-process by the core framework libraries (`core.integrity.anchor`) rather than over a network socket. This is reported honestly rather than claiming port-level isolation for an unlistened socket.
+
+
