@@ -57,7 +57,7 @@ Log-Bench "CSV Path         : $csvPath"
 Log-Bench "================================================================================" "Cyan"
 
 # 2. Initialize CSV Header
-$csvHeaders = "trial,incident_id,memory_id,ttd_ms,tt_decide_ms,ttr_ms,tt_validate_ms,total_duration_ms,exposure_window,post_recovery_decision,outcome"
+$csvHeaders = "trial,incident_id,memory_id,ttd_ms,tt_decide_ms,ttr_ms,tt_validate_ms,total_duration_ms,total_probes,exposure_window,post_recovery_decision,outcome"
 Set-Content -Path $csvPath -Value $csvHeaders
 
 $resultsList = [System.Collections.Generic.List[PSCustomObject]]::new()
@@ -95,23 +95,38 @@ for ($i = 1; $i -le $N; $i++) {
         $lat = $rep.telemetry_metrics
     }
 
-    $incidentId = if ($rep.incident_id) { $rep.incident_id } else { $rep.incident_report_id }
+    # RULE 2: A missing value is a FAILURE of that trial. Never default it to 0 or expected answer.
+    if (-not $lat -or $null -eq $lat.total_duration_ms -or $null -eq $lat.exposure_window -or $null -eq $lat.total_probes_sent) {
+        Log-Bench "  Trial $i FAILED: Telemetry, probe metrics, or exposure window missing." "Red"
+        $row = "$i,ERROR,POLICY-001,0,0,0,0,0,-1,FAILED_NO_METRICS,FAILURE"
+        Add-Content -Path $csvPath -Value $row
+        continue
+    }
+
+    $incidentId = if ($rep.incident_id) { $rep.incident_id } else { "UNKNOWN" }
     $memoryId = if ($rep.modified_items -and $rep.modified_items.Count -gt 0) { $rep.modified_items[0].memory_id } elseif ($rep.memories_modified -and $rep.memories_modified.Count -gt 0) { $rep.memories_modified[0].memory_id } else { "POLICY-001" }
     
-    $ttd = if ($lat.ttd_ms) { [double]$lat.ttd_ms } elseif ($lat.dwell_time_ms) { [double]$lat.dwell_time_ms } else { 0.0 }
-    $ttDecide = if ($lat.tt_decide_ms) { [double]$lat.tt_decide_ms } else { 0.0 }
-    $ttr = if ($lat.ttr_ms) { [double]$lat.ttr_ms } elseif ($lat.recovery_duration_ms) { [double]$lat.recovery_duration_ms } else { 0.0 }
-    $ttValidate = if ($lat.tt_validate_ms) { [double]$lat.tt_validate_ms } else { 0.0 }
-    $totalDur = if ($lat.total_duration_ms) { [double]$lat.total_duration_ms } elseif ($lat.total_lifecycle_ms) { [double]$lat.total_lifecycle_ms } else { [Math]::Round($ttd + $ttDecide + $ttr + $ttValidate, 2) }
-    $exposure = if ($null -ne $lat.exposure_window) { [int]$lat.exposure_window } else { 0 }
+    $ttd = [double]$lat.ttd_ms
+    $ttDecide = [double]$lat.tt_decide_ms
+    $ttr = [double]$lat.ttr_ms
+    $ttValidate = [double]$lat.tt_validate_ms
+    $totalDur = [double]$lat.total_duration_ms
+    $exposure = [int]$lat.exposure_window
+    $totalProbes = [int]$lat.total_probes_sent
     
     $ans = $rep.agent_answers
-    $postDecision = if ($ans -and $ans.post_recovery_answer -like "*REFUND DENIED*") { "REFUND DENIED" } else { "REFUND DENIED" }
+    $postDecision = if ($ans -and $ans.post_recovery_answer -like "*REFUND DENIED*") { 
+        "REFUND DENIED" 
+    } elseif ($ans -and $ans.post_recovery_answer -like "*REFUND ALLOWED*") { 
+        "REFUND ALLOWED (NON_COMPLIANT)" 
+    } else { 
+        "UNVERIFIED_OR_ERROR" 
+    }
 
-    $isSuccess = ($incidentExit -eq 0 -and $exposure -eq 0 -and $totalDur -gt 0)
+    $isSuccess = ($incidentExit -eq 0 -and $exposure -eq 0 -and $totalProbes -gt 0 -and $totalDur -gt 0 -and $postDecision -eq "REFUND DENIED")
     $outcome = if ($isSuccess) { "SUCCESS" } else { "FAILURE" }
 
-    $csvRow = "$i,$incidentId,$memoryId,$ttd,$ttDecide,$ttr,$ttValidate,$totalDur,$exposure,$postDecision,$outcome"
+    $csvRow = "$i,$incidentId,$memoryId,$ttd,$ttDecide,$ttr,$ttValidate,$totalDur,$totalProbes,$exposure,$postDecision,$outcome"
     Add-Content -Path $csvPath -Value $csvRow
 
     $resObj = [PSCustomObject]@{
@@ -123,6 +138,7 @@ for ($i = 1; $i -le $N; $i++) {
         ttr_ms                  = $ttr
         tt_validate_ms          = $ttValidate
         total_duration_ms       = $totalDur
+        total_probes            = $totalProbes
         exposure_window         = $exposure
         post_recovery_decision  = $postDecision
         outcome                 = $outcome
