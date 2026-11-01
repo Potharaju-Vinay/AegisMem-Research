@@ -1,4 +1,5 @@
 import asyncio
+import os
 import time
 from typing import Any, Optional
 
@@ -237,7 +238,9 @@ class AegisMemWatcher:
 
 
 if __name__ == "__main__":
-    watcher = AegisMemWatcher(interval_seconds=2.0)
+    interval = float(os.getenv("AEGIS_WATCHER_INTERVAL", "2.0"))
+    event_driven = os.getenv("AEGIS_WATCHER_EVENT_DRIVEN", "false").lower() in ("true", "1", "yes")
+    watcher = AegisMemWatcher(interval_seconds=interval, event_driven=event_driven)
     try:
         asyncio.run(watcher.run())
     except (KeyboardInterrupt, SystemExit):

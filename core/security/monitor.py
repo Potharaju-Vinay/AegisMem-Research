@@ -108,6 +108,39 @@ class AegisMemSecurityMonitor:
                 "telemetry": telemetry_rec,
             }
 
+        # Record detection alert in SOC database if compromise is detected
+        try:
+            from core.soc.engine import create_soc_alert
+            from attack_lab.models import AttackEvent
+
+            latest_attack = (
+                self.session.query(AttackEvent)
+                .filter(AttackEvent.memory_id == memory_id)
+                .order_by(AttackEvent.attack_time.desc())
+                .first()
+            )
+            latest_mem = self.repository.get_latest(memory_id)
+            curr_v = latest_mem.version if latest_mem else 1
+            attack_id = latest_attack.attack_id if latest_attack else f"DETECTION-{memory_id}-V{curr_v}"
+            attack_type = latest_attack.attack_type if latest_attack else "memory_compromise_detection"
+            evidence_dict = {
+                "integrity_compromised": detection.evidence.integrity_compromised,
+                "provenance_suspicious": detection.evidence.provenance_suspicious,
+                "attack_detected": detection.evidence.attack_detected,
+                "unauthorized_access": not detection.evidence.authorization_valid,
+                "content_changed": detection.evidence.content_changed,
+                "dependency_contamination": detection.evidence.dependency_exposure,
+            }
+            create_soc_alert(
+                session=self.session,
+                memory_id=memory_id,
+                attack_id=attack_id,
+                attack_type=attack_type,
+                evidence=evidence_dict,
+            )
+        except Exception as alert_err:
+            print(f"[AegisMem Monitor] Notice: Failed to log soc_alert: {alert_err}")
+
         t_decide_start = time.perf_counter()
         impact_analyzer = AttackImpactAnalyzer(graph)
 

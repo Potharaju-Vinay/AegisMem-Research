@@ -1,4 +1,4 @@
-﻿from sqlalchemy import select
+from sqlalchemy import select
 
 from core.integrity.hash import calculate_version_hash
 from core.integrity.manifest_store import IntegrityManifestStore
@@ -517,13 +517,17 @@ class MemoryCompromiseDetector:
                 provenance_suspicious,
                 attack_detected,
                 status_corrupted,
-                suspicion_score >= 0.50
+                suspicion_score >= 0.50,
+                not (authorization_valid or integrity_anchor_status == "VALID"),
+                numeric_change_detected,
             ]
         )
 
         compromised = (
             independent_evidence >= 2
             or provenance_suspicious
+            or not (authorization_valid or integrity_anchor_status == "VALID")
+            or integrity_compromised
         )
 
         dependency_exposed = (

@@ -174,25 +174,31 @@ async def lifespan(app: FastAPI):
     except Exception as exc:
         print(f"[AegisMem Startup] Database initialization: {exc}")
 
+    watcher_interval = float(os.getenv("AEGIS_WATCHER_INTERVAL", "2.0"))
+    watcher_event_driven = os.getenv("AEGIS_WATCHER_EVENT_DRIVEN", "false").lower() in ("true", "1", "yes")
     watcher = AegisMemWatcher(
-        interval_seconds=2.0
+        interval_seconds=watcher_interval,
+        event_driven=watcher_event_driven
     )
 
     app.state.aegismem_watcher = watcher
 
-    watcher_task = asyncio.create_task(
-        watcher.run()
-    )
-
-    app.state.aegismem_watcher_task = watcher_task
+    enable_in_process_watcher = os.getenv("AEGIS_ENABLE_IN_PROCESS_WATCHER", "false").lower() in ("true", "1", "yes")
+    if enable_in_process_watcher:
+        watcher_task = asyncio.create_task(
+            watcher.run()
+        )
+        app.state.aegismem_watcher_task = watcher_task
+    else:
+        app.state.aegismem_watcher_task = None
 
     try:
         yield
 
     finally:
         watcher.stop()
-
-        await watcher_task
+        if getattr(app.state, "aegismem_watcher_task", None):
+            await app.state.aegismem_watcher_task
 
 
 app = FastAPI(
@@ -1654,6 +1660,165 @@ def resume_watcher(http_request: Request):
     if watcher:
         watcher.paused = False
     return {"status": "active"}
+
+
+@app.get("/aegismem/detector/config")
+def get_detector_config(http_request: Request):
+    require_owner(http_request)
+    watcher = getattr(app.state, "aegismem_watcher", None)
+    interval = watcher.interval_seconds if watcher else float(os.getenv("AEGIS_WATCHER_INTERVAL", "2.0"))
+    event_driven = watcher.event_driven if watcher else os.getenv("AEGIS_WATCHER_EVENT_DRIVEN", "false").lower() in ("true", "1", "yes")
+    paused = getattr(watcher, "paused", False)
+
+    if event_driven:
+        mechanism_desc = "Event-driven store change hook (immediate dispatch)"
+    else:
+        mechanism_desc = f"Background continuous reconciliation scan (interval: {interval}s)"
+
+    return {
+        "mode": "event-driven" if event_driven else "polling",
+        "interval_seconds": interval,
+        "event_driven": event_driven,
+        "mechanism_description": mechanism_desc,
+        "is_realtime": bool(event_driven),
+        "paused": paused,
+    }
+
+
+@app.get("/aegismem/incident/telemetry")
+def get_incident_telemetry(http_request: Request, memory_id: str, attack_id: str | None = None):
+    require_owner(http_request)
+    session = get_session()
+    try:
+        # 1. Resolve attack event
+        attack_query = session.query(AttackEvent).filter(AttackEvent.memory_id == memory_id)
+        if attack_id:
+            attack_query = attack_query.filter(AttackEvent.attack_id == attack_id)
+        attack = attack_query.order_by(AttackEvent.attack_time.desc(), AttackEvent.id.desc()).first()
+
+        if not attack:
+            return {
+                "completed": False,
+                "memory_id": memory_id,
+                "attack_id": attack_id,
+                "error": "No attack event found",
+                "timestamps": {},
+                "latencies_ms": {},
+            }
+
+        t_write_dt = attack.attack_end_time or attack.attack_time
+        target_attack_id = attack.attack_id
+
+        # 2. Resolve detection event (SOCAlert)
+        alert = (
+            session.query(SOCAlert)
+            .filter(
+                SOCAlert.memory_id == memory_id,
+                (SOCAlert.attack_id == target_attack_id) | (SOCAlert.created_at >= attack.attack_time)
+            )
+            .order_by(SOCAlert.created_at.desc(), SOCAlert.id.desc())
+            .first()
+        )
+        t_detect_dt = alert.created_at if alert else None
+
+        # 3. Resolve TCRP decision event
+        tcrp_decision = (
+            session.query(RecoveryEvent)
+            .filter(
+                RecoveryEvent.memory_id == memory_id,
+                RecoveryEvent.event_type == "TCRP_DECISION",
+                RecoveryEvent.created_at >= attack.attack_time
+            )
+            .order_by(RecoveryEvent.created_at.desc(), RecoveryEvent.id.desc())
+            .first()
+        )
+        t_decide_dt = tcrp_decision.created_at if tcrp_decision else None
+
+        # 4. Resolve Recovery event
+        recovery_ev = (
+            session.query(RecoveryEvent)
+            .filter(
+                RecoveryEvent.memory_id == memory_id,
+                RecoveryEvent.event_type == "RECOVERY",
+                RecoveryEvent.created_at >= attack.attack_time
+            )
+            .order_by(RecoveryEvent.created_at.desc(), RecoveryEvent.id.desc())
+            .first()
+        )
+        t_recover_dt = recovery_ev.created_at if recovery_ev else None
+
+        # 5. Resolve Validation event
+        validation_ev = (
+            session.query(RecoveryEvent)
+            .filter(
+                RecoveryEvent.memory_id == memory_id,
+                RecoveryEvent.event_type == "VALIDATION",
+                RecoveryEvent.created_at >= attack.attack_time
+            )
+            .order_by(RecoveryEvent.created_at.desc(), RecoveryEvent.id.desc())
+            .first()
+        )
+        t_validate_dt = validation_ev.created_at if validation_ev else (t_recover_dt if (recovery_ev and recovery_ev.validation_result) else None)
+
+        completed = all([
+            t_write_dt is not None,
+            t_detect_dt is not None,
+            t_decide_dt is not None,
+            t_recover_dt is not None,
+            t_validate_dt is not None,
+        ])
+
+        timestamps = {
+            "t_write": {"iso": t_write_dt.isoformat(), "epoch": t_write_dt.timestamp()} if t_write_dt else None,
+            "t_detect": {"iso": t_detect_dt.isoformat(), "epoch": t_detect_dt.timestamp()} if t_detect_dt else None,
+            "t_decide": {"iso": t_decide_dt.isoformat(), "epoch": t_decide_dt.timestamp()} if t_decide_dt else None,
+            "t_recover": {"iso": t_recover_dt.isoformat(), "epoch": t_recover_dt.timestamp()} if t_recover_dt else None,
+            "t_validate": {"iso": t_validate_dt.isoformat(), "epoch": t_validate_dt.timestamp()} if t_validate_dt else None,
+        }
+
+        latencies_ms = {}
+        if completed:
+            latencies_ms["ttd_ms"] = round((t_detect_dt - t_write_dt).total_seconds() * 1000.0, 2)
+            latencies_ms["tt_decide_ms"] = round((t_decide_dt - t_detect_dt).total_seconds() * 1000.0, 2)
+            latencies_ms["ttr_ms"] = round((t_recover_dt - t_decide_dt).total_seconds() * 1000.0, 2)
+            latencies_ms["tt_validate_ms"] = round((t_validate_dt - t_recover_dt).total_seconds() * 1000.0, 2)
+            latencies_ms["total_duration_ms"] = round((t_validate_dt - t_write_dt).total_seconds() * 1000.0, 2)
+
+        return {
+            "completed": completed,
+            "memory_id": memory_id,
+            "attack_id": target_attack_id,
+            "target_version": attack.target_version,
+            "restored_version": recovery_ev.restored_version if recovery_ev else None,
+            "recovery_status": recovery_ev.status if recovery_ev else None,
+            "validation_result": validation_ev.validation_result if validation_ev else (recovery_ev.validation_result if recovery_ev else None),
+            "timestamps": timestamps,
+            "latencies_ms": latencies_ms,
+            "records": {
+                "attack": {
+                    "attack_id": attack.attack_id,
+                    "mutation": attack.mutation_description,
+                    "target_version": attack.target_version,
+                },
+                "soc_alert": {
+                    "alert_id": alert.alert_id if alert else None,
+                    "severity": alert.severity if alert else None,
+                    "severity_score": alert.severity_score if alert else None,
+                } if alert else None,
+                "tcrp_decision": {
+                    "action": tcrp_decision.action if tcrp_decision else None,
+                    "action_cost": tcrp_decision.selected_action_cost if tcrp_decision else None,
+                    "candidate_costs": tcrp_decision.candidate_costs if tcrp_decision else None,
+                } if tcrp_decision else None,
+                "recovery": {
+                    "action": recovery_ev.action if recovery_ev else None,
+                    "status": recovery_ev.status if recovery_ev else None,
+                    "restored_version": recovery_ev.restored_version if recovery_ev else None,
+                } if recovery_ev else None,
+            }
+        }
+    finally:
+        session.close()
 
 
 def build_dashboard_internal_request(

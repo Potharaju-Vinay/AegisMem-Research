@@ -512,6 +512,33 @@ session_id: str | None = None
                     ),
                 session_id=session_id
             )
+
+                self._record_event(
+                    memory_id=decision.memory_id,
+                    event_type="VALIDATION",
+                    action="ROLLBACK",
+                    message=(
+                        "State restoration verified: "
+                        + ("PASS" if content_recovery_success else "FAIL")
+                    ),
+                    status=("success" if fully_verified or content_recovery_success else "failed"),
+                    compromised_version=recovery.get("previous_version"),
+                    restored_version=recovery.get("restored_version"),
+                    trust_score=decision.trust_score,
+                    suspicion_score=detection_results.get(
+                        decision.memory_id
+                    ).suspicion_score if detection_results.get(
+                        decision.memory_id
+                    ) else None,
+                    validation_result=(
+                        "PASS"
+                        if fully_verified
+                        else "PARTIAL"
+                        if content_recovery_success
+                        else "FAIL"
+                    ),
+                    session_id=session_id,
+                )
                 
 
                 results.append({

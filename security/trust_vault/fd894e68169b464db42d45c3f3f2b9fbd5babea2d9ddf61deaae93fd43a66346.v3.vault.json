@@ -1,0 +1,14 @@
+{
+  "store_domain": "isolated_cryptographic_vault",
+  "memory_id": "POLICY-001",
+  "version": 3,
+  "revision_id": "8edba6bf-851c-4ee1-a095-fe6789f6b121",
+  "parent_revision_id": "e3beda6a-901c-467e-a39f-91270c74244e",
+  "content": "Customers may request refunds within 30 calendar days of purchase.",
+  "content_hash": "ceb4d3d6a93f71d75ed28980722262aadccfa9e4fd92efe6b71da9959cebbe22",
+  "previous_hash": "26542fefdd19ff7c2306aa5e3412761a55e8716595e7ef3b794ec640bbdb6b51",
+  "signature": "dWtiC36sdbYG0HEhooGCHP0xn13dNwj1A87QQ6yCj7JhISMHpqmMivofJBhaRUPAPfY9D51e10Bk5CNBM0YIBg==",
+  "authorization_signature": null,
+  "authorization_id": null,
+  "authorization_nonce": null
+}

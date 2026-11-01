@@ -1,7 +1,7 @@
 {
-  "event_count": 1,
-  "event_hash": "17528fa73da445cb6335b25d044cfead2729a971458dc6b0afb82a5e066fe319",
+  "event_count": 3,
+  "event_hash": "da995a074dd3e9c0933f38d70c8ab11ede602daf78b25b921c99159336141a4e",
   "memory_id": "POLICY-001",
-  "signature": "r7Qxq9LCpecIC7VOUVmxihEIWNE2h4g+xKMOE2JmVNotwfqjHBFwndHHTn5PgntXyHc8tat/Onj1hMiEvAz0Dg==",
-  "version": 1
+  "signature": "e6JSTxXS1zcDWUp2clhPa7Kbf+AlNlFA4UbzrpOkJPl3arM0kE0fMg+f3xKrzRH2r8OA4W3xCG/5awLGe6CEBA==",
+  "version": 3
 }
