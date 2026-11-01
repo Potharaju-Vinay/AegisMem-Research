@@ -1,0 +1,70 @@
+=================================================================
+ AegisMem Network-Segmented Isolation Verification (D2)
+ Timestamp: 20261101_214458
+ Architecture: Network-Segmented Multi-Zone Deployment
+=================================================================
+
+[Discovery] Dynamically querying runtime container network configurations...
+  - vault-db IP    : 172.19.0.2 (vault-net)
+  - anchor IP      : 172.20.0.2 (anchor-net)
+  - attacker IP    : 172.21.0.4 (public-net)
+  - recovery IPs   : aegismem-research-main_data-net=172.18.0.3 aegismem-research-main_vault-net=172.19.0.3
+
+[Test A] Attacker container to Vault Database by Hostname (vault-db:5432)
+Command: docker exec aegismem-attacker python3 -c "import socket; s = socket.socket(); s.settimeout(3); s.connect((\"vault-db\", 5432))" 2>&1
+Result (Exit Code 1):
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+socket.gaierror: [Errno -2] Name or service not known
+ASSERTION PASSED: Attacker cannot resolve or route to vault-db hostname.
+
+[Test B] Attacker container to Anchor Witness by Hostname (anchor:8000)
+Command: docker exec aegismem-attacker python3 -c "import socket; s = socket.socket(); s.settimeout(3); s.connect((\"anchor\", 8000))" 2>&1
+Result (Exit Code 1):
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+socket.gaierror: [Errno -2] Name or service not known
+ASSERTION PASSED: Attacker cannot resolve or route to anchor hostname.
+
+[Test C] Host workstation to Vault Port (127.0.0.1:5433)
+Testing TCP connection from host to 127.0.0.1:5433...
+Result: TCP Connection Established = False
+ASSERTION PASSED: Host cannot reach vault-db port (Port is unmapped and internal to vault-net).
+
+[Test D] Recovery Service to Vault Database by Hostname (vault-db:5432)
+Command: docker exec aegismem-recovery python -c "import socket; s = socket.socket(); s.settimeout(3); s.connect((\"vault-db\", 5432)); print(\"CONNECTED_OK\")" 2>&1
+Result (Exit Code 0):
+CONNECTED_OK
+ASSERTION PASSED: Recovery service successfully connected to vault-db via vault-net.
+
+[Test E] Attacker container to Public Gateway API (http://aegismem-gateway:8000/health)
+Command: docker exec aegismem-attacker curl -s -f http://aegismem-gateway:8000/health 2>&1
+Result (Exit Code 0):
+{"status":"healthy"}
+ASSERTION PASSED: Attacker successfully connected to Public Gateway API via public-net.
+
+[Test F] Attacker container to Vault Database by Direct IP (172.19.0.2:5432)
+Command: docker exec aegismem-attacker python3 -c "import socket; s = socket.socket(); s.settimeout(3); s.connect(('172.19.0.2', 5432))" 2>&1
+Destination IP: 172.19.0.2, Port: 5432
+Result (Exit Code 1):
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+TimeoutError: timed out
+ASSERTION PASSED: Direct IP TCP routing blocked between public-net attacker and vault-db (172.19.0.2:5432).
+
+[Test G] Attacker container to Anchor Witness by Direct IP (172.20.0.2)
+Destination IP: 172.20.0.2
+Anchor Service Status: Placeholder worker (time.sleep) - No active server daemon or listening port.
+NOT IMPLEMENTED: Anchor daemon listening port; direct IP port isolation test unavailable for this service.
+
+[Test H] Recovery Service to Vault Database by Direct IP (172.19.0.2:5432)
+Command: docker exec aegismem-recovery python -c "import socket; s = socket.socket(); s.settimeout(3); s.connect(('172.19.0.2', 5432)); print('CONNECTED_DIRECT_IP_OK')" 2>&1
+Destination IP: 172.19.0.2, Port: 5432
+Result (Exit Code 0):
+CONNECTED_DIRECT_IP_OK
+ASSERTION PASSED: Recovery service connected to vault-db by Direct IP (172.19.0.2:5432) over vault-net.
+
+=================================================================
+PASSED: isolation: All active network-segmented assertions verified.
+Transcript saved to: demo_runs\20261101_214458\isolation.txt
+=================================================================
