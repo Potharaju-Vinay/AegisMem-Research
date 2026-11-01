@@ -8,9 +8,9 @@ services:
     environment:
       POSTGRES_DB: aegismem_live
       POSTGRES_USER: aegis_admin
-      POSTGRES_PASSWORD: aegis_secure_password_2026
+      POSTGRES_PASSWORD: ${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
     volumes:
       - memory_pgdata:/var/lib/postgresql/data
     networks:
@@ -27,9 +27,7 @@ services:
     environment:
       POSTGRES_DB: aegismem_vault
       POSTGRES_USER: vault_operator
-      POSTGRES_PASSWORD: vault_airgapped_password_2026
-    ports:
-      - "5433:5432"
+      POSTGRES_PASSWORD: ${AEGISMEM_VAULT_PASSWORD:-vault_airgapped_password_2026}
     volumes:
       - vault_pgdata:/var/lib/postgresql/data
     networks:
@@ -47,7 +45,7 @@ services:
     container_name: aegismem-gateway
     command: ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/aegismem_live
       - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
       - AEGIS_OWNER_AUTH=true
@@ -69,7 +67,7 @@ services:
     healthcheck:
       disable: true
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/aegismem_live
       - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
     networks:
@@ -87,8 +85,8 @@ services:
     healthcheck:
       disable: true
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
-      - VAULT_URL=postgresql+psycopg2://vault_operator:vault_airgapped_password_2026@vault-db:5432/aegismem_vault
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/aegismem_live
+      - VAULT_URL=postgresql+psycopg2://vault_operator:${AEGISMEM_VAULT_PASSWORD:-vault_airgapped_password_2026}@vault-db:5432/aegismem_vault
     networks:
       - data-net
       - vault-net
