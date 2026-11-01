@@ -627,6 +627,13 @@ def answer_general_question(question: str) -> Optional[str]:
     if not text:
         return None
 
+    enterprise_keywords = {
+        "refund", "policy", "sop", "escalat", "escalation", "complaint", "faq",
+        "hours", "contact", "mfa", "access", "incident", "backup", "privacy", "credential"
+    }
+    if any(k in text for k in enterprise_keywords):
+        return None
+
     intent = find_intent(text)
 
     if intent is None:

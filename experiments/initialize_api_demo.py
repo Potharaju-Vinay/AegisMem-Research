@@ -1,3 +1,11 @@
+import sys
+from pathlib import Path
+
+# Fix: Ensure project root is in sys.path when script is executed directly
+project_root = Path(__file__).resolve().parent.parent
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
 from core.memory.database import Base, engine, get_session
 from core.memory.service import MemoryService
 

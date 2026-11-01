@@ -166,6 +166,18 @@ class EnterpriseAgent:
                 "status": memory.status
             }
 
+        if memory.memory_id == "FAQ-001":
+            return {
+                "memory_id": memory.memory_id,
+                "memory_version": memory.version,
+                "question": question,
+                "intent": "customer_support_faq",
+                "topic": "support_hours_and_contact",
+                "answer": f"Enterprise Customer Support FAQ: {memory.content}",
+                "trust_score": memory.trust_score,
+                "status": memory.status
+            }
+
         if memory.memory_id == "SOP-003":
             return {
                 "memory_id": memory.memory_id,

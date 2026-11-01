@@ -19,7 +19,8 @@ class MemoryResolver:
         "ENT-EMPLOYEE-005": {"employee", "employees", "credential", "credentials", "password", "hygiene", "phishing", "training"},
         "POLICY-001": {"refund", "refunds", "refundable", "return", "returns", "exchange", "calendar", "day", "days", "reimbursement"},
         "POLICY-002": {"manual", "exception", "review", "manager", "escalation"},
-        "SOP-003": {"sop", "complaint", "complaints", "ticket", "tickets", "verify", "support", "escalat", "agent", "service"}
+        "SOP-003": {"sop", "complaint", "complaints", "ticket", "tickets", "verify", "support", "escalat", "agent", "service"},
+        "FAQ-001": {"faq", "hours", "contact", "channels", "email", "support", "operating", "business", "schedule", "availability"},
     }
 
     def __init__(self, session: Session):
