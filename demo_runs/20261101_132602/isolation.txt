@@ -1,0 +1,8 @@
+=================================================================
+ AegisMem Network-Segmented Isolation Verification (D2)
+ Timestamp: 20261101_132602
+ Architecture: Network-Segmented Multi-Zone Deployment
+=================================================================
+
+[Test A] Attacker container to Vault Database (vault-db:5432)
+Command: docker exec aegismem-attacker python3 -c "import socket; s = socket.socket(); s.settimeout(3); s.connect(('vault-db', 5432))" 2>&1
