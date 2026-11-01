@@ -11,6 +11,7 @@ python-dotenv==1.2.4
 # Database & Storage Layer
 SQLAlchemy==2.1.3
 psycopg2-binary>=2.9.9
+psycopg[binary]>=3.1.18
 
 # Cryptography & Security
 cryptography==50.0.2

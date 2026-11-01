@@ -230,3 +230,12 @@ class AegisMemWatcher:
     def stop(self):
         print("[AegisMem Watcher] Background watcher stopped.")
         self._stop_event.set()
+
+
+if __name__ == "__main__":
+    watcher = AegisMemWatcher(interval_seconds=2.0)
+    try:
+        asyncio.run(watcher.run())
+    except (KeyboardInterrupt, SystemExit):
+        watcher.stop()
+

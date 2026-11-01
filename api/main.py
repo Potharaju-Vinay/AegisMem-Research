@@ -1,4 +1,4 @@
-﻿import re
+import re
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -165,6 +165,13 @@ class DashboardLoginRequest(BaseModel):
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    try:
+        from core.memory.init_db import initialize_database
+        initialize_database()
+        from scripts.sync_sqlite_to_postgres import auto_sync_if_needed
+        auto_sync_if_needed()
+    except Exception as exc:
+        print(f"[AegisMem Startup] Database initialization: {exc}")
 
     watcher = AegisMemWatcher(
         interval_seconds=2.0

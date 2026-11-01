@@ -19,6 +19,8 @@ DATABASE_URL = get_database_url()
 def create_configured_engine(url: str):
     if url.startswith("sqlite"):
         return create_engine(url, connect_args={"check_same_thread": False})
+    if url.startswith("postgresql://"):
+        url = url.replace("postgresql://", "postgresql+psycopg2://", 1)
     return create_engine(url, pool_pre_ping=True)
 
 

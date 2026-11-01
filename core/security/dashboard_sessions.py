@@ -1,4 +1,4 @@
-﻿import hashlib
+import hashlib
 import secrets
 from datetime import datetime, timedelta, timezone
 
@@ -29,6 +29,9 @@ def verify_dashboard_password(password: str) -> bool:
 
     if not password_hash:
         return False
+
+    if "$$" in password_hash:
+        password_hash = password_hash.replace("$$", "$")
 
     try:
         return password_hasher.verify(password_hash, password)

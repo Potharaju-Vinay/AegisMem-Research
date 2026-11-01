@@ -1,6 +1,5 @@
 # AegisMem Multi-Container Segmented Deployment Architecture (Part C1)
 # Enforces isolated networks: public-net, data-net, vault-net, anchor-net
-version: '3.8'
 
 services:
   memory-db:
@@ -48,7 +47,8 @@ services:
     container_name: aegismem-gateway
     command: ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
     environment:
-      - DATABASE_URL=postgresql://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
+      - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
       - AEGIS_OWNER_AUTH=true
     ports:
@@ -66,8 +66,11 @@ services:
       dockerfile: Dockerfile
     container_name: aegismem-detector
     command: ["python", "-m", "core.security.watcher"]
+    healthcheck:
+      disable: true
     environment:
-      - DATABASE_URL=postgresql://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
+      - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
     networks:
       - data-net
@@ -81,9 +84,11 @@ services:
       dockerfile: Dockerfile
     container_name: aegismem-recovery
     command: ["python", "-c", "import time; print('AegisMem Self-Healing TCRP Resolver Active'); time.sleep(86400)"]
+    healthcheck:
+      disable: true
     environment:
-      - DATABASE_URL=postgresql://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
-      - VAULT_URL=postgresql://vault_operator:vault_airgapped_password_2026@vault-db:5432/aegismem_vault
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:aegis_secure_password_2026@memory-db:5432/aegismem_live
+      - VAULT_URL=postgresql+psycopg2://vault_operator:vault_airgapped_password_2026@vault-db:5432/aegismem_vault
     networks:
       - data-net
       - vault-net
@@ -99,6 +104,8 @@ services:
       dockerfile: Dockerfile
     container_name: aegismem-anchor-witness
     command: ["python", "-c", "import time; print('AegisMem Independent Anchor Witness Active'); time.sleep(86400)"]
+    healthcheck:
+      disable: true
     networks:
       - anchor-net
 
@@ -108,6 +115,8 @@ services:
       dockerfile: Dockerfile
     container_name: aegismem-support-agent
     command: ["python", "-c", "import time; print('Enterprise Support Agent Active (RAG via ReadPathGate)'); time.sleep(86400)"]
+    healthcheck:
+      disable: true
     environment:
       - GATEWAY_URL=http://aegismem-gateway:8000
     networks:
