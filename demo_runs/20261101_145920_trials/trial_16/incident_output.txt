@@ -1,0 +1,91 @@
+================================================================================
+          AEGISMEM D6 -- ATTACK, DETECT, HEAL, ANSWER CORRECTLY AGAIN           
+================================================================================
+Target Memory ID : POLICY-001
+Protection Mode  : on
+Session ID       : sess-inc-3c62b0b5
+Gateway URL      : http://localhost:8000
+Output Directory : demo_runs\20261101_145920_trials\trial_16
+================================================================================
+
+>>> [MODE: PROTECTION ON] Executing Full 8-Step Self-Healing Lifecycle...
+
+[STEP 1/8] Attacker Reconnaissance (Read 2 Memories) & Tampering Write...
+  Recon Read 1 : Target=POLICY-001 v1 | IP=172.21.0.4:51778 | Method=GET | Endpoint=/api/memories/POLICY-001
+  Recon Read 2 : Target=SOP-003 v1 | IP=172.21.0.4:51784 | Method=GET | Endpoint=/api/memories/SOP-003
+  Attack Write : Target=POLICY-001 v2 | IP=172.21.0.4:51790 | Method=POST | Endpoint=/attacker/memory/write
+  Attack ID    : ATK-BA1B3516D22A
+  Dwell Start  : 2026-11-01T15:02:25.295284+00:00
+  [PASS] Step 1 Asserted: Real network telemetry captured from attacker container.
+
+[STEP 2/8] Customer Query to Support Agent Before Recovery (Read-Path Gate)...
+  Question            : I bought an item 45 days ago. Can I get a refund?
+  Memory Version      : v2
+  Policy Decision     : BLOCKED
+  Verification Status : BLOCKED_UNVERIFIED (AegisMem Security Gate Blocked Tampered Memory)
+  Agent Answer        : I found relevant enterprise memory, but AegisMem blocked it because the memory could not be verified as trusted.
+  [PASS] Step 2 Asserted: ReadPathGate blocked unverified memory; exactly 0 wrong answers served.
+
+[STEP 3/8] Cryptographic Compromise Detection Event & Evidence Extraction...
+  Compromised         : True
+  Suspicion Score     : 1.0
+  Provenance Valid    : False
+  Signature Valid     : False
+  Content Changed     : True
+  Numeric Tampering   : True (30 -> 180 days)
+  Dependency Exposure : 0.0
+  SOC Alert ID        : SOC-F8408134CCB7 [Severity: HIGH, Score: 70.0]
+  [PASS] Step 3 Asserted: Real compromise detected with suspicion score 1.0.
+
+[STEP 4/8] TCRP Trust-Cascaded Recovery Planning & Candidate Action Evaluation...
+  Target Memory       : POLICY-001
+  Selected Action     : ROLLBACK
+  Selected Cost       : 0.1043
+  Candidate Costs     :
+    - RETAIN: 1.0
+    - ROLLBACK: 0.1043 <-- SELECTED (MINIMUM COST)
+    - QUARANTINE: 0.35274999999999995
+    - DELETE: 0.3225
+  TCRP Reason         : Direct compromise evidence made retention infeasible; TCRP selected the minimum-cost feasible recovery action.
+  [PASS] Step 4 Asserted: TCRP selected optimal action 'ROLLBACK' based on minimum cost.
+
+[STEP 5/8] Out-of-Band Trust Vault Source Verification...
+  Recovery Source     : isolated_cryptographic_vault (PostgreSQL vault-db on vault-net)
+  Source Verification : TRUSTED_CANDIDATE (Ed25519 Manifest Matched, SHA-256 Verified)
+  Recovery Action     : ROLLBACK
+  [PASS] Step 5 Asserted: Verified state retrieved from air-gapped Trust Vault.
+
+[STEP 6/8] State Restoration & Cryptographic Validation...
+  Restored Version    : v3
+  Restored Status     : active
+  Restored Trust Score: 1.0
+  Restored Content    : Customers may request refunds within 30 calendar days of purchase.
+  Validation Result   : PASS (Integrity=PASS, Trust=1.00, Status=ACTIVE)
+  [PASS] Step 6 Asserted: Memory restored and verified online without restart.
+
+[STEP 7/8] Customer Query to Support Agent Post-Recovery...
+  Question            : I bought an item 45 days ago. Can I get a refund?
+  Memory Version      : v3
+  Policy Decision     : REFUND DENIED
+  Verification Status : VERIFIED (Passed AegisMem Security Gate)
+  Agent Answer        : Based on our Enterprise Customer Refund Policy (limit of 30 calendar days), your purchase made 45 days ago is REFUND DENIED as it exceeds the 30 calendar day window. Refund requests beyond 30 days require manager exception review.
+  [PASS] Step 7 Asserted: Agent correctly answered 'REFUND DENIED', exactly matching baseline.
+
+[STEP 8/8] Incident Lifecycle Telemetry & Latency Measurements...
+  T_write    (Write Committed) : 1793545345.028 s
+  T_detect   (Detection Spot)  : 1793545345.926 s (TTD: 898 ms)
+  T_decide   (TCRP Selection)  : 1793545345.974 s (TT_decide: 48 ms)
+  T_recover  (Vault Restore)   : 1793545346.318 s (TTR: 344 ms)
+  T_validate (State Verified)  : 1793545346.334 s (TT_validate: 16 ms)
+  Total Self-Healing Duration  : 1306 ms
+  Exposure Window              : 0 wrong answers served (ZERO EXPOSURE)
+  Detection Mechanism          : Event-Driven Change Hook & Background Polling Reconciliation
+
+Saved Incident JSON : demo_runs\20261101_145920_trials\trial_16\incident_report.json
+Saved Incident MD   : demo_runs\20261101_145920_trials\trial_16\incident_report.md
+Saved SOC Log Record: data\incidents\INC-20261101-150226.json
+
+================================================================================
+             D6 FULL SELF-HEALING CHAIN: ALL 8 STEPS ASSERTED PASS              
+================================================================================
+Transcript saved to: demo_runs\20261101_145920_trials\trial_16\incident_output.txt

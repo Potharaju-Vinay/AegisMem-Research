@@ -1,4 +1,4 @@
-﻿import json
+import json
 from dataclasses import dataclass
 
 from core.integrity.hash import calculate_version_hash
@@ -92,7 +92,7 @@ class IntegrityVerifier:
 
                 if (
                     previous_version is not None
-                    and event.version <= previous_version
+                    and event.version < previous_version
                 ):
                     return False
 

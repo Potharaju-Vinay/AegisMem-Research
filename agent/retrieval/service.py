@@ -1,12 +1,13 @@
-﻿from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session
 
 from core.memory.service import MemoryService
 
 
 class MemoryRetriever:
 
-    def __init__(self, session: Session):
+    def __init__(self, session: Session, allow_untrusted: bool = False):
         self.memory = MemoryService(session)
+        self.allow_untrusted = allow_untrusted
 
     def retrieve(self, memory_id: str):
 
@@ -17,7 +18,7 @@ class MemoryRetriever:
                 f"Memory '{memory_id}' does not exist."
             )
 
-        if memory.status != "active":
+        if not self.allow_untrusted and memory.status != "active":
             raise ValueError(
                 f"Memory '{memory_id}' is not trusted for retrieval."
             )

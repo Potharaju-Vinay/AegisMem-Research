@@ -21,7 +21,6 @@ security/keys/*secret*.pem
 
 # Frontend & Node
 node_modules/
-frontend/dist/
 frontend/.vite/
 frontend/node_modules/
 

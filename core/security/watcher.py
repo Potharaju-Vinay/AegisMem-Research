@@ -26,6 +26,7 @@ class AegisMemWatcher:
     ):
         self.interval_seconds = interval_seconds
         self.event_driven = event_driven
+        self.paused = False
         self._stop_event = asyncio.Event()
         self._event_queue: Optional[asyncio.Queue] = None
         self._last_seen_versions = {}
@@ -125,6 +126,9 @@ class AegisMemWatcher:
             session.close()
 
     def scan_once(self):
+        if getattr(self, "paused", False):
+            return []
+
         results = []
 
         for memory_id in self.get_memory_ids():

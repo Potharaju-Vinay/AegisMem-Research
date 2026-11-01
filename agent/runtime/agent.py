@@ -6,8 +6,8 @@ from agent.extraction.query_parser import QueryParser
 
 class EnterpriseAgent:
 
-    def __init__(self, session: Session):
-        self.retriever = MemoryRetriever(session)
+    def __init__(self, session: Session, allow_untrusted: bool = False):
+        self.retriever = MemoryRetriever(session, allow_untrusted=allow_untrusted)
         self.parser = QueryParser()
 
     def _extract_policy_limit(self, content: str) -> int:

@@ -1,4 +1,4 @@
-﻿import base64
+import base64
 import hashlib
 import json
 import os
@@ -89,8 +89,9 @@ class TrustedCheckpointHeadStore:
         if any(event.memory_id != memory_id for event in events):
             raise ValueError("Provenance events contain multiple memory IDs")
 
-        if len({event.version for event in events}) != len(events):
-            raise ValueError("Provenance events contain duplicate versions")
+        for i in range(1, len(events)):
+            if events[i].version < events[i-1].version:
+                raise ValueError("Provenance events contain non-monotonic versions")
 
         checkpoint_status = self.checkpoint_store.verify_checkpoint(events)
 

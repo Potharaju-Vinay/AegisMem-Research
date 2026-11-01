@@ -75,7 +75,7 @@ def sign_update(
         authorization_id=auth_id,
         nonce=auth_nonce,
         expected_parent_revision_id=expected_parent_revision_id,
-        timestamp=ts,
+        timestamp=timestamp,
     )
 
     payload = {
@@ -124,7 +124,8 @@ def submit_update(
         nonce=http_nonce,
     )
 
-    token = owner_token or os.getenv("OWNER_BEARER_TOKEN", os.getenv("AEGISMEM_OWNER_TOKEN", "aegismem-owner-secret"))
+    from core.security.owner_auth import load_owner_token
+    token = owner_token or load_owner_token() or os.getenv("OWNER_BEARER_TOKEN") or "aegismem-owner-secret"
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {token}",

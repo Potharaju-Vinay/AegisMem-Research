@@ -1,7 +1,7 @@
 # AegisMem Forensic Incident Dossier: `INC-ENDPOINT-TEST`
 **Title:** Endpoint Integration Test Incident
 **Status:** `RESOLVED_SECURE` | **Severity:** `HIGH` (Score: 0.85)
-**Recorded UTC:** `2026-10-31T21:08:54.585855+00:00`
+**Recorded UTC:** `2026-10-31T22:01:29.776024+00:00`
 
 ---
 ## 1. Executive Summary & Exposure Window

@@ -1,0 +1,27 @@
+================================================================================
+          AEGISMEM D6 -- ATTACK, DETECT, HEAL, ANSWER CORRECTLY AGAIN           
+================================================================================
+Target Memory ID : POLICY-001
+Protection Mode  : on
+Session ID       : sess-inc-36a608c7
+Gateway URL      : http://localhost:8000
+Output Directory : demo_runs\20261101_141228
+================================================================================
+
+>>> [MODE: PROTECTION ON] Executing Full 8-Step Self-Healing Lifecycle...
+
+[STEP 1/8] Attacker Reconnaissance (Read 2 Memories) & Tampering Write...
+  Recon Read 1 : Target=POLICY-001 v1 | IP=172.21.0.4:33824 | Method=GET | Endpoint=/api/memories/POLICY-001
+  Recon Read 2 : Target=SOP-003 v1 | IP=172.21.0.4:33830 | Method=GET | Endpoint=/api/memories/SOP-003
+  Attack Write : Target=POLICY-001 v | IP=: | Method= | Endpoint=
+  Attack ID    : 
+  Dwell Start  : 
+  [PASS] Step 1 Asserted: Real network telemetry captured from attacker container.
+
+[STEP 2/8] Customer Query to Support Agent Before Recovery (Read-Path Gate)...
+  Question            : I bought an item 45 days ago. Can I get a refund?
+  Memory Version      : v1
+  Policy Decision     : REFUND DENIED
+  Verification Status : VERIFIED (Passed AegisMem Security Gate)
+  Agent Answer        : Based on our Enterprise Customer Refund Policy (limit of 30 calendar days), your purchase made 45 days ago is REFUND DENIED as it exceeds the 30 calendar day window. Refund requests beyond 30 days require manager exception review.
+FAILED: Read-path gate failed to block tampered memory!

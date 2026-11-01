@@ -1,0 +1,14 @@
+{
+  "store_domain": "isolated_cryptographic_vault",
+  "memory_id": "POLICY-002",
+  "version": 1,
+  "revision_id": "23b8c1e9-3924-46de-beb1-3b9046685257",
+  "parent_revision_id": null,
+  "content": "Refund requests beyond 30 calendar days require manual review.",
+  "content_hash": "0ebaf0fc61b57588c40e0d391c0400bc691c2a81b870f6e82b44d32091f98772",
+  "previous_hash": null,
+  "signature": "eysoo+TqMMWTtxD8HEmPnuhwZT5JO10+pvVXjESUJZB8Nw2JWYH1G6Zjuh/fJtbGaBTjECrXjwPPZHAyN1zSCw==",
+  "authorization_signature": null,
+  "authorization_id": null,
+  "authorization_nonce": null
+}

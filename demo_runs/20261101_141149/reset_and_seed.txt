@@ -1,0 +1,75 @@
+================================================================================
+               AEGISMEM SYSTEM RESET AND DETERMINISTIC SEED                     
+================================================================================
+Timestamp (UTC) : 2026-11-01 14:11:49Z
+Fixed Seed      : 42
+Transcript Path : demo_runs\20261101_141149\reset_and_seed.txt
+--------------------------------------------------------------------------------
+[STAGE 1] Syncing reset scripts and modules to aegismem-gateway container...
+
+[STAGE 2] Executing Initial Reset and Seed (Run 1) on target database 'aegismem_demo'...
+================================================================================
+                    AEGISMEM RESET AND SEED VERIFICATION                       
+================================================================================
+[ROOT CAUSE DIAGNOSIS]
+  Previous 'initialize_api_demo' failure (exit code 1) investigated:
+  1. ModuleNotFoundError: No module named 'core'
+     - Script invoked directly without PYTHONPATH=/app, so sys.path lacked root.
+     - Fixed by adding dynamic project root resolution to sys.path.
+  2. Incomplete reset scope:
+     - Did not truncate incident/attack tables (leftover attack_events / recovery_events).
+     - Left database in unverified state across repeated runs.
+  3. Missing cryptographic manifest & trust vault integration:
+     - Initialized rows lacked IntegrityManifestStore cryptographic signatures and
+       ReplicatedTrustVault out-of-band snapshots, causing detection gate anomalies.
+--------------------------------------------------------------------------------
+
+[POSTGRES READ-BACK VERIFICATION]
+--------------------------------------------------------------------------------
+Target Demo Database : aegismem_demo [ISOLATED REVIEWER DEMO]
+Original Live DB Row : 171 memories in aegismem_live [PRESERVED & UNTOUCHED]
+--------------------------------------------------------------------------------
+Incident & Audit Tables in Demo DB (must all be 0):
+  - attack_events                   :   0 rows [CLEAN]
+  - recovery_events                 :   0 rows [CLEAN]
+  - soc_alerts                      :   0 rows [CLEAN]
+  - memory_access_events            :   0 rows [CLEAN]
+  - session_audit_events            :   0 rows [CLEAN]
+  - dashboard_operation_approvals   :   0 rows [CLEAN]
+
+Active Baseline Memories (9 total in aegismem_demo):
+  MEMORY ID          VER   STATUS   TRUST  SUSP   HASH (SHA-256)   CONTENT PREVIEW
+  ------------------ ----- -------- ------ ------ ---------------- ------------------------------
+  ENT-ACCESS-001     v1    active   1.00   0.00   54ba9a55e498a4bb... All employees must use multi-fac...
+  ENT-BACKUP-003     v1    active   1.00   0.00   15f213739aacf51d... Enterprise systems must maintain...
+  ENT-DATA-004       v1    active   1.00   0.00   d874984ffdbf492f... Enterprise data must be collecte...
+  ENT-EMPLOYEE-005   v1    active   1.00   0.00   06680d720c1b2610... Employees must protect their cre...
+  ENT-INCIDENT-002   v1    active   1.00   0.00   63fbed59168dc941... All suspected security incidents...
+  FAQ-001            v1    active   1.00   0.00   2c4b6d7338bbce02... Customer support is available Mo...
+  POLICY-001         v1    active   1.00   0.00   02d4eb7dafc2b3cc... Customers may request refunds wi...
+  POLICY-002         v1    active   1.00   0.00   0ebaf0fc61b57588... Refund requests beyond 30 calend...
+  SOP-003            v1    active   1.00   0.00   655fae106f4ea3b0... Customer support must verify the...
+
+Memory Dependencies (4 total):
+  - POLICY-001 --[derived_from (strength: 0.9)]--> POLICY-002
+  - POLICY-002 --[derived_from (strength: 0.8)]--> SOP-003
+  - SOP-003 --[derives_from (strength: 1.0)]--> POLICY-001
+  - SOP-003 --[derives_from (strength: 0.8)]--> POLICY-002
+--------------------------------------------------------------------------------
+
+AegisMem reset and seed completed successfully.
+
+[STAGE 3] Executing Second Reset and Seed (Run 2) for Idempotence Verification...
+
+[STAGE 4] Executing Real Assertions on Database Read-Back...
+  [PASS] Assertion 0: Original database preservation verified (aegismem_live has all 171 historical records intact).
+  [PASS] Assertion 1: All 6 incident & audit tables are verified empty (0 rows).
+  [PASS] Assertion 2: Total baseline memory count is 9.
+  [PASS] Assertion 3: All 9 memories verified active, version 1, trust=1.00, suspicion=0.00.
+  [PASS] Assertion 4: Baseline dependency count is verified (2 relationships).
+  [PASS] Assertion 5: Strict Idempotence Verified: Run 1 and Run 2 state, hashes, and counts are identical.
+
+================================================================================
+                    D3 RESET AND SEED: ALL ASSERTIONS PASSED                   
+================================================================================
+Transcript saved to: demo_runs\20261101_141149\reset_and_seed.txt

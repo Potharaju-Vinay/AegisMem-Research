@@ -1,0 +1,18 @@
+{
+    "benchmark_id":  "BENCH-20261101_145841",
+    "trials_count":  2,
+    "success_count":  2,
+    "failure_count":  0,
+    "failure_rate_percent":  0,
+    "max_exposure_window":  0,
+    "latency_metrics_ms":  {
+                               "min_total_ms":  1046.16,
+                               "mean_total_ms":  1128.04,
+                               "median_total_ms":  1128.04,
+                               "p95_total_ms":  1201.72,
+                               "max_total_ms":  1209.91,
+                               "mean_ttd_ms":  35.62,
+                               "mean_ttr_ms":  1092.4
+                           },
+    "csv_file":  "demo_runs\\20261101_145841_trials\\trials.csv"
+}

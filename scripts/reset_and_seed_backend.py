@@ -70,6 +70,8 @@ from core.security.dashboard_operation_approval import DashboardOperationApprova
 from core.integrity.hash import calculate_version_hash, calculate_content_hash
 from core.integrity.manifest_store import IntegrityManifestStore
 from core.provenance.manager import ProvenanceManager
+from core.provenance.checkpoint import ProvenanceCheckpointStore
+from core.provenance.trusted_head import TrustedCheckpointHeadStore
 from core.recovery.vault import ReplicatedTrustVault
 
 
@@ -254,6 +256,7 @@ def reset_and_seed(seed_value: int = 42, target_db: str = ALLOWED_DEMO_DATABASE)
                 trust_score=1.0,
                 suspicion_score=0.0,
                 status="active",
+                authorization_state="AUTHORIZED",
             )
             session.add(rec)
             session.flush()
@@ -306,6 +309,18 @@ def reset_and_seed(seed_value: int = 42, target_db: str = ALLOWED_DEMO_DATABASE)
             session.add(md)
 
         session.commit()
+
+        # Create baseline checkpoints and advance trusted heads
+        cp_store = ProvenanceCheckpointStore()
+        head_store = TrustedCheckpointHeadStore(checkpoint_store=cp_store)
+        for cr in created_records:
+            events = prov_mgr.get_events(cr["memory_id"])
+            if events:
+                try:
+                    cp_store.create_checkpoint(events)
+                    head_store.advance(events)
+                except Exception as exc:
+                    print(f"  [Warning] Checkpoint init for {cr['memory_id']}: {exc}")
 
         # 6. Read-back verification directly from PostgreSQL
         readback_incidents = {}

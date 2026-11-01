@@ -1,0 +1,251 @@
+{
+  "incident_report_id": "REPORT-sess-inc-d48adeaf",
+  "generated_at": "2026-11-01T14:59:32.211494+00:00",
+  "session_id": "sess-inc-d48adeaf",
+  "database_source": "PostgreSQL aegismem_demo (Read-Back Audit)",
+  "attacker": {
+    "actor": "kali-attacker",
+    "source_ip": "172.21.0.4",
+    "source_port": 33568,
+    "entry_point": "/attacker/memory/write",
+    "method": "POST"
+  },
+  "memories_read_count": 2,
+  "memories_read": [
+    {
+      "access_id": "access-f114cbbc6dc7459e9a59625e3dd915eb",
+      "memory_id": "POLICY-001",
+      "memory_version": 1,
+      "actor": "kali-attacker",
+      "source_ip": "172.21.0.4",
+      "source_port": 33544,
+      "entry_point": "/api/memories/POLICY-001",
+      "method": "GET",
+      "authorization_state": "UNAUTHORIZED",
+      "timestamp": "2026-11-01T14:59:27.974856+00:00"
+    },
+    {
+      "access_id": "access-155101d2bca74fccb59beb456321ed75",
+      "memory_id": "SOP-003",
+      "memory_version": 1,
+      "actor": "kali-attacker",
+      "source_ip": "172.21.0.4",
+      "source_port": 33554,
+      "entry_point": "/api/memories/SOP-003",
+      "method": "GET",
+      "authorization_state": "UNAUTHORIZED",
+      "timestamp": "2026-11-01T14:59:28.205442+00:00"
+    }
+  ],
+  "memories_modified_count": 1,
+  "memories_modified": [
+    {
+      "attack_id": "ATK-FB799B2CBF53",
+      "memory_id": "POLICY-001",
+      "attacker": "kali-attacker",
+      "attack_type": "content_tampering",
+      "original_version": 1,
+      "target_version": 2,
+      "original_content": "Customers may request refunds within 30 calendar days of purchase.",
+      "tampered_content": "Customer refunds are permitted within 180 calendar days of the transaction, subject to eligibility verification.",
+      "unified_diff": "--- POLICY-001_v1\n+++ POLICY-001_v2\n@@ -1 +1 @@\n-Customers may request refunds within 30 calendar days of purchase.\n+Customer refunds are permitted within 180 calendar days of the transaction, subject to eligibility verification.",
+      "attack_time": "2026-11-01T14:59:28.567206+00:00",
+      "current_active_version": 3,
+      "current_active_content": "Customers may request refunds within 30 calendar days of purchase.",
+      "current_trust_score": 1.0,
+      "current_status": "active"
+    }
+  ],
+  "soc_alerts_count": 2,
+  "soc_alerts": [
+    {
+      "alert_id": "SOC-EB16391E3238",
+      "memory_id": "POLICY-001",
+      "severity": "CRITICAL",
+      "severity_score": 85.0,
+      "status": "OPEN",
+      "evidence_summary": "Memory integrity compromised; Suspicious provenance evidence; Attack telemetry detected; Memory content changed",
+      "timestamp": "2026-11-01T14:59:28.584829+00:00"
+    },
+    {
+      "alert_id": "SOC-1B0968FDDC2A",
+      "memory_id": "POLICY-001",
+      "severity": "HIGH",
+      "severity_score": 70.0,
+      "status": "OPEN",
+      "evidence_summary": "Suspicious provenance evidence; Attack telemetry detected; Unauthorized access; Memory content changed",
+      "timestamp": "2026-11-01T14:59:29.164405+00:00"
+    }
+  ],
+  "recovery_events_count": 6,
+  "recovery_events": [
+    {
+      "id": 125,
+      "memory_id": "POLICY-001",
+      "event_type": "TCRP_DECISION",
+      "action": "ROLLBACK",
+      "status": "completed",
+      "message": "Direct compromise evidence made retention infeasible; TCRP selected the minimum-cost feasible recovery action.",
+      "compromised_version": 2,
+      "restored_version": null,
+      "validation_result": null,
+      "selected_action_cost": 0.1043,
+      "candidate_costs": {
+        "DELETE": 0.3225,
+        "QUARANTINE": 0.35274999999999995,
+        "RETAIN": 1.0,
+        "ROLLBACK": 0.1043
+      },
+      "dependency_exposure": 0.0,
+      "timestamp": "2026-11-01T14:59:29.400881+00:00"
+    },
+    {
+      "id": 126,
+      "memory_id": "POLICY-002",
+      "event_type": "TCRP_DECISION",
+      "action": "QUARANTINE",
+      "status": "completed",
+      "message": "Recovery evidence or dependency impact prevents safe retention; TCRP selected the minimum-cost feasible containment action.",
+      "compromised_version": 1,
+      "restored_version": null,
+      "validation_result": null,
+      "selected_action_cost": 0.18,
+      "candidate_costs": {
+        "DELETE": 0.3975,
+        "QUARANTINE": 0.18,
+        "RETAIN": 0.9,
+        "ROLLBACK": 0.31
+      },
+      "dependency_exposure": 0.9,
+      "timestamp": "2026-11-01T14:59:29.405338+00:00"
+    },
+    {
+      "id": 127,
+      "memory_id": "SOP-003",
+      "event_type": "TCRP_DECISION",
+      "action": "QUARANTINE",
+      "status": "completed",
+      "message": "Recovery evidence or dependency impact prevents safe retention; TCRP selected the minimum-cost feasible containment action.",
+      "compromised_version": 1,
+      "restored_version": null,
+      "validation_result": null,
+      "selected_action_cost": 0.29900000000000004,
+      "candidate_costs": {
+        "DELETE": 0.40650000000000003,
+        "QUARANTINE": 0.29900000000000004,
+        "RETAIN": 0.384,
+        "ROLLBACK": 0.382
+      },
+      "dependency_exposure": 0.72,
+      "timestamp": "2026-11-01T14:59:29.410226+00:00"
+    },
+    {
+      "id": 128,
+      "memory_id": "POLICY-001",
+      "event_type": "RECOVERY",
+      "action": "ROLLBACK",
+      "status": "partial",
+      "message": "Content recovery validated; complete verification not achieved.",
+      "compromised_version": 2,
+      "restored_version": 3,
+      "validation_result": "PARTIAL",
+      "selected_action_cost": null,
+      "candidate_costs": null,
+      "dependency_exposure": null,
+      "timestamp": "2026-11-01T14:59:29.626738+00:00"
+    },
+    {
+      "id": 129,
+      "memory_id": "POLICY-002",
+      "event_type": "RECOVERY",
+      "action": "QUARANTINE",
+      "status": "success",
+      "message": "Memory isolated pending verification; recovery not performed.",
+      "compromised_version": 1,
+      "restored_version": null,
+      "validation_result": null,
+      "selected_action_cost": null,
+      "candidate_costs": null,
+      "dependency_exposure": null,
+      "timestamp": "2026-11-01T14:59:29.634037+00:00"
+    },
+    {
+      "id": 130,
+      "memory_id": "SOP-003",
+      "event_type": "RECOVERY",
+      "action": "QUARANTINE",
+      "status": "success",
+      "message": "Memory isolated pending verification; recovery not performed.",
+      "compromised_version": 1,
+      "restored_version": null,
+      "validation_result": null,
+      "selected_action_cost": null,
+      "candidate_costs": null,
+      "dependency_exposure": null,
+      "timestamp": "2026-11-01T14:59:29.642337+00:00"
+    }
+  ],
+  "timeline": [
+    {
+      "stage": "RECONNAISSANCE_READ",
+      "timestamp": "2026-11-01T14:59:27.974856+00:00",
+      "detail": "Attacker kali-attacker read POLICY-001 v1 via /api/memories/POLICY-001"
+    },
+    {
+      "stage": "RECONNAISSANCE_READ",
+      "timestamp": "2026-11-01T14:59:28.205442+00:00",
+      "detail": "Attacker kali-attacker read SOP-003 v1 via /api/memories/SOP-003"
+    },
+    {
+      "stage": "UNAUTHORIZED_WRITE",
+      "timestamp": "2026-11-01T14:59:28.553194+00:00",
+      "detail": "Attacker kali-attacker wrote unauthorized modification to POLICY-001 via /attacker/memory/write"
+    },
+    {
+      "stage": "DETECTION_ALERT",
+      "timestamp": "2026-11-01T14:59:28.584829+00:00",
+      "detail": "AegisMem detected compromise on POLICY-001 (Alert SOC-EB16391E3238, Severity: CRITICAL)"
+    },
+    {
+      "stage": "DETECTION_ALERT",
+      "timestamp": "2026-11-01T14:59:29.164405+00:00",
+      "detail": "AegisMem detected compromise on POLICY-001 (Alert SOC-1B0968FDDC2A, Severity: HIGH)"
+    },
+    {
+      "stage": "TCRP_RECOVERY",
+      "timestamp": "2026-11-01T14:59:29.400881+00:00",
+      "detail": "TCRP action 'ROLLBACK' executed on POLICY-001: restored to vNone (None)"
+    },
+    {
+      "stage": "TCRP_RECOVERY",
+      "timestamp": "2026-11-01T14:59:29.405338+00:00",
+      "detail": "TCRP action 'QUARANTINE' executed on POLICY-002: restored to vNone (None)"
+    },
+    {
+      "stage": "TCRP_RECOVERY",
+      "timestamp": "2026-11-01T14:59:29.410226+00:00",
+      "detail": "TCRP action 'QUARANTINE' executed on SOP-003: restored to vNone (None)"
+    },
+    {
+      "stage": "TCRP_RECOVERY",
+      "timestamp": "2026-11-01T14:59:29.626738+00:00",
+      "detail": "TCRP action 'ROLLBACK' executed on POLICY-001: restored to v3 (PARTIAL)"
+    },
+    {
+      "stage": "TCRP_RECOVERY",
+      "timestamp": "2026-11-01T14:59:29.634037+00:00",
+      "detail": "TCRP action 'QUARANTINE' executed on POLICY-002: restored to vNone (None)"
+    },
+    {
+      "stage": "TCRP_RECOVERY",
+      "timestamp": "2026-11-01T14:59:29.642337+00:00",
+      "detail": "TCRP action 'QUARANTINE' executed on SOP-003: restored to vNone (None)"
+    }
+  ],
+  "telemetry_metrics": {
+    "dwell_time_ms": 31.64,
+    "recovery_duration_ms": 1057.51,
+    "total_lifecycle_ms": 1089.14,
+    "exposure_window": 0
+  }
+}

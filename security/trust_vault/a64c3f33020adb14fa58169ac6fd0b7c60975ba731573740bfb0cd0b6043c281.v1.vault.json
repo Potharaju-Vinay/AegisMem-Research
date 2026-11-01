@@ -2,13 +2,13 @@
   "store_domain": "isolated_cryptographic_vault",
   "memory_id": "SOP-003",
   "version": 1,
-  "revision_id": "a9cbfb1d-9ee9-44a6-9ad6-02cd09615281",
+  "revision_id": "bd9c66b3-ad3c-4d6d-9a3d-1fa7bc8960a9",
   "parent_revision_id": null,
-  "content": "Customer support must verify the purchase date before processing a refund.",
-  "content_hash": "034be876084f3918cae0c7c7d39a88034b4a41252d239f155cd752b86beafab1",
+  "content": "Customer support must verify the purchase date before processing a refund. Complaints requiring escalation must be routed to a Level 2 customer support specialist within 24 hours.",
+  "content_hash": "655fae106f4ea3b07e801f2480eaa1dc48026ccf80ce7e56cf91efc724a1bedc",
   "previous_hash": null,
-  "signature": "6kUBovu+CNw7Hr4qUkvVfQvwh4iF60H/oOfWXaN9Hp6bKREOGU15TQmMNXr+OLzhBaEYY/SN0hXmV7/bCFGBAw==",
-  "authorization_signature": "b61775c424c54a038e27c806e05c9f15b165ab420fae1f373869ca6c44b5ef1862ee0c7a29672d57e800d3756745d6c204e442498a23f2f4dd848462a1e6010e",
-  "authorization_id": "AUTH-OWNER-62FB41B3",
-  "authorization_nonce": "NONCE-D68C2FDC6ED7"
+  "signature": "nACBtMBz54p2YIDJGb2q95SW+5zfd82ZzZiDyjGsjJ5kx/i3kMGRzbPcLTCYsV5FFnXEzvYBVTEUtKuD78FtCQ==",
+  "authorization_signature": null,
+  "authorization_id": null,
+  "authorization_nonce": null
 }

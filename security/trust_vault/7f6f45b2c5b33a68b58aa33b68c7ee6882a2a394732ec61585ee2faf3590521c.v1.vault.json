@@ -2,12 +2,13 @@
   "store_domain": "isolated_cryptographic_vault",
   "memory_id": "ENT-BACKUP-003",
   "version": 1,
-  "revision_id": "299963dd-9033-4787-a41d-d177fc34ae50",
+  "revision_id": "b74d0fb1-32e7-4629-8fad-c1a606cb0fb3",
   "parent_revision_id": null,
   "content": "Enterprise systems must maintain regular backups of critical data. Backup copies must be protected against unauthorized modification and deletion. Restoration procedures must be tested periodically to ensure data availability and integrity.",
   "content_hash": "15f213739aacf51d30d08c9eef58518c78d6201f8bae713430ed3c46624af469",
   "previous_hash": null,
-  "signature": "nMHFlxY8Ugp3MS7c0PYl9udDIYzWsE44tIt57P+GdP7lVtxcsfSX/XlXJ87RDSzwU8ZFHUrWr1zhrjkxb2ZqDg==",
-  "authorization_signature": "455cac5a19528a6d9e78844effbd077e55e373382720107779c6d693aa047f8fa6856ae9e79af1f3f9fa721b171342b47c8ee07ed57e34b032ecb7d5264ef302",
-  "authorization_id": "BGsNLCU54VGqAfT5zkG3hVzsXTO2hYFBj04gzH5bTbg"
+  "signature": "XA9aLMOEQhsFe6dJ7DkTbVRaTspml7AfdTRupQTvu/CALL5NcGhLYtZCZr61+DE66Cn5smesfJOLvHTCjEB7DA==",
+  "authorization_signature": null,
+  "authorization_id": null,
+  "authorization_nonce": null
 }

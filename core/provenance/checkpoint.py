@@ -1,4 +1,4 @@
-﻿import base64
+import base64
 import hashlib
 import json
 import os
@@ -53,9 +53,9 @@ class ProvenanceCheckpointStore:
         if any(event.memory_id != memory_id for event in events):
             raise ValueError("Events must belong to the same memory")
 
-        versions = [event.version for event in events]
-        if len(set(versions)) != len(versions):
-            raise ValueError("Duplicate provenance versions")
+        for i in range(1, len(events)):
+            if events[i].version < events[i-1].version:
+                raise ValueError("Provenance versions must be monotonic")
 
         checkpoint = {
             "memory_id": memory_id,
@@ -114,9 +114,9 @@ class ProvenanceCheckpointStore:
         if any(event.memory_id != memory_id for event in events):
             return "CHAIN_TAMPERED"
 
-        versions = [event.version for event in events]
-        if len(set(versions)) != len(versions):
-            return "CHAIN_TAMPERED"
+        for i in range(1, len(events)):
+            if events[i].version < events[i-1].version:
+                return "CHAIN_TAMPERED"
 
         latest_version = events[-1].version
         path = self._path(memory_id, latest_version)

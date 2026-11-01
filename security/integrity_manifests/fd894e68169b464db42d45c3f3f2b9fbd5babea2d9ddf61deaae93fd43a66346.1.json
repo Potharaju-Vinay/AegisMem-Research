@@ -1,9 +1,9 @@
 {
-  "content_hash": "167631efcd1ccb998db25cbe1adb2747e1e443e5422de4e5d410c399d8daa669",
+  "content_hash": "02d4eb7dafc2b3cca3af22a315f2906c45e8edaddf192abf8ef65c0d1a93f904",
   "memory_id": "POLICY-001",
   "parent_revision_id": null,
   "previous_hash": null,
-  "revision_id": "cf65e3c7-2927-4473-a72a-6adb3aa5d0a7",
-  "signature": "fa38CebXKz6r1+tYmhrmYse1JW+VTOz6BMcA8XSobshJoQT+G5W1Ha9wz++trnuQHIpZFS94srewJ/XqNpS3AA==",
+  "revision_id": "bdd640fb-0667-4ad1-9c80-317fa3b1799d",
+  "signature": "fRndqiXbMHhd9s5fk3k9yyjAFMvdRZoTFzyTlahYMHXrEAGCUrwN0qJFN6RBO7kEEVUFSqD26bz+2bWIOIa4Cw==",
   "version": 1
 }

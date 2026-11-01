@@ -59,6 +59,7 @@ from core.security.owner_auth import attack_lab_enabled, verify_owner_token
 from core.integrity.manifest_store import IntegrityManifestStore
 from core.provenance.checkpoint import ProvenanceCheckpointStore
 from core.provenance.trusted_head import TrustedCheckpointHeadStore
+from core.recovery.vault import ReplicatedTrustVault
 import secrets
 from pathlib import Path
 from urllib.parse import quote
@@ -308,10 +309,12 @@ async def cache_raw_request_body(request: Request, call_next):
 
 class ChatRequest(BaseModel):
     question: str
+    protection: bool = True
 
 
 class RefundRequest(BaseModel):
     customer_days: int
+    protection: bool = True
 
 
 class ExternalMemoryWriteRequest(BaseModel):
@@ -320,6 +323,7 @@ class ExternalMemoryWriteRequest(BaseModel):
     attacker: str = "kali-attacker"
     attack_type: str = "content_tampering"
     session_id: str | None = None
+    auto_heal: bool = False
     
 class OwnerMemoryWriteRequest(BaseModel):
     memory_id: str
@@ -686,43 +690,59 @@ def chat(request: ChatRequest, http_request: Request):
             question
         )
 
-        security = aegismem_security_gate(
-            session,
-            memory.memory_id
-        )
+        protection_enabled = bool(request.protection) and (http_request.headers.get("x-aegis-protection", "on").lower() != "off")
 
-        if not security["verified"]:
-            return {
-                "answer": (
-                    "I found relevant enterprise memory, "
-                    "but AegisMem blocked it because the memory "
-                    "could not be verified as trusted."
-                ),
-                "mode": "enterprise",
-                "memory_used": True,
-                "aegismem_verified": False,
-                "memory_id": memory.memory_id,
-                "memory_version": memory.version,
-                "trust": memory.trust_score,
-                "trust_score": memory.trust_score,
-                "status": memory.status,
-                "suspicion_score": security["suspicion_score"],
-                "security_reason": security["reason"]
-            }
+        if protection_enabled:
+            security = aegismem_security_gate(
+                session,
+                memory.memory_id
+            )
 
-        agent = EnterpriseAgent(session)
+            if not security["verified"]:
+                return {
+                    "answer": (
+                        "I found relevant enterprise memory, "
+                        "but AegisMem blocked it because the memory "
+                        "could not be verified as trusted."
+                    ),
+                    "mode": "enterprise",
+                    "memory_used": True,
+                    "aegismem_verified": False,
+                    "protection_active": True,
+                    "decision": "BLOCKED",
+                    "memory_id": memory.memory_id,
+                    "memory_version": memory.version,
+                    "trust": memory.trust_score,
+                    "trust_score": memory.trust_score,
+                    "status": memory.status,
+                    "suspicion_score": security["suspicion_score"],
+                    "security_reason": security["reason"]
+                }
 
-        result = agent.answer_question(
-            memory_id=memory.memory_id,
-            question=question
-        )
-
-        result["mode"] = "enterprise"
-        result["memory_used"] = True
-        result["aegismem_verified"] = True
-        result["security_reason"] = "Memory passed AegisMem security verification."
-
-        return result
+            agent = EnterpriseAgent(session, allow_untrusted=False)
+            result = agent.answer_question(
+                memory_id=memory.memory_id,
+                question=question
+            )
+            result["mode"] = "enterprise"
+            result["memory_used"] = True
+            result["aegismem_verified"] = True
+            result["protection_active"] = True
+            result["security_reason"] = "Memory passed AegisMem security verification."
+            return result
+        else:
+            # Protection explicitly disabled (evaluation mode for proving harm)
+            agent = EnterpriseAgent(session, allow_untrusted=True)
+            result = agent.answer_question(
+                memory_id=memory.memory_id,
+                question=question
+            )
+            result["mode"] = "enterprise"
+            result["memory_used"] = True
+            result["aegismem_verified"] = False
+            result["protection_active"] = False
+            result["security_reason"] = "Protection disabled: unverified memory retrieved without security gate."
+            return result
 
     except LookupError:
         return {
@@ -771,33 +791,43 @@ def refund_decision(request: RefundRequest, http_request: Request):
             "What is the refund policy?"
         )
 
-        security = aegismem_security_gate(
-            session,
-            memory.memory_id
-        )
+        protection_enabled = bool(request.protection) and (http_request.headers.get("x-aegis-protection", "on").lower() != "off")
 
-        if not security["verified"]:
-            return {
-                "memory_id": memory.memory_id,
-                "memory_version": memory.version,
-                "customer_days": request.customer_days,
-                "decision": "BLOCKED",
-                "reason": (
-                    "AegisMem blocked the decision because "
-                    "the policy memory could not be verified as trusted."
-                ),
-                "trust_score": memory.trust_score,
-                "status": memory.status,
-                "suspicion_score": security["suspicion_score"],
-                "security_reason": security["reason"]
-            }
+        if protection_enabled:
+            security = aegismem_security_gate(
+                session,
+                memory.memory_id
+            )
 
-        agent = EnterpriseAgent(session)
+            if not security["verified"]:
+                return {
+                    "memory_id": memory.memory_id,
+                    "memory_version": memory.version,
+                    "customer_days": request.customer_days,
+                    "decision": "BLOCKED",
+                    "reason": (
+                        "AegisMem blocked the decision because "
+                        "the policy memory could not be verified as trusted."
+                    ),
+                    "trust_score": memory.trust_score,
+                    "status": memory.status,
+                    "suspicion_score": security["suspicion_score"],
+                    "security_reason": security["reason"]
+                }
 
-        return agent.make_refund_decision(
-            memory_id=memory.memory_id,
-            customer_days=request.customer_days
-        )
+            agent = EnterpriseAgent(session, allow_untrusted=False)
+            return agent.make_refund_decision(
+                memory_id=memory.memory_id,
+                customer_days=request.customer_days
+            )
+        else:
+            agent = EnterpriseAgent(session, allow_untrusted=True)
+            res = agent.make_refund_decision(
+                memory_id=memory.memory_id,
+                customer_days=request.customer_days
+            )
+            res["protection_active"] = False
+            return res
 
     except LookupError as e:
         raise HTTPException(
@@ -831,15 +861,26 @@ def owner_memory_write(
         repository = MemoryRepository(session)
 
         record = repository.create_owner_authorized(
-    memory_id=request.memory_id,
-    content=request.content,
-    source="enterprise_owner",
-    authorization_id=authorization_id,
-    nonce=nonce,
-    authorization_signature=request.authorization_signature,
-    expected_revision_id=request.expected_revision_id,
-    record_provenance=True,
-)
+            memory_id=request.memory_id,
+            content=request.content,
+            source="enterprise_owner",
+            authorization_id=authorization_id,
+            nonce=nonce,
+            authorization_signature=request.authorization_signature,
+            expected_revision_id=request.expected_revision_id,
+            record_provenance=True,
+        )
+
+        try:
+            prov_mgr = ProvenanceManager(session)
+            events = prov_mgr.get_events(record.memory_id)
+            if events:
+                cp_store = ProvenanceCheckpointStore()
+                head_store = TrustedCheckpointHeadStore(checkpoint_store=cp_store)
+                cp_store.create_checkpoint(events)
+                head_store.advance(events)
+        except Exception:
+            pass
 
         return {
             "memory_id": record.memory_id,
@@ -860,14 +901,64 @@ def owner_memory_write(
         session.close()
 
 
+@app.get("/attacker/memory/{memory_id}")
+@app.get("/api/memories/{memory_id}")
+def read_memory_endpoint(
+    memory_id: str,
+    http_request: Request,
+    actor: str = "kali-attacker",
+    session_id: str | None = None,
+):
+    if not attack_lab_enabled():
+        raise HTTPException(status_code=403, detail="Attack lab is disabled.")
+    session = get_session()
+    try:
+        repository = MemoryRepository(session)
+        current = repository.get_latest(memory_id)
+        if current is None:
+            raise HTTPException(status_code=404, detail=f"Memory '{memory_id}' not found.")
+        
+        client = http_request.client
+        source_ip = client.host if client else None
+        source_port = client.port if client else None
+        sess_id = session_id or http_request.headers.get("x-session-id") or http_request.headers.get("x-attacker-session")
+        act = http_request.headers.get("x-actor") or actor
+
+        access_logger = MemoryAccessLogger(session)
+        access_event = access_logger.record(
+            memory_id=memory_id,
+            memory_version=current.version,
+            actor=act,
+            session_id=sess_id,
+            source_ip=source_ip,
+            source_port=source_port,
+            entry_point=http_request.url.path,
+            access_method=http_request.method,
+            authorization_state="UNAUTHORIZED"
+        )
+        session.commit()
+        return {
+            "access_id": access_event.access_id,
+            "memory_id": current.memory_id,
+            "version": current.version,
+            "content": current.content,
+            "status": current.status,
+            "trust_score": current.trust_score,
+            "source_ip": source_ip,
+            "source_port": source_port,
+            "session_id": sess_id,
+            "access_method": http_request.method,
+            "entry_point": http_request.url.path
+        }
+    finally:
+        session.close()
+
+
 @app.post("/attacker/memory/write")
 def attacker_memory_write(
     request: ExternalMemoryWriteRequest,
     http_request: Request,
 ):
-
-    require_owner_signature(http_request)
-    
     if not attack_lab_enabled():
         raise HTTPException(
                 status_code=403,
@@ -947,8 +1038,14 @@ def attacker_memory_write(
             access_method=http_request.method
         )
 
-        monitor = AegisMemSecurityMonitor(session)
-        security_result = monitor.process(request.memory_id)
+        if request.auto_heal:
+            monitor = AegisMemSecurityMonitor(session)
+            security_result = monitor.process(request.memory_id)
+        else:
+            security_result = {
+                "status": "unrecovered_pending_action",
+                "message": "Memory modified without immediate recovery. Pending compromise detection and TCRP resolution."
+            }
 
         return {
             "attack": attack_result,
@@ -1466,12 +1563,9 @@ def detect_memory(memory_id: str, http_request: Request):
 
 @app.post("/aegismem/recover/{memory_id}")
 def recover_memory(memory_id: str, http_request: Request):
-    
-        
-    require_owner_signature(http_request)
+    require_owner(http_request)
 
     session = get_session()
-
 
     try:
         repository = MemoryRepository(session)
@@ -1492,7 +1586,6 @@ def recover_memory(memory_id: str, http_request: Request):
             graph
         )
 
-        
         manifest_store = repository.manifest_store
         provenance_manager = ProvenanceManager(session)
         checkpoint_store = ProvenanceCheckpointStore()
@@ -1500,15 +1593,17 @@ def recover_memory(memory_id: str, http_request: Request):
             checkpoint_store=checkpoint_store
         )
 
-        orchestrator = AegisMemRecoveryOrchestrator(
-    repository=repository,
-    impact_analyzer=impact_analyzer,
-    manifest_store=manifest_store,
-    provenance_manager=provenance_manager,
-    checkpoint_store=checkpoint_store,
-    trusted_head_store=trusted_head_store,
-)
+        vault_store = ReplicatedTrustVault()
 
+        orchestrator = AegisMemRecoveryOrchestrator(
+            repository=repository,
+            impact_analyzer=impact_analyzer,
+            manifest_store=manifest_store,
+            provenance_manager=provenance_manager,
+            checkpoint_store=checkpoint_store,
+            trusted_head_store=trusted_head_store,
+            vault_store=vault_store,
+        )
 
         recovery = orchestrator.recover_from_attack(
             compromised_memory_id=memory_id,
@@ -1518,6 +1613,17 @@ def recover_memory(memory_id: str, http_request: Request):
         current = repository.get_latest(
             memory_id
         )
+
+        serialized_decisions = []
+        for d in recovery.get("decisions", []):
+            if hasattr(d, "__dict__"):
+                item = dict(d.__dict__)
+                if hasattr(d, "action") and hasattr(d.action, "value"):
+                    item["action"] = d.action.value
+                serialized_decisions.append(item)
+            else:
+                serialized_decisions.append(d)
+        recovery["decisions"] = serialized_decisions
 
         return {
             "memory_id": memory_id,
@@ -1530,6 +1636,24 @@ def recover_memory(memory_id: str, http_request: Request):
 
     finally:
         session.close()
+
+
+@app.post("/aegismem/watcher/pause")
+def pause_watcher(http_request: Request):
+    require_owner(http_request)
+    watcher = getattr(app.state, "aegismem_watcher", None)
+    if watcher:
+        watcher.paused = True
+    return {"status": "paused"}
+
+
+@app.post("/aegismem/watcher/resume")
+def resume_watcher(http_request: Request):
+    require_owner(http_request)
+    watcher = getattr(app.state, "aegismem_watcher", None)
+    if watcher:
+        watcher.paused = False
+    return {"status": "active"}
 
 
 def build_dashboard_internal_request(

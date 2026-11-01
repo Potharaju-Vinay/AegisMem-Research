@@ -1,0 +1,88 @@
+================================================================================
+         AEGISMEM D8 -- REPEATED TRIALS BENCHMARK (N = 20 RUNS)                 
+================================================================================
+Benchmark Trials : 20
+Target Database  : aegismem_demo
+Gateway URL      : http://localhost:8000
+Output Directory : demo_runs\20261101_145920_trials
+CSV Path         : demo_runs\20261101_145920_trials\trials.csv
+================================================================================
+
+>>> [TRIAL 1 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 1 Result: Outcome=SUCCESS | Total=1089.14 ms | TTD=31.64 ms | TTR=1057.51 ms | Exposure=0
+
+>>> [TRIAL 2 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 2 Result: Outcome=SUCCESS | Total=2155.99 ms | TTD=67.67 ms | TTR=2088.32 ms | Exposure=0
+
+>>> [TRIAL 3 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 3 Result: Outcome=SUCCESS | Total=1073.49 ms | TTD=29.44 ms | TTR=1044.05 ms | Exposure=0
+
+>>> [TRIAL 4 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 4 Result: Outcome=SUCCESS | Total=1087.61 ms | TTD=40.8 ms | TTR=1046.81 ms | Exposure=0
+
+>>> [TRIAL 5 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 5 Result: Outcome=SUCCESS | Total=990.42 ms | TTD=29.6 ms | TTR=960.82 ms | Exposure=0
+
+>>> [TRIAL 6 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 6 Result: Outcome=SUCCESS | Total=981.74 ms | TTD=31.99 ms | TTR=949.75 ms | Exposure=0
+
+>>> [TRIAL 7 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 7 Result: Outcome=SUCCESS | Total=1007.6 ms | TTD=26.76 ms | TTR=980.84 ms | Exposure=0
+
+>>> [TRIAL 8 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 8 Result: Outcome=SUCCESS | Total=958.98 ms | TTD=26.89 ms | TTR=932.09 ms | Exposure=0
+
+>>> [TRIAL 9 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 9 Result: Outcome=SUCCESS | Total=980.26 ms | TTD=27.26 ms | TTR=953 ms | Exposure=0
+
+>>> [TRIAL 10 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 10 Result: Outcome=SUCCESS | Total=992.56 ms | TTD=26.15 ms | TTR=966.4 ms | Exposure=0
+
+>>> [TRIAL 11 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 11 Result: Outcome=SUCCESS | Total=1234.09 ms | TTD=27.67 ms | TTR=1206.41 ms | Exposure=0
+
+>>> [TRIAL 12 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 12 Result: Outcome=SUCCESS | Total=983.66 ms | TTD=24.1 ms | TTR=959.56 ms | Exposure=0
+
+>>> [TRIAL 13 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 13 Result: Outcome=SUCCESS | Total=990.75 ms | TTD=26.8 ms | TTR=963.95 ms | Exposure=0
+
+>>> [TRIAL 14 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 14 Result: Outcome=SUCCESS | Total=991.1 ms | TTD=28 ms | TTR=963.1 ms | Exposure=0
+
+>>> [TRIAL 15 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 15 Result: Outcome=SUCCESS | Total=974.38 ms | TTD=32.34 ms | TTR=942.04 ms | Exposure=0
+
+>>> [TRIAL 16 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 16 Result: Outcome=SUCCESS | Total=1003.69 ms | TTD=30.6 ms | TTR=973.1 ms | Exposure=0
+
+>>> [TRIAL 17 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 17 Result: Outcome=SUCCESS | Total=1031.04 ms | TTD=30.16 ms | TTR=1000.89 ms | Exposure=0
+
+>>> [TRIAL 18 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 18 Result: Outcome=SUCCESS | Total=983.34 ms | TTD=26.4 ms | TTR=956.93 ms | Exposure=0
+
+>>> [TRIAL 19 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 19 Result: Outcome=SUCCESS | Total=970.09 ms | TTD=31.09 ms | TTR=939 ms | Exposure=0
+
+>>> [TRIAL 20 / 20] Resetting database to baseline & executing incident lifecycle...
+  Trial 20 Result: Outcome=SUCCESS | Total=1020.78 ms | TTD=29.25 ms | TTR=991.53 ms | Exposure=0
+
+================================================================================
+                 D8 STATISTICAL BENCHMARK SUMMARY (N = 20)                      
+================================================================================
+Total Benchmark Runs       : 20
+Successful Restorations    : 20 / 20
+Incident Failures          : 0
+Max Policy Exposure Window : 0 wrong answers served (ZERO EXPOSURE)
+--------------------------------------------------------------------------------
+Total Self-Healing Duration:
+  - Min Total Latency      : 958.98 ms
+  - Mean Total Latency     : 1075.04 ms
+  - Median (p50) Latency   : 991.83 ms
+  - 95th Percentile (p95)  : 1280.19 ms
+  - Max Total Latency      : 2155.99 ms
+Sub-Phase Breakdown (Means):
+  - Mean Dwell Time (TTD)  : 31.23 ms
+  - Mean Recovery Time(TTR): 1043.8 ms
+================================================================================

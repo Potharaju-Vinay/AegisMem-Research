@@ -45,10 +45,19 @@ services:
     container_name: aegismem-gateway
     command: ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_demo}
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
       - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
       - AEGIS_OWNER_AUTH=true
+    volumes:
+      - ./core:/app/core
+      - ./security:/app/security
+      - ./data:/app/data
+      - ./api:/app/api
+      - ./agent:/app/agent
+      - ./domain:/app/domain
+      - ./admin_client.py:/app/admin_client.py
+      - ./.env:/app/.env
     ports:
       - "8000:8000"
     networks:
@@ -67,9 +76,18 @@ services:
     healthcheck:
       disable: true
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_demo}
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
       - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
+    volumes:
+      - ./core:/app/core
+      - ./security:/app/security
+      - ./data:/app/data
+      - ./api:/app/api
+      - ./agent:/app/agent
+      - ./domain:/app/domain
+      - ./admin_client.py:/app/admin_client.py
+      - ./.env:/app/.env
     networks:
       - data-net
     depends_on:
@@ -85,8 +103,17 @@ services:
     healthcheck:
       disable: true
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_demo}
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
       - VAULT_URL=postgresql+psycopg2://vault_operator:${AEGISMEM_VAULT_PASSWORD:-vault_airgapped_password_2026}@vault-db:5432/aegismem_vault
+    volumes:
+      - ./core:/app/core
+      - ./security:/app/security
+      - ./data:/app/data
+      - ./api:/app/api
+      - ./agent:/app/agent
+      - ./domain:/app/domain
+      - ./admin_client.py:/app/admin_client.py
+      - ./.env:/app/.env
     networks:
       - data-net
       - vault-net
@@ -119,6 +146,27 @@ services:
       - GATEWAY_URL=http://aegismem-gateway:8000
     networks:
       - public-net
+    depends_on:
+      - aegismem-gateway
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegismem-dashboard
+    command: ["python", "scripts/dashboard_server.py", "--port", "5173", "--gateway", "http://aegismem-gateway:8000"]
+    ports:
+      - "127.0.0.1:5173:5173"
+    volumes:
+      - ./frontend/dist:/app/frontend/dist:ro
+      - ./scripts:/app/scripts:ro
+    networks:
+      - public-net
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5173/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
     depends_on:
       - aegismem-gateway
 

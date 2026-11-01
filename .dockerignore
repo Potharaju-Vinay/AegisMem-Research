@@ -18,3 +18,4 @@ backups/
 logs/
 *.log
 .pytest_cache/
+

@@ -62,6 +62,7 @@ $roleMap = @{
     "anchor"            = "Anchor Witness Worker"
     "support-agent"     = "Enterprise Support Agent Worker"
     "attacker"          = "Adversary Container (Debian)"
+    "dashboard"         = "Reviewer Dashboard Service (React/SPA)"
 }
 
 $requiredServices = @("memory-db", "vault-db", "aegismem-gateway", "aegismem-detector", "aegismem-recovery", "anchor", "support-agent", "attacker")
@@ -154,3 +155,4 @@ if ($securityViolations.Count -gt 0) {
 
 Write-Host "PASSED: preflight: All $computedCount required services are active, healthy, and network-hardened.`n" -ForegroundColor Green
 exit 0
+
