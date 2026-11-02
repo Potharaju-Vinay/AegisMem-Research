@@ -145,14 +145,30 @@ class TrustedCheckpointHeadStore:
             **checkpoint,
         }
 
-        private_key = serialization.load_pem_private_key(
-            self.private_key_path.read_bytes(),
-            password=None,
-        )
-
-        head["signature"] = base64.b64encode(
-            private_key.sign(_canonical_head(head))
-        ).decode("ascii")
+        if self.private_key_path.exists():
+            private_key = serialization.load_pem_private_key(
+                self.private_key_path.read_bytes(),
+                password=None,
+            )
+            head["signature"] = base64.b64encode(
+                private_key.sign(_canonical_head(head))
+            ).decode("ascii")
+        else:
+            anchor_url = os.getenv("ANCHOR_URL", "http://anchor:8000")
+            internal_token = os.getenv("AEGISMEM_INTERNAL_TOKEN", "")
+            import urllib.request
+            headers = {"Content-Type": "application/json"}
+            if internal_token:
+                headers["X-Anchor-Token"] = internal_token
+            req = urllib.request.Request(
+                f"{anchor_url}/head/sign",
+                data=json.dumps(head).encode("utf-8"),
+                headers=headers,
+                method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=5) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                head["signature"] = data["signature"]
 
         self.head_dir.mkdir(parents=True, exist_ok=True)
 
@@ -270,4 +286,3 @@ class TrustedCheckpointHeadStore:
             return "CHECKPOINT_MISMATCH"
 
         return "VALID"
-

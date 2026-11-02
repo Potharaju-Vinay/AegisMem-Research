@@ -8,6 +8,17 @@ frontend/dist
 *.pyc
 .env
 .env.*
+security/keys/*private*
+security/keys/*private*.pem
+security/anchor_keys/*private*
+security/recovery_keys/*private*
+security/trust_vault/
+security/integrity_manifests/
+security/provenance_checkpoints/
+security/trusted_checkpoint_heads/
+security/recovery_attestations/
+demo_runs/
+data/incidents/
 *.db
 *.db-journal
 *.db-wal

@@ -7,7 +7,7 @@
   "content": "Enterprise systems must maintain regular backups of critical data. Backup copies must be protected against unauthorized modification and deletion. Restoration procedures must be tested periodically to ensure data availability and integrity.",
   "content_hash": "15f213739aacf51d30d08c9eef58518c78d6201f8bae713430ed3c46624af469",
   "previous_hash": null,
-  "signature": "XA9aLMOEQhsFe6dJ7DkTbVRaTspml7AfdTRupQTvu/CALL5NcGhLYtZCZr61+DE66Cn5smesfJOLvHTCjEB7DA==",
+  "signature": "xTdPS844rJGgju2iBlwq0Cp7k9eNnPFZu0WsAIHSrKpl3RXn9VJ5tDBUxI3dkLpP3PYblQZeBV4ubQDPlewYDQ==",
   "authorization_signature": null,
   "authorization_id": null,
   "authorization_nonce": null

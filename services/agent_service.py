@@ -18,6 +18,7 @@ if str(ROOT_DIR) not in sys.path:
 from core.memory.database import get_session
 from core.memory.repository import MemoryRepository
 from core.gateway.read_gate import ReadPathGate
+from core.integrity.manifest_store import IntegrityManifestStore
 from agent.runtime.agent import EnterpriseAgent
 
 app = FastAPI(title="AegisMem Support Agent Service", version="1.0.0")
@@ -51,7 +52,7 @@ def chat(req: ChatQueryRequest):
         target_memory = req.memory_id or "POLICY-001"
 
         if req.protection:
-            read_gate = ReadPathGate(repository)
+            read_gate = ReadPathGate(repository, manifest_store=IntegrityManifestStore())
             verified_record = read_gate.get_verified_memory(
                 target_memory,
                 fail_closed=True,

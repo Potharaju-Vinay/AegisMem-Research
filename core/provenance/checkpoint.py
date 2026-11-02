@@ -39,7 +39,7 @@ class ProvenanceCheckpointStore:
         ).hexdigest()
         return self.checkpoint_dir / f"{safe_id}.{version}.json"
 
-    def create_checkpoint(self, events: list) -> dict:
+    def create_checkpoint(self, events: list, overwrite: bool = True) -> dict:
         if not events:
             raise ValueError("Cannot checkpoint an empty provenance chain")
         
@@ -64,19 +64,36 @@ class ProvenanceCheckpointStore:
             "event_count": len(events),
         }
 
-        private_key = serialization.load_pem_private_key(
-            self.private_key_path.read_bytes(),
-            password=None,
-        )
-        signature = private_key.sign(_canonical_payload(checkpoint))
-        checkpoint["signature"] = base64.b64encode(
-            signature
-        ).decode("ascii")
+        if self.private_key_path.exists():
+            private_key = serialization.load_pem_private_key(
+                self.private_key_path.read_bytes(),
+                password=None,
+            )
+            signature = private_key.sign(_canonical_payload(checkpoint))
+            checkpoint["signature"] = base64.b64encode(
+                signature
+            ).decode("ascii")
+        else:
+            anchor_url = os.getenv("ANCHOR_URL", "http://anchor:8000")
+            internal_token = os.getenv("AEGISMEM_INTERNAL_TOKEN", "")
+            import urllib.request
+            headers = {"Content-Type": "application/json"}
+            if internal_token:
+                headers["X-Anchor-Token"] = internal_token
+            req = urllib.request.Request(
+                f"{anchor_url}/checkpoint/sign",
+                data=json.dumps(checkpoint).encode("utf-8"),
+                headers=headers,
+                method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=5) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                checkpoint["signature"] = data["signature"]
 
         self.checkpoint_dir.mkdir(parents=True, exist_ok=True)
         destination = self._path(memory_id, events[-1].version)
 
-        if destination.exists():
+        if destination.exists() and not overwrite:
             raise FileExistsError(
                 f"Checkpoint already exists for version {events[-1].version}"
             )

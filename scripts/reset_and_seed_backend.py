@@ -264,17 +264,21 @@ def reset_and_seed(seed_value: int = 42, target_db: str = ALLOWED_DEMO_DATABASE)
             # Sign manifest
             manifest = manifest_store.create_for_record(rec)
 
-            # Store out-of-band trust vault snapshot
-            trust_vault.save_snapshot(
-                memory_id=rec.memory_id,
-                version=rec.version,
-                content=rec.content,
-                content_hash=rec.content_hash,
-                previous_hash=None,
-                revision_id=rec.revision_id,
-                parent_revision_id=None,
-                manifest_signature=manifest.get("signature"),
-            )
+            # Store out-of-band trust vault snapshot if vault directory is writable
+            try:
+                trust_vault.save_snapshot(
+                    memory_id=rec.memory_id,
+                    version=rec.version,
+                    content=rec.content,
+                    content_hash=rec.content_hash,
+                    previous_hash=None,
+                    revision_id=rec.revision_id,
+                    parent_revision_id=None,
+                    manifest_signature=manifest.get("signature") if manifest else None,
+                )
+            except OSError:
+                # Gateway has read-only access to trust vault (Hardened F4)
+                pass
 
             # Genesis provenance event
             prov_mgr.record(

@@ -46,7 +46,7 @@ class ReadPathGate:
         cache_ttl_seconds: float = 300.0,
     ):
         self.repository = repository
-        self.manifest_store = manifest_store if manifest_store is not None else getattr(repository, "manifest_store", None)
+        self.manifest_store = manifest_store or getattr(repository, "manifest_store", None) or IntegrityManifestStore()
         self.revocation_registry = revocation_registry or get_revocation_registry()
         self.read_logger = read_logger if read_logger is not None else get_read_access_logger()
         self.enable_cache = enable_cache

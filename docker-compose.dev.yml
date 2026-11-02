@@ -1,0 +1,45 @@
+# AegisMem Developer Mode Override (Explicit -f flag required)
+# Mounts local workspace source directories for hot-reload development.
+# Usage: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  aegismem-gateway:
+    volumes:
+      - ./core:/app/core
+      - ./api:/app/api
+      - ./agent:/app/agent
+      - ./domain:/app/domain
+      - ./services:/app/services
+
+  aegismem-detector:
+    volumes:
+      - ./core:/app/core
+      - ./services:/app/services
+
+  aegismem-recovery:
+    volumes:
+      - ./core:/app/core
+      - ./api:/app/api
+      - ./agent:/app/agent
+      - ./domain:/app/domain
+      - ./attack_lab:/app/attack_lab
+      - ./services:/app/services
+
+  anchor:
+    volumes:
+      - ./core:/app/core
+      - ./services:/app/services
+
+  support-agent:
+    volumes:
+      - ./core:/app/core
+      - ./api:/app/api
+      - ./agent:/app/agent
+      - ./domain:/app/domain
+      - ./services:/app/services
+
+  dashboard:
+    volumes:
+      - ./frontend/dist:/app/frontend/dist:ro
+      - ./scripts:/app/scripts:ro
+

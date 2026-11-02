@@ -24,10 +24,23 @@ class IntegrityManifestStore:
 
     def create_for_record(self, record) -> dict:
         anchor_url = os.getenv("ANCHOR_URL", "http://anchor:8000")
+        internal_token = os.getenv("AEGISMEM_INTERNAL_TOKEN", "")
         manifest = None
         # Attempt to sign via authoritative Anchor Witness microservice
         try:
             import urllib.request
+            headers = {"Content-Type": "application/json"}
+            if internal_token:
+                headers["X-Anchor-Token"] = internal_token
+
+            is_seed = (record.version == 1 and not getattr(record, "authorization_signature", None))
+            is_rec = (
+                getattr(record, "_is_recovery", False)
+                or getattr(record, "source_type", "") == "verified_recovery"
+                or str(getattr(record, "source", "")).startswith("recovery")
+            )
+            role = "seed_initializer" if is_seed else ("recovery_service" if is_rec else "gateway")
+
             payload = json.dumps({
                 "memory_id": record.memory_id,
                 "version": record.version,
@@ -35,11 +48,17 @@ class IntegrityManifestStore:
                 "previous_hash": record.previous_hash,
                 "revision_id": record.revision_id,
                 "parent_revision_id": record.parent_revision_id,
+                "owner_signature": getattr(record, "authorization_signature", None),
+                "authorization_id": getattr(record, "authorization_id", None),
+                "nonce": getattr(record, "authorization_nonce", None),
+                "timestamp": getattr(record, "authorization_timestamp", None),
+                "content": getattr(record, "content", None),
+                "caller_role": role,
             }).encode("utf-8")
             req = urllib.request.Request(
                 f"{anchor_url}/manifest/sign",
                 data=payload,
-                headers={"Content-Type": "application/json"},
+                headers=headers,
                 method="POST"
             )
             with urllib.request.urlopen(req, timeout=3) as resp:
@@ -48,8 +67,8 @@ class IntegrityManifestStore:
         except Exception:
             pass
 
-        if manifest is None:
-            # Fallback to local anchor key if witness microservice is unavailable
+        if manifest is None and self.private_key_path.exists():
+            # Fallback to local anchor key only if witness microservice is unavailable and key exists locally
             manifest = sign_revision(
                 memory_id=record.memory_id,
                 version=record.version,
@@ -59,15 +78,20 @@ class IntegrityManifestStore:
                 revision_id=record.revision_id,
                 parent_revision_id=record.parent_revision_id,
             )
-        self.write_manifest(manifest)
+        if manifest:
+            try:
+                self.write_manifest(manifest)
+            except OSError:
+                # Manifest directory is read-only on gateway (Hardened F4)
+                pass
         return manifest
 
-    def write_manifest(self, manifest: dict) -> Path:
+    def write_manifest(self, manifest: dict, overwrite: bool = True) -> Path:
         self.manifest_dir.mkdir(parents=True, exist_ok=True)
         destination = self._path(
             manifest["memory_id"], manifest["version"]
         )
-        if destination.exists():
+        if destination.exists() and not overwrite:
             raise FileExistsError(
                 f"Manifest already exists for version {manifest['version']}"
             )

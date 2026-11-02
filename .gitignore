@@ -16,8 +16,13 @@ htmlcov/
 !.env.example
 
 # Cryptographic Private Keys (Never commit private keys)
-security/keys/*private*.pem
-security/keys/*secret*.pem
+**/*private*.pem
+**/*secret*.pem
+security/anchor_keys/
+security/recovery_keys/
+security/keys/*private*
+demo_runs/
+data/incidents/
 
 # Frontend & Node
 node_modules/

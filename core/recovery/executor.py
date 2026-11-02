@@ -353,13 +353,17 @@ class RecoveryExecutor:
         restored.suspicion_score = 0.0
         restored.status = "active"
         restored.authorization_state = "UNAUTHORIZED"
+        restored._is_recovery = True
 
         self.repository.session.commit()
         self.repository.session.refresh(restored)
+        restored._is_recovery = True
 
         
         try:
-            self.manifest_store.create_for_record(restored)
+            m_res = self.manifest_store.create_for_record(restored)
+            if m_res is None:
+                raise ValueError("Failed to create signed integrity manifest for recovered record")
 
             self.attestation_store.create_for_record(
                 record=restored,

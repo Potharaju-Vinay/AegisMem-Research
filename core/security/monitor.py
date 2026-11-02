@@ -1,4 +1,6 @@
 
+import os
+import time
 from datetime import datetime, timezone
 
 from core.memory.repository import MemoryRepository
@@ -155,10 +157,32 @@ class AegisMemSecurityMonitor:
         )
         t_decide = time.perf_counter()
 
-        recovery = orchestrator.recover_from_attack(
-            compromised_memory_id=memory_id,
-            attack_time=datetime.now(timezone.utc),
-        )
+        recovery_service_url = os.getenv("RECOVERY_SERVICE_URL")
+        recovery = None
+        if recovery_service_url:
+            try:
+                import urllib.request, json
+                internal_token = os.getenv("AEGISMEM_INTERNAL_TOKEN", "")
+                hdrs = {"Content-Type": "application/json"}
+                if internal_token:
+                    hdrs["X-Recovery-Token"] = internal_token
+                body = json.dumps({"memory_id": memory_id}).encode("utf-8")
+                req = urllib.request.Request(
+                    f"{recovery_service_url}/recovery/execute",
+                    data=body,
+                    headers=hdrs,
+                    method="POST"
+                )
+                with urllib.request.urlopen(req, timeout=10) as resp:
+                    recovery = json.loads(resp.read().decode("utf-8"))
+            except Exception as rec_err:
+                print(f"[AegisMem Monitor] Delegation to recovery service failed: {rec_err}")
+
+        if recovery is None:
+            recovery = orchestrator.recover_from_attack(
+                compromised_memory_id=memory_id,
+                attack_time=datetime.now(timezone.utc),
+            )
         t_recover = time.perf_counter()
 
         current = self.repository.get_latest(memory_id)

@@ -1612,10 +1612,15 @@ def recover_memory(memory_id: str, http_request: Request):
         recovery = None
         try:
             req_data = json.dumps({"memory_id": memory_id}).encode("utf-8")
+            internal_token = os.getenv("AEGISMEM_INTERNAL_TOKEN", "")
+            headers = {"Content-Type": "application/json"}
+            if internal_token:
+                headers["X-Recovery-Token"] = internal_token
+
             http_req = urllib.request.Request(
                 f"{recovery_service_url}/recovery/execute",
                 data=req_data,
-                headers={"Content-Type": "application/json"},
+                headers=headers,
                 method="POST"
             )
             with urllib.request.urlopen(http_req, timeout=10) as resp:

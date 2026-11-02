@@ -7,7 +7,7 @@
   "content": "All employees must use multi-factor authentication to access enterprise systems. Privileged access requires explicit authorization from an approved administrator. Access permissions must follow the principle of least privilege.",
   "content_hash": "54ba9a55e498a4bb3bbafd9ffe8509edf39c891ebee4a46efb4cb5239f949350",
   "previous_hash": null,
-  "signature": "WH9gbIoEod4KPM7rR6czvPz/W+EQs0ZOX4FgywZngD+9fFEC2X2JzEdPAoJSZXLFv15Qusx34sgH7o7aPVmBBg==",
+  "signature": "IHrkmntpz0wzw23tNLjqPf7ItUQRKcU98VnL4DiS3kyTynsJ+ePr+wiigKC3pU3FkZBz3kxCMJ7HPcBYFT4OCg==",
   "authorization_signature": null,
   "authorization_id": null,
   "authorization_nonce": null

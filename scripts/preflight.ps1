@@ -117,6 +117,11 @@ foreach ($c in $containers) {
         $securityViolations += "memory-db is published on 0.0.0.0 ($publishedStr). It must bind to 127.0.0.1 only."
     }
 
+    # (c) aegismem-gateway must not be bound to public 0.0.0.0
+    if ($svc -eq "aegismem-gateway" -and ($publishedStr -like "*0.0.0.0*")) {
+        $securityViolations += "aegismem-gateway is published on 0.0.0.0 ($publishedStr). It must bind to 127.0.0.1 by default."
+    }
+
     # Check running state
     if ($c.State -ne "running") {
         $unhealthyServices += "$svc (State: $($c.State))"

@@ -1,14 +1,16 @@
-# AegisMem Multi-Container Segmented Deployment Architecture (Part C1 / F3)
-# Enforces isolated networks: public-net, data-net, vault-net, anchor-net
+# AegisMem Multi-Container Segmented Deployment Architecture (Hardened Milestone F4)
+# Enforces strictly isolated internal networks: data-net, vault-net, anchor-net
+# Enforces secret segregation: private keys only in owning containers, read-only.
+# Zero plain-text fallback passwords: required from .env.
 
 services:
   memory-db:
     image: postgres:16-alpine
     container_name: aegismem-memory-db
     environment:
-      POSTGRES_DB: aegismem_live
-      POSTGRES_USER: aegis_admin
-      POSTGRES_PASSWORD: ${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}
+      POSTGRES_DB: ${AEGISMEM_DB_NAME:-aegismem_live}
+      POSTGRES_USER: ${AEGISMEM_DB_USER:-aegis_admin}
+      POSTGRES_PASSWORD: ${AEGISMEM_DB_PASSWORD:?AEGISMEM_DB_PASSWORD environment variable is required}
     ports:
       - "127.0.0.1:5432:5432"
     volumes:
@@ -16,7 +18,7 @@ services:
     networks:
       - data-net
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U aegis_admin -d aegismem_live"]
+      test: ["CMD-SHELL", "pg_isready -U ${AEGISMEM_DB_USER:-aegis_admin} -d ${AEGISMEM_DB_NAME:-aegismem_live}"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -25,15 +27,15 @@ services:
     image: postgres:16-alpine
     container_name: aegismem-vault-db
     environment:
-      POSTGRES_DB: aegismem_vault
-      POSTGRES_USER: vault_operator
-      POSTGRES_PASSWORD: ${AEGISMEM_VAULT_PASSWORD:-vault_airgapped_password_2026}
+      POSTGRES_DB: ${AEGISMEM_VAULT_NAME:-aegismem_vault}
+      POSTGRES_USER: ${AEGISMEM_VAULT_USER:-vault_operator}
+      POSTGRES_PASSWORD: ${AEGISMEM_VAULT_PASSWORD:?AEGISMEM_VAULT_PASSWORD environment variable is required}
     volumes:
       - vault_pgdata:/var/lib/postgresql/data
     networks:
       - vault-net
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U vault_operator -d aegismem_vault"]
+      test: ["CMD-SHELL", "pg_isready -U ${AEGISMEM_VAULT_USER:-vault_operator} -d ${AEGISMEM_VAULT_NAME:-aegismem_vault}"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -45,25 +47,25 @@ services:
     container_name: aegismem-gateway
     command: ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
+      - DATABASE_URL=postgresql+psycopg2://${AEGISMEM_DB_USER:-aegis_admin}:${AEGISMEM_DB_PASSWORD:?AEGISMEM_DB_PASSWORD is required}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
       - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
       - AEGIS_OWNER_AUTH=true
       - ANCHOR_URL=http://anchor:8000
       - RECOVERY_SERVICE_URL=http://aegismem-recovery:8000
       - SUPPORT_AGENT_URL=http://support-agent:8000
+      - AEGISMEM_INTERNAL_TOKEN=${AEGISMEM_INTERNAL_TOKEN}
+      - AEGISMEM_OWNER_TOKEN=${AEGISMEM_OWNER_TOKEN}
+      - AEGISMEM_ENABLE_ATTACK_LAB=${AEGISMEM_ENABLE_ATTACK_LAB:-1}
     volumes:
-      - ./core:/app/core
-      - ./security:/app/security
-      - ./data:/app/data
-      - ./api:/app/api
-      - ./agent:/app/agent
-      - ./domain:/app/domain
-      - ./services:/app/services
-      - ./admin_client.py:/app/admin_client.py
-      - ./.env:/app/.env
+      # Only public keys, read-only. ZERO private keys mounted.
+      - ./security/public_keys:/app/security/keys:ro
+      - ./security/integrity_manifests:/app/security/integrity_manifests:ro
+      - ./security/provenance_checkpoints:/app/security/provenance_checkpoints:ro
+      - ./security/trusted_checkpoint_heads:/app/security/trusted_checkpoint_heads:ro
+      - ./security/trust_vault:/app/security/trust_vault:ro
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     networks:
       - public-net
       - data-net
@@ -84,20 +86,18 @@ services:
       timeout: 5s
       retries: 5
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
+      - DATABASE_URL=postgresql+psycopg2://${AEGISMEM_DB_USER:-aegis_admin}:${AEGISMEM_DB_PASSWORD:?AEGISMEM_DB_PASSWORD is required}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
       - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
       - RECOVERY_SERVICE_URL=http://aegismem-recovery:8000
+      - AEGISMEM_INTERNAL_TOKEN=${AEGISMEM_INTERNAL_TOKEN}
     volumes:
-      - ./core:/app/core
-      - ./security:/app/security
-      - ./data:/app/data
-      - ./api:/app/api
-      - ./agent:/app/agent
-      - ./domain:/app/domain
-      - ./services:/app/services
-      - ./admin_client.py:/app/admin_client.py
-      - ./.env:/app/.env
+      # Detector gets only public keys and manifests read-only. ZERO private keys, ZERO vault write.
+      - ./security/public_keys:/app/security/keys:ro
+      - ./security/integrity_manifests:/app/security/integrity_manifests:ro
+      - ./security/provenance_checkpoints:/app/security/provenance_checkpoints:ro
+      - ./security/trusted_checkpoint_heads:/app/security/trusted_checkpoint_heads:ro
+      - ./security/trust_vault:/app/security/trust_vault:ro
     networks:
       - data-net
     depends_on:
@@ -116,20 +116,18 @@ services:
       timeout: 5s
       retries: 5
     environment:
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
-      - VAULT_URL=postgresql+psycopg2://vault_operator:${AEGISMEM_VAULT_PASSWORD:-vault_airgapped_password_2026}@vault-db:5432/aegismem_vault
+      - DATABASE_URL=postgresql+psycopg2://${AEGISMEM_DB_USER:-aegis_admin}:${AEGISMEM_DB_PASSWORD:?AEGISMEM_DB_PASSWORD is required}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
+      - VAULT_URL=postgresql+psycopg2://${AEGISMEM_VAULT_USER:-vault_operator}:${AEGISMEM_VAULT_PASSWORD:?AEGISMEM_VAULT_PASSWORD is required}@vault-db:5432/${AEGISMEM_VAULT_NAME:-aegismem_vault}
       - ANCHOR_URL=http://anchor:8000
+      - AEGISMEM_INTERNAL_TOKEN=${AEGISMEM_INTERNAL_TOKEN}
     volumes:
-      - ./core:/app/core
-      - ./security:/app/security
-      - ./data:/app/data
-      - ./api:/app/api
-      - ./agent:/app/agent
-      - ./domain:/app/domain
-      - ./attack_lab:/app/attack_lab
-      - ./services:/app/services
-      - ./admin_client.py:/app/admin_client.py
-      - ./.env:/app/.env
+      # Recovery container gets recovery private key + public keys, and vault storage
+      - ./security/recovery_keys:/app/security/keys:ro
+      - ./security/trust_vault:/app/security/trust_vault
+      - ./security/integrity_manifests:/app/security/integrity_manifests
+      - ./security/provenance_checkpoints:/app/security/provenance_checkpoints
+      - ./security/trusted_checkpoint_heads:/app/security/trusted_checkpoint_heads
+      - ./security/recovery_attestations:/app/security/recovery_attestations
     networks:
       - data-net
       - vault-net
@@ -151,10 +149,11 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    environment:
+      - AEGISMEM_INTERNAL_TOKEN=${AEGISMEM_INTERNAL_TOKEN}
     volumes:
-      - ./core:/app/core
-      - ./security:/app/security
-      - ./services:/app/services
+      # Anchor witness gets anchor private key + public keys read-only
+      - ./security/anchor_keys:/app/security/keys:ro
     networks:
       - anchor-net
 
@@ -173,16 +172,11 @@ services:
       - "127.0.0.1:8002:8000"
     environment:
       - GATEWAY_URL=http://aegismem-gateway:8000
-      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
+      - DATABASE_URL=postgresql+psycopg2://${AEGISMEM_DB_USER:-aegis_admin}:${AEGISMEM_DB_PASSWORD:?AEGISMEM_DB_PASSWORD is required}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
+      - AEGISMEM_INTERNAL_TOKEN=${AEGISMEM_INTERNAL_TOKEN}
     volumes:
-      - ./core:/app/core
-      - ./security:/app/security
-      - ./data:/app/data
-      - ./api:/app/api
-      - ./agent:/app/agent
-      - ./domain:/app/domain
-      - ./services:/app/services
-      - ./.env:/app/.env
+      - ./security/public_keys:/app/security/keys:ro
+      - ./security/integrity_manifests:/app/security/integrity_manifests:ro
     networks:
       - public-net
       - data-net
@@ -198,9 +192,6 @@ services:
     command: ["python", "scripts/dashboard_server.py", "--port", "5173", "--gateway", "http://aegismem-gateway:8000"]
     ports:
       - "127.0.0.1:5173:5173"
-    volumes:
-      - ./frontend/dist:/app/frontend/dist:ro
-      - ./scripts:/app/scripts:ro
     networks:
       - public-net
     healthcheck:
@@ -212,9 +203,11 @@ services:
       - aegismem-gateway
 
   attacker:
-    image: debian:bookworm-slim
+    build:
+      context: .
+      dockerfile: Dockerfile.attacker
     container_name: aegismem-attacker
-    command: ["bash", "-c", "apt-get update && apt-get install -y curl jq python3 && echo 'Adversary Container Ready' && sleep infinity"]
+    command: ["sleep", "infinity"]
     networks:
       - public-net
     depends_on:
@@ -225,13 +218,13 @@ networks:
     driver: bridge
   data-net:
     driver: bridge
-    internal: false
+    internal: true
   vault-net:
     driver: bridge
-    internal: false
+    internal: true
   anchor-net:
     driver: bridge
-    internal: false
+    internal: true
 
 volumes:
   memory_pgdata:

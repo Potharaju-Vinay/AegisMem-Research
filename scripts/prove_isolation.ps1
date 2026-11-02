@@ -215,6 +215,107 @@ if ($exitH -eq 0 -and ($outH -like "*CONNECTED_DIRECT_IP_OK*")) {
 }
 
 # -------------------------------------------------------------------------
+# Test (i): Gateway write isolation: Gateway cannot write to trust vault (MUST FAIL)
+# -------------------------------------------------------------------------
+Log-Output "[Test I] Gateway write isolation: Gateway cannot write to trust vault (MUST FAIL)" "Yellow"
+$cmdI = 'docker exec aegismem-gateway python -c "with open(\"/app/security/trust_vault/probe.tmp\", \"w\") as f: f.write(\"tamper\"); print(\"WRITE_UNEXPECTEDLY_SUCCEEDED\")" 2>&1'
+$outI = & cmd.exe /c $cmdI
+$exitI = $LASTEXITCODE
+Log-Output "Command: $cmdI"
+Log-Output "Result (Exit Code $exitI):`n$($outI -join "`n")"
+
+if ($exitI -ne 0 -or ($outI -notlike "*WRITE_UNEXPECTEDLY_SUCCEEDED*")) {
+    Log-Output "ASSERTION PASSED: Gateway is blocked from writing to trust vault (ReadOnly / Not Mounted).`n" "Green"
+} else {
+    Log-Output "FAILED: test_i: Gateway wrote to trust vault! Vault directory write isolation breached.`n" "Red"
+    $allPassed = $false
+}
+
+# -------------------------------------------------------------------------
+# Test (j): Attacker key isolation: Attacker cannot read keys (MUST FAIL)
+# -------------------------------------------------------------------------
+Log-Output "[Test J] Attacker key isolation: Attacker cannot read keys (MUST FAIL)" "Yellow"
+$cmdJ = 'docker exec aegismem-attacker cat /app/security/keys/integrity_anchor_private.pem 2>&1'
+$outJ = & cmd.exe /c $cmdJ
+$exitJ = $LASTEXITCODE
+Log-Output "Command: $cmdJ"
+Log-Output "Result (Exit Code $exitJ):`n$($outJ -join "`n")"
+
+if ($exitJ -ne 0) {
+    Log-Output "ASSERTION PASSED: Attacker cannot access or read keys from the host.`n" "Green"
+} else {
+    Log-Output "FAILED: test_j: Attacker read keys! Security directory exposed to adversary.`n" "Red"
+    $allPassed = $false
+}
+
+# -------------------------------------------------------------------------
+# Test (k): Secret segregation: No private keys in gateway container or built image
+# -------------------------------------------------------------------------
+Log-Output "[Test K] Secret segregation: No private keys inside gateway container or built image" "Yellow"
+$cmdK_cnt = 'docker exec aegismem-gateway find /app/security -name "*private*.pem" 2>&1'
+$rawK_cnt = & cmd.exe /c $cmdK_cnt
+$outK_cnt = if ($null -ne $rawK_cnt) { ([string]($rawK_cnt -join " ")).Trim() } else { "" }
+$cmdK_img = 'docker run --rm aegismem-research-main-aegismem-gateway find /app/security -name "*private*.pem" 2>&1'
+$rawK_img = & cmd.exe /c $cmdK_img
+$outK_img = if ($null -ne $rawK_img) { ([string]($rawK_img -join " ")).Trim() } else { "" }
+Log-Output "Container scan result : $outK_cnt"
+Log-Output "Image layers result   : $outK_img"
+
+if ([string]::IsNullOrWhiteSpace($outK_cnt) -and [string]::IsNullOrWhiteSpace($outK_img)) {
+    Log-Output "ASSERTION PASSED: Zero private keys found inside running gateway container and built image layers.`n" "Green"
+} else {
+    Log-Output "FAILED: test_k: Private key found! Container keys: '$outK_cnt', Image keys: '$outK_img'`n" "Red"
+    $allPassed = $false
+}
+
+# -------------------------------------------------------------------------
+# Test (l): Anchor authorization gate: Rejects signature without valid owner signature
+# -------------------------------------------------------------------------
+Log-Output "[Test L] Anchor authorization gate: Rejects signature without valid owner signature (MUST FAIL)" "Yellow"
+$cmdL = 'docker exec aegismem-anchor-witness python -c "import urllib.request, json; data = json.dumps({\"memory_id\": \"POLICY-001\", \"version\": 99, \"content_hash\": \"fake\", \"revision_id\": \"rev-fake\"}).encode(\"utf-8\"); req = urllib.request.Request(\"http://localhost:8000/manifest/sign\", data=data, headers={\"Content-Type\": \"application/json\"}); urllib.request.urlopen(req)" 2>&1'
+$outL = & cmd.exe /c $cmdL
+$exitL = $LASTEXITCODE
+Log-Output "Command: $cmdL"
+Log-Output "Result (Exit Code $exitL):`n$($outL -join "`n")"
+
+if ($exitL -ne 0 -and ($outL -like "*403*" -or $outL -like "*401*" -or $outL -like "*HTTP Error*")) {
+    Log-Output "ASSERTION PASSED: Anchor refused signature request lacking valid owner approval signature.`n" "Green"
+} else {
+    Log-Output "FAILED: test_l: Anchor signed revision without owner approval! Detail: $outL`n" "Red"
+    $allPassed = $false
+}
+
+# -------------------------------------------------------------------------
+# Test (m): Recovery Service integrity re-check: Refuses rollback on clean memory
+# -------------------------------------------------------------------------
+Log-Output "[Test M] Recovery Service integrity re-check: Refuses rollback on clean memory (MUST REJECT)" "Yellow"
+$token = $env:AEGISMEM_INTERNAL_TOKEN
+if (-not $token) {
+    # Resolve from .env file
+    $rootEnv = Join-Path $PSScriptRoot "..\.env"
+    if (Test-Path $rootEnv) {
+        foreach ($line in (Get-Content $rootEnv)) {
+            if ($line.Trim().StartsWith("AEGISMEM_INTERNAL_TOKEN=")) {
+                $token = $line.Trim().Substring("AEGISMEM_INTERNAL_TOKEN=".Length).Trim('"', "'")
+                break
+            }
+        }
+    }
+}
+$cmdM = "docker exec aegismem-recovery python -c ""import urllib.request, json; data = json.dumps({'memory_id': 'POLICY-001'}).encode('utf-8'); req = urllib.request.Request('http://localhost:8000/recovery/execute', data=data, headers={'Content-Type': 'application/json', 'X-Recovery-Token': '$token'}); print(urllib.request.urlopen(req).read().decode('utf-8'))"" 2>&1"
+$outM = & cmd.exe /c $cmdM
+$exitM = $LASTEXITCODE
+Log-Output "Command: $cmdM"
+Log-Output "Result (Exit Code $exitM):`n$($outM -join "`n")"
+
+if ($exitM -eq 0 -and ($outM -like "*ROLLBACK_REFUSED_UNCOMPROMISED*" -or $outM -like "*success"":false*")) {
+    Log-Output "ASSERTION PASSED: Recovery service re-checked compromise and refused forced rollback on uncompromised memory.`n" "Green"
+} else {
+    Log-Output "FAILED: test_m: Recovery service permitted rollback on uncompromised memory! Detail: $outM`n" "Red"
+    $allPassed = $false
+}
+
+# -------------------------------------------------------------------------
 # Final Summary and Exit Status
 # -------------------------------------------------------------------------
 if ($allPassed) {
