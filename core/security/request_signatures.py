@@ -1,4 +1,4 @@
-﻿import time
+import time
 from pathlib import Path
 
 from cryptography.exceptions import InvalidSignature
@@ -61,15 +61,15 @@ def verify_owner_request_signature(
         payload = canonical_request(method, path, timestamp, nonce, body)
         public_key.verify(signature, payload)
     except (
-        OSError,
+        InvalidSignature,
         ValueError,
         TypeError,
-        InvalidSignature,
         UnicodeDecodeError,
         AttributeError,
     ):
         return False
-    except Exception:
+    except OSError as err:
+        print(f"[AegisMem Security] Public key error: {err}")
         return False
 
     try:
@@ -79,5 +79,6 @@ def verify_owner_request_signature(
                 f"request:{method.upper()}:{path}",
             )
         )
-    except Exception:
-        return False
+    except Exception as exc:
+        print(f"[AegisMem Security] Nonce registration error: {exc}")
+        raise

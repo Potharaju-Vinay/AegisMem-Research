@@ -1,6 +1,6 @@
-﻿from core.memory.database import Base, engine
+from core.memory.database import Base, engine
 from core.security.dashboard_session import DashboardSession
-from core.memory.models import MemoryRecord
+from core.memory.models import MemoryRecord, AuthorizationEvent, AuthorizationNonce
 from core.provenance.models import ProvenanceEvent
 from core.graph.dependency.models import MemoryDependency
 from attack_lab.models import AttackEvent

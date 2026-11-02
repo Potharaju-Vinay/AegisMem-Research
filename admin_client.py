@@ -101,6 +101,15 @@ def submit_update(
 ) -> dict:
     import httpx
 
+    if expected_parent_revision_id is None:
+        try:
+            with httpx.Client(timeout=5.0) as client:
+                mem_resp = client.get(f"{url.rstrip('/')}/api/memories/{memory_id}")
+                if mem_resp.status_code == 200:
+                    expected_parent_revision_id = mem_resp.json().get("revision_id")
+        except Exception as e:
+            print(f"[Admin Client] Could not auto-fetch parent revision: {e}")
+
     # 1. Sign owner approval payload
     approval_payload = sign_update(
         memory_id=memory_id,

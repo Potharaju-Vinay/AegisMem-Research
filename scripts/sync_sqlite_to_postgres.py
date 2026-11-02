@@ -22,6 +22,8 @@ TABLES_TO_SYNC = [
     "dashboard_sessions",
     "session_audit_events",
     "dashboard_operation_approvals",
+    "authorization_events",
+    "authorization_nonces",
 ]
 
 BOOLEAN_COLUMNS = {

@@ -81,6 +81,8 @@ from core.security.dashboard_operation import (
 
 from fastapi.responses import JSONResponse
 from core.soc.models import SOCAlert
+from core.security.authorization_evaluator import evaluate_owner_request
+from core.memory.models import AuthorizationEvent
 from core.security.dashboard_sessions import (
     SESSION_COOKIE_NAME,
     verify_dashboard_password,
@@ -882,23 +884,63 @@ def owner_memory_write(
     request: OwnerMemoryWriteRequest,
     http_request: Request
 ):
-
-        
-    require_owner_signature(http_request)
+    require_owner(http_request)
     session = get_session()
 
     try:
-        authorization_id = request.authorization_id
-        nonce = request.nonce
+        timestamp = http_request.headers.get("x-owner-timestamp")
+        nonce = http_request.headers.get("x-owner-nonce")
+        signature = http_request.headers.get("x-owner-signature")
+        raw_body = getattr(http_request.state, "raw_body", None)
+        if raw_body is None:
+            raw_body = http_request.headers.get("x-raw-body", "").encode("utf-8")
+
+        client = http_request.client
+        client_ip = client.host if client else None
+        client_port = client.port if client else None
+
+        is_ok, reason_code, correlation_id, err_detail = evaluate_owner_request(
+            session=session,
+            method=http_request.method,
+            path=http_request.url.path,
+            timestamp_str=timestamp,
+            nonce_str=nonce,
+            signature_hex=signature,
+            raw_body=raw_body,
+            client_ip=client_ip,
+            client_port=client_port,
+            memory_id=request.memory_id,
+            expected_revision_id=request.expected_revision_id,
+            authorization_signature=request.authorization_signature,
+            authorization_id=request.authorization_id,
+            authorization_nonce=request.nonce,
+            content=request.content,
+        )
+
+        if not is_ok:
+            status_code = (
+                409 if reason_code == "VERSION_MISMATCH"
+                else 500 if reason_code == "INTERNAL_ERROR"
+                else 401
+            )
+            # F6: The client gets only a generic message plus a correlation ID.
+            return Response(
+                status_code=status_code,
+                content=json.dumps({
+                    "detail": "Authorization denied.",
+                    "correlation_id": correlation_id
+                }),
+                media_type="application/json",
+                headers={"X-Correlation-ID": correlation_id}
+            )
 
         repository = MemoryRepository(session)
-
         record = repository.create_owner_authorized(
             memory_id=request.memory_id,
             content=request.content,
             source="enterprise_owner",
-            authorization_id=authorization_id,
-            nonce=nonce,
+            authorization_id=request.authorization_id,
+            nonce=request.nonce,
             authorization_signature=request.authorization_signature,
             expected_revision_id=request.expected_revision_id,
             record_provenance=True,
@@ -916,6 +958,8 @@ def owner_memory_write(
             pass
 
         return {
+            "correlation_id": correlation_id,
+            "reason_code": "ACCEPTED",
             "memory_id": record.memory_id,
             "version": record.version,
             "revision_id": record.revision_id,
@@ -924,12 +968,39 @@ def owner_memory_write(
             "content_hash": record.content_hash
         }
 
-    except ValueError as e:
+    except HTTPException:
+        raise
+    except Exception as e:
+        session.rollback()
         raise HTTPException(
-            status_code=403,
-            detail=str(e)
+            status_code=500,
+            detail="Internal authorization error."
         )
+    finally:
+        session.close()
 
+
+@app.get("/api/authorization/events/{correlation_id}")
+def get_authorization_event_endpoint(correlation_id: str):
+    session = get_session()
+    try:
+        ev = session.query(AuthorizationEvent).filter(AuthorizationEvent.correlation_id == correlation_id).first()
+        if not ev:
+            raise HTTPException(status_code=404, detail=f"Authorization event {correlation_id} not found.")
+        return ev.to_dict()
+    finally:
+        session.close()
+
+
+@app.get("/api/authorization/events")
+def list_authorization_events_endpoint(limit: int = 150, reason_code: str | None = None):
+    session = get_session()
+    try:
+        q = session.query(AuthorizationEvent)
+        if reason_code:
+            q = q.filter(AuthorizationEvent.reason_code == reason_code)
+        events = q.order_by(AuthorizationEvent.id.desc()).limit(limit).all()
+        return [e.to_dict() for e in events]
     finally:
         session.close()
 
@@ -974,6 +1045,7 @@ def read_memory_endpoint(
             "access_id": access_event.access_id,
             "memory_id": current.memory_id,
             "version": current.version,
+            "revision_id": current.revision_id,
             "content": current.content,
             "status": current.status,
             "trust_score": current.trust_score,

@@ -1,4 +1,4 @@
-﻿import hashlib
+import hashlib
 import json
 from pathlib import Path
 
@@ -82,14 +82,14 @@ def verify_owner_approval(
         public_key.verify(signature, payload)
         return True
     except (
-        OSError,
+        InvalidSignature,
         ValueError,
         TypeError,
-        InvalidSignature,
         UnicodeEncodeError,
     ):
         return False
-    except Exception:
+    except OSError as err:
+        print(f"[AegisMem Security] Key or file system error: {err}")
         return False
 
 def verify_record_owner_approval(record) -> bool:

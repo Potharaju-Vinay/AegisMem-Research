@@ -70,13 +70,21 @@ def register_nonce(
         session.commit()
         return True
 
-    except Exception:
+    except IntegrityError:
         if session is not None:
             try:
                 session.rollback()
             except Exception:
                 pass
         return False
+    except Exception as exc:
+        if session is not None:
+            try:
+                session.rollback()
+            except Exception:
+                pass
+        print(f"[AegisMem Security] Database error in register_nonce: {exc}")
+        raise
 
     finally:
         if session is not None:
@@ -137,3 +145,6 @@ def verify_and_register_nonce(
         return True
     except IntegrityError:
         return False
+    except Exception as exc:
+        print(f"[AegisMem Security] Database error in verify_and_register_nonce: {exc}")
+        raise

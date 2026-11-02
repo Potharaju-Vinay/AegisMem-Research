@@ -220,6 +220,8 @@ def reset_and_seed(seed_value: int = 42, target_db: str = ALLOWED_DEMO_DATABASE)
             "memory_access_events",
             "session_audit_events",
             "dashboard_operation_approvals",
+            "authorization_events",
+            "authorization_nonces",
         ]
         for tbl in incident_tables:
             session.execute(text(f"DELETE FROM {tbl}"))
