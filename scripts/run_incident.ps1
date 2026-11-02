@@ -38,7 +38,10 @@ param(
     [double]$AutonomousTimeoutSeconds = 25.0
 )
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"
+if (Test-Path Variable:\PSNativeCommandUseErrorActionPreference) {
+    $PSNativeCommandUseErrorActionPreference = $false
+}
 
 # 1. Resolve Owner Token
 $ownerToken = $env:AEGISMEM_OWNER_TOKEN

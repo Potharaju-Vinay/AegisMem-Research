@@ -84,7 +84,7 @@ def register_nonce(
             except Exception:
                 pass
         print(f"[AegisMem Security] Database error in register_nonce: {exc}")
-        raise
+        return False
 
     finally:
         if session is not None:

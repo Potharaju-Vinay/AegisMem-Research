@@ -1,4 +1,4 @@
-﻿from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 
 from core.memory.database import Base
@@ -15,7 +15,7 @@ def make_test_session():
     Base.metadata.create_all(engine)
     with engine.begin() as connection:
         connection.execute(text("""
-            CREATE TABLE authorization_nonces (
+            CREATE TABLE IF NOT EXISTS authorization_nonces (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nonce VARCHAR(128) NOT NULL UNIQUE,
                 authorization_id VARCHAR(128) NOT NULL,

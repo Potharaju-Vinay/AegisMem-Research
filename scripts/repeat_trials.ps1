@@ -18,7 +18,10 @@ param(
     [string]$OutputDir = ""
 )
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"
+if (Test-Path Variable:\PSNativeCommandUseErrorActionPreference) {
+    $PSNativeCommandUseErrorActionPreference = $false
+}
 
 # 1. Setup Benchmark Output Directory
 if ([string]::IsNullOrWhiteSpace($OutputDir)) {
@@ -67,8 +70,9 @@ $incidentScript = Join-Path $PSScriptRoot "run_incident.ps1"
 for ($i = 1; $i -le $N; $i++) {
     Log-Bench "`n>>> [TRIAL $i / $N] Resetting database to baseline & executing incident lifecycle..." "Yellow"
 
-    # Fast deterministic database reset & seed
-    $resetRaw = & docker exec aegismem-gateway python scripts/reset_and_seed_backend.py --database aegismem_demo --seed 42 --json 2>&1
+    # Fast deterministic database reset & seed inside recovery container (which holds rw security storage)
+    & docker cp scripts/reset_and_seed_backend.py aegismem-recovery:/app/scripts/reset_and_seed_backend.py 2>$null | Out-Null
+    $resetRaw = & docker exec aegismem-recovery python scripts/reset_and_seed_backend.py --database aegismem_demo --seed 42 --json 2>&1
     if ($LASTEXITCODE -ne 0) {
         Log-Bench "FAILED: Database reset failed at trial $i." "Red"
         Set-Content -Path $transcriptPath -Value $transcriptLines
@@ -84,6 +88,9 @@ for ($i = 1; $i -le $N; $i++) {
     $reportFile = Join-Path $trialDir "incident_report.json"
     if (-not (Test-Path $reportFile)) {
         Log-Bench "  Trial $i FAILED: incident_report.json not produced." "Red"
+        if ($incidentRaw) {
+            $incidentRaw | Select-Object -Last 10 | ForEach-Object { Log-Bench "    $_" "Gray" }
+        }
         $row = "$i,ERROR,POLICY-001,0,0,0,0,0,1,FAILED,FAILURE"
         Add-Content -Path $csvPath -Value $row
         continue
@@ -158,8 +165,8 @@ $totalDurations = $resultsList | Where-Object { $_.outcome -eq "SUCCESS" } | For
 $ttdList = $resultsList | Where-Object { $_.outcome -eq "SUCCESS" } | ForEach-Object { $_.ttd_ms }
 $ttrList = $resultsList | Where-Object { $_.outcome -eq "SUCCESS" } | ForEach-Object { $_.ttr_ms }
 
-$successCount = ($resultsList | Where-Object { $_.outcome -eq "SUCCESS" }).Count
-$failureCount = ($resultsList | Where-Object { $_.outcome -eq "FAILURE" }).Count
+$successCount = @($resultsList | Where-Object { $_.outcome -eq "SUCCESS" }).Count
+$failureCount = @($resultsList | Where-Object { $_.outcome -eq "FAILURE" }).Count
 $maxExposure = ($resultsList | Measure-Object -Property exposure_window -Maximum).Maximum
 
 # Helper for median

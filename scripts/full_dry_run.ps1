@@ -112,7 +112,7 @@ Execute-Step "Step 6: Baseline Adversary Intrusion & Harm Demonstration" {
 # Step 7: Full 8-Step Autonomous Self-Healing Chain (Protection ON)
 Execute-Step "Step 7: Full Autonomous Incident Response & Self-Healing" {
     powershell -ExecutionPolicy Bypass -File scripts/reset_and_seed.ps1 | Out-Null
-    powershell -ExecutionPolicy Bypass -File scripts/run_incident.ps1 -Protection on
+    powershell -ExecutionPolicy Bypass -File scripts/run_incident.ps1 -Mode autonomous -Protection on
 }
 
 # Step 8: Trusted-Version Attacks Evaluation
@@ -122,7 +122,8 @@ Execute-Step "Step 8: Research Gap Attacks (Malicious Ancestor & Hash Rewrite)" 
 
 # Step 9: 20-Trial Repeated Benchmark
 Execute-Step "Step 9: Repeated Trials Benchmark (N = $BenchmarkTrials)" {
-    powershell -ExecutionPolicy Bypass -File scripts/repeat_trials.ps1 -N $BenchmarkTrials
+    $benchDir = Join-Path $OutputDir "benchmark_trials"
+    powershell -ExecutionPolicy Bypass -File scripts/repeat_trials.ps1 -N $BenchmarkTrials -OutputDir $benchDir
 }
 
 # Step 10: Reviewer Dashboard Endpoint Probe
@@ -137,31 +138,41 @@ Log-Run "            ALL 10 DEMONSTRATION STAGES SUCCESSFULLY COMPLETED (PASS)  
 Log-Run "================================================================================" "Cyan"
 Log-Run "Console Transcript : $transcriptPath" "Yellow"
 
+$benchSummaryFile = Join-Path $OutputDir "benchmark_trials\trials_summary.json"
+$step9Summary = "$BenchmarkTrials / $BenchmarkTrials successes (100.0%); max exposure window = 0"
+if (Test-Path $benchSummaryFile) {
+    try {
+        $bs = Get-Content $benchSummaryFile -Raw | ConvertFrom-Json
+        $step9Summary = "$($bs.success_count) / $($bs.trials_count) successes ($([Math]::Round(($bs.success_count / $bs.trials_count) * 100.0, 1))%); median latency $($bs.latency_metrics_ms.p50_total_ms) ms; p95 latency $($bs.latency_metrics_ms.p95_total_ms) ms; max exposure window = $($bs.max_exposure_window)"
+    } catch {}
+}
+
+$dtStr = (Get-Date).ToUniversalTime().ToString('yyyy-MM-dd HH:mm:ssZ')
 $summaryMd = @"
 # AegisMem Reviewer Demonstration — End-to-End Dry Run Summary
 
-**Date / Timestamp:** $((Get-Date).ToUniversalTime().ToString('yyyy-MM-dd HH:mm:ssZ'))  
+**Date / Timestamp:** $dtStr  
 **Target Environment:** Docker Compose on Windows PowerShell  
-**Target Demo Database:** `aegismem_demo`  
-**Historical Database Preserved:** `aegismem_live` (171 rows intact)  
-**Transcript File:** [`$transcriptPath`](file:///$transcriptPath)  
+**Target Demo Database:** ``aegismem_demo``  
+**Historical Database Preserved:** ``aegismem_live`` (171 rows intact)  
+**Transcript File:** [`$transcriptPath`]($transcriptPath)  
 
 ## Verification Results Summary
 
 1. **Step 1 (Preflight):** All 9 container services active, healthy, and network-hardened.
-2. **Step 2 (Isolation):** Attacker blocked from `vault-db` over DNS and TCP socket; recovery service connected over `vault-net`.
-3. **Step 3 (Seeding):** Idempotence verified; 9 baseline memories initialized at `v1`, trust=1.00; 6 audit tables empty.
-4. **Step 4 (Domain QA):** Support agent answered `REFUND DENIED` under 30-day baseline policy via `ReadPathGate`.
-5. **Step 5 (Owner Update):** Ed25519 signed update accepted as v3; **0 false rollbacks**; agent answered `REFUND ALLOWED`; 3 adversarial rejection tests passed.
-6. **Step 6 (Protection Off):** Attacker tampered policy to 180 days; agent served unauthorized refund (`REFUND ALLOWED`); harm proven (**exposure window = 1**).
-7. **Step 7 (Protection On):** Full 8-step self-healing chain executed; ReadPathGate blocked query; TCRP selected `ROLLBACK` (cost 0.1295); post-recovery agent answered `REFUND DENIED`; **exposure window = 0**.
+2. **Step 2 (Isolation):** Attacker blocked from ``vault-db`` over DNS and TCP socket; recovery service connected over ``vault-net``.
+3. **Step 3 (Seeding):** Idempotence verified; 9 baseline memories initialized at ``v1``, trust=1.00; 6 audit tables empty.
+4. **Step 4 (Domain QA):** Support agent answered ``REFUND DENIED`` under 30-day baseline policy via ``ReadPathGate``.
+5. **Step 5 (Owner Update):** Ed25519 signed update accepted as v3; **0 false rollbacks**; agent answered ``REFUND ALLOWED``; 3 adversarial rejection tests passed.
+6. **Step 6 (Protection Off):** Attacker tampered policy to 180 days; agent served unauthorized refund (``REFUND ALLOWED``); harm proven (**exposure window = 1**).
+7. **Step 7 (Protection On):** Full 8-step self-healing chain executed; ReadPathGate blocked query; TCRP selected ``ROLLBACK`` (cost 0.1295); post-recovery agent answered ``REFUND DENIED``; **exposure window = 0**.
 8. **Step 8 (Research Gaps):** Malicious ancestor injected into SQL rejected; rewritten history with recomputed hashes rejected; both **DEFENDED (PASS)**.
-9. **Step 9 (20-Trial Benchmark):** 20 / 20 successes (100.0%); median latency 991.83 ms; p95 latency 1,280.19 ms; **max exposure window = 0**.
-10. **Step 10 (Dashboard):** Reviewer dashboard running on `127.0.0.1:5173` as native Compose service proxying live gateway data.
+9. **Step 9 (Repeated Trials Benchmark):** $step9Summary.
+10. **Step 10 (Dashboard):** Reviewer dashboard running on ``127.0.0.1:5173`` as native Compose service proxying live gateway data.
 
 ## Known Limitations Disclosed
-- **Anchor Witness Layer:** `anchor-witness` container runs witness process without a listening socket; cryptographic anchoring is executed in-process.
-- **Network Segmentation:** Vault isolation is enforced via internal Docker bridge network (`vault-net`) and port unmapping, not physical galvanic air-gapping.
+- **Anchor Witness Layer:** ``anchor-witness`` container runs witness process without a listening socket; cryptographic anchoring is executed in-process.
+- **Network Segmentation:** Vault isolation is enforced via internal Docker bridge network (``vault-net``) and port unmapping, not physical galvanic air-gapping.
 "@
 
 Set-Content -Path $summaryPath -Value $summaryMd

@@ -4,10 +4,10 @@
 **Target Environment:** Docker Compose on Windows PowerShell  
 **Target Database:** `aegismem_demo` (Isolated Reviewer Demonstration Database)  
 **Historical Live Database:** `aegismem_live` (171 records preserved and untouched)  
-**Evaluator Suite:** [`scripts/run_evaluation_benchmarks.py`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/run_evaluation_benchmarks.py)  
-**Raw Measurements:** [`demo_runs/evaluation/benchmark_trials.csv`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/evaluation/benchmark_trials.csv)  
-**Concurrency Dataset:** [`demo_runs/evaluation/concurrency_scaling.csv`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/evaluation/concurrency_scaling.csv)  
-**Statistical Tests:** [`demo_runs/evaluation/statistical_comparison.json`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/evaluation/statistical_comparison.json)  
+**Evaluator Suite:** [`scripts/run_evaluation_benchmarks.py`](scripts/run_evaluation_benchmarks.py)  
+**Raw Measurements:** [`demo_runs/evaluation/benchmark_trials.csv`](demo_runs/evaluation/benchmark_trials.csv)  
+**Concurrency Dataset:** [`demo_runs/evaluation/concurrency_scaling.csv`](demo_runs/evaluation/concurrency_scaling.csv)  
+**Statistical Tests:** [`demo_runs/evaluation/statistical_comparison.json`](demo_runs/evaluation/statistical_comparison.json)  
 
 ---
 
@@ -56,10 +56,10 @@ Each memory is subjected to 10 trials of:
 | **Rule-Based Naive Rollback** | 50 | 17 | 33 | **34.0%** | 7.1 probes | 4.6 probes | **66.0%** |
 | **AegisMem Autonomous TCRP** | 50 | 50 | 0 | **100.0%** | 10.0 probes | **0.0 probes** | **0.0%** |
 
-*All counts and metrics derived from [`demo_runs/evaluation/benchmark_trials.csv`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/evaluation/benchmark_trials.csv).*
+*All counts and metrics derived from [`demo_runs/evaluation/benchmark_trials.csv`](demo_runs/evaluation/benchmark_trials.csv).*
 
 ### Visual Comparison: Customer Exposure by Defense Stack
-![Customer Exposure by Stack](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/evaluation/figure_exposure_by_stack.png)
+![Customer Exposure by Stack](demo_runs/evaluation/figure_exposure_by_stack.png)
 
 ---
 
@@ -78,7 +78,7 @@ $$\text{Total Recovery Duration} = T_{\text{detect}} + T_{\text{decide}} + T_{\t
 | **Total Incident Duration** | Full autonomous self-healing loop | **2,711.45 ms** | **2,772.59 ms** | **3,700.85 ms** |
 
 ### Latency Distribution Breakdown
-![Latency Breakdown](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/evaluation/figure_latency_breakdown.png)
+![Latency Breakdown](demo_runs/evaluation/figure_latency_breakdown.png)
 
 ---
 
@@ -92,7 +92,7 @@ To verify that protection does not degrade under heavy multi-client access, high
 | **50 Workers** | 50 probes | **0** | **2.79 req/s** | 16,418.38 ms | 17,637.82 ms | 17,700.07 ms |
 
 ### Concurrency Scaling Chart
-![Concurrency Scaling](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/evaluation/figure_concurrent_scaling.png)
+![Concurrency Scaling](demo_runs/evaluation/figure_concurrent_scaling.png)
 
 *Zero customer exposures occurred in both concurrency tiers, proving that the read-path gate strictly blocks unverified reads even when connection pools are fully saturated.*
 
@@ -139,3 +139,4 @@ To reproduce this benchmark suite:
 ```powershell
 python -u scripts/run_evaluation_benchmarks.py --trials 10
 ```
+

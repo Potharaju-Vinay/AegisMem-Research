@@ -87,7 +87,7 @@ This audit assesses the physical runtime truth of the AegisMem Docker Compose de
 
 ## 5. Network-Segmented Isolation Verification Results (D2)
 
-The 8-test verification suite ([`scripts/prove_isolation.ps1`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/prove_isolation.ps1)) was executed against the live Docker deployment. Output logged to `demo_runs/20261101_133611/isolation.txt`.
+The 8-test verification suite ([`scripts/prove_isolation.ps1`](scripts/prove_isolation.ps1)) was executed against the live Docker deployment. Output logged to `demo_runs/20261101_133611/isolation.txt`.
 
 ### Test Summary
 
@@ -121,7 +121,7 @@ The 8-test verification suite ([`scripts/prove_isolation.ps1`](file:///c:/Users/
 ## 7. Domain Evidence — Agent Question Answering Audit (D4)
 
 ### Overview
-Verification was performed using [`scripts/ask_agent.ps1`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/ask_agent.ps1) against the live running `aegismem-gateway` service. The script queries the enterprise support agent through the AegisMem security gate and returns the answer, memory ID, version used, and verification status.
+Verification was performed using [`scripts/ask_agent.ps1`](scripts/ask_agent.ps1) against the live running `aegismem-gateway` service. The script queries the enterprise support agent through the AegisMem security gate and returns the answer, memory ID, version used, and verification status.
 
 ### Test Results
 
@@ -141,7 +141,7 @@ Verification was performed using [`scripts/ask_agent.ps1`](file:///c:/Users/Sai%
 ## 8. Legitimate Owner Update & Signature Verification Audit (D5)
 
 ### Overview
-Verification was performed using [`scripts/owner_update.ps1`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/owner_update.ps1) against `aegismem-gateway`. The script signs and submits an authorized enterprise policy extension (extending `POLICY-001` refund window from 30 days to 45 days) using dual-tier Ed25519 cryptographic signatures:
+Verification was performed using [`scripts/owner_update.ps1`](scripts/owner_update.ps1) against `aegismem-gateway`. The script signs and submits an authorized enterprise policy extension (extending `POLICY-001` refund window from 30 days to 45 days) using dual-tier Ed25519 cryptographic signatures:
 1. **Inner Layer (Business Approval Payload):** Ed25519 signature over canonical 7-field JSON payload (`aegismem-owner-approval-v1`) verified by `core/security/owner_approval.py`.
 2. **Outer Layer (HTTP Transport Security):** Ed25519 request signature over `(METHOD, PATH, TIMESTAMP, NONCE, BODY)` sent via `X-Owner-Timestamp`, `X-Owner-Nonce`, `X-Owner-Signature` and verified by `core/security/request_signatures.py`.
 
@@ -188,7 +188,7 @@ Agent Answer:        Based on our Enterprise Customer Refund Policy (limit of 45
 ## 9. Autonomous Incident Response & Self-Healing Audit (D6)
 
 ### Overview
-Verification was performed using [`scripts/run_incident.ps1`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/run_incident.ps1) against the live containerized deployment. The test evaluated both modes of operation:
+Verification was performed using [`scripts/run_incident.ps1`](scripts/run_incident.ps1) against the live containerized deployment. The test evaluated both modes of operation:
 1. **Mode `-Protection off` (Baseline Harm Demonstration):** Proves that an unprotected AI agent retrieves the adversary-tampered memory and serves unauthorized policy decisions causing direct financial harm (exposure count = 1).
 2. **Mode `-Protection on` (Full Autonomous Self-Healing Chain):** Verifies the complete 8-step incident lifecycle from reconnaissance through compromise detection, TCRP candidate optimization, cryptographic vault restoration, and post-healing verification (exposure count = 0).
 
@@ -213,7 +213,7 @@ Verification was performed using [`scripts/run_incident.ps1`](file:///c:/Users/S
 
 ### Step-by-Step Execution Evidence (Mode `-Protection on`)
 
-Transcript logged to [`demo_runs/20261101_144229/incident_output.txt`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/20261101_144229/incident_output.txt) and structured dossier exported to [`data/incidents/INC-20261101-144235.json`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/data/incidents/INC-20261101-144235.json).
+Transcript logged to [`demo_runs/20261101_144229/incident_output.txt`](demo_runs/20261101_144229/incident_output.txt) and structured dossier exported to [`data/incidents/INC-20261101-144235.json`](data/incidents/INC-20261101-144235.json).
 
 ```
 ================================================================================
@@ -306,7 +306,7 @@ Output Directory : demo_runs\20261101_144229
 ## 10. Database-Driven Incident Dossier Generation Audit (D7)
 
 ### Overview
-Verification was performed using [`scripts/generate_incident_report.py`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/generate_incident_report.py) executed inside the live containerized environment against PostgreSQL `aegismem_demo`. In compliance with the PhD reviewer requirements, all report fields, timelines, telemetry, diffs, candidate costs, and latencies are synthesized **solely from real database rows**. No fields, timestamps, or IP addresses are hardcoded.
+Verification was performed using [`scripts/generate_incident_report.py`](scripts/generate_incident_report.py) executed inside the live containerized environment against PostgreSQL `aegismem_demo`. In compliance with the PhD reviewer requirements, all report fields, timelines, telemetry, diffs, candidate costs, and latencies are synthesized **solely from real database rows**. No fields, timestamps, or IP addresses are hardcoded.
 
 ### Stored Database Row Provenance
 
@@ -321,9 +321,9 @@ Verification was performed using [`scripts/generate_incident_report.py`](file://
 ### Generated Incident Forensic Dossier
 
 The dossier was exported to:
-- **JSON Structure:** [`demo_runs/20261101_144229/incident_report.json`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/20261101_144229/incident_report.json)
-- **Markdown Dossier:** [`demo_runs/20261101_144229/incident_report.md`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/20261101_144229/incident_report.md)
-- **SOC Audit Log:** [`data/incidents/INC-20261101-144235.json`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/data/incidents/INC-20261101-144235.json)
+- **JSON Structure:** [`demo_runs/20261101_144229/incident_report.json`](demo_runs/20261101_144229/incident_report.json)
+- **Markdown Dossier:** [`demo_runs/20261101_144229/incident_report.md`](demo_runs/20261101_144229/incident_report.md)
+- **SOC Audit Log:** [`data/incidents/INC-20261101-144235.json`](data/incidents/INC-20261101-144235.json)
 
 #### Unified Content Diff (Synthesized from Stored Content Strings)
 ```diff
@@ -358,7 +358,7 @@ The dossier was exported to:
 ## 11. Trusted-Version Attacks & 20-Trial Benchmark Audit (D8)
 
 ### Overview
-Verification was performed using [`scripts/test_trusted_version_attacks.py`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/test_trusted_version_attacks.py) and [`scripts/repeat_trials.ps1`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/repeat_trials.ps1) against the live containerized deployment.
+Verification was performed using [`scripts/test_trusted_version_attacks.py`](scripts/test_trusted_version_attacks.py) and [`scripts/repeat_trials.ps1`](scripts/repeat_trials.ps1) against the live containerized deployment.
 
 ---
 
@@ -378,12 +378,12 @@ The deployed stack was subjected to the two historical research-gap attacks defi
 
 ### Part 2: 20-Trial Repeated Benchmark ($N = 20$)
 
-Benchmark executed via [`scripts/repeat_trials.ps1 -N 20`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/repeat_trials.ps1). Each trial reset the database to baseline, executed the full 8-step incident self-healing cycle, and recorded telemetry.
+Benchmark executed via [`scripts/repeat_trials.ps1 -N 20`](scripts/repeat_trials.ps1). Each trial reset the database to baseline, executed the full 8-step incident self-healing cycle, and recorded telemetry.
 
 Output files saved to:
-- **CSV Data:** [`demo_runs/20261101_145920_trials/trials.csv`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/20261101_145920_trials/trials.csv)
-- **JSON Statistics:** [`demo_runs/20261101_145920_trials/trials_summary.json`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/20261101_145920_trials/trials_summary.json)
-- **Full Console Transcript:** [`demo_runs/20261101_145920_trials/benchmark_output.txt`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/demo_runs/20261101_145920_trials/benchmark_output.txt)
+- **CSV Data:** [`demo_runs/20261101_145920_trials/trials.csv`](demo_runs/20261101_145920_trials/trials.csv)
+- **JSON Statistics:** [`demo_runs/20261101_145920_trials/trials_summary.json`](demo_runs/20261101_145920_trials/trials_summary.json)
+- **Full Console Transcript:** [`demo_runs/20261101_145920_trials/benchmark_output.txt`](demo_runs/20261101_145920_trials/benchmark_output.txt)
 
 #### Per-Trial Latency & Exposure Table ($N = 20$)
 
@@ -438,7 +438,7 @@ Output files saved to:
 ### Compose Dashboard Service Verification (D9)
 * **Service Name:** `dashboard` (container `aegismem-dashboard`)
 * **Host Binding:** `127.0.0.1:5173->5173/tcp` (strictly bound to localhost loopback; unexposed to public networks)
-* **Backend Ingress:** Proxies all `/api/*` requests directly to `http://aegismem-gateway:8000` via [`scripts/dashboard_server.py`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/dashboard_server.py).
+* **Backend Ingress:** Proxies all `/api/*` requests directly to `http://aegismem-gateway:8000` via [`scripts/dashboard_server.py`](scripts/dashboard_server.py).
 * **Live Views Verified:**
   1. **Overview & Services:** Container status, network health, memory counts.
   2. **Memory Versions & Hashes:** Active versions, SHA-256 hashes, trust scores.
@@ -447,13 +447,13 @@ Output files saved to:
   5. **AI Assistant Gate:** Interactive support agent query interface backed by `ReadPathGate`.
 
 ### Demonstration Artifacts Produced
-1. **Reviewer Run Sheet:** [`docs/DEMO_RUNSHEET.md`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/docs/DEMO_RUNSHEET.md)
+1. **Reviewer Run Sheet:** [`docs/DEMO_RUNSHEET.md`](docs/DEMO_RUNSHEET.md)
    - Step-by-step commands (Steps 1 – 11) with real measured wait times.
    - Comprehensive presentation talk track for academic reviewers.
    - Strict "Do Not Say" vocabulary guard list.
-2. **Claims & Evidence Matrix:** [`docs/CLAIMS_EVIDENCE.md`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/docs/CLAIMS_EVIDENCE.md)
+2. **Claims & Evidence Matrix:** [`docs/CLAIMS_EVIDENCE.md`](docs/CLAIMS_EVIDENCE.md)
    - Maps 10 core claims (C1 – C10) to exact supporting scripts, log files, sample sizes ($n$), and disclosed limitations.
-3. **End-to-End Dry Run Harness:** [`scripts/full_dry_run.ps1`](file:///c:/Users/Sai%20Abhijith/Downloads/AegisMem-Research-main/AegisMem-Research-main/scripts/full_dry_run.ps1)
+3. **End-to-End Dry Run Harness:** [`scripts/full_dry_run.ps1`](scripts/full_dry_run.ps1)
    - Automated sequential verification harness executing all 10 stages end-to-end with full console transcript capture.
 
 ### Final Verification Sign-Off
@@ -462,3 +462,22 @@ All 10 reviewer demo milestones (**D1 through D10**) are completely implemented,
 
 
 
+
+---
+
+## 13. PhD Reviewer Deployment Re-Audit & Verification Matrix (Task F10)
+
+This table synthesizes the complete empirical audit of all 10 core scientific and deployment claims. Every claim is verified against reproducible system artifacts and paired with a **Negative Control** demonstrating that the measurement harness reliably detects failure.
+
+| Claim ID | Scientific / Architectural Claim | Audit Status | Evidence File | Negative Control (Proving Check Can Fail) |
+| :---: | :--- | :---: | :--- | :--- |
+| **C1** | **Network Segmentation Blocks Direct Vault Ingress** | **VERIFIED** | [scripts/prove_isolation.ps1](scripts/prove_isolation.ps1), demo_runs/20261101_133611/isolation.txt | Gateway on ault-net connects successfully (CONNECTED_OK), while Attacker on public-net fails (TimeoutError). Gateway cannot write to vault (read-only mount). |
+| **C2** | **Demo Database Isolation with Deterministic Seeding** | **VERIFIED** | [scripts/reset_and_seed.ps1](scripts/reset_and_seed.ps1), [scripts/reset_and_seed_backend.py](scripts/reset_and_seed_backend.py) | Attempting to pass target egismem_live or an invalid name triggers immediate termination with exit code 1; original 170 rows preserved intact. |
+| **C3** | **Enterprise Support Agent Answering Fidelity** | **VERIFIED** | [scripts/ask_agent.ps1](scripts/ask_agent.ps1), [scripts/test_d4.ps1](scripts/test_d4.ps1) | Unverified or tampered memories are rejected fail-closed by ReadPathGate (UNVERIFIED), preventing agent from answering with unauthorized policy content. |
+| **C4** | **Legitimate Owner Updates Produce Zero False-Rollbacks & Distinct Rejections** | **VERIFIED** | [scripts/owner_update.ps1](scripts/owner_update.ps1), [	ests/test_authorization_events.py](tests/test_authorization_events.py) | Rogue private key updates and 120 rejection tests (tampered payload, replayed nonce, stale timestamp, version mismatch) fail with HTTP 401/409; recorded in uthorization_events. |
+| **C5** | **Demonstrated Financial Harm Under Unprotected State** | **VERIFIED** | [scripts/run_incident.ps1](scripts/run_incident.ps1), [demo_runs/evaluation/benchmark_trials.csv](demo_runs/evaluation/benchmark_trials.csv) | Across 50 protection-off trials, the probe client recorded 100% failure rate with mean 7.04 customer exposures per trial (352 total exposures). |
+| **C6** | **Autonomous Self-Healing with Zero Customer Exposure** | **VERIFIED** | [scripts/run_incident.ps1](scripts/run_incident.ps1), [demo_runs/evaluation/benchmark_trials.csv](demo_runs/evaluation/benchmark_trials.csv) | When protection is disabled (negative control C5), exposure is 100%; with TCRP active, exposure is 0.0% (0 wrong answers out of 500 customer probes). |
+| **C7** | **Dynamic Forensics Dossier Built Solely from Database Rows** | **VERIFIED** | [scripts/generate_incident_report.py](scripts/generate_incident_report.py), demo_runs/20261101_144229/incident_report.json | Running report generator against an empty session ID produces empty tables with 0 rows (zero hardcoded values or fake entries). |
+| **C8** | **Cryptographic Defense Against Research Gap Attacks** | **VERIFIED** | [scripts/test_trusted_version_attacks.py](scripts/test_trusted_version_attacks.py), [	ests/test_trusted_version_gap.py](tests/test_trusted_version_gap.py) | Attacker modifying SQLite/Postgres hash chains fails against out-of-band Ed25519 manifest and trust vault signatures (DEFENDED (PASS)). |
+| **C9** | **Empirical Evaluation Breadth & Statistical Superiority Across 4 Stacks** | **VERIFIED** | [scripts/run_evaluation_benchmarks.py](scripts/run_evaluation_benchmarks.py), [demo_runs/evaluation/statistical_comparison.json](demo_runs/evaluation/statistical_comparison.json) | McNemar tests reject the null hypothesis of equal performance against Protection-OFF (chi2 = 48.02, p = 4.22e-12) and Rule-Based (chi2 = 31.03, p = 2.54e-8). |
+| **C10**| **Containerized Reviewer Dashboard with Live Telemetry** | **VERIFIED** | [scripts/dashboard_server.py](scripts/dashboard_server.py), rontend/dist, [	ests/test_dashboard_truthfulness.py](tests/test_dashboard_truthfulness.py) | Test asserts missing or null source IP in database yields 'unknown' in API and UI, proving absence of hardcoded 'Kali' or 192.168.56.101 fallbacks. |

@@ -23,7 +23,8 @@ security/recovery_keys/
 security/keys/*private*
 demo_runs/*
 !demo_runs/evaluation/
-data/incidents/
+data/incidents/*
+!data/incidents/.gitkeep
 
 # Frontend & Node
 node_modules/
