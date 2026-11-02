@@ -23,10 +23,10 @@ This audit assesses the physical runtime truth of the AegisMem Docker Compose de
 | **`memory-db`** | `aegismem-memory-db` | `postgres:16-alpine` | `postgres` (official entrypoint) | `data-net` | `0.0.0.0:5432->5432/tcp` | Healthy (`pg_isready`) | **Real Service** (Live PostgreSQL memory store) |
 | **`vault-db`** | `aegismem-vault-db` | `postgres:16-alpine` | `postgres` (official entrypoint) | `vault-net` | `0.0.0.0:5433->5432/tcp` | Healthy (`pg_isready`) | **Real Service** (Trust Vault PostgreSQL store) |
 | **`aegismem-gateway`** | `aegismem-gateway` | Custom (Python 3.12-slim) | `uvicorn api.main:app --host 0.0.0.0 --port 8000` | `public-net`, `data-net` | `0.0.0.0:8000->8000/tcp` | Healthy (`curl http://localhost:8000/health`) | **Real Service** (FastAPI Gateway, ReadPathGate, Auth, TCRP endpoints) |
-| **`aegismem-detector`** | `aegismem-detector` | Custom (Python 3.12-slim) | `python -m core.security.watcher` | `data-net` | None | Running (healthcheck disabled) | **Real Service** (Continuous background watcher scanning memory table) |
-| **`aegismem-recovery`** | `aegismem-recovery` | Custom (Python 3.12-slim) | `python -c "import time; print('AegisMem Self-Healing TCRP Resolver Active'); time.sleep(86400)"` | `data-net`, `vault-net` | None | Running (healthcheck disabled) | **Placeholder** (Background sleep process; active recovery runs inside gateway & watcher) |
-| **`anchor`** | `aegismem-anchor-witness` | Custom (Python 3.12-slim) | `python -c "import time; print('AegisMem Independent Anchor Witness Active'); time.sleep(86400)"` | `anchor-net` | None | Running (healthcheck disabled) | **Placeholder** (Background sleep process; cryptographic anchor logic resides in `core.integrity.anchor`) |
-| **`support-agent`** | `aegismem-support-agent` | Custom (Python 3.12-slim) | `python -c "import time; print('Enterprise Support Agent Active (RAG via ReadPathGate)'); time.sleep(86400)"` | `public-net` | None | Running (healthcheck disabled) | **Placeholder** (Background sleep process; RAG support agent logic is invoked via gateway `/chat` & Python SDK) |
+| **`aegismem-detector`** | `aegismem-detector` | Custom (Python 3.12-slim) | `python -m core.security.watcher` | `data-net` | None | Healthy (Heartbeat check) | **Real Service** (Continuous background watcher scanning memory table) |
+| **`aegismem-recovery`** | `aegismem-recovery` | Custom (Python 3.12-slim) | `uvicorn services.recovery_service:app --host 0.0.0.0 --port 8000` | `data-net`, `vault-net`, `anchor-net` | None | Healthy (`curl http://localhost:8000/health`) | **Real Microservice** (TCRP planning, isolated vault recovery, rollback execution) |
+| **`anchor`** | `aegismem-anchor-witness` | Custom (Python 3.12-slim) | `uvicorn services.anchor_service:app --host 0.0.0.0 --port 8000` | `anchor-net` | None | Healthy (`curl http://localhost:8000/health`) | **Real Microservice** (Authoritative manifest signer; holds Ed25519 Anchor Private Key) |
+| **`support-agent`** | `aegismem-support-agent` | Custom (Python 3.12-slim) | `uvicorn services.agent_service:app --host 0.0.0.0 --port 8000` | `public-net`, `data-net` | `127.0.0.1:8002->8000/tcp` | Healthy (`curl http://localhost:8000/health`) | **Real Microservice** (Enterprise customer support agent; RAG retrieval via ReadPathGate) |
 | **`attacker`** | `aegismem-attacker` | `debian:bookworm-slim` | `bash -c "apt-get update && apt-get install -y curl jq python3 && echo 'Adversary Container Ready' && sleep infinity"` | `public-net` | None | Running | **Real Worker** (Debian container with curl, jq, python3; **NOT Kali**) |
 
 ---
@@ -48,13 +48,14 @@ This audit assesses the physical runtime truth of the AegisMem Docker Compose de
 * **Runtime Truth:** `memory-db` was published to `0.0.0.0:5432`, exposing it on all external network interfaces of the host.
 * **Remediation:** Change port binding to `127.0.0.1:5432:5432`.
 
-### Discrepancy 4: Placeholder Services vs. Architectural Roles
-* **Runtime Truth:** `aegismem-recovery`, `anchor`, and `support-agent` currently execute `time.sleep(86400)`.
-* **Functional Location:** 
-  - TCRP Recovery is orchestrated inside `api/main.py` and `core/security/watcher.py` (calling `TCRPResolver` and `ReplicatedTrustVault`).
-  - Anchor verification is executed as library code in `core/integrity/anchor.py`.
-  - The Support Agent query engine is served live by `api/main.py` (`EnterpriseAgent` and `ReadPathGate`).
-* **Remediation:** Clearly document that these three containers represent simulated network boundaries/witnesses, while the operational logic runs inside `aegismem-gateway` and `aegismem-detector`.
+### Discrepancy 4: Microservice Architecture (Resolved in F3)
+* **Historical State:** `aegismem-recovery`, `anchor`, and `support-agent` previously executed `time.sleep(86400)` placeholder loops.
+* **Current Runtime Truth (F3 Implementation):** 
+  - `anchor`: Runs `services/anchor_service.py` (FastAPI) on `anchor-net`. Authoritatively holds the Ed25519 Anchor Private Key; provides `POST /manifest/sign`, `POST /manifest/verify`, and `GET /health`.
+  - `aegismem-recovery`: Runs `services/recovery_service.py` (FastAPI) on `vault-net`, `data-net`, and `anchor-net`. Connects directly to air-gapped `vault-db`, plans TCRP actions via `POST /recovery/plan`, and executes rollback/quarantine via `POST /recovery/execute`.
+  - `support-agent`: Runs `services/agent_service.py` (FastAPI) on `public-net` and `data-net` (published port 8002). Performs retrieval strictly through `ReadPathGate` via `POST /chat` and reports verification status.
+  - `aegismem-detector`: Runs continuous watcher with real-time heartbeat health check on `data-net`.
+  - All services run real Uvicorn processes with live HTTP healthchecks verified by `scripts/preflight.ps1` and `scripts/prove_isolation.ps1`.
 
 ### Discrepancy 5: Hardcoded Passwords in Compose File
 * **Security Principle:** Passwords must not be plain-text hardcoded in version-controlled Compose definitions.

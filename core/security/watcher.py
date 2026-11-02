@@ -127,6 +127,12 @@ class AegisMemWatcher:
             session.close()
 
     def scan_once(self):
+        try:
+            with open("/tmp/watcher_heartbeat", "w", encoding="utf-8") as f:
+                f.write(str(time.time()))
+        except Exception:
+            pass
+
         if getattr(self, "paused", False):
             return []
 

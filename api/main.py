@@ -1,5 +1,7 @@
 import re
 import os
+import json
+import urllib.request
 from dotenv import load_dotenv
 load_dotenv()
 from typing import Optional
@@ -697,6 +699,26 @@ def chat(request: ChatRequest, http_request: Request):
         )
 
         protection_enabled = bool(request.protection) and (http_request.headers.get("x-aegis-protection", "on").lower() != "off")
+
+        # Delegate query to dedicated Support Agent microservice if available
+        support_agent_url = os.getenv("SUPPORT_AGENT_URL", "http://support-agent:8000")
+        try:
+            req_data = json.dumps({
+                "question": question,
+                "memory_id": memory.memory_id if memory else "POLICY-001",
+                "protection": protection_enabled,
+                "session_id": session_id,
+            }).encode("utf-8")
+            agent_req = urllib.request.Request(
+                f"{support_agent_url}/chat",
+                data=req_data,
+                headers={"Content-Type": "application/json"},
+                method="POST"
+            )
+            with urllib.request.urlopen(agent_req, timeout=5) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except Exception:
+            pass
 
         if protection_enabled:
             security = aegismem_security_gate(
@@ -1586,35 +1608,51 @@ def recover_memory(memory_id: str, http_request: Request):
                 detail=f"Memory '{memory_id}' does not exist."
             )
 
-        graph = build_graph(session)
+        recovery_service_url = os.getenv("RECOVERY_SERVICE_URL", "http://aegismem-recovery:8000")
+        recovery = None
+        try:
+            req_data = json.dumps({"memory_id": memory_id}).encode("utf-8")
+            http_req = urllib.request.Request(
+                f"{recovery_service_url}/recovery/execute",
+                data=req_data,
+                headers={"Content-Type": "application/json"},
+                method="POST"
+            )
+            with urllib.request.urlopen(http_req, timeout=10) as resp:
+                recovery = json.loads(resp.read().decode("utf-8"))
+        except Exception:
+            pass
 
-        impact_analyzer = AttackImpactAnalyzer(
-            graph
-        )
+        if recovery is None:
+            graph = build_graph(session)
 
-        manifest_store = repository.manifest_store
-        provenance_manager = ProvenanceManager(session)
-        checkpoint_store = ProvenanceCheckpointStore()
-        trusted_head_store = TrustedCheckpointHeadStore(
-            checkpoint_store=checkpoint_store
-        )
+            impact_analyzer = AttackImpactAnalyzer(
+                graph
+            )
 
-        vault_store = ReplicatedTrustVault()
+            manifest_store = repository.manifest_store
+            provenance_manager = ProvenanceManager(session)
+            checkpoint_store = ProvenanceCheckpointStore()
+            trusted_head_store = TrustedCheckpointHeadStore(
+                checkpoint_store=checkpoint_store
+            )
 
-        orchestrator = AegisMemRecoveryOrchestrator(
-            repository=repository,
-            impact_analyzer=impact_analyzer,
-            manifest_store=manifest_store,
-            provenance_manager=provenance_manager,
-            checkpoint_store=checkpoint_store,
-            trusted_head_store=trusted_head_store,
-            vault_store=vault_store,
-        )
+            vault_store = ReplicatedTrustVault()
 
-        recovery = orchestrator.recover_from_attack(
-            compromised_memory_id=memory_id,
-            attack_time=datetime.now(timezone.utc)
-        )
+            orchestrator = AegisMemRecoveryOrchestrator(
+                repository=repository,
+                impact_analyzer=impact_analyzer,
+                manifest_store=manifest_store,
+                provenance_manager=provenance_manager,
+                checkpoint_store=checkpoint_store,
+                trusted_head_store=trusted_head_store,
+                vault_store=vault_store,
+            )
+
+            recovery = orchestrator.recover_from_attack(
+                compromised_memory_id=memory_id,
+                attack_time=datetime.now(timezone.utc)
+            )
 
         current = repository.get_latest(
             memory_id

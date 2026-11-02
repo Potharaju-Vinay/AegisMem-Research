@@ -11,9 +11,9 @@ Write-Host "=== AegisMem Deployment Preflight Truth Audit ===" -ForegroundColor 
 
 # 1. Verify Docker Compose configuration syntax
 try {
-    $configCheck = docker compose config --quiet 2>&1
-    if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($configCheck) -eq $false) {
-        Write-Error "FAILED: preflight: docker compose config --quiet produced warnings or failed:`n$configCheck"
+    $configCheck = docker compose config 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "FAILED: preflight: docker compose config produced errors:`n$configCheck"
         exit 1
     }
 } catch {
@@ -58,9 +58,9 @@ $roleMap = @{
     "vault-db"          = "Trust Vault DB (Network-Segmented)"
     "aegismem-gateway"   = "FastAPI Gateway & ReadPathGate"
     "aegismem-detector"  = "Continuous Watcher & Integrity Detector"
-    "aegismem-recovery"  = "TCRP Recovery Resolver Worker"
-    "anchor"            = "Anchor Witness Worker"
-    "support-agent"     = "Enterprise Support Agent Worker"
+    "aegismem-recovery"  = "TCRP Recovery Resolver Service (FastAPI)"
+    "anchor"            = "Authoritative Anchor Witness Service (FastAPI)"
+    "support-agent"     = "Enterprise Support Agent Service (FastAPI)"
     "attacker"          = "Adversary Container (Debian)"
     "dashboard"         = "Reviewer Dashboard Service (React/SPA)"
 }

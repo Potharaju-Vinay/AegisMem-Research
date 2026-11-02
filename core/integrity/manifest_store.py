@@ -1,4 +1,4 @@
-﻿import json
+import json
 import os
 import tempfile
 from pathlib import Path
@@ -23,15 +23,42 @@ class IntegrityManifestStore:
         return self.manifest_dir / f"{safe_id}.{version}.json"
 
     def create_for_record(self, record) -> dict:
-        manifest = sign_revision(
-            memory_id=record.memory_id,
-            version=record.version,
-            content_hash=record.content_hash,
-            previous_hash=record.previous_hash,
-            private_key_path=self.private_key_path,
-            revision_id=record.revision_id,
-            parent_revision_id=record.parent_revision_id,
-        )
+        anchor_url = os.getenv("ANCHOR_URL", "http://anchor:8000")
+        manifest = None
+        # Attempt to sign via authoritative Anchor Witness microservice
+        try:
+            import urllib.request
+            payload = json.dumps({
+                "memory_id": record.memory_id,
+                "version": record.version,
+                "content_hash": record.content_hash,
+                "previous_hash": record.previous_hash,
+                "revision_id": record.revision_id,
+                "parent_revision_id": record.parent_revision_id,
+            }).encode("utf-8")
+            req = urllib.request.Request(
+                f"{anchor_url}/manifest/sign",
+                data=payload,
+                headers={"Content-Type": "application/json"},
+                method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=3) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                manifest = data.get("manifest")
+        except Exception:
+            pass
+
+        if manifest is None:
+            # Fallback to local anchor key if witness microservice is unavailable
+            manifest = sign_revision(
+                memory_id=record.memory_id,
+                version=record.version,
+                content_hash=record.content_hash,
+                previous_hash=record.previous_hash,
+                private_key_path=self.private_key_path,
+                revision_id=record.revision_id,
+                parent_revision_id=record.parent_revision_id,
+            )
         self.write_manifest(manifest)
         return manifest
 
@@ -66,8 +93,6 @@ class IntegrityManifestStore:
         return self._path(record.memory_id, record.version).is_file()
 
     def verify_record(self, record) -> bool:
-    
-    
         path = self._path(record.memory_id, record.version)
 
         try:
@@ -82,19 +107,18 @@ class IntegrityManifestStore:
             from core.integrity.hash import calculate_version_hash
 
             calculated_hash = calculate_version_hash(
-            record.content,
-            record.previous_hash,
-        )
-    
+                record.content,
+                record.previous_hash,
+            )
         except Exception:
             return False
 
         return (
-        manifest.get("memory_id") == record.memory_id
-        and manifest.get("version") == record.version
-        and manifest.get("revision_id") == record.revision_id
-        and manifest.get("parent_revision_id") == record.parent_revision_id
-        and manifest.get("content_hash") == record.content_hash
-        and manifest.get("previous_hash") == record.previous_hash
-        and calculated_hash == record.content_hash
-    )
+            manifest.get("memory_id") == record.memory_id
+            and manifest.get("version") == record.version
+            and manifest.get("revision_id") == record.revision_id
+            and manifest.get("parent_revision_id") == record.parent_revision_id
+            and manifest.get("content_hash") == record.content_hash
+            and manifest.get("previous_hash") == record.previous_hash
+            and calculated_hash == record.content_hash
+        )

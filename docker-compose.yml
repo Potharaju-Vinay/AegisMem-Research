@@ -1,4 +1,4 @@
-# AegisMem Multi-Container Segmented Deployment Architecture (Part C1)
+# AegisMem Multi-Container Segmented Deployment Architecture (Part C1 / F3)
 # Enforces isolated networks: public-net, data-net, vault-net, anchor-net
 
 services:
@@ -49,6 +49,9 @@ services:
       - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
       - AEGIS_OWNER_AUTH=true
+      - ANCHOR_URL=http://anchor:8000
+      - RECOVERY_SERVICE_URL=http://aegismem-recovery:8000
+      - SUPPORT_AGENT_URL=http://support-agent:8000
     volumes:
       - ./core:/app/core
       - ./security:/app/security
@@ -56,6 +59,7 @@ services:
       - ./api:/app/api
       - ./agent:/app/agent
       - ./domain:/app/domain
+      - ./services:/app/services
       - ./admin_client.py:/app/admin_client.py
       - ./.env:/app/.env
     ports:
@@ -63,6 +67,7 @@ services:
     networks:
       - public-net
       - data-net
+      - anchor-net
     depends_on:
       memory-db:
         condition: service_healthy
@@ -74,11 +79,15 @@ services:
     container_name: aegismem-detector
     command: ["python", "-m", "core.security.watcher"]
     healthcheck:
-      disable: true
+      test: ["CMD", "python", "-c", "import time, sys; sys.exit(0 if time.time() - float(open('/tmp/watcher_heartbeat').read().strip()) < 15 else 1)"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     environment:
       - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
       - AEGISMEM_STORAGE_BACKEND=postgresql
       - AEGIS_STORAGE_BACKEND=postgresql
+      - RECOVERY_SERVICE_URL=http://aegismem-recovery:8000
     volumes:
       - ./core:/app/core
       - ./security:/app/security
@@ -86,6 +95,7 @@ services:
       - ./api:/app/api
       - ./agent:/app/agent
       - ./domain:/app/domain
+      - ./services:/app/services
       - ./admin_client.py:/app/admin_client.py
       - ./.env:/app/.env
     networks:
@@ -99,12 +109,16 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: aegismem-recovery
-    command: ["python", "-c", "import time; print('AegisMem Self-Healing TCRP Resolver Active'); time.sleep(86400)"]
+    command: ["uvicorn", "services.recovery_service:app", "--host", "0.0.0.0", "--port", "8000"]
     healthcheck:
-      disable: true
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     environment:
       - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
       - VAULT_URL=postgresql+psycopg2://vault_operator:${AEGISMEM_VAULT_PASSWORD:-vault_airgapped_password_2026}@vault-db:5432/aegismem_vault
+      - ANCHOR_URL=http://anchor:8000
     volumes:
       - ./core:/app/core
       - ./security:/app/security
@@ -112,11 +126,14 @@ services:
       - ./api:/app/api
       - ./agent:/app/agent
       - ./domain:/app/domain
+      - ./attack_lab:/app/attack_lab
+      - ./services:/app/services
       - ./admin_client.py:/app/admin_client.py
       - ./.env:/app/.env
     networks:
       - data-net
       - vault-net
+      - anchor-net
     depends_on:
       memory-db:
         condition: service_healthy
@@ -128,9 +145,16 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: aegismem-anchor-witness
-    command: ["python", "-c", "import time; print('AegisMem Independent Anchor Witness Active'); time.sleep(86400)"]
+    command: ["uvicorn", "services.anchor_service:app", "--host", "0.0.0.0", "--port", "8000"]
     healthcheck:
-      disable: true
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ./core:/app/core
+      - ./security:/app/security
+      - ./services:/app/services
     networks:
       - anchor-net
 
@@ -139,15 +163,32 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: aegismem-support-agent
-    command: ["python", "-c", "import time; print('Enterprise Support Agent Active (RAG via ReadPathGate)'); time.sleep(86400)"]
+    command: ["uvicorn", "services.agent_service:app", "--host", "0.0.0.0", "--port", "8000"]
     healthcheck:
-      disable: true
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "127.0.0.1:8002:8000"
     environment:
       - GATEWAY_URL=http://aegismem-gateway:8000
+      - DATABASE_URL=postgresql+psycopg2://aegis_admin:${AEGISMEM_DB_PASSWORD:-aegis_secure_password_2026}@memory-db:5432/${AEGISMEM_DB_NAME:-aegismem_live}
+    volumes:
+      - ./core:/app/core
+      - ./security:/app/security
+      - ./data:/app/data
+      - ./api:/app/api
+      - ./agent:/app/agent
+      - ./domain:/app/domain
+      - ./services:/app/services
+      - ./.env:/app/.env
     networks:
       - public-net
+      - data-net
     depends_on:
       - aegismem-gateway
+      - memory-db
 
   dashboard:
     build:
@@ -195,4 +236,3 @@ networks:
 volumes:
   memory_pgdata:
   vault_pgdata:
-
