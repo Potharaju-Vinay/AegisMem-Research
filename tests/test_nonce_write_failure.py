@@ -15,7 +15,7 @@ def test_failed_memory_write_rolls_back_nonce():
 
     with engine.begin() as connection:
         connection.execute(text("""
-            CREATE TABLE authorization_nonces (
+            CREATE TABLE IF NOT EXISTS authorization_nonces (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nonce VARCHAR(128) NOT NULL UNIQUE,
                 authorization_id VARCHAR(128) NOT NULL,

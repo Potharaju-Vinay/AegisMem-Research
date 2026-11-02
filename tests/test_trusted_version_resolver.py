@@ -19,7 +19,7 @@ def test_resolver_rejects_unverified_historical_revision(tmp_path):
     with engine.begin() as connection:
         connection.execute(
             text(
-                "CREATE TABLE authorization_nonces ("
+                "CREATE TABLE IF NOT EXISTS authorization_nonces ("
                 "nonce VARCHAR(128) PRIMARY KEY, "
                 "authorization_id VARCHAR(128) NOT NULL, "
                 "created_at DATETIME NOT NULL)"
@@ -190,7 +190,7 @@ def test_resolver_rejects_tampered_historical_content(tmp_path):
     with engine.begin() as connection:
         connection.execute(
             text(
-                "CREATE TABLE authorization_nonces ("
+                "CREATE TABLE IF NOT EXISTS authorization_nonces ("
                 "nonce VARCHAR(128) PRIMARY KEY, "
                 "authorization_id VARCHAR(128) NOT NULL, "
                 "created_at DATETIME NOT NULL)"
@@ -291,7 +291,7 @@ def test_resolver_rejects_tampered_signed_manifest(tmp_path):
     with engine.begin() as connection:
         connection.execute(
             text(
-                "CREATE TABLE authorization_nonces ("
+                "CREATE TABLE IF NOT EXISTS authorization_nonces ("
                 "nonce VARCHAR(128) PRIMARY KEY, "
                 "authorization_id VARCHAR(128) NOT NULL, "
                 "created_at DATETIME NOT NULL)"

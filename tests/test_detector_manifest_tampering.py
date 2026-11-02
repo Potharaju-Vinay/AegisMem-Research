@@ -1,4 +1,4 @@
-﻿from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from cryptography.hazmat.primitives import serialization
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
@@ -39,7 +39,7 @@ def test_detector_flags_direct_edit_against_signed_manifest(tmp_path):
 
     with engine.begin() as connection:
         connection.execute(text("""
-            CREATE TABLE authorization_nonces (
+            CREATE TABLE IF NOT EXISTS authorization_nonces (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nonce VARCHAR(128) NOT NULL UNIQUE,
                 authorization_id VARCHAR(128) NOT NULL,

@@ -1,4 +1,4 @@
-﻿import statistics
+import statistics
 import time
 
 import pytest
@@ -59,7 +59,7 @@ def run_trial(trial_index, tmp_path):
     with engine.begin() as connection:
         connection.execute(
             text(
-                "CREATE TABLE authorization_nonces ("
+                "CREATE TABLE IF NOT EXISTS authorization_nonces ("
                 "nonce VARCHAR(128) PRIMARY KEY, "
                 "authorization_id VARCHAR(128) NOT NULL, "
                 "created_at DATETIME NOT NULL)"
@@ -155,11 +155,20 @@ def run_trial(trial_index, tmp_path):
 
             detection_succeeded = not verifier.verify_memory(compromised)
 
+            from core.recovery.attestation import RecoveryAttestationStore
+            _rk = Ed25519PrivateKey.generate()
+            rec_priv = tmp_path / 'rec_priv.pem'
+            rec_pub = tmp_path / 'rec_pub.pem'
+            rec_priv.write_bytes(_rk.private_bytes(serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption()))
+            rec_pub.write_bytes(_rk.public_key().public_bytes(serialization.Encoding.PEM, serialization.PublicFormat.SubjectPublicKeyInfo))
+            att_store = RecoveryAttestationStore(attestation_dir=tmp_path / 'attestations', private_key_path=rec_priv, public_key_path=rec_pub)
+
             start = time.perf_counter()
 
             result = RecoveryExecutor(
                 repository,
                 manifest_store=manifest_store,
+                attestation_store=att_store,
                 provenance_manager=provenance_manager,
                 checkpoint_store=checkpoint_store,
                 trusted_head_store=trusted_head_store,
@@ -175,6 +184,7 @@ def run_trial(trial_index, tmp_path):
             validation = RecoveryValidator(
     repository,
     manifest_store=manifest_store,
+    attestation_store=att_store,
     provenance_manager=provenance_manager,
     provenance_verifier=ProvenanceRecoveryVerifier(
         checkpoint_store=checkpoint_store,

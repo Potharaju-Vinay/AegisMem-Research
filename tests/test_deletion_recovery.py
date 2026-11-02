@@ -54,7 +54,7 @@ def test_recovery_after_latest_revision_deletion(tmp_path):
     with engine.begin() as connection:
         connection.execute(
             text(
-            "CREATE TABLE authorization_nonces ("
+            "CREATE TABLE IF NOT EXISTS authorization_nonces ("
             "nonce VARCHAR(128) PRIMARY KEY, "
             "authorization_id VARCHAR(128) NOT NULL, "
             "created_at DATETIME NOT NULL)"

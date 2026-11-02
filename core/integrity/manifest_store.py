@@ -23,6 +23,24 @@ class IntegrityManifestStore:
         return self.manifest_dir / f"{safe_id}.{version}.json"
 
     def create_for_record(self, record) -> dict:
+        # If a custom local private key is provided (e.g. in unit tests), use it directly
+        default_anchor_key = Path("security/keys/integrity_anchor_private.pem")
+        if self.private_key_path.exists() and self.private_key_path.resolve() != default_anchor_key.resolve():
+            manifest = sign_revision(
+                memory_id=record.memory_id,
+                version=record.version,
+                content_hash=record.content_hash,
+                previous_hash=record.previous_hash,
+                private_key_path=self.private_key_path,
+                revision_id=record.revision_id,
+                parent_revision_id=record.parent_revision_id,
+            )
+            self.manifest_dir.mkdir(parents=True, exist_ok=True)
+            self._path(record.memory_id, record.version).write_text(
+                json.dumps(manifest, indent=2), encoding="utf-8"
+            )
+            return manifest
+
         anchor_url = os.getenv("ANCHOR_URL", "http://anchor:8000")
         internal_token = os.getenv("AEGISMEM_INTERNAL_TOKEN", "")
         manifest = None
