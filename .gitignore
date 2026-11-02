@@ -21,7 +21,8 @@ htmlcov/
 security/anchor_keys/
 security/recovery_keys/
 security/keys/*private*
-demo_runs/
+demo_runs/*
+!demo_runs/evaluation/
 data/incidents/
 
 # Frontend & Node

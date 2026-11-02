@@ -231,6 +231,11 @@ def reset_and_seed(seed_value: int = 42, target_db: str = ALLOWED_DEMO_DATABASE)
         session.execute(text("DELETE FROM provenance_events"))
         session.execute(text("DELETE FROM memories"))
         session.commit()
+        session.close()
+
+        # Reopen fresh session for seeding to clear transaction snapshot and identity map
+        session, _ = get_target_session(target_db)
+        prov_mgr = ProvenanceManager(session)
 
         # 4. Seed baseline customer support & enterprise memories
         created_records = []

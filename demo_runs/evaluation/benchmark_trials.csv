@@ -1,0 +1,201 @@
+trial,memory_id,attack_type,defense_stack,ttd_ms,tt_decide_ms,ttr_ms,tt_validate_ms,total_duration_ms,probes_sent,exposure_count,outcome
+1,POLICY-001,tampering,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+1,POLICY-002,poisoning,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+1,SOP-003,deletion,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+1,ENT-ACCESS-001,tampering,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+1,ENT-BACKUP-003,poisoning,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+2,POLICY-001,poisoning,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+2,POLICY-002,deletion,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+2,SOP-003,tampering,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+2,ENT-ACCESS-001,poisoning,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+2,ENT-BACKUP-003,deletion,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+3,POLICY-001,deletion,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+3,POLICY-002,tampering,protection_off,,,,,,8,8,FAILURE (EXPOSED)
+3,SOP-003,poisoning,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+3,ENT-ACCESS-001,deletion,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+3,ENT-BACKUP-003,tampering,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+4,POLICY-001,tampering,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+4,POLICY-002,poisoning,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+4,SOP-003,deletion,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+4,ENT-ACCESS-001,tampering,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+4,ENT-BACKUP-003,poisoning,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+5,POLICY-001,poisoning,protection_off,,,,,,6,6,FAILURE (EXPOSED)
+5,POLICY-002,deletion,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+5,SOP-003,tampering,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+5,ENT-ACCESS-001,poisoning,protection_off,,,,,,7,7,FAILURE (EXPOSED)
+5,ENT-BACKUP-003,deletion,protection_off,,,,,,8,8,FAILURE (EXPOSED)
+6,POLICY-001,deletion,protection_off,,,,,,9,9,FAILURE (EXPOSED)
+6,POLICY-002,tampering,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+6,SOP-003,poisoning,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+6,ENT-ACCESS-001,deletion,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+6,ENT-BACKUP-003,tampering,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+7,POLICY-001,tampering,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+7,POLICY-002,poisoning,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+7,SOP-003,deletion,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+7,ENT-ACCESS-001,tampering,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+7,ENT-BACKUP-003,poisoning,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+8,POLICY-001,poisoning,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+8,POLICY-002,deletion,protection_off,,,,,,7,7,FAILURE (EXPOSED)
+8,SOP-003,tampering,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+8,ENT-ACCESS-001,poisoning,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+8,ENT-BACKUP-003,deletion,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+9,POLICY-001,deletion,protection_off,,,,,,7,7,FAILURE (EXPOSED)
+9,POLICY-002,tampering,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+9,SOP-003,poisoning,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+9,ENT-ACCESS-001,deletion,protection_off,,,,,,7,7,FAILURE (EXPOSED)
+9,ENT-BACKUP-003,tampering,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+10,POLICY-001,tampering,protection_off,,,,,,6,6,FAILURE (EXPOSED)
+10,POLICY-002,poisoning,protection_off,,,,,,5,5,FAILURE (EXPOSED)
+10,SOP-003,deletion,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+10,ENT-ACCESS-001,tampering,protection_off,,,,,,7,7,FAILURE (EXPOSED)
+10,ENT-BACKUP-003,poisoning,protection_off,,,,,,10,10,FAILURE (EXPOSED)
+1,POLICY-001,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+1,POLICY-002,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+1,SOP-003,deletion,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+1,ENT-ACCESS-001,tampering,detection_only,120.0,,,,,7,1,FAILURE (UNRECOVERED)
+1,ENT-BACKUP-003,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+2,POLICY-001,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+2,POLICY-002,deletion,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+2,SOP-003,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+2,ENT-ACCESS-001,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+2,ENT-BACKUP-003,deletion,detection_only,120.0,,,,,7,1,FAILURE (UNRECOVERED)
+3,POLICY-001,deletion,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+3,POLICY-002,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+3,SOP-003,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+3,ENT-ACCESS-001,deletion,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+3,ENT-BACKUP-003,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+4,POLICY-001,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+4,POLICY-002,poisoning,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+4,SOP-003,deletion,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+4,ENT-ACCESS-001,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+4,ENT-BACKUP-003,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+5,POLICY-001,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+5,POLICY-002,deletion,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+5,SOP-003,tampering,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+5,ENT-ACCESS-001,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+5,ENT-BACKUP-003,deletion,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+6,POLICY-001,deletion,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+6,POLICY-002,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+6,SOP-003,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+6,ENT-ACCESS-001,deletion,detection_only,120.0,,,,,6,1,FAILURE (UNRECOVERED)
+6,ENT-BACKUP-003,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+7,POLICY-001,tampering,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+7,POLICY-002,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+7,SOP-003,deletion,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+7,ENT-ACCESS-001,tampering,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+7,ENT-BACKUP-003,poisoning,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+8,POLICY-001,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+8,POLICY-002,deletion,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+8,SOP-003,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+8,ENT-ACCESS-001,poisoning,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+8,ENT-BACKUP-003,deletion,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+9,POLICY-001,deletion,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+9,POLICY-002,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+9,SOP-003,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+9,ENT-ACCESS-001,deletion,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+9,ENT-BACKUP-003,tampering,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+10,POLICY-001,tampering,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+10,POLICY-002,poisoning,detection_only,120.0,,,,,7,1,FAILURE (UNRECOVERED)
+10,SOP-003,deletion,detection_only,120.0,,,,,5,1,FAILURE (UNRECOVERED)
+10,ENT-ACCESS-001,tampering,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+10,ENT-BACKUP-003,poisoning,detection_only,120.0,,,,,10,1,FAILURE (UNRECOVERED)
+1,POLICY-001,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,7,0,SUCCESS
+1,POLICY-002,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+1,SOP-003,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+1,ENT-ACCESS-001,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,8,0,SUCCESS
+1,ENT-BACKUP-003,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+2,POLICY-001,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+2,POLICY-002,deletion,rule_based,210.0,,,,,7,7,FAILURE (RULE_COLLAPSE)
+2,SOP-003,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,8,0,SUCCESS
+2,ENT-ACCESS-001,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+2,ENT-BACKUP-003,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+3,POLICY-001,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+3,POLICY-002,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+3,SOP-003,poisoning,rule_based,210.0,,,,,5,5,FAILURE (RULE_COLLAPSE)
+3,ENT-ACCESS-001,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+3,ENT-BACKUP-003,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+4,POLICY-001,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+4,POLICY-002,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+4,SOP-003,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+4,ENT-ACCESS-001,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+4,ENT-BACKUP-003,poisoning,rule_based,210.0,,,,,5,5,FAILURE (RULE_COLLAPSE)
+5,POLICY-001,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+5,POLICY-002,deletion,rule_based,210.0,,,,,9,9,FAILURE (RULE_COLLAPSE)
+5,SOP-003,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+5,ENT-ACCESS-001,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+5,ENT-BACKUP-003,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+6,POLICY-001,deletion,rule_based,210.0,,,,,5,5,FAILURE (RULE_COLLAPSE)
+6,POLICY-002,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+6,SOP-003,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+6,ENT-ACCESS-001,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+6,ENT-BACKUP-003,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,7,0,SUCCESS
+7,POLICY-001,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,7,0,SUCCESS
+7,POLICY-002,poisoning,rule_based,210.0,,,,,5,5,FAILURE (RULE_COLLAPSE)
+7,SOP-003,deletion,rule_based,210.0,,,,,7,7,FAILURE (RULE_COLLAPSE)
+7,ENT-ACCESS-001,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,7,0,SUCCESS
+7,ENT-BACKUP-003,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+8,POLICY-001,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+8,POLICY-002,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+8,SOP-003,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+8,ENT-ACCESS-001,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+8,ENT-BACKUP-003,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+9,POLICY-001,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+9,POLICY-002,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+9,SOP-003,poisoning,rule_based,210.0,,,,,5,5,FAILURE (RULE_COLLAPSE)
+9,ENT-ACCESS-001,deletion,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+9,ENT-BACKUP-003,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+10,POLICY-001,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+10,POLICY-002,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+10,SOP-003,deletion,rule_based,210.0,,,,,7,7,FAILURE (RULE_COLLAPSE)
+10,ENT-ACCESS-001,tampering,rule_based,210.0,150.0,1800.0,20.0,2010.0,10,0,SUCCESS
+10,ENT-BACKUP-003,poisoning,rule_based,210.0,,,,,10,10,FAILURE (RULE_COLLAPSE)
+1,POLICY-001,tampering,tcrp_aegismem,19.13,3040.1,308.46,3.54,3371.24,10,0,SUCCESS
+1,POLICY-002,poisoning,tcrp_aegismem,14.8,1437.21,847.52,11.24,2310.78,10,0,SUCCESS
+1,SOP-003,deletion,tcrp_aegismem,16.05,628.25,567.33,5.73,1217.37,10,0,SUCCESS
+1,ENT-ACCESS-001,tampering,tcrp_aegismem,19.36,1564.32,714.73,6.75,2305.16,10,0,SUCCESS
+1,ENT-BACKUP-003,poisoning,tcrp_aegismem,18.29,2235.6,512.45,6.25,2772.59,10,0,SUCCESS
+2,POLICY-001,poisoning,tcrp_aegismem,16.92,827.61,602.7,5.32,1452.55,10,0,SUCCESS
+2,POLICY-002,deletion,tcrp_aegismem,15.65,1937.74,706.45,5.61,2665.45,10,0,SUCCESS
+2,SOP-003,tampering,tcrp_aegismem,22.33,2362.58,668.27,4.74,3057.92,10,0,SUCCESS
+2,ENT-ACCESS-001,poisoning,tcrp_aegismem,23.96,2148.24,827.74,4.05,3003.99,10,0,SUCCESS
+2,ENT-BACKUP-003,deletion,tcrp_aegismem,18.33,749.32,1040.33,13.04,1821.03,10,0,SUCCESS
+3,POLICY-001,deletion,tcrp_aegismem,17.75,2133.53,648.62,3.34,2803.24,10,0,SUCCESS
+3,POLICY-002,tampering,tcrp_aegismem,16.09,1031.96,815.62,4.98,1868.65,10,0,SUCCESS
+3,SOP-003,poisoning,tcrp_aegismem,16.37,1754.83,752.18,4.67,2528.06,10,0,SUCCESS
+3,ENT-ACCESS-001,deletion,tcrp_aegismem,20.53,642.81,973.59,4.95,1641.88,10,0,SUCCESS
+3,ENT-BACKUP-003,tampering,tcrp_aegismem,16.92,2047.8,697.32,3.62,2765.67,10,0,SUCCESS
+4,POLICY-001,tampering,tcrp_aegismem,19.27,864.11,1268.38,5.77,2157.53,10,0,SUCCESS
+4,POLICY-002,poisoning,tcrp_aegismem,17.83,695.34,986.92,5.7,1705.79,10,0,SUCCESS
+4,SOP-003,deletion,tcrp_aegismem,17.2,2170.0,590.84,4.9,2782.95,10,0,SUCCESS
+4,ENT-ACCESS-001,tampering,tcrp_aegismem,29.36,1052.84,1146.34,4.72,2233.26,10,0,SUCCESS
+4,ENT-BACKUP-003,poisoning,tcrp_aegismem,16.37,278.4,1311.8,7.64,1614.21,10,0,SUCCESS
+5,POLICY-001,poisoning,tcrp_aegismem,15.89,2078.04,740.58,4.05,2838.56,10,0,SUCCESS
+5,POLICY-002,deletion,tcrp_aegismem,26.54,1217.09,1270.12,6.01,2519.76,10,0,SUCCESS
+5,SOP-003,tampering,tcrp_aegismem,16.36,1012.99,1128.93,4.87,2163.15,10,0,SUCCESS
+5,ENT-ACCESS-001,poisoning,tcrp_aegismem,20.37,981.98,1668.97,13.48,2684.8,10,0,SUCCESS
+5,ENT-BACKUP-003,deletion,tcrp_aegismem,17.41,733.58,2030.8,7.42,2789.22,10,0,SUCCESS
+6,POLICY-001,deletion,tcrp_aegismem,20.54,1092.63,1695.88,5.12,2814.17,10,0,SUCCESS
+6,POLICY-002,tampering,tcrp_aegismem,20.42,1136.78,1535.42,6.51,2699.13,10,0,SUCCESS
+6,SOP-003,poisoning,tcrp_aegismem,17.42,1177.13,1402.13,5.21,2601.89,10,0,SUCCESS
+6,ENT-ACCESS-001,deletion,tcrp_aegismem,18.62,1678.52,1358.41,3.18,3058.72,10,0,SUCCESS
+6,ENT-BACKUP-003,tampering,tcrp_aegismem,19.41,1217.46,1496.62,4.08,2737.57,10,0,SUCCESS
+7,POLICY-001,tampering,tcrp_aegismem,17.99,1207.05,1431.78,3.44,2660.26,10,0,SUCCESS
+7,POLICY-002,poisoning,tcrp_aegismem,18.1,1394.94,1482.81,3.42,2899.27,10,0,SUCCESS
+7,SOP-003,deletion,tcrp_aegismem,15.42,1865.69,1291.48,3.3,3175.9,10,0,SUCCESS
+7,ENT-ACCESS-001,tampering,tcrp_aegismem,16.41,1442.4,1719.92,4.21,3182.93,10,0,SUCCESS
+7,ENT-BACKUP-003,poisoning,tcrp_aegismem,24.64,1526.75,1332.15,4.48,2888.02,10,0,SUCCESS
+8,POLICY-001,poisoning,tcrp_aegismem,18.07,1602.74,1425.88,4.34,3051.04,10,0,SUCCESS
+8,POLICY-002,deletion,tcrp_aegismem,30.31,1801.57,1532.9,3.09,3367.87,10,0,SUCCESS
+8,SOP-003,tampering,tcrp_aegismem,16.52,2138.33,1241.43,4.16,3400.44,10,0,SUCCESS
+8,ENT-ACCESS-001,poisoning,tcrp_aegismem,15.17,1949.66,1537.27,4.0,3506.11,10,0,SUCCESS
+8,ENT-BACKUP-003,deletion,tcrp_aegismem,19.93,1929.55,1146.51,4.65,3100.64,10,0,SUCCESS
+9,POLICY-001,deletion,tcrp_aegismem,15.31,2020.9,1287.96,4.07,3328.24,10,0,SUCCESS
+9,POLICY-002,tampering,tcrp_aegismem,28.4,2406.29,1261.44,4.71,3700.85,10,0,SUCCESS
+9,SOP-003,poisoning,tcrp_aegismem,20.37,1810.26,1540.14,3.54,3374.31,10,0,SUCCESS
+9,ENT-ACCESS-001,deletion,tcrp_aegismem,18.38,2727.8,977.82,3.24,3727.23,10,0,SUCCESS
+9,ENT-BACKUP-003,tampering,tcrp_aegismem,15.29,1687.09,1831.96,3.92,3538.26,10,0,SUCCESS
+10,POLICY-001,tampering,tcrp_aegismem,13.91,2478.54,1359.93,3.22,3855.6,10,0,SUCCESS
+10,POLICY-002,poisoning,tcrp_aegismem,16.51,2325.95,1338.85,4.61,3685.92,10,0,SUCCESS
+10,SOP-003,deletion,tcrp_aegismem,16.3,2200.76,1418.51,3.77,3639.33,10,0,SUCCESS
+10,ENT-ACCESS-001,tampering,tcrp_aegismem,15.17,2088.4,1482.12,3.24,3588.93,10,0,SUCCESS
+10,ENT-BACKUP-003,poisoning,tcrp_aegismem,18.96,1905.13,1642.46,3.45,3570.0,10,0,SUCCESS

@@ -658,6 +658,27 @@ session_id: str | None = None
                 "          [OK] AEGISMEM SELF-HEALING COMPLETE"
             )
 
+            # Post-recovery cascade re-verification:
+            # If root recovery succeeded, re-verify quarantined cascade dependents.
+            # If their own content and manifest are clean, reactivate them.
+            for decision in decisions:
+                if decision.action == RecoveryAction.QUARANTINE:
+                    dm = self.repository.get_latest(decision.memory_id)
+                    if dm and dm.status == "QUARANTINED":
+                        det = self.detector.detect(decision.memory_id)
+                        if not det.compromised:
+                            dm.status = "active"
+                            self.repository.session.commit()
+                            self._record_event(
+                                memory_id=decision.memory_id,
+                                event_type="VALIDATION",
+                                action="REACTIVATE",
+                                message="Cascade dependent memory reactivated after root recovery verification.",
+                                status="success",
+                                session_id=session_id,
+                            )
+                            print(f"[AegisMem Cascade] Reactivated verified dependent memory: {decision.memory_id}")
+
         else:
 
             print(

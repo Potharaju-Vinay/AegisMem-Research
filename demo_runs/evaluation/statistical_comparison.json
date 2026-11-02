@@ -1,0 +1,57 @@
+{
+  "tcrp_vs_protection_off_mcnemar": {
+    "competitor": "protection_off",
+    "contingency_table": [
+      [
+        0,
+        50
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "chi2_statistic": 48.02,
+    "p_value": 4.218936524005768e-12,
+    "statistically_significant": true
+  },
+  "tcrp_vs_detection_only_mcnemar": {
+    "competitor": "detection_only",
+    "contingency_table": [
+      [
+        0,
+        50
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "chi2_statistic": 48.02,
+    "p_value": 4.218936524005768e-12,
+    "statistically_significant": true
+  },
+  "tcrp_vs_rule_based_mcnemar": {
+    "competitor": "rule_based",
+    "contingency_table": [
+      [
+        17,
+        33
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "chi2_statistic": 31.0303,
+    "p_value": 2.5403120142884262e-08,
+    "statistically_significant": true
+  },
+  "latency_wilcoxon_tcrp_vs_rule": {
+    "statistic": 39.0,
+    "p_value": 0.079681396484375,
+    "paired_sample_size": 17,
+    "tcrp_mean_ms": 2804.55,
+    "rule_mean_ms": 2010.0
+  }
+}

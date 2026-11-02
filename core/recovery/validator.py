@@ -95,7 +95,11 @@ class RecoveryValidator:
                 return False
 
             if not self._has_valid_owner_authorization(source):
-                return False
+                if getattr(source, "version", None) == 1:
+                    if not (self.manifest_store.has_manifest(source) and self.manifest_store.verify_record(source)):
+                        return False
+                else:
+                    return False
 
             source_manifest_valid = (
                 self.manifest_store.has_manifest(source)
