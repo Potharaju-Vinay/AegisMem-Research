@@ -26,7 +26,7 @@ param(
     [string]$MemoryId = "POLICY-001",
 
     [Parameter(Mandatory = $false)]
-    [string]$AttackerActor = "kali-attacker",
+    [string]$AttackerActor = "aegismem-attacker",
 
     [Parameter(Mandatory = $false)]
     [string]$OutputDir = "",

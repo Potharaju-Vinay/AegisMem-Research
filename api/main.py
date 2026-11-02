@@ -133,10 +133,16 @@ def require_owner_signature(http_request: Request):
             detail="A valid owner digital signature is required."
         )
         
+def get_active_db_name() -> str:
+    db_url = os.environ.get("DATABASE_URL", "")
+    if "/" in db_url:
+        return db_url.split("/")[-1].split("?")[0]
+    return os.environ.get("AEGISMEM_DB_NAME", "aegismem_demo")
+
+
 DASHBOARD_ALLOWED_ORIGINS = {
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "http://192.168.56.101:5173",
 }
 
 
@@ -214,7 +220,6 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "http://192.168.56.101:5173",
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
@@ -328,7 +333,7 @@ class RefundRequest(BaseModel):
 class ExternalMemoryWriteRequest(BaseModel):
     memory_id: str
     modified_content: str
-    attacker: str = "kali-attacker"
+    attacker: str = "unknown"
     attack_type: str = "content_tampering"
     session_id: str | None = None
     auto_heal: bool = False
@@ -934,7 +939,7 @@ def owner_memory_write(
 def read_memory_endpoint(
     memory_id: str,
     http_request: Request,
-    actor: str = "kali-attacker",
+    actor: str = "unknown",
     session_id: str | None = None,
 ):
     if not attack_lab_enabled():
@@ -1146,45 +1151,46 @@ def external_memory_write(
 
 
 def classify_ip_location(ip: str | None) -> dict:
-    if not ip or str(ip).strip() in ("unavailable", "Not recorded", "testclient", ""):
+    if not ip or str(ip).strip() in ("unavailable", "Not recorded", "testclient", "", "None"):
         return {
-            "location": "Internal Test Client / Mock",
-            "zone": "Automated Harness",
-            "network_type": "Test Suite",
+            "location": "unknown",
+            "zone": "unknown",
+            "network_type": "unknown",
             "is_adversary": False,
         }
     ip_clean = str(ip).strip()
-    if ip_clean == "192.168.56.101":
-        return {
-            "location": "Adversary Lab VM (Kali Linux)",
-            "zone": "External Attack Lab (VirtualBox Host-Only)",
-            "network_type": "Adversary Lab",
-            "is_adversary": True,
-        }
-    elif ip_clean in ("127.0.0.1", "localhost", "::1"):
+    if ip_clean in ("127.0.0.1", "localhost", "::1"):
         return {
             "location": "Windows Host Gateway (Localhost)",
             "zone": "Internal Loopback",
             "network_type": "Local System",
             "is_adversary": False,
         }
-    elif ip_clean.startswith("192.168.") or ip_clean.startswith("10.") or ip_clean.startswith("172."):
+    elif ip_clean.startswith("172."):
         return {
-            "location": "Enterprise Internal Network",
+            "location": f"Docker Adversary Network ({ip_clean})",
+            "zone": "Segmented Docker Bridge (public-net)",
+            "network_type": "Adversary Container Bridge",
+            "is_adversary": True,
+        }
+    elif ip_clean.startswith("192.168.") or ip_clean.startswith("10."):
+        return {
+            "location": f"Enterprise Internal Subnet ({ip_clean})",
             "zone": "Private VPC / Subnet",
             "network_type": "Internal LAN",
             "is_adversary": False,
         }
     return {
-        "location": "External Public Network",
+        "location": f"External Network ({ip_clean})",
         "zone": "WAN Gateway",
         "network_type": "External Internet",
         "is_adversary": True,
     }
 
 
+@app.post("/lab/adversary/memory/write")
 @app.post("/lab/kali/memory/write")
-def kali_lab_memory_write(
+def adversary_lab_memory_write(
     request: ExternalMemoryWriteRequest,
     http_request: Request,
 ):
@@ -1222,9 +1228,6 @@ def kali_lab_memory_write(
     client = http_request.client
     source_ip = client.host if client else None
 
-    if source_ip != "192.168.56.101":
-        raise HTTPException(status_code=403, detail="Source IP is not permitted.")
-
     allowed_memories = {
         "PHASE3-REPLAY",
         "ENT-ACCESS-001",
@@ -1252,7 +1255,7 @@ def kali_lab_memory_write(
         attack_result = attacker.modify_memory(
             memory_id=request.memory_id,
             modified_content=request.modified_content,
-            attacker="kali-attacker",
+            attacker=request.attacker if request.attacker and request.attacker != "unknown" else "adversary_container",
             attack_type=request.attack_type,
             session_id=request.session_id,
             source_ip=source_ip,
@@ -1354,7 +1357,7 @@ def poison_memory(
                 "Persistent refund policy changed from "
                 "30 calendar days to 180 calendar days."
             ),
-            attacker="controlled_kali_lab",
+            attacker="adversary_lab",
             attack_time=datetime.now(timezone.utc),
             integrity_compromised=True,
             status="DETECTED"
@@ -1371,7 +1374,7 @@ def poison_memory(
             memory_record_id=poisoned.id,
             memory_id=poisoned.memory_id,
             version=poisoned.version,
-            actor="controlled_kali_lab",
+            actor="adversary_lab",
             operation="MEMORY_POISON",
             source="prompt_injection_attack",
             source_type="memory_poisoning",
@@ -1503,7 +1506,7 @@ def tamper_memory(
                 "30 calendar days to 180 calendar days "
                 "through controlled content tampering."
             ),
-            attacker="controlled_kali_lab"
+            attacker="adversary_lab"
         )
 
         return {
@@ -2450,6 +2453,8 @@ def dashboard_memories(http_request: Request):
                 latest_by_memory[record.memory_id] = record
 
         return {
+            "database_name": get_active_db_name(),
+            "database": get_active_db_name(),
             "memories": [
                 {
                     "id": memory.memory_id,
@@ -2546,9 +2551,9 @@ def dashboard_alerts(http_request: Request):
 
                 attribution_evidence = [
                     f"Attack record matched: {attack.attack_id}",
-                    f"Attacker identity: {attacker or 'kali-attacker'}",
-                    f"Source IP: {source_ip or 'unavailable'}",
-                    f"Entry point: {entry_point or 'unavailable'}",
+                    f"Attacker identity: {attacker or 'unknown'}",
+                    f"Source IP: {source_ip or 'unknown'}",
+                    f"Entry point: {entry_point or 'unknown'}",
                 ]
 
             alerts_response.append({
@@ -3032,8 +3037,8 @@ def latest_recovery(http_request: Request, memory_id: str | None = None):
 
                     "attacker":
                         attack_event.attacker
-                        if attack_event
-                        else "kali-attacker",
+                        if attack_event and attack_event.attacker
+                        else "unknown",
 
                     "attack_id":
                         attack_event.attack_id
@@ -3144,6 +3149,9 @@ def get_soc_dashboard_feed_endpoint():
     session = SessionLocal()
     try:
         feed = get_soc_dashboard_feed(db_session=session)
+        if isinstance(feed, dict):
+            feed["database_name"] = get_active_db_name()
+            feed["database"] = get_active_db_name()
         return feed
     finally:
         session.close()

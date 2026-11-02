@@ -192,6 +192,8 @@ services:
     command: ["python", "scripts/dashboard_server.py", "--port", "5173", "--gateway", "http://aegismem-gateway:8000"]
     ports:
       - "127.0.0.1:5173:5173"
+    volumes:
+      - ./frontend/dist:/app/frontend/dist:ro
     networks:
       - public-net
     healthcheck:

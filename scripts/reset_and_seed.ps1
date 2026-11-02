@@ -54,18 +54,18 @@ Log-Output "Fixed Seed      : $Seed"
 Log-Output "Transcript Path : $transcriptPath"
 Log-Output "--------------------------------------------------------------------------------"
 
-# 2. Synchronize scripts to aegismem-gateway container
-Log-Output "[STAGE 1] Syncing reset scripts and modules to aegismem-gateway container..." "Cyan"
-& docker cp scripts/reset_and_seed_backend.py aegismem-gateway:/app/scripts/reset_and_seed_backend.py 2>&1 | Out-Null
+# 2. Synchronize scripts to aegismem-recovery container
+Log-Output "[STAGE 1] Syncing reset scripts and modules to aegismem-recovery container..." "Cyan"
+& docker cp scripts/reset_and_seed_backend.py aegismem-recovery:/app/scripts/reset_and_seed_backend.py 2>&1 | Out-Null
 if ($LASTEXITCODE -ne 0) {
-    Log-Output "FAILED: Failed to copy scripts/reset_and_seed_backend.py into aegismem-gateway." "Red"
+    Log-Output "FAILED: Failed to copy scripts/reset_and_seed_backend.py into aegismem-recovery." "Red"
     Set-Content -Path $transcriptPath -Value $transcriptLines
     exit 1
 }
 
 # 3. Execute Run 1 (Initial Reset & Seed)
 Log-Output "`n[STAGE 2] Executing Initial Reset and Seed (Run 1) on target database '$Database'..." "Cyan"
-$run1Raw = & docker exec aegismem-gateway python scripts/reset_and_seed_backend.py --seed $Seed --database $Database 2>&1
+$run1Raw = & docker exec aegismem-recovery python scripts/reset_and_seed_backend.py --seed $Seed --database $Database 2>&1
 $run1Exit = $LASTEXITCODE
 
 foreach ($line in $run1Raw) {
@@ -79,12 +79,12 @@ if ($run1Exit -ne 0) {
 }
 
 # Capture Run 1 structured JSON for assertion
-$run1JsonRaw = & docker exec aegismem-gateway python scripts/reset_and_seed_backend.py --seed $Seed --database $Database --json 2>&1
+$run1JsonRaw = & docker exec aegismem-recovery python scripts/reset_and_seed_backend.py --seed $Seed --database $Database --json 2>&1
 $run1Data = $run1JsonRaw | ConvertFrom-Json
 
 # 4. Execute Run 2 (Idempotence Verification)
 Log-Output "`n[STAGE 3] Executing Second Reset and Seed (Run 2) for Idempotence Verification..." "Cyan"
-$run2JsonRaw = & docker exec aegismem-gateway python scripts/reset_and_seed_backend.py --seed $Seed --database $Database --json 2>&1
+$run2JsonRaw = & docker exec aegismem-recovery python scripts/reset_and_seed_backend.py --seed $Seed --database $Database --json 2>&1
 $run2Exit = $LASTEXITCODE
 
 if ($run2Exit -ne 0) {

@@ -111,8 +111,13 @@ class MemoryCompromiseDetector:
             in {
                 "kali-attacker",
                 "controlled_kali_lab",
-                "research-attacker"
+                "research-attacker",
+                "aegismem-attacker",
+                "adversary",
+                "unknown",
             }
+            or "attacker" in str(event.actor).lower()
+            or "adversary" in str(event.actor).lower()
         )
 
         # Milestone M2: Cryptographic Signature Verification for Owner Provenance

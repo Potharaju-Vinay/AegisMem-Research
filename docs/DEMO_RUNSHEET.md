@@ -105,13 +105,13 @@ To preserve scientific credibility, adhere strictly to these terminology boundar
   ```powershell
   # Reset to baseline
   powershell -ExecutionPolicy Bypass -File scripts/reset_and_seed.ps1
-  # Execute full protected lifecycle
-  powershell -ExecutionPolicy Bypass -File scripts/run_incident.ps1 -Protection on
+  # Execute full autonomous protected lifecycle
+  powershell -ExecutionPolicy Bypass -File scripts/run_incident.ps1 -Mode autonomous -Protection on
   ```
-* **Expected Runtime:** ~2 – 3 seconds
+* **Expected Runtime:** ~2 – 4 seconds
 * **What to Say:**
-  > *"Now we execute the identical attack with AegisMem protection active. Notice the 8 asserted steps: First, attacker reconnaissance and write are captured with real source IP `172.21.0.4`. Second, before recovery finishes, a customer query is intercepted by ReadPathGate—serving zero wrong answers. Third, the compromise is detected with suspicion score 1.0. Fourth, TCRP evaluates candidate costs and selects ROLLBACK at minimum cost 0.1295. Fifth, the trusted state is retrieved from the Trust Vault on `vault-net`. Sixth, state is restored to active v3. Seventh, customer queries again and receives REFUND DENIED, perfectly matching baseline. Eighth, all sub-phase latencies are recorded with an exposure window of exactly zero."*
-* **Expected Verification:** All 8 steps pass; total duration ~1.0 – 1.4 seconds; exposure window = 0.
+  > *"Now we execute the identical attack with AegisMem autonomous protection active. The background watcher continuously scans and self-heals without scripted orchestrations. Notice the asserted telemetry: First, attacker write is captured with the real container IP from public-net (e.g. 172.18.0.x). Second, continuous 50ms customer query probes are intercepted by ReadPathGate—measuring real zero financial exposure (0 wrong answers). Third, the background watcher spots the compromise with suspicion score 1.0. Fourth, TCRP evaluates candidate costs and restores the verified genesis state from the Trust Vault on vault-net. Fifth, memory is restored to active v3. Sixth, customer queries again and receives REFUND DENIED, perfectly matching baseline enterprise policy. All timestamps are extracted from PostgreSQL rows."*
+* **Expected Verification:** Autonomous self-healing completes with watcher active; measured exposure window = 0; post-recovery agent decision = `REFUND DENIED`.
 
 ---
 
@@ -139,14 +139,14 @@ To preserve scientific credibility, adhere strictly to these terminology boundar
 
 ---
 
-### Step 10: 20-Trial Repeated Benchmark
+### Step 10: Repeated Benchmark Trials
 * **Command:**
   ```powershell
   powershell -ExecutionPolicy Bypass -File scripts/repeat_trials.ps1 -N 20
   ```
 * **Expected Runtime:** ~140 seconds (~2.3 minutes)
 * **What to Say:**
-  > *"To demonstrate statistical rigor beyond a single run, we execute 20 independent trials from a clean state. In all 20 trials, AegisMem achieved a 100% success rate with zero incident failures. The median self-healing duration is 991.83 ms with a 95th percentile latency of 1,280.19 ms. Most critically, across all 20 trials, the maximum customer policy exposure window was exactly 0 wrong answers served."*
+  > *"To demonstrate statistical rigor beyond a single run, we execute repeated independent trials from a clean state. Across all trials, AegisMem records measured self-healing latencies and customer exposure window from live database event rows. Most critically, across all protected trials, the customer policy exposure window is verified at 0 wrong answers served."*
 * **Expected Verification:** 20 / 20 successes; 0 failures; max exposure window = 0; CSV written to `demo_runs/<timestamp>_trials/trials.csv`.
 
 ---
@@ -154,6 +154,6 @@ To preserve scientific credibility, adhere strictly to these terminology boundar
 ### Step 11: Reviewer Dashboard Verification
 * **Action:** Open browser at `http://127.0.0.1:5173/` (or `http://localhost:5173/`).
 * **What to Say:**
-  > *"Finally, we inspect the live reviewer dashboard running as a native Compose service on `127.0.0.1:5173`. The dashboard provides operators with live visibility into: (1) container services and health, (2) persistent memory versions and cryptographic hash states, (3) real-time incident timelines with dwell times, (4) TCRP recovery action candidate cost comparisons, and (5) the interactive AI Assistant security gate. Notice that all telemetry reflects the database rows generated during our live runs."*
-* **Expected Verification:** Overview metrics, Live Recovery state comparison, SOC Audit log table, and AI Assistant query gate are active.
+  > *"Finally, we inspect the live reviewer dashboard running as a native Compose service on `127.0.0.1:5173`. The dashboard provides operators with live visibility into: (1) container services and health, (2) the active database name (`aegismem_demo`), (3) persistent memory versions showing real runtime progression (v1 baseline -> v2 attacked -> v3 restored), (4) real adversary container IP (e.g. 172.18.0.x on public-net) without hardcoded Kali assumptions, (5) real-time incident timelines with dwell times, and (6) the interactive AI Assistant security gate. Notice that all telemetry reflects the database rows generated during our live runs."*
+* **Expected Verification:** Overview metrics, active database indicator (`aegismem_demo`), Live Recovery three-state comparison (v1 -> v2 -> v3), real container IP/port, and SOC Audit log table are active.
 

@@ -1036,7 +1036,7 @@ function renderAttackLab() {
             </div>
             <h1 className="soc-title">Adversary Intrusion & Live Recovery Console</h1>
             <p className="soc-subtitle">
-              Live telemetry tracking external attacks from Kali Linux (192.168.56.101), automated intrusion detection,
+              Live telemetry tracking external attacks from adversary containers, automated intrusion detection,
               dependency impact propagation, and cryptographic state restoration.
             </p>
           </div>
@@ -1051,7 +1051,7 @@ function renderAttackLab() {
               </span>
             )}
             <span className="soc-status-badge info">
-              <Crosshair size={13} /> ADVERSARY: 192.168.56.101
+              <Crosshair size={13} /> ADVERSARY: {socAlerts && socAlerts.length > 0 && socAlerts[0].source_ip ? socAlerts[0].source_ip : "CONTAINER"}
             </span>
           </div>
         </div>
@@ -1119,7 +1119,7 @@ function renderAttackLab() {
                   <span>Tampering Detected (Suspicion 1.00)</span>
                 </div>
                 <div style={{ fontSize: "10px", color: "#94a3b8", marginTop: "3px", fontFamily: "monospace" }}>
-                  Attacker: kali-attacker · Source: 192.168.56.101
+                  Attacker: {socAlerts && socAlerts.length > 0 && socAlerts[0].attacker ? socAlerts[0].attacker : "unknown"} · Source: {socAlerts && socAlerts.length > 0 && socAlerts[0].source_ip ? socAlerts[0].source_ip : "unknown"}
                 </div>
               </div>
             </div>
@@ -1176,7 +1176,7 @@ function renderAttackLab() {
               </div>
               <strong style={{ display: "block", color: "#f8fafc", fontSize: "13px", marginBottom: "4px" }}>Detect</strong>
               <p style={{ fontSize: "11px", color: "#94a3b8", margin: 0, lineHeight: 1.4 }}>
-                Kali unauthorized write detected on {dependencyMemoryId}. Attributed as UNAUTHORIZED_MODIFICATION.
+                Unauthorized write detected on {dependencyMemoryId}. Attributed as UNAUTHORIZED_MODIFICATION.
               </p>
             </div>
 
@@ -1377,7 +1377,7 @@ function renderOverview() {
       recoveryResult?.memory?.restored?.content ||
       trustedContent
     const attackType = recoveryResult?.memory?.compromised?.attack_type || "memory tampering"
-    const attacker = recoveryResult?.memory?.compromised?.attacker || "kali-attacker"
+    const attacker = recoveryResult?.memory?.compromised?.attacker || "unknown"
 
     const recoveryValidationResult = String(
       recoveryResult?.validation_result ??
@@ -1412,7 +1412,7 @@ function renderOverview() {
         type: "INTRUSION",
         title: `Adversary Intrusion: ${formatAttackTypeLabel(al.attack_type)}`,
         memoryId: al.memory_id,
-        detail: al.mutation_description || `Attacker: ${al.attacker || "kali-attacker"} · IP: ${al.source_ip || "192.168.56.101"}`,
+        detail: al.mutation_description || `Attacker: ${al.attacker || "unknown"} · IP: ${al.source_ip || "unknown"}`,
         status: al.severity || "CRITICAL",
         time: al.created_at || al.attack_time,
         isAlert: true,
@@ -2232,12 +2232,12 @@ function renderAssistant() {
       }
     }
     const clean = String(ip || "").trim()
-    if (clean === "192.168.56.101") {
+    if (!clean || clean === "unknown" || clean === "null" || clean === "undefined") {
       return {
-        label: "Adversary Lab VM (Kali Linux)",
-        zone: "VirtualBox Host-Only Subnet",
-        isAdversary: true,
-        networkType: "External Attack Lab"
+        label: "unknown",
+        zone: "unknown",
+        isAdversary: false,
+        networkType: "unknown"
       }
     }
     if (clean === "127.0.0.1" || clean === "localhost" || clean === "::1") {
@@ -2256,7 +2256,15 @@ function renderAssistant() {
         networkType: "Automated Test"
       }
     }
-    if (clean.startsWith("192.168.") || clean.startsWith("10.") || clean.startsWith("172.")) {
+    if (clean.startsWith("172.")) {
+      return {
+        label: `Adversary Container (${clean})`,
+        zone: "Segmented Docker Bridge",
+        isAdversary: true,
+        networkType: "Adversary Container Network"
+      }
+    }
+    if (clean.startsWith("192.168.") || clean.startsWith("10.")) {
       return {
         label: "Enterprise Internal Network",
         zone: "Private VPC Subnet",
@@ -2297,8 +2305,8 @@ function renderAssistant() {
     ).length
     const adversaryCount = socAlerts.filter((a) => {
       const ip = a.source_ip || ""
-      const actor = a.attacker || ""
-      return ip.includes("192.168.56.101") || actor.includes("kali")
+      const actor = String(a.attacker || "").toLowerCase()
+      return Boolean(a.is_adversary) || actor.includes("attacker") || actor.includes("adversary") || ip.startsWith("172.")
     }).length
     const mutatedCount = socAlerts.filter((a) => a.content_changed).length
 
@@ -2421,7 +2429,7 @@ function renderAssistant() {
               <span className="soc-kpi-label">Adversary Intrusions</span>
               <strong className="soc-kpi-value">{adversaryCount}</strong>
               <small className="soc-kpi-subtext adversary-tag">
-                Kali VM (192.168.56.101)
+                Adversary Container Network
               </small>
             </div>
           </div>
@@ -2602,12 +2610,12 @@ function renderAssistant() {
 
                           <td className="soc-cell-location">
                             <div className="soc-threat-actor-line">
-                              <strong>{alert.attacker || "kali-attacker"}</strong>
+                              <strong>{alert.attacker || "unknown"}</strong>
                             </div>
                             <div className={`soc-location-tag ${locMeta.isAdversary ? "adversary" : "internal"}`}>
                               {locMeta.isAdversary ? <Crosshair size={10} /> : <MapPin size={10} />}
                               <span>{locMeta.label}</span>
-                              <span className="soc-ip-tag">{alert.source_ip || "192.168.56.101"}</span>
+                              <span className="soc-ip-tag">{alert.source_ip || "unknown"}</span>
                             </div>
                           </td>
 
@@ -2930,11 +2938,11 @@ function renderAssistant() {
                   <div className="soc-modal-grid">
                     <div className="soc-prop-item">
                       <span className="soc-prop-label">Attacker Identity</span>
-                      <strong className="soc-prop-val red">{socSelectedAlert.attacker || "kali-attacker"}</strong>
+                      <strong className="soc-prop-val red">{socSelectedAlert.attacker || "unknown"}</strong>
                     </div>
                     <div className="soc-prop-item">
                       <span className="soc-prop-label">Source IP Address</span>
-                      <strong className="soc-prop-val mono">{socSelectedAlert.source_ip || "192.168.56.101"}</strong>
+                      <strong className="soc-prop-val mono">{socSelectedAlert.source_ip || "unknown"}</strong>
                     </div>
                     <div className="soc-prop-item">
                       <span className="soc-prop-label">Network Location & Host</span>
@@ -2950,7 +2958,7 @@ function renderAssistant() {
                     </div>
                     <div className="soc-prop-item">
                       <span className="soc-prop-label">Entry Point</span>
-                      <strong className="soc-prop-val mono">{socSelectedAlert.entry_point || "/lab/kali/memory/write"}</strong>
+                      <strong className="soc-prop-val mono">{socSelectedAlert.entry_point || "unknown"}</strong>
                     </div>
                     <div className="soc-prop-item">
                       <span className="soc-prop-label">Access Method & Latency</span>
@@ -3332,7 +3340,7 @@ function renderMemory() {
                       const vNum = rev.version_number || String(rev.version || "").replace(/^v/i, "")
                       const isOwnerAuth = rev.authorization_state === "AUTHORIZED" || rev.owner_authorization_valid === true
                       const isRecoveryAuth = rev.authorization_type === "RECOVERY" || rev.recovery_authorization_valid === true
-                      const isAttack = String(rev.author || "").toLowerCase().includes("attacker") || String(rev.author || "").toLowerCase().includes("kali")
+                      const isAttack = String(rev.author || "").toLowerCase().includes("attacker") || String(rev.author || "").toLowerCase().includes("adversary") || rev.authorization_state === "UNAUTHORIZED"
 
                       return (
                         <div
@@ -3508,7 +3516,7 @@ function renderMemory() {
             <button type="button" onClick={handleLogout} style={{padding:"8px 12px",border:"1px solid #475569",borderRadius:"8px",background:"transparent",color:"inherit",cursor:"pointer"}}>Logout</button>
             <span className="environment">
               <span className="status-dot online"></span>
-              Research Environment
+              Research Environment ({dashboard.database_name || "aegismem_demo"})
             </span>
             <div className="operator-avatar">V</div>
           </div>

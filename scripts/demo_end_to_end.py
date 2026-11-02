@@ -244,7 +244,7 @@ def run_demo():
         # =========================================================================
         print(f"{Colors.BOLD}[Step 4/7] Adversary Injects Direct Database Tampering (Simulating Compromise)...{Colors.RESET}")
         attacker_ip = "172.28.0.5"
-        reconstructor.record_probe(session_id, actor="kali-attacker", memory_id=policy_id, probe_type="UNAUTHORIZED_SQL_MUTATION")
+        reconstructor.record_probe(session_id, actor="aegismem-attacker", memory_id=policy_id, probe_type="UNAUTHORIZED_SQL_MUTATION")
 
         pre_attack_hash = current_record.content_hash
         pre_attack_content = current_record.content
@@ -270,7 +270,7 @@ def run_demo():
         t_exploit = time.time()
         reconstructor.record_exploit(
             session_id,
-            actor="kali-attacker",
+            actor="aegismem-attacker",
             memory_id=policy_id,
             attack_type="DIRECT_POLICY_TAMPERING",
             mutation="30d -> 180d window extension",
@@ -390,7 +390,7 @@ def run_demo():
             severity="CRITICAL",
             severity_score=0.95,
             attacker={
-                "actor": "kali-attacker",
+                "actor": "aegismem-attacker",
                 "source_ip": attacker_ip,
                 "source_port": 49152,
                 "scenario": "DIRECT_POLICY_TAMPERING",
