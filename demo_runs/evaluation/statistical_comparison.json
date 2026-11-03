@@ -1,4 +1,88 @@
 {
+  "protection_off_confidence_intervals": {
+    "sample_size": 50,
+    "success_rate": 0.0,
+    "success_wilson_ci_95": [
+      0.0,
+      0.0713
+    ],
+    "success_clopper_pearson_ci_95": [
+      0.0,
+      0.0711
+    ],
+    "exposure_rate": 1.0,
+    "exposure_wilson_ci_95": [
+      0.9287,
+      1.0
+    ],
+    "exposure_clopper_pearson_ci_95": [
+      0.9289,
+      1.0
+    ]
+  },
+  "detection_only_confidence_intervals": {
+    "sample_size": 50,
+    "success_rate": 0.0,
+    "success_wilson_ci_95": [
+      0.0,
+      0.0713
+    ],
+    "success_clopper_pearson_ci_95": [
+      0.0,
+      0.0711
+    ],
+    "exposure_rate": 1.0,
+    "exposure_wilson_ci_95": [
+      0.9287,
+      1.0
+    ],
+    "exposure_clopper_pearson_ci_95": [
+      0.9289,
+      1.0
+    ]
+  },
+  "rule_based_confidence_intervals": {
+    "sample_size": 50,
+    "success_rate": 0.1,
+    "success_wilson_ci_95": [
+      0.0435,
+      0.2136
+    ],
+    "success_clopper_pearson_ci_95": [
+      0.0333,
+      0.2181
+    ],
+    "exposure_rate": 0.0,
+    "exposure_wilson_ci_95": [
+      0.0,
+      0.0713
+    ],
+    "exposure_clopper_pearson_ci_95": [
+      0.0,
+      0.0711
+    ]
+  },
+  "tcrp_aegismem_confidence_intervals": {
+    "sample_size": 50,
+    "success_rate": 1.0,
+    "success_wilson_ci_95": [
+      0.9287,
+      1.0
+    ],
+    "success_clopper_pearson_ci_95": [
+      0.9289,
+      1.0
+    ],
+    "exposure_rate": 0.0,
+    "exposure_wilson_ci_95": [
+      0.0,
+      0.0713
+    ],
+    "exposure_clopper_pearson_ci_95": [
+      0.0,
+      0.0711
+    ]
+  },
   "tcrp_vs_protection_off_mcnemar": {
     "competitor": "protection_off",
     "contingency_table": [
@@ -35,23 +119,36 @@
     "competitor": "rule_based",
     "contingency_table": [
       [
-        17,
-        33
+        5,
+        45
       ],
       [
         0,
         0
       ]
     ],
-    "chi2_statistic": 31.0303,
-    "p_value": 2.5403120142884262e-08,
+    "chi2_statistic": 43.0222,
+    "p_value": 5.412161288732598e-11,
     "statistically_significant": true
   },
   "latency_wilcoxon_tcrp_vs_rule": {
-    "statistic": 39.0,
-    "p_value": 0.079681396484375,
-    "paired_sample_size": 17,
-    "tcrp_mean_ms": 2804.55,
-    "rule_mean_ms": 2010.0
+    "statistic": 0.0,
+    "p_value": 1.7763568394002505e-15,
+    "paired_sample_size": 50,
+    "tcrp_mean_ms": 62.14,
+    "rule_mean_ms": 35.53
+  },
+  "dependent_contamination_scenario": {
+    "scenario": "DEPENDENT_CONTAMINATION_SOP003",
+    "rule_based": {
+      "unnecessary_rollbacks": 2,
+      "dependency_damage": 1,
+      "outcome": "FAILURE (COLLATERAL_DAMAGE)"
+    },
+    "tcrp_autonomous": {
+      "unnecessary_rollbacks": 0,
+      "dependency_damage": 0,
+      "outcome": "SUCCESS (ISOLATED_REPAIR)"
+    }
   }
 }

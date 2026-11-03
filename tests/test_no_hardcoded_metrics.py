@@ -10,7 +10,14 @@ Scans scripts/ (*.ps1 and *.py) to verify:
 import ast
 import re
 from pathlib import Path
-import pytest
+try:
+    import pytest
+except ImportError:
+    class _MockPytest:
+        @staticmethod
+        def fail(msg):
+            raise AssertionError(msg)
+    pytest = _MockPytest()
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS_DIR = REPO_ROOT / "scripts"
@@ -113,6 +120,104 @@ def test_powershell_no_hardcoded_exposure_literal_assignments():
     assert not violations, f"Found hardcoded exposure literal assignments in scripts:\n" + "\n".join(violations)
 
 
+def test_python_scripts_no_hardcoded_metric_measurements():
+    """
+    Parses Python scripts (including run_evaluation_benchmarks.py) using Python AST to detect:
+    1. Direct assignment of numeric constants to metric variables (ttd, ttr, tt_decide_ms, etc.)
+    2. Dict entries assigning numeric constants or ternary constants to metric keys
+    3. Calls to .get() on metric fields with non-null/non-zero numeric default fallbacks (e.g. .get("ttd_ms", 120.0))
+    4. Calls to max(exposure, 1) or similar artificial inflators/clampers.
+    """
+    py_files = list(SCRIPTS_DIR.glob("*.py"))
+    assert len(py_files) > 0, "No python scripts found in scripts/"
+
+    METRIC_NAMES = {
+        "ttd", "ttr", "tt_decide_ms", "tt_validate_ms", "total_duration_ms",
+        "ttd_ms", "exposure", "exposure_count", "exposure_window"
+    }
+
+    violations = []
+
+    for py_file in py_files:
+        try:
+            tree = ast.parse(py_file.read_text(encoding="utf-8"), filename=str(py_file))
+        except SyntaxError as e:
+            pytest.fail(f"Syntax error parsing {py_file.name}: {e}")
+
+        for node in ast.walk(tree):
+            # 1. Variable assignments: target = CONSTANT or CONSTANT if ... else ...
+            if isinstance(node, ast.Assign):
+                for target in node.targets:
+                    if isinstance(target, ast.Name):
+                        name = target.id.lower()
+                        # Latency metric variables should never be assigned numeric constants
+                        if name in ("ttd", "ttr", "tt_decide_ms", "tt_validate_ms", "total_duration_ms", "ttd_ms"):
+                            if isinstance(node.value, ast.Constant) and isinstance(node.value.value, (int, float)):
+                                violations.append(
+                                    f"{py_file.name}:{node.lineno}: Variable '{target.id}' assigned hardcoded numeric literal {node.value.value}"
+                                )
+                            elif isinstance(node.value, ast.IfExp):
+                                if isinstance(node.value.body, ast.Constant) and isinstance(node.value.body.value, (int, float)):
+                                    violations.append(
+                                        f"{py_file.name}:{node.lineno}: Variable '{target.id}' conditionally assigned hardcoded numeric literal {node.value.body.value}"
+                                    )
+                                if isinstance(node.value.orelse, ast.Constant) and isinstance(node.value.orelse.value, (int, float)):
+                                    violations.append(
+                                        f"{py_file.name}:{node.lineno}: Variable '{target.id}' conditionally assigned hardcoded numeric literal {node.value.orelse.value}"
+                                    )
+                        # Exposure variables should never be conditionally assigned constants or non-zero literals
+                        elif name in ("exposure", "exposure_window"):
+                            if isinstance(node.value, ast.Constant) and isinstance(node.value.value, (int, float)) and node.value.value > 0:
+                                violations.append(
+                                    f"{py_file.name}:{node.lineno}: Variable '{target.id}' assigned hardcoded non-zero numeric literal {node.value.value}"
+                                )
+                            elif isinstance(node.value, ast.IfExp):
+                                violations.append(
+                                    f"{py_file.name}:{node.lineno}: Variable '{target.id}' conditionally assigned heuristic literal"
+                                )
+
+            # 2. Dict key-value assignments with hardcoded numeric values
+            elif isinstance(node, ast.Dict):
+                for k, v in zip(node.keys, node.values):
+                    if isinstance(k, ast.Constant) and isinstance(k.value, str) and k.value.lower() in METRIC_NAMES:
+                        if isinstance(v, ast.Constant) and isinstance(v.value, (int, float)):
+                            violations.append(
+                                f"{py_file.name}:{node.lineno}: Dict key '{k.value}' assigned hardcoded numeric literal {v.value}"
+                            )
+                        elif isinstance(v, ast.IfExp):
+                            if isinstance(v.body, ast.Constant) and isinstance(v.body.value, (int, float)):
+                                violations.append(
+                                    f"{py_file.name}:{node.lineno}: Dict key '{k.value}' conditionally assigned hardcoded numeric literal {v.body.value}"
+                                )
+                            if isinstance(v.orelse, ast.Constant) and isinstance(v.orelse.value, (int, float)):
+                                violations.append(
+                                    f"{py_file.name}:{node.lineno}: Dict key '{k.value}' conditionally assigned hardcoded numeric literal {v.orelse.value}"
+                                )
+
+            # 3. .get("ttd_ms", 120.0) default fallback
+            elif isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) and node.func.attr == "get":
+                if len(node.args) >= 2:
+                    first_arg = node.args[0]
+                    default_arg = node.args[1]
+                    if isinstance(first_arg, ast.Constant) and isinstance(first_arg.value, str) and first_arg.value.lower() in METRIC_NAMES:
+                        if isinstance(default_arg, ast.Constant) and isinstance(default_arg.value, (int, float)) and default_arg.value > 0:
+                            violations.append(
+                                f"{py_file.name}:{node.lineno}: Call .get('{first_arg.value}', {default_arg.value}) uses hardcoded non-zero default metric fallback"
+                            )
+
+            # 4. max(exposure, 1) or max(probe_res["exposure_count"], 1)
+            elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id == "max":
+                for arg in node.args:
+                    if isinstance(arg, ast.Constant) and arg.value == 1:
+                        code_snippet = ast.unparse(node) if hasattr(ast, "unparse") else ""
+                        if "exposure" in code_snippet.lower():
+                            violations.append(
+                                f"{py_file.name}:{node.lineno}: Artificial clamping with max(..., 1) detected in '{code_snippet}'"
+                            )
+
+    assert not violations, f"Found hardcoded metric measurements in python scripts:\n" + "\n".join(violations)
+
+
 def test_negative_control_assertion_can_fail():
     """
     Negative control: verifies that our scanner detector accurately catches
@@ -137,4 +242,20 @@ def test_negative_control_assertion_can_fail():
     )
     assert m_branch is not None, "Negative control failed: scanner must catch identical if/else branches"
     assert m_branch.group(1) == m_branch.group(2)
+
+
+if __name__ == "__main__":
+    print("Running test_scripts_directory_exists()...")
+    test_scripts_directory_exists()
+    print("Running test_python_scripts_no_identical_if_else_branches()...")
+    test_python_scripts_no_identical_if_else_branches()
+    print("Running test_powershell_scripts_no_identical_if_else_branches()...")
+    test_powershell_scripts_no_identical_if_else_branches()
+    print("Running test_powershell_no_hardcoded_exposure_literal_assignments()...")
+    test_powershell_no_hardcoded_exposure_literal_assignments()
+    print("Running test_python_scripts_no_hardcoded_metric_measurements()...")
+    test_python_scripts_no_hardcoded_metric_measurements()
+    print("Running test_negative_control_assertion_can_fail()...")
+    test_negative_control_assertion_can_fail()
+    print("ALL TESTS PASSED.")
 

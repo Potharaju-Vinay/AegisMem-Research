@@ -1,3 +1,5 @@
 concurrency,defense_stack,total_probes,exposure_count,throughput_rps,p50_ms,p95_ms,p99_ms
-10,tcrp_aegismem,20,0,3.97,2419.64,2611.45,2691.68
-50,tcrp_aegismem,50,0,2.79,16418.38,17637.82,17700.07
+10,aegismem_gate,200,0,504.46,7.06,18.06,21.81
+10,no_gate,200,0,542.94,2.0,15.26,25.28
+50,aegismem_gate,1000,0,482.59,80.95,136.25,190.88
+50,no_gate,1000,0,1313.38,15.71,53.29,81.17

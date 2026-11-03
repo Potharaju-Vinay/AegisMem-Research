@@ -250,6 +250,21 @@ def generate_report(session_id: str | None = None, output_dir: str | None = None
         if t_write and t_recover:
             total_lifecycle_ms = round((t_recover - t_write).total_seconds() * 1000.0, 2)
 
+        # Measure exposure count from live memory read events during contaminated window
+        exposure_window = None
+        if t_write is not None:
+            exposure_reads = 0
+            for mr in memories_read:
+                ts_str = mr.get("timestamp")
+                if ts_str:
+                    try:
+                        ts_read = datetime.fromisoformat(ts_str)
+                        if ts_read >= t_write and (t_recover is None or ts_read <= t_recover):
+                            exposure_reads += 1
+                    except Exception:
+                        pass
+            exposure_window = exposure_reads
+
         # 7. Construct Full Incident Report Object
         report = {
             "incident_report_id": f"REPORT-{session_id or 'DB-AUDIT'}",
@@ -270,7 +285,7 @@ def generate_report(session_id: str | None = None, output_dir: str | None = None
                 "dwell_time_ms": dwell_time_ms,
                 "recovery_duration_ms": recovery_duration_ms,
                 "total_lifecycle_ms": total_lifecycle_ms,
-                "exposure_window": 0
+                "exposure_window": exposure_window
             }
         }
 

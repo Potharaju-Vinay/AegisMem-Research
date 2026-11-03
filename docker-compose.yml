@@ -11,8 +11,6 @@ services:
       POSTGRES_DB: ${AEGISMEM_DB_NAME:-aegismem_live}
       POSTGRES_USER: ${AEGISMEM_DB_USER:-aegis_admin}
       POSTGRES_PASSWORD: ${AEGISMEM_DB_PASSWORD:?AEGISMEM_DB_PASSWORD environment variable is required}
-    ports:
-      - "127.0.0.1:5432:5432"
     volumes:
       - memory_pgdata:/var/lib/postgresql/data
     networks:
